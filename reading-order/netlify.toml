@@ -1,0 +1,5 @@
+# Redirects everything to the index.html which contains the react.
+[[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200

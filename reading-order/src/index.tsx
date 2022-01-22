@@ -1,27 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+/*import './styles/tailwind.css';*/
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {AppProvider} from './context'
 
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
+/*import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";*/
 
 ReactDOM.render(
     <React.StrictMode>
-        <TransformWrapper initialScale={1} initialPositionX={0} initialPositionY={0}>
-        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
-            <React.Fragment>
-                <div className="tools">
-                    <button onClick={() => zoomIn()}>+</button>
-                    <button onClick={() => zoomOut()}>-</button>
-                    <button onClick={() => resetTransform()}>x</button>
-                </div>
-                <TransformComponent>
-                    <App />
-                </TransformComponent>
-             </React.Fragment>
-        )}
-        </TransformWrapper>
+        <AppProvider>
+            <App />
+        </AppProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );
