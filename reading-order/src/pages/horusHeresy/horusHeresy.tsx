@@ -1,6 +1,5 @@
 import React from 'react';
-import './index.css';
-import './App.css';
+import '../../index.css';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 
@@ -16,7 +15,7 @@ function HorusHerasy() {
             </div>
             <TransformComponent>
               <main className="w-screen h-screen bg-black">
-
+                
               </main>
             </TransformComponent>
          </React.Fragment>

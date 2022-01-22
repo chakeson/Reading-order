@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './index.css';
 import './App.css'
 import Navbar from './components/navbar';
@@ -12,26 +12,16 @@ import Error from './pages/error/error';
 function App() {
 	return (
 
-        <Router>
+        <BrowserRouter>
       		<Navbar />
-      		<Switch>
-				<Route exact path="/">
-					<HorusHerasy />
-				</Route>
-				<Route exact path="/horusheresy">
-					<HorusHerasy />
-				</Route>
-				<Route exact path="/siegeofterra">
-					<SiegeOfTerra />
-				</Route>
-				<Route exact path="/about">
-					<About />
-				</Route>
-				<Route path="*">
-					<Error />
-				</Route>
-			</Switch>
-    	</Router>
+      		<Routes>
+				<Route path="/" element={<HorusHerasy />} />
+				<Route path="/horusheresy" element={<HorusHerasy />} />
+				<Route path="/siegeofterra" element={<SiegeOfTerra />} />
+				<Route path="/about" element={<About />} />
+				<Route path="*" element={<Error />} />
+			</Routes>
+    	</BrowserRouter>
     
 
 	);
