@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+html,body {
+  height:100%;
+  padding:0;
+  margin:0;
+}
+
+.navButton {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+
+}
 
 
-
-
+.navButton > button {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    vertical-align: middle;
+    border: 1px solid black;
+    border-radius: 50%;
+}
 
 
 

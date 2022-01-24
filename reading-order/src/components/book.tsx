@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
-import './index.css';
-import './App.css';
+import '../index.css';
 
+interface Props {
+    x:number;
+    y:number;
+    id:number;
+    title:string;
+    author:string;
+    book:string;
+    faction:string[];
+    pages:string;
+    audio:string;
+    rating:string;
+    link:string;
+}
+/*  faction:Array<string> */
+function Book(props:Props) {
+    const [ isExpanded , setIsExpanded ] = useState<boolean>(false);
 
-
-
-function Book() {
-	const [ isExpanded , setIsExpanded ] = useState<boolean>(false);
-
-	return (
-    	<div className="">
-
-    </div>
-  );
+    return (
+        <div className="">
+            book
+        </div>
+    );
 }
 
 export default Book;
