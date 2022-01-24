@@ -1,7 +1,21 @@
+# TODO
+Add progress-bar on navbar.
+
+
+
 # Important libraries
 React
+React router dom v6
 React-zoom-pan-pinch
 TailwindCSS 3
+
+# Structure
+Website intro point index.tsx.
+Router and website structure in App.tsx. (React router)
+
+# Design
+Palettes: https://coolors.co/palette/ff5400-ff6d00-ff8500-ff9100-ff9e00-00b4d8-0096c7-0077b6-023e8a-03045e
+
 
 # Getting Started with Create React App
 
