@@ -3,6 +3,7 @@ import '../index.css';
 
 
 interface Props {
+    id:number;
     color:string;
     type:string;
     dimension:{

@@ -1,6 +1,6 @@
 # TODO
 Add progress-bar on navbar.
-
+Add api hooking for books.tsx so it saves progress. Add localstorage support.
 
 
 # Important libraries
@@ -8,6 +8,9 @@ React
 React router dom v6
 React-zoom-pan-pinch
 TailwindCSS 3
+
+# Technical articles
+Relevant for books.tsx https://www.freecodecamp.org/news/event-propagation-event-bubbling-event-catching-beginners-guide/
 
 # Structure
 Website intro point index.tsx.

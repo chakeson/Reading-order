@@ -8,7 +8,7 @@ const horusHeresyDataBooks = [
         book:"1",
         faction:["Sons of horus"],
         pages:"320 (hardcover) 416 (softcover)",
-        audio:"12 hours 16 minutes",
+        audio:"12h 16m",
         rating:"95%",
         link: "https://www.blacklibrary.com/the-horus-heresy/novels/horus-rising.html",
     },
@@ -21,7 +21,7 @@ const horusHeresyDataBooks = [
         book:"2",
         faction:["Sons of horus"],
         pages:"416",
-        audio:"11 hours 20 minutes ",
+        audio:"11h 20m",
         rating:"75%",
         link: "https://www.blacklibrary.com/the-horus-heresy/novels/False-Gods-eBook.html",
     },
@@ -34,7 +34,7 @@ const horusHeresyDataBooks = [
         book:"3",
         faction:["Sons of horus"],
         pages:"416",
-        audio:"8 hours 51 minutes ",
+        audio:"8h 51m",
         rating:"75%",
         link: "https://www.blacklibrary.com/the-horus-heresy/novels/galaxy-in-flames-ebook.html",
     },
@@ -45,16 +45,19 @@ export default horusHeresyDataBooks;
 
 export const horusHeresyDataArrow = [
     {
+        id:1,
         color:"red",
         type:"primary",
         dimension:[{x:100,y:100,length:100,height:20}]
     },
-    {
+    {   
+        id:2,
         color:"blue",
         type:"secondary",
         dimension:[{x:200,y:100,length:100,height:20}]
     },
     {
+        id:3,
         color:"green",
         type:"tertiary",
         dimension:[{x:300,y:100,length:100,height:20}]

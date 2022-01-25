@@ -19,13 +19,12 @@ function HorusHerasy() {
                 
                     <main className="w-screen h-screen min-h-full min-w-full bg-map">
                     {horusHeresyDataBooks.map(( data, index ) => {
-                            return <Book key={index+"book"} {...data}/>
+                            return <Book key={index+"book"+data.id} {...data}/>
                         }
                     )}
                     
-                    {horusHeresyDataArrow.map(( data, index ) => {
-                            console.log(data);                            
-                            return <Arrow key={index+"arrow"} {...data}/>
+                    {horusHeresyDataArrow.map(( data, index ) => {                          
+                            return <Arrow key={index+"arrow"+data.id} {...data}/>
                         }
                     )}
 

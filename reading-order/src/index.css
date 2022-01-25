@@ -8,6 +8,10 @@ html,body {
   margin:0;
 }
 
+.body {
+    margin-top: 56px;
+}
+
 .navButton {
     position: fixed;
     bottom: 40px;
