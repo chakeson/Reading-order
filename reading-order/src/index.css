@@ -9,8 +9,18 @@ html,body {
 }
 
 .body {
-    margin-top: 56px;
+    margin-top: 72px;
 }
+
+.test {
+    background: linear-gradient(
+        0deg,
+        green,
+        green 50%,
+        blue 50%
+    );
+}
+
 
 .navButton {
     position: fixed;

@@ -25,36 +25,48 @@ function Book(props:Props) {
         
     }
 
+    const backgroudMaker = (faction:string[]) => {
+        var outputString:string;
+
+
+        //return outputString
+    }
+    const backgroundMakerColor = backgroudMaker(faction);
 
     return (
-        <div className="inline-flex flex-col border-2" onClick = { e => { setIsExpanded(!isExpanded); }} >
-            <div>
-                {title}
+        <div className="test w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled" style={{top:`${y}px`,left:`${x}px`}} onClick = { e => { setIsExpanded(!isExpanded); }} >
+            <div className='font-semibold text-xl overflow-clip flex justify-between items-center pt-3 px-3'>
+                <div className='w-11/12'>{title}</div>
+                <input type="checkbox" className='w-6 h-6' onClick={e => {handleChange(e);}}/>
             </div>
-            <div>
+            <div className='px-3'>
                 Author: {author}
             </div>
-            <div>
-                Book {book}
-            </div>
-            <input type="checkbox"   onClick={e => {handleChange(e);}}/>
+         
 
             { isExpanded ? 
             <div>
-                <div>
-                    Pages:{pages}
+                <div className='px-3'>
+                    Book {book}
+                </div>   
+                <div className='px-3'>
+                    Pages: {pages}
                 </div>
-                <div>
+                <div className='px-3'>
                     Audiobook length: {audio}
                 </div>
-                <div>
+                <div className='px-3'>
                     Rating: {rating}
                 </div>
-                <div>
-                    <a href={link}  target="_blank" rel="noopener noreferrer">Buy now</a>
+                <div className='flex justify-center content-center p-2'>
+                    <a href={link} target="_blank" rel="noopener noreferrer" className='border-2 rounded-full px-2 py-1 font-medium font-lg'>Buy now</a>
                 </div>
             </div>
-            :""}
+            :
+            <div className='px-3 pb-3'>
+            Book {book}
+            </div>   
+            }
         </div>
     );
 }

@@ -38,6 +38,19 @@ const horusHeresyDataBooks = [
         rating:"75%",
         link: "https://www.blacklibrary.com/the-horus-heresy/novels/galaxy-in-flames-ebook.html",
     },
+    {
+        x:800,
+        y:500,
+        id: 3,
+        title: "The Flight of the Eisenstein",
+        author: "James Swallow",
+        book:"4",
+        faction:["Sons of horus","Knight Errant"],
+        pages:"416",
+        audio:"12h",
+        rating:"75%",
+        link: "https://www.blacklibrary.com/the-horus-heresy/novels/flight-of-the-eisenstein-ebook.html",
+    },
 ];
 export default horusHeresyDataBooks;
 

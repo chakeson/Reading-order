@@ -8,6 +8,7 @@ import horusHeresyDataBooks, { horusHeresyDataArrow } from './horusHeresyData';
 
 function HorusHerasy() {
     return (
+        <div className='body'>
         <TransformWrapper initialScale={1} initialPositionX={0} initialPositionY={0}>
         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
             <React.Fragment>
@@ -17,7 +18,7 @@ function HorusHerasy() {
                 </div>
                 <TransformComponent>
                 
-                    <main className="w-screen h-screen min-h-full min-w-full bg-map">
+                <main className="w-screen h-screen min-h-full min-w-full bg-map">
                     {horusHeresyDataBooks.map(( data, index ) => {
                             return <Book key={index+"book"+data.id} {...data}/>
                         }
@@ -33,6 +34,7 @@ function HorusHerasy() {
             </React.Fragment>
         )}
         </TransformWrapper>
+        </div>
   );
 }
 
