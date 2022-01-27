@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import factionToColor from '../util/factionToColor';
 import '../index.css';
 
 interface Props {
@@ -26,15 +27,21 @@ function Book(props:Props) {
     }
 
     const backgroudMaker = (faction:string[]) => {
-        var outputString:string;
-
-
-        //return outputString
+        var outputString:string = "";
+        const factionNumber:number = faction.length;
+        const colorList:string[] = factionToColor(faction);
+        
+        for (let i=0; i<faction.length;i++) {
+            outputString = outputString+colorList[i]+" "+ (i/factionNumber)*100+"%" + ",";
+            outputString = outputString+colorList[i]+" "+ ((i+1)/factionNumber)*100+"%" + ",";
+        }   
+        outputString = outputString.slice(0, -1); //Remove last comma.
+        return outputString
     }
     const backgroundMakerColor = backgroudMaker(faction);
 
     return (
-        <div className="test w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled" style={{top:`${y}px`,left:`${x}px`}} onClick = { e => { setIsExpanded(!isExpanded); }} >
+        <div style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(0deg,${backgroundMakerColor})`}} className=" w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled" onClick = { e => { setIsExpanded(!isExpanded); }} >
             <div className='font-semibold text-xl overflow-clip flex justify-between items-center pt-3 px-3'>
                 <div className='w-11/12'>{title}</div>
                 <input type="checkbox" className='w-6 h-6' onClick={e => {handleChange(e);}}/>

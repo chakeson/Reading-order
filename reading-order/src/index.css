@@ -13,11 +13,14 @@ html,body {
 }
 
 .test {
-    background: linear-gradient(
+    background: repeating-linear-gradient(
         0deg,
-        green,
-        green 50%,
-        blue 50%
+        green 0%,
+        green 33%,
+        red 33%,
+        red 66%,
+        blue 66%,
+        blue 100%   
     );
 }
 
