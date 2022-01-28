@@ -1,7 +1,7 @@
 const horusHeresyDataBooks = [
     {
         x:100,
-        y:500,
+        y:200,
         id: 1,
         title: "Horus Rising",
         author: "Dan Abnett",
@@ -14,7 +14,7 @@ const horusHeresyDataBooks = [
     },
     {
         x:250,
-        y:500,
+        y:200,
         id: 2,
         title: "False Gods",
         author: "Graham McNeill",
@@ -27,7 +27,7 @@ const horusHeresyDataBooks = [
     },
     {
         x:500,
-        y:500,
+        y:200,
         id: 3,
         title: "Galaxy in Flames",
         author: "Dan Abnett",
@@ -39,9 +39,22 @@ const horusHeresyDataBooks = [
         link: "https://www.blacklibrary.com/the-horus-heresy/novels/galaxy-in-flames-ebook.html",
     },
     {
-        x:800,
+        x:300,
         y:500,
-        id: 3,
+        id: 4,
+        title: "The Flight of the Eisenstein",
+        author: "James Swallow",
+        book:"4",
+        faction:["Sons of horus","Knight Errant"],
+        pages:"416",
+        audio:"12h",
+        rating:"75%",
+        link: "https://www.blacklibrary.com/the-horus-heresy/novels/flight-of-the-eisenstein-ebook.html",
+    },
+    {
+        x:1500,
+        y:100,
+        id: 5,
         title: "The Flight of the Eisenstein",
         author: "James Swallow",
         book:"4",
