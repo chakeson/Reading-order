@@ -8,7 +8,7 @@ html,body {
   margin:0;
 }
 
-.body123 {
+.body {
     position: relative;
     top:73px;
 }
@@ -19,6 +19,10 @@ html,body {
 .mapDimensions2 {
     height: fit-content;
     width: fit-content;
+}
+
+.nav-pannel {
+    margin-top: 56px;
 }
 
 .navButton {

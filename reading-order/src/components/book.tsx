@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import factionToColor from '../util/factionToColor';
+import { NoPanArea } from 'react-zoomable-ui';
 import '../index.css';
 
 interface Props {
@@ -44,6 +45,7 @@ function Book(props:Props) {
     var backgroundMakerColor = backgroudMaker(faction);
 
     return (
+        <NoPanArea>
         <div style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(0deg,${ isGreyedOut ? `${greyedOutColorHex} 0%, ${greyedOutColorHex} 100%` : backgroundMakerColor})`}} className=" w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled" onClick = { e => { setIsExpanded(!isExpanded); }} >
             <div className='font-semibold text-xl overflow-clip flex justify-between items-center pt-3 px-3'>
                 <div className='w-11/12'>{title}</div>
@@ -78,6 +80,7 @@ function Book(props:Props) {
             </div>   
             }
         </div>
+        </NoPanArea>
     );
 }
 
