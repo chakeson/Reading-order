@@ -59,7 +59,7 @@ function Book(props:Props) {
             { isExpanded ? 
             <div>
                 <div className='px-3'>
-                    Book {book}
+                    {book}
                 </div>   
                 <div className='px-3'>
                     Pages: {pages}

@@ -65,7 +65,7 @@ const factionText = [
     },
     {
         nr:"VIII",
-        Name:"NightLords",
+        Name:"Night Lords",
         color:"#a1aefe",
         text:"#000000",
     },
