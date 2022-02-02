@@ -1,7 +1,9 @@
 from imp import load_source
+import imp
 from turtle import clear
 import requests, random
 from time import sleep
+import pickle
 from bs4 import BeautifulSoup
 
 LOAD_URL_DATA = 1
@@ -133,16 +135,28 @@ print("Finished gathering data.")
 # title, author, pages, length_book, link_black_library, nr
 new_file = open("output.txt", "w", encoding="utf-8")
 for book in data_answer:
-    new_file.write(str(book.nr)+"\n")
-    new_file.write(str(book.title)+"\n")
-    new_file.write(str(book.author)+"\n")
-    new_file.write(str(book.pages)+"\n")
-    new_file.write(str(book.length_book)+"\n")
-    new_file.write(str(book.link_black_library)+"\n")
-    new_file.write("\n")
-    new_file.write("\n")
+    new_file.write("{\n")
+    new_file.write("\tx: 1\n")
+    new_file.write("\ty: 1\n")
+    new_file.write("\tid:"+' "'+str(book.nr)+'",'+"\n")
+    new_file.write("\ttitle::"+' "'+str(book.title)+'",'+"\n")
+    new_file.write("\tauthor:"+' "'+str(book.author)+'",'+"\n")
+    new_file.write("\tbook:"+' "",'+"\n")
+    new_file.write("\tfaction:"+' [""],'+"\n")
+    new_file.write("\tpages:"+'"'+str(book.pages)+'",'+"\n")
+    new_file.write("\taudio:"+'"'+str(book.length_book)+'",'+"\n")
+    new_file.write("\trating:"+' "",'+"\n")
+    new_file.write("\tlink:"+'"'+str(book.link_black_library)+'",'+"\n")
 
+    new_file.write("},\n")
 
 new_file.close()
 
-print("Finished")
+print("\nFinished writing output.txt\n")
+
+print("Saving memory object of class")
+with open("data_answer.obj", "wb") as save_file:
+    pickle.dump(data_answer ,save_file)
+
+print("Saved object")
+print("Closing script")
