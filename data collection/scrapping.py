@@ -4,7 +4,7 @@ import requests, random
 from time import sleep
 from bs4 import BeautifulSoup
 
-LOAD_URL_DATA = 0
+LOAD_URL_DATA = 1
 
 if LOAD_URL_DATA:
     url = "https://wh40k.lexicanum.com/wiki/Horus_Heresy_Series#Horus_Heresy_Characters_Novels"
@@ -13,10 +13,12 @@ if LOAD_URL_DATA:
     with open("request_data.txt", "w", encoding="utf-8") as f:
         f.write(web_resutlt.text)
     html_doc = BeautifulSoup(web_resutlt.text, "html.parser")
+    print("Loaded page from source")
 else:
     web_resutlt = open("request_data.txt", "r", encoding="utf-8")
     # web_resutlt.read()
     html_doc = BeautifulSoup(web_resutlt, "html.parser")
+    print("Loaded page from save")
 
 
 html_doc.prettify()
@@ -29,6 +31,7 @@ link_list = []
 for link in gallery_box_Links:
     temp = link.find_all("a")
     link_list.append("https://wh40k.lexicanum.com" + temp[0]["href"])
+print("Extracted links")
 
 try:
     del link, temp, gallery_box_Links, html_doc, web_resutlt, LOAD_URL_DATA
@@ -56,15 +59,23 @@ for link in link_list:
     html_doc = BeautifulSoup(web_resutlt.text, "html.parser")
 
     # Find title
-    title_doc = html_doc.find_all("div", class_="mw-parser-output")[1]
-    title = title_doc.find_all("b")[1].string
+    try:
+        title_doc = html_doc.find_all("div", class_="mw-parser-output")[1]
+        title = title_doc.find_all("b")[1].string
+        title = title.strip("\n")
+    except:
+        title = ""
 
     # Find the author
-    author_doc = html_doc.find_all("div", class_="mw-parser-output")[1]
-    author = author_doc.find(text="Author").parent.parent
-    author = author.findNext("td")
-    author = author.find("a")
-    author = author.string
+    try:
+        author_doc = html_doc.find_all("div", class_="mw-parser-output")[1]
+        author = author_doc.find(text="Author").parent.parent
+        author = author.findNext("td")
+        author = author.find("a")
+        author = author.string
+        author = author.strip("\n")
+    except:
+        author = ""
 
     # Find pages
     try:
@@ -73,6 +84,7 @@ for link in link_list:
         pages = pages.parent.parent
         pages = pages.findNext("td")
         pages = pages.decode_contents()
+        pages = pages.strip("\n")
     except:
         pages = ""
 
@@ -83,6 +95,7 @@ for link in link_list:
         length_book = length_book.parent.parent
         length_book = length_book.findNext("td")
         length_book = length_book.string
+        length_book = length_book.strip("\n")
     except:
         length_book = ""
 
@@ -95,6 +108,7 @@ for link in link_list:
         link_black_library = link_black_library.find("li")
         link_black_library = link_black_library.find("a", class_="external text")
         link_black_library = link_black_library["href"]
+        link_black_library = link_black_library.strip("\n")
     except:
         link_black_library = ""
 
@@ -105,9 +119,11 @@ for link in link_list:
     )
 
     data_answer.append(book_class_instance)
+    print("Scrapped site:"+str(i))    
 
     # Wait time between requests
-    wait_time = random.randint(10, 100)
+    wait_time = random.randint(10, 60)
+    print("Waiting to next book scrape " + str(wait_time))
     sleep(wait_time)
 
 
@@ -117,16 +133,16 @@ print("Finished gathering data.")
 # title, author, pages, length_book, link_black_library, nr
 new_file = open("output.txt", "w", encoding="utf-8")
 for book in data_answer:
-    new_file.write(book.nr)
-    new_file.write(book.title)
-    new_file.write(book.author)
-    new_file.write(book.pages)
-    new_file.write(book.length_book)
-    new_file.write(book.link_black_library)
+    new_file.write(str(book.nr)+"\n")
+    new_file.write(str(book.title)+"\n")
+    new_file.write(str(book.author)+"\n")
+    new_file.write(str(book.pages)+"\n")
+    new_file.write(str(book.length_book)+"\n")
+    new_file.write(str(book.link_black_library)+"\n")
     new_file.write("\n")
     new_file.write("\n")
 
 
 new_file.close()
 
-"Finished"
+print("Finished")
