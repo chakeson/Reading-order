@@ -1,6 +1,5 @@
 from imp import load_source
 import imp
-from turtle import clear
 import requests, random
 from time import sleep
 import pickle
@@ -136,10 +135,10 @@ print("Finished gathering data.")
 new_file = open("output.txt", "w", encoding="utf-8")
 for book in data_answer:
     new_file.write("{\n")
-    new_file.write("\tx: 1\n")
-    new_file.write("\ty: 1\n")
-    new_file.write("\tid:"+' "'+str(book.nr)+'",'+"\n")
-    new_file.write("\ttitle::"+' "'+str(book.title)+'",'+"\n")
+    new_file.write("\tx: 1,\n")
+    new_file.write("\ty: 1,\n")
+    new_file.write("\tid:"+' '+str(book.nr)+','+"\n")
+    new_file.write("\ttitle:"+' "'+str(book.title)+'",'+"\n")
     new_file.write("\tauthor:"+' "'+str(book.author)+'",'+"\n")
     new_file.write("\tbook:"+' "",'+"\n")
     new_file.write("\tfaction:"+' [""],'+"\n")
