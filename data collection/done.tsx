@@ -1282,7 +1282,7 @@ const horusHeresyDataBooks = [
 	book:"Official Novellas",
 	faction: ["4h 5m"],
 	pages:"128",
-	audio:"",
+	audio:"4h 5m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/novels/promethean-sun-ebook.html"
 },
@@ -1321,7 +1321,7 @@ const horusHeresyDataBooks = [
 	book:"Official Novellas",
 	faction: [""],
 	pages:"95",
-	audio:"",
+	audio:"3h 38m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-reflection-crackd-ebook.html"
 },
@@ -1360,7 +1360,7 @@ const horusHeresyDataBooks = [
 	book:"Official Novellas",
 	faction: [""],
 	pages:"101",
-	audio:"",
+	audio:"3h 43m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-serpent-beneath-ebook.html"
 },
@@ -1412,7 +1412,7 @@ const horusHeresyDataBooks = [
 	book:"Official Novellas",
 	faction: [""],
 	pages:"99",
-	audio:"",
+	audio:"3h 20m",
 	rating: "%",
 	link:"https://web.archive.org/web/20170402224633/https://www.blacklibrary.com/the-horus-heresy/novels/prince-of-crows-ebook.html"
 },
@@ -1433,14 +1433,14 @@ const horusHeresyDataBooks = [
 	x: 1,
 	y: 1,
 	id: 111,
-	title: "Chaos Space Marine warband",
+	title: "The Purge",
 	author: "Anthony Reynolds",
 	book:"Official Novellas",
 	faction: [""],
 	pages:"114",
 	audio:"3h 40m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-purge-ebook.html"
 },
 {
 	x: 1,
@@ -1453,7 +1453,7 @@ const horusHeresyDataBooks = [
 	pages:"112",
 	audio:"3h 40m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/novels/ravenlord-ebook.html"
 },
 {
 	x: 1,
@@ -1466,7 +1466,7 @@ const horusHeresyDataBooks = [
 	pages:"132",
 	audio:"4h 27m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-seventh-serpent-ebook.html"
 },
 {
 	x: 1,
@@ -1479,7 +1479,7 @@ const horusHeresyDataBooks = [
 	pages:"240",
 	audio:"7h 26m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/novels/tallarn-ironclad-ebook.html"
 },
 {
 	x: 1,
@@ -1503,9 +1503,9 @@ const horusHeresyDataBooks = [
 	book:"Official Novellas",
 	faction: [""],
 	pages:"114",
-	audio:"",
+	audio:"3h 54m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/novels/wolf-king-ebook.html"
 },
 {
 	x: 1,
@@ -1531,7 +1531,7 @@ const horusHeresyDataBooks = [
 	pages:"192",
 	audio:"5h 48m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-unburdened-ebook.html"
 },
 {
 	x: 1,
@@ -1550,7 +1550,7 @@ const horusHeresyDataBooks = [
 	x: 1,
 	y: 1,
 	id: 120,
-	title: "Chaos Space Marine warband",
+	title: "Sons of the Forge",
 	author: "Nick Kyme",
 	book:"Official Novellas",
 	faction: [""],
@@ -1570,7 +1570,7 @@ const horusHeresyDataBooks = [
 	pages:"114",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/series/novella-series-1/dreadwing-ebook-2018.html"
 },
 {
 	x: 1,
@@ -1583,7 +1583,7 @@ const horusHeresyDataBooks = [
 	pages:"100",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/new-titles/featured/spear-of-ultramar-ebook-2018.html"
 },
 {
 	x: 1,
@@ -1596,7 +1596,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/angron-ebook.html"
 },
 {
 	x: 1,
@@ -1737,7 +1737,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"20",
-	audio:"",
+	audio:"40m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/lightning-tower-enhanced-audio.html"
 },
@@ -1749,10 +1749,10 @@ const horusHeresyDataBooks = [
 	author: "Graham McNeill",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
-	audio:"",
+	pages:"39",
+	audio:"36m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/dark-king-enhanced-audio.html"
 },
 {
 	x: 1,
@@ -1765,7 +1765,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"1 hour 27m",
 	rating: "%",
-	link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/blood-games-eshort.html"
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/blood-games-eshort.html"
 },
 {
 	x: 1,
@@ -1854,7 +1854,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 36m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/rules-of-engagement-ebook.html"
 },
@@ -1867,7 +1867,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 33m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/liars-due-ebook.html"
 },
@@ -1879,7 +1879,7 @@ const horusHeresyDataBooks = [
 	author: "Nick Kyme",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
+	pages:"1h 54m",
 	audio:"",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/forgotten-sons-ebook.html"
@@ -1893,7 +1893,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"54m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/last-remembrancer-ebook.html"
 },
@@ -1901,12 +1901,12 @@ const horusHeresyDataBooks = [
 	x: 1,
 	y: 1,
 	id: 147,
-	title: "novel by Nick Kyme",
+	title: "Rebirth",
 	author: "Chris Wraight",
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 21m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/horus-heresy-rebirth-ebook.html"
 },
@@ -1919,7 +1919,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"52m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/face-of-treachery-ebook.html"
 },
@@ -1932,7 +1932,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"56m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/little-horus-ebook.html"
 },
@@ -1945,7 +1945,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 53m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/iron-within-ebook.html"
 },
@@ -1958,7 +1958,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 27m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/savage-weapons-ebook.html"
 },
@@ -1971,7 +1971,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"8m",
 	rating: "%",
 	link:"http://www.blacklibrary.com/all-products/army-of-one-ebook.html"
 },
@@ -1979,7 +1979,7 @@ const horusHeresyDataBooks = [
 	x: 1,
 	y: 1,
 	id: 153,
-	title: "xeno-species",
+	title: "Kryptos",
 	author: "Graham McNeill",
 	book:"Short stories",
 	faction: [""],
@@ -1997,7 +1997,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"53m",
 	rating: "%",
 	link:""
 },
@@ -2010,7 +2010,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"42m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/lost_sons.html"
 },
@@ -2023,7 +2023,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"30m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/death_of_a_silversmith.html"
 },
@@ -2036,7 +2036,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"43m",
 	rating: "%",
 	link:""
 },
@@ -2049,7 +2049,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 39m",
 	rating: "%",
 	link:""
 },
@@ -2062,7 +2062,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"40m",
 	rating: "%",
 	link:""
 },
@@ -2075,7 +2075,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"11m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/lord-of-the-red-sands-ebook.html"
 },
@@ -2090,7 +2090,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"12m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/serpent-mp3.html"
 },
 {
 	x: 1,
@@ -2101,9 +2101,9 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"38m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/all-products/luna-mendax-eshort.html"
 },
 {
 	x: 1,
@@ -2116,7 +2116,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"1 hour 25m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/riven-ebook.html"
 },
 {
 	x: 1,
@@ -2140,7 +2140,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 17m",
 	rating: "%",
 	link:""
 },
@@ -2166,9 +2166,9 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"38m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/child-of-night-ebook.html"
 },
 {
 	x: 1,
@@ -2179,7 +2179,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 54m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-devine-adoratrice-ebook.html"
 },
@@ -2207,7 +2207,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"13m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/sins-of-the-father-ebook.html"
 },
 {
 	x: 1,
@@ -2218,22 +2218,22 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"18m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/final-compliance-of-63-14-ebook.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 172,
-	title: "short story by Matthew Farrer",
+	title: "Vorax",
 	author: "Matthew Farrer",
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"15m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/vorax-ebook.html"
 },
 {
 	x: 1,
@@ -2244,9 +2244,9 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"15m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/value-of-fear-ebook.html"
 },
 {
 	x: 1,
@@ -2257,7 +2257,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"18m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/brotherhood-of-the-moon-ebook.html"
 },
@@ -2282,10 +2282,10 @@ const horusHeresyDataBooks = [
 	author: "Nick Kyme",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
+	pages:"34m",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/imperfect-ebook.html"
 },
 {
 	x: 1,
