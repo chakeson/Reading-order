@@ -684,7 +684,7 @@ const horusHeresyDataBooks = [
 	book:"Book 53",
 	faction: [""],
 	pages:"480",
-	audio:"13h and 40 Minutes",
+	audio:"13h and 40m",
 	rating: "%",
 	link:""
 },
@@ -905,7 +905,7 @@ const horusHeresyDataBooks = [
 	book:"The Primarchs",
 	faction: [""],
 	pages:"224",
-	audio:"6h 9 Minutes",
+	audio:"6h 9m",
 	rating: "%",
 	link:""
 },
@@ -1152,7 +1152,7 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"21 Minutes",
+	audio:"21m",
 	rating: "%",
 	link:""
 },
@@ -1165,7 +1165,7 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"25 Minutes",
+	audio:"25m",
 	rating: "%",
 	link:""
 },
@@ -1178,7 +1178,7 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"27 Minutes",
+	audio:"27m",
 	rating: "%",
 	link:""
 },
@@ -2751,7 +2751,7 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"1h 1m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/dreams-of-unity-eshort.html"
 },
@@ -2764,35 +2764,35 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"37m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-board-is-set-eshort.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 214,
-	title: "Imperial Fists",
+	title: "Champion of Oaths",
 	author: "John French",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
+	pages:"17",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/eshort-champion-of-oaths.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 215,
-	title: "Word Bearers",
+	title: "Child of Chaos",
 	author: "Chris Wraight",
 	book:"Short stories",
 	faction: [""],
 	pages:"",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/child-of-chaos-eshort-2020.html"
 },
 {
 	x: 1,
@@ -2803,9 +2803,9 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"38m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/massacre-eshort.html"
 },
 {
 	x: 1,
@@ -2818,7 +2818,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/eshort-two-metaphysical-blades.html"
 },
 {
 	x: 1,
@@ -2828,10 +2828,10 @@ const horusHeresyDataBooks = [
 	author: "David Annandale",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
-	audio:"",
+	pages:"22",
+	audio:"38m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/eshort-prologue-to-nikaea.html"
 },
 {
 	x: 1,
@@ -2841,10 +2841,10 @@ const horusHeresyDataBooks = [
 	author: "Graham McNeill",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
+	pages:"27",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/all-products/advent-2018-1-old-wounds-new-scars-eshort.html"
 },
 {
 	x: 1,
@@ -2854,10 +2854,10 @@ const horusHeresyDataBooks = [
 	author: "David Annandale",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
+	pages:"20",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/advent-2018-6-abyssal-eshort.html"
 },
 {
 	x: 1,
@@ -2868,9 +2868,9 @@ const horusHeresyDataBooks = [
 	book:"Short stories",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"57m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/prod-home/new/advent-2018-12-the-last-council-eshort.html"
 },
 {
 	x: 1,
@@ -2880,36 +2880,36 @@ const horusHeresyDataBooks = [
 	author: "Aaron Dembski-Bowden",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
+	pages:"24",
 	audio:"",
 	rating: "%",
-	link:"https://www.blacklibrary.com/prod-home/advent-2018/advent-2018-24-rose-watered-blood-eshort.html"
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/advent-2018-24-rose-watered-blood-eshort.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 223,
-	title: "Space Marines Portal",
+	title: "Bringer of Sorrow",
 	author: "Aaron Dembski-Bowden",
 	book:"Short stories",
 	faction: [""],
 	pages:"20",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/bringer-of-sorrows-eng-2019.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 224,
-	title: "Death Guard",
+	title: "Lantern's Light",
 	author: "James Swallow",
 	book:"Short stories",
 	faction: [""],
-	pages:"",
+	pages:"25",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/prod-home/library/lanterns-light-eng-2019.html"
 },
 {
 	x: 1,
@@ -2922,7 +2922,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/prod-home/12-tales-of-christmas/the-serpents-dance-eshort-2020.html"
 },
 {
 	x: 1,
@@ -2935,7 +2935,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/prod-home/12-tales-of-christmas/the-lighting-hall-eshort-2020.html"
 },
 {
 	x: 1,
@@ -2948,7 +2948,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/new-titles/featured/eshort-eater-of-dreams-eng-2021.html"
 },
 {
 	x: 1,
@@ -2961,7 +2961,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/new-titles/featured/eshort-bloodhowl-eng-2021.html"
 },
 {
 	x: 1,
@@ -2974,59 +2974,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"",
 	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
-	id: 230,
-	title: "Crusade's End",
-	author: "Dan Abnett",
-	book:"Omnibus Editions",
-	faction: [""],
-	pages:"1024",
-	audio:"",
-	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
-	id: 231,
-	title: "The Razing of Prospero",
-	author: "Dan Abnett",
-	book:"Omnibus Editions",
-	faction: [""],
-	pages:"",
-	audio:"",
-	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
-	id: 232,
-	title: "The Last Phoenix",
-	author: "John French",
-	book:"Omnibus Editions",
-	faction: [""],
-	pages:"1024",
-	audio:"",
-	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
-	id: 233,
-	title: "The Dark King and The Lightning Tower",
-	author: "Graham McNeill",
-	book:"Audio Dramas",
-	faction: [""],
-	pages:"",
-	audio:"1 hour 16m",
-	rating: "%",
-	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/Dark-King-and-The-Lightning-Tower-Audiobook-The-mp3.html"
+	link:"https://www.blacklibrary.com/new-titles/featured/eshort-amor-fati-eng-2021.html"
 },
 {
 	x: 1,
@@ -3037,48 +2985,22 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"75 Minutes",
+	audio:"75m",
 	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
-	id: 235,
-	title: "Garro: Oath of Moment",
-	author: "James Swallow",
-	book:"Audio Dramas",
-	faction: [""],
-	pages:"",
-	audio:"71m",
-	rating: "%",
-	link:"https://www.blacklibrary.com/series/garro/Garro-oath-of-moment-mp3.html"
-},
-{
-	x: 1,
-	y: 1,
-	id: 236,
-	title: "Garro: Legion of One",
-	author: "James Swallow",
-	book:"Audio Dramas",
-	faction: [""],
-	pages:"",
-	audio:"68m",
-	rating: "%",
-	link:"https://www.blacklibrary.com/series/garro/garro-legion-of-one-mp3.html"
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/Ravens-Flight-mp3.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 237,
-	title: "surgical procedure",
+	title: "Butcher's Nails",
 	author: "Aaron Dembski-Bowden",
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
 	audio:"1 hour 13m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/butchers-nails-mp3.html"
 },
 {
 	x: 1,
@@ -3089,9 +3011,9 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"35 Minutes",
+	audio:"35m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/grey-angel-eshort.html"
 },
 {
 	x: 1,
@@ -3102,28 +3024,15 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"5m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/series/garro/burden-of-duty-mp3.html"
 },
 {
 	x: 1,
 	y: 1,
-	id: 240,
-	title: "Garro: Sword of Truth",
-	author: "James Swallow",
-	book:"Audio Dramas",
-	faction: [""],
-	pages:"",
-	audio:"140m",
-	rating: "%",
-	link:"https://www.blacklibrary.com/series/garro/garro-sword-of-truth-mp3.html"
-},
-{
-	x: 1,
-	y: 1,
 	id: 241,
-	title: "the audio book by John French",
+	title: "Warmaster",
 	author: "John French",
 	book:"Audio Dramas",
 	faction: [""],
@@ -3143,7 +3052,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"10m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/strike-and-fade-mp3.html"
 },
 {
 	x: 1,
@@ -3154,22 +3063,22 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"11m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/veritas-ferrum-mp3.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 244,
-	title: "other uses",
+	title: "The Sigillite",
 	author: "Chris Wraight",
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"75 min",
+	audio:"1h 15m",
 	rating: "%",
-	link:"http://www.blacklibrary.com/Blog/you-sigillite-horus-heresy-art.html"
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-sigillite-eshort.html"
 },
 {
 	x: 1,
@@ -3180,7 +3089,7 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"75m",
+	audio:"1h 15m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/Honour-to-the-Dead.html"
 },
@@ -3193,9 +3102,9 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"80m",
+	audio:"1h 20m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/wolf-hunt-eshort.html"
 },
 {
 	x: 1,
@@ -3206,9 +3115,9 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"75m",
+	audio:"1h 15m",
 	rating: "%",
-	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/censure-mp3.html"
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/censure-ebook.html"
 },
 {
 	x: 1,
@@ -3221,7 +3130,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"35m",
 	rating: "%",
-	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/thief-of-revelations-mp3.html"
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/thief-of-revelations-mp3.html"
 },
 {
 	x: 1,
@@ -3234,7 +3143,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"12m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/advent-day-eight-kharn-the-eightfold-path-mp3.html"
 },
 {
 	x: 1,
@@ -3271,7 +3180,7 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"35 min",
+	audio:"35m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/hunters-moon-mp3.html"
 },
@@ -3286,13 +3195,13 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"10m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/wolfs-claw-mp3.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 254,
-	title: "the audio drama",
+	title: "Templar",
 	author: "John French",
 	book:"Audio Dramas",
 	faction: [""],
@@ -3300,19 +3209,6 @@ const horusHeresyDataBooks = [
 	audio:"65m",
 	rating: "%",
 	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/templar-mp3.html"
-},
-{
-	x: 1,
-	y: 1,
-	id: 255,
-	title: "Garro: Shield of Lies",
-	author: "James Swallow",
-	book:"Audio Dramas",
-	faction: [""],
-	pages:"",
-	audio:"130m",
-	rating: "%",
-	link:"https://www.blacklibrary.com/series/garro/garro-shield-of-lies-mp3.html"
 },
 {
 	x: 1,
@@ -3325,7 +3221,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"36m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/all-products/master-of-the-first-eshort.html"
 },
 {
 	x: 1,
@@ -3338,7 +3234,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"42m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-long-night-eshort.html"
 },
 {
 	x: 1,
@@ -3351,20 +3247,20 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"21m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/stratagem-mp3.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 259,
-	title: "title",
+	title: "Herald of Sanguinius",
 	author: "Andy Smillie",
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
 	audio:"20m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/herald-of-sanguinius-eshort.html"
 },
 {
 	x: 1,
@@ -3375,9 +3271,9 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"20m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-watcher-eshort.html"
 },
 {
 	x: 1,
@@ -3390,7 +3286,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"39m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-eagles-talon-eshort.html"
 },
 {
 	x: 1,
@@ -3408,28 +3304,15 @@ const horusHeresyDataBooks = [
 {
 	x: 1,
 	y: 1,
-	id: 263,
-	title: "Garro: Ashes of Fealty",
-	author: "James Swallow",
-	book:"Audio Dramas",
-	faction: [""],
-	pages:"",
-	audio:"18m",
-	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
 	id: 264,
 	title: "Raptor",
 	author: "Gav Thorpe",
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"69m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/authors/gav-thorpe/raptor-mp3.html"
 },
 {
 	x: 1,
@@ -3440,9 +3323,9 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"60m",
+	audio:"1h",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/hh-grey-talon-mp3.html"
 },
 {
 	x: 1,
@@ -3453,22 +3336,22 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"75 Minutes",
+	audio:"1h 15m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/hh-red-marked-mp3.html"
 },
 {
 	x: 1,
 	y: 1,
 	id: 267,
-	title: "Space Marine",
+	title: "The Either",
 	author: "Graham McNeill",
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
 	audio:"67m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/hh-the-either-mp3.html"
 },
 {
 	x: 1,
@@ -3481,7 +3364,7 @@ const horusHeresyDataBooks = [
 	pages:"",
 	audio:"38m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/heart-of-the-pharos-mp3.html"
 },
 {
 	x: 1,
@@ -3526,7 +3409,7 @@ const horusHeresyDataBooks = [
 	x: 1,
 	y: 1,
 	id: 272,
-	title: "",
+	title: "The Soul, Severed",
 	author: "Chris Wraight",
 	book:"Audio Dramas",
 	faction: [""],
@@ -3539,14 +3422,14 @@ const horusHeresyDataBooks = [
 	x: 1,
 	y: 1,
 	id: 273,
-	title: "other uses",
+	title: "Valerius",
 	author: "Gav Thorpe",
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"",
+	audio:"22m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/valerius.mp3.html"
 },
 {
 	x: 1,
@@ -3557,9 +3440,9 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"75m",
+	audio:"1h 15m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/binary-succession.html"
 },
 {
 	x: 1,
@@ -3570,9 +3453,9 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"64m",
+	audio:"1h 4m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/dark-compliance.html"
 },
 {
 	x: 1,
@@ -3622,9 +3505,9 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"1 hour 13m",
+	audio:"1h 13m",
 	rating: "%",
-	link:""
+	link:"https://www.blacklibrary.com/series/the-horus-heresy/the-horus-heresy-nightfane-mp3.html"
 },
 {
 	x: 1,
@@ -3635,71 +3518,20 @@ const horusHeresyDataBooks = [
 	book:"Audio Dramas",
 	faction: [""],
 	pages:"",
-	audio:"70m",
+	audio:"1h 10m",
 	rating: "%",
 	link:"https://www.warhammer-community.com/2019/06/01/black-library-live-the-reveals/"
 },
-{
-	x: 1,
-	y: 1,
-	id: 281,
-	title: "2018 art and reference book",
-	author: "",
-	book: "",
-	faction: [""],
-	pages:"320",
-	audio:"",
-	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
-	id: 282,
-	title: "2013 book",
-	author: "",
-	book: "",
-	faction: [""],
-	pages:"",
-	audio:"",
-	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
-	id: 283,
-	title: "Horus Heresy: The Scripts: Volume 1",
-	author: "Dan Abnett",
-	book: "",
-	faction: [""],
-	pages:"",
-	audio:"",
-	rating: "%",
-	link:""
-},
-{
-	x: 1,
-	y: 1,
-	id: 284,
-	title: "Horus Heresy: The Scripts: Volume II",
-	author: "John French",
-	book: "",
-	faction: [""],
-	pages:"320",
-	audio:"",
-	rating: "%",
-	link:""
-},
+
 {
 	x: 1,
 	y: 1,
 	id: 285,
 	title: "Macragge's Honour",
 	author: "Dan Abnett",
-	book: "",
+	book: "Graphic Novel",
 	faction: [""],
-	pages:"",
+	pages:"128",
 	audio:"",
 	rating: "%",
 	link:"https://www.blacklibrary.com/series/the-horus-heresy/horus-heresy-macragge's-honour-en-ebook-2019.html"
