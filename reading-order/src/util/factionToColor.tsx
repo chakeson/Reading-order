@@ -98,6 +98,9 @@ const factionToColor = (factionArray:string[]) =>{
             case "perpetuals":
                 colorList.push("#62bc85");
                 break;
+            case "":
+                colorList.push("#ffffff");
+                break;
             default:
                 break;
         }
