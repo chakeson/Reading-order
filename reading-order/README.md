@@ -7,8 +7,17 @@ Create class to display conflic zones and areas.
 
 # Important libraries
 React
+
 React router dom v6
-React-zoom-pan-pinch
+
+react-zoomable-ui [Github Link.](https://github.com/aarondail/react-zoomable-ui) Make movable map with.
+
+~~React-zoom-pan-pinch~~
+
+react-xarrows [Github Link.](https://github.com/Eliav2/react-xarrows) The arrow library.
+
+~~react-archer [Github Link.](https://github.com/pierpo/react-archer)~~ Lacks good interface to work with components.
+
 TailwindCSS 3
 
 # Technical articles
