@@ -60,7 +60,7 @@ const horusHeresyDataBooks = [
         book:"Book 5",
         faction: ["Emperor's Children"],
         pages:"512",
-        audio:"",
+        audio:"15h 2m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/fulgrim-ebook.html"
     },
@@ -73,7 +73,7 @@ const horusHeresyDataBooks = [
         book:"Book 6",
         faction: ["Dark Angels"],
         pages:"416",
-        audio:"",
+        audio:"10h 30m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/descent-of-angels-ebook.html"
     },
@@ -112,7 +112,7 @@ const horusHeresyDataBooks = [
         book:"Book 9",
         faction: ["Mechanicum"],
         pages:"416",
-        audio:"",
+        audio:"11h 53m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/Mechanicum-eBook.html"
     },
@@ -138,7 +138,7 @@ const horusHeresyDataBooks = [
         book:"Book 11",
         faction: ["Dark Angels"],
         pages:"416",
-        audio:"",
+        audio:"9h 59m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/fallen-angels-ebook.html"
     },
@@ -320,7 +320,7 @@ const horusHeresyDataBooks = [
         book:"Book 25 Anthology",
         faction: ["Ultramarines","Word Bearers","Perpetuals"],
         pages:"",
-        audio:"",
+        audio:"12h 51m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/mark-of-calth-ebook.html"
     },
@@ -411,7 +411,7 @@ const horusHeresyDataBooks = [
         book:"Book 32",
         faction: ["Salamanders"],
         pages:"416",
-        audio:"",
+        audio:"15h 24h",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/deathfire-ebook.html"
     },
@@ -606,7 +606,7 @@ const horusHeresyDataBooks = [
         book:"Book 47",
         faction: ["Salamanders","Iron Hands","Perpetuals"],
         pages:"400",
-        audio:"",
+        audio:"12h 39m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/old-earth-ebook.html"
     },
@@ -697,7 +697,7 @@ const horusHeresyDataBooks = [
         book:"Book 54",
         faction: ["Death Guard","Knight Errant"],
         pages:"400",
-        audio:"",
+        audio:"12h 40m",
         rating: "%",
         link:""
     },
@@ -879,7 +879,7 @@ const horusHeresyDataBooks = [
         book:"The Primarchs",
         faction: ["Emperor's Children"],
         pages:"224",
-        audio:"",
+        audio:"7h 2m",
         rating: "%",
         link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/fulgrim-the-palatine-phoenix-ebook.html"
     },
@@ -1321,7 +1321,7 @@ const horusHeresyDataBooks = [
         book:"Official Novellas",
         faction: ["Iron Hands"],
         pages:"102",
-        audio:"",
+        audio:"3h 58m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/feat-of-iron-ebook.html"
     },
@@ -1334,7 +1334,7 @@ const horusHeresyDataBooks = [
         book:"Official Novellas",
         faction: ["Dark Angels","Death Guard"],
         pages:"95",
-        audio:"",
+        audio:"3h 11m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-lion-ebook.html"
     },
