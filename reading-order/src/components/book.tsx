@@ -22,7 +22,9 @@ function Book(props:Props) {
     const [ isExpanded , setIsExpanded ] = useState<boolean>(false);
     const [ isGreyedOut , setIsGreyedOut ] = useState<boolean>(false);
     const greyedOutColorHex:string = "#C4C4C4";
-
+    
+    var idAsString:string = id.toString()
+    
     const handleChange = (e:any) => {
         e.stopPropagation(); // Allows checkbox to work in a clickable div.
         //e.preventDefault();
@@ -46,7 +48,7 @@ function Book(props:Props) {
 
     return (
         <NoPanArea>
-        <div style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(0deg,${ isGreyedOut ? `${greyedOutColorHex} 0%, ${greyedOutColorHex} 100%` : backgroundMakerColor})`}} className=" w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled" onClick = { e => { setIsExpanded(!isExpanded); }} >
+        <div id={idAsString} style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(0deg,${ isGreyedOut ? `${greyedOutColorHex} 0%, ${greyedOutColorHex} 100%` : backgroundMakerColor})`}} className=" w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled" onClick = { e => { setIsExpanded(!isExpanded); }} >
             <div className='font-semibold text-xl overflow-clip flex justify-between items-center pt-3 px-3'>
                 <div className='w-11/12'>{title}</div>
                 <input type="checkbox" className='w-6 h-6' onClick={e => {handleChange(e);}}/>

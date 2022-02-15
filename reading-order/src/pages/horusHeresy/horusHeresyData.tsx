@@ -1,7 +1,7 @@
 const horusHeresyDataBooks = [
     {
         x: 100,
-        y: 200,
+        y: 400,
         id: 1,
         title: "Horus Rising",
         author: "Dan Abnett",
@@ -14,7 +14,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 400,
-        y: 200,
+        y: 400,
         id: 2,
         title: "False Gods",
         author: "Graham McNeill",
@@ -27,7 +27,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 700,
-        y: 200,
+        y: 400,
         id: 3,
         title: "Galaxy in Flames",
         author: "Ben Counter",
@@ -39,8 +39,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/galaxy-in-flames-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 800,
+        y: 100,
         id: 4,
         title: "The Flight of the Eisenstein",
         author: "James Swallow",
@@ -3687,20 +3687,20 @@ export default horusHeresyDataBooks;
 export const horusHeresyDataArrow = [
     {
         id:1,
-        color:"red",
         type:"primary",
-        dimension:[{x:340,y:150,length:100,height:20},{x:340,y:150,length:20,height:100}]
+        start:1,
+        end:2,
     },
     {   
         id:2,
-        color:"blue",
         type:"secondary",
-        dimension:[{x:200,y:100,length:100,height:20}]
+        start:2,
+        end:3,
     },
     {
         id:3,
-        color:"green",
         type:"tertiary",
-        dimension:[{x:300,y:100,length:100,height:20}]
+        start:3,
+        end:4,
     },
 ];

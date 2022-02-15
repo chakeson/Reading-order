@@ -22,6 +22,7 @@ function HorusHerasy() {
                         return <Arrow key={index+"arrow"+data.id} {...data}/>
                     }
                 )}
+                
                 <div style={{height:"2000px",width:"2000px",background:"purple"}}>
                     test
                 </div>

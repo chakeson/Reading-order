@@ -1,35 +1,34 @@
 import React from 'react';
+import Xarrow from "react-xarrows";
 import '../index.css';
 
 
 interface PropsArrow {
     id:number;
-    color:string;
     type:string;
-    dimension:{
-        x:number;
-        y:number;
-        length:number;
-        height:number;
-    }[];
+    start:number;
+    end:number;
 }
-/*{
-    id:1,
-    color:"red",
-    type:"primary",
-    dimension:[{x:340,y:150,length:100,height:20}]
-},*/
-//[{x:100,y:100,length:100,height:20}]
+
+interface ArrowColorInterface {
+    [key:string]:string;
+}
+interface ArrowDashnessInterface {
+    /*Type from dashess in XArrow */
+    [key:string]:boolean | { strokeLen?: number | undefined; nonStrokeLen?: number | undefined; animation?: number | boolean | undefined; } | undefined ;
+}
+
 function Arrow(props:PropsArrow) {
-    const { color , type , dimension } = props;
+    const { type , start, end } = props;
+
+    const startString:string = start.toString();
+    const endString:string = end.toString();
+
+    const arrowColor:ArrowColorInterface = {primary:"red",secondary:"blue",tertiary:"green"}
+    const arrowDashness:ArrowDashnessInterface = {primary:false, secondary:{strokeLen: 5,nonStrokeLen:2}, tertiary:{strokeLen: 3,nonStrokeLen:5}}
 
 	return (
-        <>
-            {dimension.map((data,index)=>{
-                return <div></div>;
-                
-            })}
-        </>
+        <Xarrow start={startString} end={endString} color={arrowColor[type]} path={"grid"} dashness={arrowDashness[type]} />
     );
 }
 
