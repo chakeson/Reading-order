@@ -104,8 +104,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/battle-for-the-abyss-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1162,
+        y: 700,
         id: 9,
         title: "Mechanicum",
         author: "Graham McNeill",
@@ -1469,8 +1469,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/tallarn-ironclad-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1950,
+        y: 600,
         id: 115,
         title: "Cybernetica",
         author: "Rob Sanders",
@@ -1781,8 +1781,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/call-of-the-lion-audio.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 110,
+        y: 1950,
         id: 141,
         title: "The Last Church",
         author: "Graham McNeill",
@@ -2002,8 +2002,8 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 700,
+        y: 295,
         id: 158,
         title: "The Kaban Project",
         author: "Graham McNeill",
@@ -2184,8 +2184,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/final-compliance-of-63-14-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1950,
+        y: 420,
         id: 172,
         title: "Vorax",
         author: "Matthew Farrer",
@@ -2496,8 +2496,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/blackshield.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2350,
+        y: 600,
         id: 196,
         title: "Myriad",
         author: "Rob Sanders",
@@ -2509,8 +2509,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/myriad.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1950,
+        y: 410,
         id: 197,
         title: "Into Exile",
         author: "Aaron Dembski-Bowden",
@@ -2886,8 +2886,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/prod-home/12-tales-of-christmas/the-serpents-dance-eshort-2020.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1950,
+        y: 700,
         id: 226,
         title: "The Lightning Hall",
         author: "Graham McNeill",
