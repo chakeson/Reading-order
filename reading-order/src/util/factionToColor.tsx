@@ -80,6 +80,9 @@ const factionToColor = (factionArray:string[]) =>{
             case "custodies and sisters of silence":
                 colorList.push("#f8a913");
                 break;
+            case "custodies & sisters of silence":
+                colorList.push("#f8a913");
+                break;
             case "sisters of silence":
                 colorList.push("#f8a913");
                 break;
