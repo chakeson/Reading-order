@@ -1,7 +1,7 @@
 const horusHeresyDataBooks = [
     {
-        x: 100,
-        y: 400,
+        x: 1,
+        y: 1,
         id: 1,
         title: "Horus Rising",
         author: "Dan Abnett",
@@ -13,8 +13,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/horus-rising.html"
     },
     {
-        x: 400,
-        y: 400,
+        x: 1,
+        y: 1,
         id: 2,
         title: "False Gods",
         author: "Graham McNeill",
@@ -26,8 +26,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/False-Gods-eBook.html"
     },
     {
-        x: 700,
-        y: 400,
+        x: 1,
+        y: 1,
         id: 3,
         title: "Galaxy in Flames",
         author: "Ben Counter",
@@ -39,8 +39,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/galaxy-in-flames-ebook.html"
     },
     {
-        x: 800,
-        y: 100,
+        x: 1,
+        y: 1,
         id: 4,
         title: "The Flight of the Eisenstein",
         author: "James Swallow",
@@ -104,8 +104,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/battle-for-the-abyss-ebook.html"
     },
     {
-        x: 1162,
-        y: 700,
+        x: 750,
+        y: 295,
         id: 9,
         title: "Mechanicum",
         author: "Graham McNeill",
@@ -143,8 +143,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/fallen-angels-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 650,
+        y: 1100,
         id: 12,
         title: "A Thousand Sons",
         author: "Graham McNeill",
@@ -182,8 +182,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/First-heretic-the-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 980,
+        y: 1100,
         id: 15,
         title: "Prospero Burns",
         author: "Dan Abnett",
@@ -208,8 +208,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/age-of-darkness.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2500,
+        y: 730,
         id: 17,
         title: "The Outcast Dead",
         author: "Graham McNeill",
@@ -351,8 +351,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-unremembered-empire-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2200,
+        y: 1500,
         id: 28,
         title: "Scars",
         author: "Chris Wraight",
@@ -364,8 +364,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/scars-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3900,
+        y: 2150,
         id: 29,
         title: "Vengeful Spirit ",
         author: "Graham McNeill",
@@ -455,13 +455,13 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 4300,
+        y: 1500,
         id: 36,
         title: "The Path of Heaven",
         author: "Chris Wraight",
         book:"Book 36",
-        faction: ["White Scars","Emperor's Children","Death Guard"],
+        faction: ["Death Guard","Emperor's Children","White Scars"],
         pages:"432",
         audio:"13h 28m",
         rating: "%",
@@ -520,8 +520,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/corax-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4000,
+        y: 295,
         id: 41,
         title: "The Master of Mankind",
         author: "Aaron Dembski-Bowden",
@@ -559,8 +559,8 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 3500,
+        y: 1100,
         id: 44,
         title: "The Crimson King",
         author: "Graham McNeill",
@@ -624,8 +624,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/the-burden-of-loyalty-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4800,
+        y: 2150,
         id: 49,
         title: "Wolfsbane",
         author: "Guy Haley",
@@ -1209,8 +1209,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/the-revelation-of-the-word-2019.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3850,
+        y: 950,
         id: 95,
         title: "Morningstar",
         author: "Graham McNeill",
@@ -1287,8 +1287,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/aurelian-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1800,
+        y: 1850,
         id: 101,
         title: "Brotherhood of the Storm",
         author: "Chris Wraight",
@@ -1469,8 +1469,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/tallarn-ironclad-ebook.html"
     },
     {
-        x: 1950,
-        y: 600,
+        x: 1120,
+        y: 560,
         id: 115,
         title: "Cybernetica",
         author: "Rob Sanders",
@@ -1482,8 +1482,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/cybernetica-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2600,
+        y: 2300,
         id: 116,
         title: "Wolf King",
         author: "Chris Wraight",
@@ -1716,8 +1716,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/dark-king-enhanced-audio.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1950,
+        y: 630,
         id: 136,
         title: "Blood Games",
         author: "Dan Abnett",
@@ -1729,8 +1729,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/blood-games-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1400,
+        y: 1850,
         id: 137,
         title: "Wolf at the Door",
         author: "Mike Lee",
@@ -1781,8 +1781,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/call-of-the-lion-audio.html"
     },
     {
-        x: 110,
-        y: 1950,
+        x: 1120,
+        y: 100,
         id: 141,
         title: "The Last Church",
         author: "Graham McNeill",
@@ -1859,8 +1859,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/last-remembrancer-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1400,
+        y: 1500,
         id: 147,
         title: "Rebirth",
         author: "Chris Wraight",
@@ -1885,8 +1885,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/face-of-treachery-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3500,
+        y: 2000,
         id: 149,
         title: "Little Horus",
         author: "Dan Abnett",
@@ -2002,7 +2002,7 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 700,
+        x: 400,
         y: 295,
         id: 158,
         title: "The Kaban Project",
@@ -2080,8 +2080,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/riven-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2800,
+        y: 2000,
         id: 164,
         title: "Lone Wolf",
         author: "Chris Wraight",
@@ -2145,8 +2145,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-devine-adoratrice-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2600,
+        y: 1500,
         id: 169,
         title: "Daemonology",
         author: "Chris Wraight",
@@ -2184,8 +2184,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/final-compliance-of-63-14-ebook.html"
     },
     {
-        x: 1950,
-        y: 420,
+        x: 1120,
+        y: 440,
         id: 172,
         title: "Vorax",
         author: "Matthew Farrer",
@@ -2210,8 +2210,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/value-of-fear-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2600,
+        y: 1200,
         id: 174,
         title: "Brotherhood of the Moon",
         author: "Chris Wraight",
@@ -2249,8 +2249,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/imperfect-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1250,
+        y: 2000,
         id: 177,
         title: "Howl of the Hearthworld",
         author: "Aaron Dembski-Bowden",
@@ -2301,8 +2301,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/black-oculus-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4300,
+        y: 1800,
         id: 181,
         title: "Wolf Mother",
         author: "Graham McNeill",
@@ -2314,8 +2314,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/wolf-mother-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4300,
+        y: 2040,
         id: 182,
         title: "Twisted",
         author: "Guy Haley",
@@ -2483,8 +2483,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/hh-inheritor-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4300,
+        y: 1920,
         id: 195,
         title: "Blackshield",
         author: "Chris Wraight",
@@ -2496,8 +2496,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/blackshield.html"
     },
     {
-        x: 2350,
-        y: 600,
+        x: 1500,
+        y: 560,
         id: 196,
         title: "Myriad",
         author: "Rob Sanders",
@@ -2509,8 +2509,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/myriad.html"
     },
     {
-        x: 1950,
-        y: 410,
+        x: 1120,
+        y: 295,
         id: 197,
         title: "Into Exile",
         author: "Aaron Dembski-Bowden",
@@ -2561,8 +2561,8 @@ const horusHeresyDataBooks = [
         link:"http://www.blacklibrary.com/all-products/exocytosis-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4800,
+        y: 1500,
         id: 201,
         title: "The Last Son of Prospero",
         author: "Chris Wraight",
@@ -2574,8 +2574,8 @@ const horusHeresyDataBooks = [
         link:"http://www.blacklibrary.com/all-products/the-last-son-of-prospero-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4700,
+        y: 170,
         id: 202,
         title: "Ordo Sinister",
         author: "John French",
@@ -2600,8 +2600,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/hh-at-the-ember-wolves-eboo.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4800,
+        y: 1200,
         id: 204,
         title: "Restorer",
         author: "Chris Wraight",
@@ -2678,8 +2678,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/duty-waits-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4700,
+        y: 450,
         id: 210,
         title: "Magisterium",
         author: "Chris Wraight",
@@ -2769,8 +2769,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/massacre-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4300,
+        y: 2400,
         id: 217,
         title: "Two Metaphysical Blades",
         author: "Chris Wraight",
@@ -2782,8 +2782,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/eshort-two-metaphysical-blades.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 300,
+        y: 1100,
         id: 218,
         title: "Prologue to Nikaea",
         author: "David Annandale",
@@ -2795,8 +2795,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/eshort-prologue-to-nikaea.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4800,
+        y: 1800,
         id: 219,
         title: "Old Wounds, New Scars",
         author: "Graham McNeill",
@@ -2808,8 +2808,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/advent-2018-1-old-wounds-new-scars-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3850,
+        y: 830,
         id: 220,
         title: "Abyssal",
         author: "David Annandale",
@@ -2821,8 +2821,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/advent-2018-6-abyssal-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4800,
+        y: 1350,
         id: 221,
         title: "The Last Council",
         author: "L.J. Goulding",
@@ -2847,8 +2847,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/advent-2018-24-rose-watered-blood-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4700,
+        y: 295,
         id: 223,
         title: "Bringer of Sorrow",
         author: "Aaron Dembski-Bowden",
@@ -2886,8 +2886,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/prod-home/12-tales-of-christmas/the-serpents-dance-eshort-2020.html"
     },
     {
-        x: 1950,
-        y: 700,
+        x: 1120,
+        y: 680,
         id: 226,
         title: "The Lightning Hall",
         author: "Graham McNeill",
@@ -3029,8 +3029,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/veritas-ferrum-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3630,
+        y: 1650,
         id: 244,
         title: "The Sigillite",
         author: "Chris Wraight",
@@ -3055,8 +3055,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/Honour-to-the-Dead.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3000,
+        y: 730,
         id: 246,
         title: "Wolf Hunt",
         author: "Graham McNeill",
@@ -3081,8 +3081,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/censure-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2600,
+        y: 1010,
         id: 248,
         title: "Thief of Revelations",
         author: "Graham McNeill",
@@ -3107,8 +3107,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/advent-day-eight-kharn-the-eightfold-path-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3000,
+        y: 900,
         id: 250,
         title: "Lucius: The Eternal Blademaster",
         author: "Graham McNeill",
@@ -3146,8 +3146,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/hunters-moon-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3100,
+        y: 2300,
         id: 253,
         title: "Wolf's Claw",
         author: "Chris Wraight",
@@ -3328,8 +3328,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/heart-of-the-pharos-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1800,
+        y: 1630,
         id: 269,
         title: "The Thirteenth Wolf",
         author: "Gav Thorpe",
@@ -3367,8 +3367,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/perpetual-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 4800,
+        y: 1670,
         id: 272,
         title: "The Soul, Severed",
         author: "Chris Wraight",
@@ -3486,7 +3486,7 @@ const horusHeresyDataBooks = [
     {
         x: 1,
         y: 1,
-        id: 285,
+        id: 284,
         title: "Macragge's Honour",
         author: "Dan Abnett",
         book: "Graphic Novel",
@@ -3497,8 +3497,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/series/the-horus-heresy/horus-heresy-macragge's-honour-en-ebook-2019.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2600,
+        y: 1350,
         id: 285,
         title: "Allegiance",
         author: "Chris Wraight",
@@ -3693,14 +3693,224 @@ export const horusHeresyDataArrow = [
     },
     {   
         id:2,
-        type:"secondary",
+        type:"primary",
         start:2,
         end:3,
     },
     {
         id:3,
-        type:"tertiary",
+        type:"primary",
         start:3,
         end:4,
+    },
+    {
+        id:4,
+        type:"primary",
+        start:158,
+        end:9,
+    },
+    {
+        id:5,
+        type:"primary",
+        start:9,
+        end:197,
+    },
+    {
+        id:6,
+        type:"primary",
+        start:9,
+        end:172,
+    },
+    {
+        id:7,
+        type:"primary",
+        start:9,
+        end:115,
+    },
+    {
+        id:7,
+        type:"primary",
+        start:9,
+        end:226,
+    },
+    {
+        id:8,
+        type:"tertiary",
+        start:9,
+        end:141,
+    },
+    {
+        id:9,
+        type:"primary",
+        start:115,
+        end:196,
+    },
+    {
+        id:10,
+        type:"primary",
+        start:197,
+        end:41,
+    },
+    {
+        id:11,
+        type:"secondary",
+        start:41,
+        end:202,
+    },
+    {
+        id:12,
+        type:"primary",
+        start:41,
+        end:223,
+    },
+    {
+        id:13,
+        type:"primary",
+        start:41,
+        end:210,
+    },
+    {
+        id:13,
+        type:"secondary",
+        start:218,
+        end:12,
+    },
+    {
+        id:14,
+        type:"primary",
+        start:12,
+        end:15,
+    },
+    {
+        id:15,
+        type:"primary",
+        start:15,
+        end:248,
+    },
+    {
+        id:16,
+        type:"primary",
+        start:15,
+        end:44,
+    },
+    {
+        id:17,
+        type:"primary",
+        start:15,
+        end:147,
+    },
+    {
+        id:18,
+        type:"primary",
+        start:15,
+        end:269,
+    },
+    {
+        id:19,
+        type:"primary",
+        start:147,
+        end:28,
+    },
+    {
+        id:20,
+        type:"secondary",
+        start:28,
+        end:174,
+    },
+    {
+        id:21,
+        type:"primary",
+        start:28,
+        end:169,
+    },
+    {
+        id:22,
+        type:"primary",
+        start:28,
+        end:285,
+    },
+    {
+        id:23,
+        type:"secondary",
+        start:15,
+        end:177,
+    },
+    {
+        id:24,
+        type:"secondary",
+        start:137,
+        end:269,
+    },
+    {
+        id:25,
+        type:"secondary",
+        start:269,
+        end:28,
+    },
+    {
+        id:26,
+        type:"primary",
+        start:28,
+        end:116,
+    },
+    {
+        id:27,
+        type:"primary",
+        start:116,
+        end:253,
+    },
+    {
+        id:28,
+        type:"secondary",
+        start:164,
+        end:253,
+    },
+    {
+        id:29,
+        type:"primary",
+        start:169,
+        end:36,
+    },
+    {
+        id:30,
+        type:"primary",
+        start:244,
+        end:36,
+    },
+    {
+        id:31,
+        type:"primary",
+        start:36,
+        end:204,
+    },
+    {
+        id:32,
+        type:"primary",
+        start:36,
+        end:221,
+    },
+    {
+        id:33,
+        type:"primary",
+        start:36,
+        end:201,
+    },
+    {
+        id:34,
+        type:"primary",
+        start:36,
+        end:272,
+    },
+    {
+        id:35,
+        type:"primary",
+        start:36,
+        end:219,
+    },
+    {
+        id:36,
+        type:"primary",
+        start:181,
+        end:219,
     },
 ];
