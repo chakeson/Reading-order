@@ -9,10 +9,12 @@ import About from './pages/about/about';
 import Error from './pages/error/error';
 
 
+
 function App() {
 	return (
 
         <BrowserRouter>
+			<div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       		<Navbar />
       		<Routes>
 				<Route path="/" element={<HorusHerasy />} />
@@ -21,6 +23,7 @@ function App() {
 				<Route path="/about" element={<About />} />
 				<Route path="*" element={<Error />} />
 			</Routes>
+			</div>
     	</BrowserRouter>
     
 

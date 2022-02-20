@@ -11,6 +11,7 @@ import NavPannel from '../../components/navPannel';
 function HorusHerasy() {
     return (
             <>
+            <div className="map-height">
             <NavPannel />
 
             <Space onCreate={vp => {vp.setBounds({ x:[0,10000], y:[0,10000] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 5000, height: 5000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 10000, height: 7000 }}>
@@ -25,6 +26,7 @@ function HorusHerasy() {
                 )}
                 
             </Space>
+            </div>
             </>
   );
 }

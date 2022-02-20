@@ -23,7 +23,12 @@ html,body {
 }
 
 .nav-pannel {
-    margin-top: 56px;
+    /*margin-top: 56px;*/
+}
+
+.map-height {
+    position: relative;
+    height: calc(100vh - 56px);
 }
 
 .navButton {
