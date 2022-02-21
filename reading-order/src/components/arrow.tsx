@@ -28,7 +28,7 @@ function Arrow(props:PropsArrow) {
     const arrowDashness:ArrowDashnessInterface = {primary:false, secondary:{strokeLen: 5,nonStrokeLen:2}, tertiary:{strokeLen: 3,nonStrokeLen:5}}
 
 	return (
-        <Xarrow start={startString} end={endString} color={arrowColor[type]} path={"grid"} dashness={arrowDashness[type]} />
+        <Xarrow start={startString} end={endString} color={arrowColor[type]} path={"grid"} dashness={arrowDashness[type]} startAnchor="right" endAnchor="left" />
     );
 }
 

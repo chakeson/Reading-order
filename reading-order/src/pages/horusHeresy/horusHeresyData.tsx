@@ -156,8 +156,8 @@ const horusHeresyDataBooks = [
         link:"http://www.blacklibrary.com/Blog/graham-mcneill-becomes-new-york-times-best-selling-author.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1800,
+        y: 2950,
         id: 13,
         title: "Nemesis",
         author: "James Swallow",
@@ -286,8 +286,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/shadows-of-treachery-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2700,
+        y: 3700,
         id: 23,
         title: "Angel Exterminatus",
         author: "Graham McNeill",
@@ -533,8 +533,8 @@ const horusHeresyDataBooks = [
         link:"https://aarondembskibowden.wordpress.com/2015/08/28/okay-okay-fine-this-is-what-im-writing/"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3000,
+        y: 2850,
         id: 42,
         title: "Garro",
         author: "James Swallow",
@@ -1300,8 +1300,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/brotherhood-of-the-storm-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2300,
+        y: 3850,
         id: 102,
         title: "The Reflection Crack'd",
         author: "Graham McNeill",
@@ -1690,8 +1690,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/hh-echoes-of-revelation-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1770,
+        y: 5200,
         id: 134,
         title: "The Lightning Tower",
         author: "Dan Abnett",
@@ -1703,8 +1703,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/lightning-tower-enhanced-audio.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1400,
+        y: 5200,
         id: 135,
         title: "The Dark King",
         author: "Graham McNeill",
@@ -1847,7 +1847,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1400,
-        y: 2900,
+        y: 2836,
         id: 146,
         title: "The Last Remembrancer",
         author: "John French",
@@ -1885,7 +1885,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/face-of-treachery-ebook.html"
     },
     {
-        x: 3700,
+        x: 3400,
         y: 1800,
         id: 149,
         title: "Little Horus",
@@ -1937,8 +1937,8 @@ const horusHeresyDataBooks = [
         link:"http://www.blacklibrary.com/all-products/army-of-one-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2300,
+        y: 3700,
         id: 153,
         title: "Kryptos",
         author: "Graham McNeill",
@@ -1963,8 +1963,8 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 3350,
+        y: 2700,
         id: 155,
         title: "Lost Sons",
         author: "James Swallow",
@@ -1976,8 +1976,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/lost_sons.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000,
+        y: 3500,
         id: 156,
         title: "Death of a Silversmith",
         author: "Graham McNeill",
@@ -2028,8 +2028,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/gates-of-terra-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000,
+        y: 3900,
         id: 160,
         title: "Lord of the Red Sands",
         author: "Aaron Dembski-Bowden",
@@ -2054,8 +2054,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/serpent-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3700,
+        y: 2700,
         id: 162,
         title: "Luna Mendax",
         author: "Graham McNeill",
@@ -2067,8 +2067,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/luna-mendax-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2300,
+        y: 3500,
         id: 163,
         title: "Riven",
         author: "John French",
@@ -2119,8 +2119,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/heart-of-the-conquerer-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2200,
+        y: 3350,
         id: 167,
         title: "Child of Night",
         author: "John French",
@@ -2171,8 +2171,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/sins-of-the-father-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000,
+        y: 4100,
         id: 171,
         title: "The Final Compliance of Sixty-Three Fourteen",
         author: "Guy Haley",
@@ -2275,8 +2275,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/safe-and-shadowed-place-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2600,
+        y: 2950,
         id: 179,
         title: "Gunsight",
         author: "James Swallow",
@@ -2392,8 +2392,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/by-the-lions-command-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3350,
+        y: 2970,
         id: 188,
         title: "All That Remains",
         author: "James Swallow",
@@ -2405,8 +2405,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/all-that-remains-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1770,
+        y: 3850,
         id: 189,
         title: "The Phoenician",
         author: "Nick Kyme",
@@ -2418,8 +2418,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-phoenician-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2300,
+        y: 5100,
         id: 190,
         title: "Artefacts",
         author: "Nick Kyme",
@@ -2431,8 +2431,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/artefacts-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1800,
+        y: 3200,
         id: 191,
         title: "Ghosts Speak Not",
         author: "James Swallow",
@@ -2444,8 +2444,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/ghosts-speak-not-patience-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2200,
+        y: 3200,
         id: 192,
         title: "Patience",
         author: "James Swallow",
@@ -2756,8 +2756,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/child-of-chaos-eshort-2020.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1770,
+        y: 4150,
         id: 216,
         title: "Massacre",
         author: "Aaron Dembski-Bowden",
@@ -2873,8 +2873,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/prod-home/library/lanterns-light-eng-2019.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2200,
+        y: 3050,
         id: 225,
         title: "The Serpent's Dance",
         author: "Mike Brooks",
@@ -2938,8 +2938,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/featured/eshort-amor-fati-eng-2021.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1770,
+        y: 4000,
         id: 234,
         title: "Raven's Flight",
         author: "Gav Thorpe",
@@ -2964,8 +2964,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/butchers-nails-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 3350,
+        y: 2850,
         id: 238,
         title: "Grey Angel",
         author: "John French",
@@ -3003,8 +3003,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/warmaster-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1770,
+        y: 5000,
         id: 242,
         title: "Strike and Fade",
         author: "Guy Haley",
@@ -3016,8 +3016,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/strike-and-fade-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1770,
+        y: 4400,
         id: 243,
         title: "Veritas Ferrum",
         author: "David Annandale",
@@ -3224,8 +3224,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/herald-of-sanguinius-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2600,
+        y: 3100,
         id: 260,
         title: "The Watcher",
         author: "C.Z. Dunn",
@@ -3510,8 +3510,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/hh-allegiance-thousand-sons-and-white-scars-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2700,
+        y: 3500,
         id: 286,
         title: "The Keys of Hel",
         author: "John French",
@@ -3523,8 +3523,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/hh-shattered-legions-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 2300,
+        y: 4040,
         id: 287,
         title: "The Harrowing",
         author: "Rob Sanders",
@@ -3664,6 +3664,19 @@ const horusHeresyDataBooks = [
         audio:"",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/sons-of-the-emperor-eng-2019.html"
+    },
+    {
+        x: 3350,
+        y: 3090,
+        id: 298,
+        title: "The Chamber at the end of Memory",
+        author: "James Swallow.",
+        book: "Short Story",
+        faction: ["Imperial Fists"],
+        pages:"158",
+        audio:"",
+        rating: "%",
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/scions-of-the-emperor-ebook-2020.html"
     },
 ];
 export default horusHeresyDataBooks;
@@ -3970,260 +3983,260 @@ export const horusHeresyDataArrow = [
 	{
 		id:46,
 		type:"primary",
-		start:1,
-		end:1,
+		start:4,
+		end:5,
 	},
 	{
 		id:47,
 		type:"primary",
-		start:1,
-		end:1,
+		start:17,
+		end:246,
 	},
 	{
 		id:48,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"tertiary",
+		start:44,
+		end:220,
 	},
 	{
 		id:49,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:44,
+		end:95,
 	},
 	{
 		id:50,
 		type:"primary",
-		start:1,
-		end:1,
+		start:246,
+		end:44,
 	},
 	{
 		id:51,
 		type:"primary",
-		start:1,
-		end:1,
+		start:246,
+		end:29,
 	},
 	{
 		id:52,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:15,
+		end:17,
 	},
 	{
 		id:53,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"tertiary",
+		start:15,
+		end:136,
 	},
 	{
 		id:54,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"tertiary",
+		start:136,
+		end:57,
 	},
 	{
 		id:55,
-		type:"primary",
+		type:"tertiary",
 		start:1,
-		end:1,
+		end:165,
 	},
 	{
 		id:56,
 		type:"primary",
-		start:1,
-		end:1,
+		start:3,
+		end:160,
 	},
 	{
 		id:57,
 		type:"primary",
-		start:1,
-		end:1,
+		start:3,
+		end:171,
 	},
 	{
 		id:58,
 		type:"primary",
-		start:1,
-		end:1,
+		start:3,
+		end:156,
 	},
 	{
 		id:59,
 		type:"primary",
-		start:1,
-		end:1,
+		start:5,
+		end:153,
 	},
 	{
 		id:60,
 		type:"primary",
-		start:1,
-		end:1,
+		start:5,
+		end:163,
 	},
 	{
 		id:61,
 		type:"primary",
-		start:1,
-		end:1,
+		start:5,
+		end:102,
 	},
 	{
 		id:62,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:5,
+		end:287,
 	},
 	{
 		id:63,
 		type:"primary",
-		start:1,
-		end:1,
+		start:5,
+		end:189,
 	},
 	{
 		id:64,
 		type:"primary",
-		start:1,
-		end:1,
+		start:5,
+		end:234,
 	},
 	{
 		id:65,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:5,
+		end:216,
 	},
 	{
 		id:66,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:5,
+		end:243,
 	},
 	{
 		id:67,
 		type:"primary",
-		start:1,
-		end:1,
+		start:5,
+		end:242,
 	},
 	{
 		id:68,
 		type:"primary",
-		start:1,
-		end:1,
+		start:5,
+		end:190,
 	},
 	{
 		id:69,
 		type:"primary",
-		start:1,
-		end:1,
+		start:153,
+		end:23,
 	},
 	{
 		id:70,
 		type:"primary",
-		start:1,
-		end:1,
+		start:163,
+		end:286,
 	},
 	{
 		id:71,
 		type:"primary",
-		start:1,
-		end:1,
+		start:135,
+		end:134,
 	},
 	{
 		id:72,
 		type:"primary",
-		start:1,
-		end:1,
+		start:135,
+		end:190,
 	},
 	{
 		id:73,
 		type:"primary",
-		start:1,
-		end:1,
+		start:4,
+		end:146,
 	},
 	{
 		id:74,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:4,
+		end:139,
 	},
 	{
 		id:75,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:139,
+		end:191,
 	},
 	{
 		id:76,
 		type:"primary",
-		start:1,
-		end:1,
+		start:4,
+		end:167,
 	},
 	{
 		id:77,
 		type:"primary",
-		start:1,
-		end:1,
+		start:191,
+		end:192,
 	},
 	{
 		id:78,
 		type:"primary",
-		start:1,
-		end:1,
+		start:146,
+		end:191,
 	},
 	{
 		id:79,
 		type:"primary",
-		start:1,
-		end:1,
+		start:191,
+		end:225,
 	},
 	{
 		id:80,
 		type:"primary",
-		start:1,
-		end:1,
+		start:13,
+		end:179,
 	},
 	{
 		id:81,
 		type:"primary",
-		start:1,
-		end:1,
+		start:179,
+		end:42,
 	},
 	{
 		id:82,
 		type:"primary",
-		start:1,
-		end:1,
+		start:260,
+		end:42,
 	},
 	{
 		id:83,
 		type:"primary",
-		start:1,
-		end:1,
+		start:42,
+		end:238,
 	},
 	{
 		id:84,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:42,
+		end:155,
 	},
 	{
 		id:85,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:42,
+		end:188,
 	},
 	{
 		id:86,
 		type:"primary",
-		start:1,
-		end:1,
+		start:42,
+		end:298,
 	},
 	{
 		id:87,
 		type:"primary",
-		start:1,
-		end:1,
+		start:238,
+		end:162,
 	},
 	{
 		id:88,
 		type:"primary",
-		start:1,
-		end:1,
+		start:146,
+		end:42,
 	},
 	{
 		id:89,
