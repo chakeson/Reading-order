@@ -78,7 +78,7 @@ function Book(props:Props) {
             </div>
             :
             <div className='px-3 pb-3'>
-            Book {book}
+                {book}
             </div>   
             }
         </div>
