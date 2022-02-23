@@ -1,2 +1,4 @@
 .vscode/settings.json
 data collection/faction.png
+backend/node_modules
+backend/.env
