@@ -364,7 +364,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/scars-ebook.html"
     },
     {
-        x: 3700,
+        x: 3920,
         y: 2150,
         id: 29,
         title: "Vengeful Spirit ",
@@ -533,7 +533,7 @@ const horusHeresyDataBooks = [
         link:"https://aarondembskibowden.wordpress.com/2015/08/28/okay-okay-fine-this-is-what-im-writing/"
     },
     {
-        x: 3000,
+        x: 2900,
         y: 2850,
         id: 42,
         title: "Garro",
@@ -598,7 +598,7 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 8500,
+        x: 8350,
         y: 6400,
         id: 47,
         title: "Old Earth",
@@ -741,7 +741,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/the-first-wall-ebook-2020.html"
     },
     {
-        x: 9000,
+        x: 9400,
         y: 6900,
         id: 58,
         title: "Sons of the Selenar",
@@ -767,8 +767,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/saturine-mp3-2020.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 10400,
+        y: 3400,
         id: 60,
         title: "The Fury of Magnus",
         author: "Graham McNeill",
@@ -780,7 +780,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/fury-of-magnus-mp3-2020.html"
     },
     {
-        x: 11000,
+        x: 10800,
         y: 3700,
         id: 61,
         title: "Mortis",
@@ -793,7 +793,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/featured/siege-of-terra-mortis-ebook-2021.html"
     },
     {
-        x: 11400,
+        x: 11100,
         y: 3700,
         id: 62,
         title: "Warhawk",
@@ -1886,7 +1886,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 3400,
-        y: 1800,
+        y: 1750,
         id: 149,
         title: "Little Horus",
         author: "Dan Abnett",
@@ -1963,8 +1963,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/all-products/distant_echoes_of_old_night.html"
     },
     {
-        x: 3350,
-        y: 2700,
+        x: 3250,
+        y: 2600,
         id: 155,
         title: "Lost Sons",
         author: "James Swallow",
@@ -2054,8 +2054,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/hh-war-without-end-ebook.html"
     },
     {
-        x: 3700,
-        y: 2700,
+        x: 3600,
+        y: 2600,
         id: 162,
         title: "Luna Mendax",
         author: "Graham McNeill",
@@ -2392,8 +2392,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/by-the-lions-command-ebook.html"
     },
     {
-        x: 3350,
-        y: 2970,
+        x: 3250,
+        y: 2870,
         id: 188,
         title: "All That Remains",
         author: "James Swallow",
@@ -2704,7 +2704,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/now-peals-midnight-eshort.html"
     },
     {
-        x: 5400,
+        x: 6000,
         y: 100,
         id: 212,
         title: "Dreams of Unity",
@@ -2717,7 +2717,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/dreams-of-unity-eshort.html"
     },
     {
-        x: 5400,
+        x: 6000,
         y: 800,
         id: 213,
         title: "The Board is Set",
@@ -2964,8 +2964,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/butchers-nails-mp3.html"
     },
     {
-        x: 3350,
-        y: 2850,
+        x: 3250,
+        y: 2750,
         id: 238,
         title: "Grey Angel",
         author: "John French",
@@ -3029,7 +3029,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/veritas-ferrum-mp3.html"
     },
     {
-        x: 3870,
+        x: 3900,
         y: 1650,
         id: 244,
         title: "The Sigillite",
@@ -3173,7 +3173,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 5800,
-        y: 5150,
+        y: 5130,
         id: 256,
         title: "Master of the First",
         author: "Gav Thorpe",
@@ -3238,7 +3238,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 4750,
-        y: 3150,
+        y: 3130,
         id: 261,
         title: "The Eagle's Talon",
         author: "John French",
@@ -3251,7 +3251,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 5200,
-        y: 3150,
+        y: 3130,
         id: 262,
         title: "Iron Corpses",
         author: "David Annandale",
@@ -3393,8 +3393,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/valerius.mp3.html"
     },
     {
-        x: 5400,
-        y: 600,
+        x: 6000,
+        y: 500,
         id: 274,
         title: "The Binary Succession",
         author: "David Annandale",
@@ -3406,8 +3406,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/binary-succession.html"
     },
     {
-        x: 4850,
-        y: 2900,
+        x: 3600,
+        y: 3570,
         id: 275,
         title: "Dark Compliance",
         author: "John French",
@@ -3419,8 +3419,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/dark-compliance.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 6500,
+        y: 8100,
         id: 276,
         title: "Blackshields: The False War",
         author: "Josh Reynolds",
@@ -3432,8 +3432,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/blackshields-the-false-war-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 6900,
+        y: 8100,
         id: 277,
         title: "Blackshields: The Red Fief",
         author: "Josh Reynolds",
@@ -3471,8 +3471,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/series/the-horus-heresy/the-horus-heresy-nightfane-mp3.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 7300,
+        y: 8100,
         id: 280,
         title: "Blackshields: The Broken Chain",
         author: "Josh Reynolds",
@@ -3640,8 +3640,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/featured/blood-of-the-emperor-ebook-2021.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 7000,
+        y: 800,
         id: 296,
         title: "Misbegotten",
         author: "Dan Abnett",
@@ -3666,8 +3666,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/sons-of-the-emperor-eng-2019.html"
     },
     {
-        x: 3350,
-        y: 3090,
+        x: 3250,
+        y: 2990,
         id: 298,
         title: "The Chamber at the end of Memory",
         author: "James Swallow",
@@ -3948,6 +3948,7 @@ export const horusHeresyDataArrow = [
 	{
 		id:38,
 		type:"secondary",
+        gridbreak:"70%",
 		start:149,
 		end:29,
 	},
@@ -3990,6 +3991,7 @@ export const horusHeresyDataArrow = [
 	{
 		id:45,
 		type:"primary",
+        gridbreak:"70%",
 		start:253,
 		end:49,
 	},
@@ -4025,7 +4027,8 @@ export const horusHeresyDataArrow = [
 	},
 	{
 		id:51,
-		type:"primary",
+		type:"secondary",
+        gridbreak:"19%",
 		start:246,
 		end:29,
 	},
@@ -4038,12 +4041,14 @@ export const horusHeresyDataArrow = [
 	{
 		id:53,
 		type:"tertiary",
+        gridbreak:"85%",
 		start:15,
 		end:136,
 	},
 	{
 		id:54,
 		type:"tertiary",
+        gridbreak:"99.5%",
 		start:136,
 		end:57,
 	},
@@ -4260,6 +4265,7 @@ export const horusHeresyDataArrow = [
 	{
 		id:90,
 		type:"tertiary",
+        gridbreak:"8%",
 		start:155,
 		end:29,
 	},
@@ -4338,6 +4344,7 @@ export const horusHeresyDataArrow = [
 	{
 		id:103,
 		type:"secondary",
+        gridbreak:"63%",
 		start:275,
 		end:114,
 	},
@@ -4518,6 +4525,7 @@ export const horusHeresyDataArrow = [
 	{
 		id:133,
 		type:"tertiary",
+        gridbreak:"7%",
 		start:109,
 		end:256,
 	},
@@ -4675,6 +4683,7 @@ export const horusHeresyDataArrow = [
 	{
 		id:159,
 		type:"tertiary",
+        gridbreak:"7%",
 		start:109,
 		end:178,
 	},
@@ -5201,176 +5210,201 @@ export const horusHeresyDataArrow = [
 	{
 		id:245,
 		type:"primary",
-		start:1,
-		end:1,
+		start:59,
+		end:60,
 	},
 	{
 		id:246,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"89%",
+		start:295,
+		end:56,
 	},
 	{
 		id:247,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"95%",
+		start:211,
+		end:55,
 	},
 	{
 		id:248,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+        gridbreak:"98%",
+		start:209,
+		end:56,
 	},
 	{
 		id:249,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"98.1%",
+		start:222,
+		end:56,
 	},
 	{
 		id:250,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"98%",
+		start:271,
+		end:59,
 	},
 	{
 		id:251,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"97.2%",
+		start:280,
+		end:59,
 	},
 	{
 		id:252,
 		type:"primary",
-		start:1,
-		end:1,
+		start:277,
+		end:280,
 	},
 	{
 		id:253,
 		type:"primary",
-		start:1,
-		end:1,
+		start:276,
+		end:277,
 	},
 	{
 		id:254,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"94%",
+		start:47,
+		end:56,
 	},
 	{
 		id:255,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"98%",
+		start:199,
+		end:56,
 	},
 	{
 		id:256,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"98.5%",
+		start:202,
+		end:61,
 	},
 	{
 		id:257,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"98.66%",
+		start:223,
+		end:59,
 	},
 	{
 		id:258,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"98.5%",
+		start:274,
+		end:56,
 	},
 	{
 		id:259,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+        gridbreak:"97%",
+		start:296,
+		end:59,
 	},
 	{
 		id:260,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"tertiary",
+        gridbreak:"5%",
+		start:15,
+		end:139,
 	},
 	{
 		id:261,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+		start:101,
+		end:28,
 	},
 	{
 		id:262,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"92%",
+		start:44,
+		end:60,
 	},
 	{
 		id:263,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"99%",
+		start:204,
+		end:59,
 	},
 	{
 		id:264,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+        gridbreak:"99%",
+		start:221,
+		end:55,
 	},
 	{
 		id:265,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"80%",
+		start:201,
+		end:54,
 	},
 	{
 		id:266,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"80%",
+		start:272,
+		end:51,
 	},
 	{
 		id:267,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"90%",
+		start:219,
+		end:60,
 	},
 	{
 		id:268,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"80%",
+		start:49,
+		end:51,
 	},
 	{
 		id:269,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+        gridbreak:"36%",
+		start:198,
+		end:54,
 	},
 	{
 		id:270,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+        gridbreak:"90%",
+		start:192,
+		end:54,
 	},
 	{
 		id:271,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+        gridbreak:"23.5%",
+		start:167,
+		end:54,
 	},
 	{
 		id:272,
 		type:"primary",
-		start:1,
-		end:1,
+        gridbreak:"80%",
+		start:238,
+		end:54,
 	},
 	{
 		id:273,
-		type:"primary",
-		start:1,
-		end:1,
+		type:"secondary",
+        gridbreak:"99.2%",
+		start:298,
+		end:55,
 	},
 	{
 		id:274,
