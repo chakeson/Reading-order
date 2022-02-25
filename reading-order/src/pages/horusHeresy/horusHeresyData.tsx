@@ -2249,7 +2249,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/imperfect-ebook.html"
     },
     {
-        x: 1250,
+        x: 1400,
         y: 2000,
         id: 177,
         title: "Howl of the Hearthworld",
@@ -3828,6 +3828,7 @@ export const horusHeresyDataArrow = [
     {
         id:18,
         type:"primary",
+        gridbreak:"15%",
         start:15,
         end:269,
     },
@@ -4085,18 +4086,21 @@ export const horusHeresyDataArrow = [
 	{
 		id:60,
 		type:"primary",
+        gridbreak:"90%",
 		start:5,
 		end:163,
 	},
 	{
 		id:61,
 		type:"primary",
+        gridbreak:"90%",
 		start:5,
 		end:102,
 	},
 	{
 		id:62,
 		type:"secondary",
+        gridbreak:"90%",
 		start:5,
 		end:287,
 	},
@@ -4465,12 +4469,14 @@ export const horusHeresyDataArrow = [
 	{
 		id:123,
 		type:"secondary",
+        gridbreak:"8%",
 		start:5,
 		end:292,
 	},
 	{
 		id:124,
 		type:"secondary",
+        gridbreak:"8%",
 		start:5,
 		end:152,
 	},
