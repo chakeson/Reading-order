@@ -9,7 +9,7 @@ const horusHeresyDataBooks = [
         faction: ["Sons of horus"],
         pages:"320 (hardcover) 416 (softcover)",
         audio:"12h 16m",
-        rating: "%",
+        rating: "95%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/horus-rising.html"
     },
     {
