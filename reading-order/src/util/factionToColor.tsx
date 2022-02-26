@@ -5,9 +5,9 @@ Utility function to take faction list and return colors.
 const factionToColor = (factionArray:string[]) =>{
     var colorList:string[] = [];
     for (let i:number = 0; i<factionArray.length; i++) {
-        let test = factionArray[i];
-        test = test.toLowerCase();
-        switch (test) {
+        let text = factionArray[i];
+        text = text.toLowerCase();
+        switch (text) {
             case "dark angels":
                 colorList.push("#00461f");
                 break;
