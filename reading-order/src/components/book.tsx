@@ -36,7 +36,7 @@ function Book(props:Props) {
 
     var backgroundMakerColor = backgroudMaker(faction);
     
-    var fontColor = fontColorMaker(faction, id, isExpanded);
+    var fontColor = fontColorMaker(faction, isExpanded);
 
 
     return (

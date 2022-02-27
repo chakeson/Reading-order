@@ -1,18 +1,14 @@
 import factionToTextColor from "./factionToTextColor";
 
 
-const fontColorMaker = (faction:string[], id:number, isExpanded:boolean) => {
+const fontColorMaker = (faction:string[], isExpanded:boolean) => {
     var outputString:Array<string> = ["title","author","book","pages","audiobook length","rating","link"];
     const factionNumber:number = faction.length;
     
     
     var fontColorList:string[] = factionToTextColor(faction);
-    if (id===51) {
-        console.log(faction);            
-        console.log(fontColorList);
-        console.log(fontColorList[4]);
-        
-    }
+
+    
     
     if (isExpanded===false) {
         switch (factionNumber) {

@@ -3,7 +3,8 @@ import '../../index.css';
 import { Space } from 'react-zoomable-ui';
 import Book from '../../components/book';
 import Arrow from '../../components/arrow';
-import horusHeresyDataBooks, { horusHeresyDataArrow } from './horusHeresyData'; 
+import Shortcut from '../../components/shortcut';
+import horusHeresyDataBooks, { horusHeresyDataArrow , horusHeresyDataShortcut } from './horusHeresyData'; 
 import NavPannel from '../../components/navPannel';
 
 
@@ -20,6 +21,11 @@ function HorusHerasy() {
                     }
                 )}
                 
+                {horusHeresyDataShortcut.map(( data, index ) => {                          
+                        return <Shortcut key={index+"Shortcut"+data.id} {...data}/>
+                    }
+                )}
+
                 {horusHeresyDataArrow.map(( data, index ) => {                          
                         return <Arrow key={index+"arrow"+data.id} {...data}/>
                     }

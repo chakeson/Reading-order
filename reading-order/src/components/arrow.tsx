@@ -4,7 +4,7 @@ import '../index.css';
 
 
 interface PropsArrow {
-    id:number;
+    id:number | string;
     type:string;
     gridbreak?:string | undefined ;
     start:number;

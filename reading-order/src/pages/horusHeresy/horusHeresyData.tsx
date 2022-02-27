@@ -5224,3 +5224,57 @@ export const horusHeresyDataArrow = [
 		end:1,
 	},
 ];
+
+
+
+export const horusHeresyDataShortcut = [
+    {
+        x:500,
+        y:500,
+        id:1,
+        title:"Fulgrim",
+        faction: ["Emperor's Children"],
+    },
+    {
+        x:500,
+        y:650,
+        id:2,
+        title:"Angel Exterminatus",
+        faction: ["Iron Warriors","Emperor's Children","Iron Hands"],
+    },
+    {
+        x:500,
+        y:800,
+        id:3,
+        title:"Fear to Tread",
+        faction: ["Blood Angels"],
+    },
+    {
+        x:500,
+        y:900,
+        id:4,
+        title:"Scars",
+        faction: ["Space Wolves","White Scars"],
+    },
+    {
+        x:500,
+        y:1000,
+        id:5,
+        title:"Old Earth",
+        faction: ["Salamanders","Iron Hands","Perpetuals"],
+    },
+    {
+        x:500,
+        y:1200,
+        id:6,
+        title:"Wolfsbane",
+        faction: ["Space Wolves","Sons of Horus"],
+    },
+    {
+        x:500,
+        y:1300,
+        id:7,
+        title:"Ruinstorm",
+        faction: ["Blood Angels","Dark Angels","Ultramarines"],
+    },
+]
