@@ -2,8 +2,6 @@
 Utility function to take faction list and return its text color.
 */
 
-
-
 const factionToTextColor = (factionArray:string[]) =>{
     var colorList:string[] = [];
     for (let i:number = 0; i<factionArray.length; i++) {
