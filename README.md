@@ -385,32 +385,7 @@ Audio Dramas & Charcter Novels
 	rating: "%",
 	link:"https://www.blacklibrary.com/prod-home/advent-home/illyrium-2019.html"
 },
-{
-	x: 4800,
-	y: 7350,
-	id: 94,
-	title: "The Revelation of the Word",
-	author: "David Annandale",
-	book:"Audio Dramas",
-	faction: ["Word Bearers"],
-	pages:"",
-	audio:"24m",
-	rating: "%",
-	link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/the-revelation-of-the-word-2019.html"
-},
-{
-	x: 3850,
-	y: 950,
-	id: 95,
-	title: "Morningstar",
-	author: "Graham McNeill",
-	book:"Audio Dramas",
-	faction: ["Thousand Sons"],
-	pages:"",
-	audio:"24m",
-	rating: "%",
-	link:""
-},
+
 {
 	x: 1,
 	y: 1,

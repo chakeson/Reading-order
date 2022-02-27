@@ -118,7 +118,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 400, 
-        y: 6700,
+        y: 6900,
         id: 10,
         title: "Tales of Heresy",
         author: "Dan Abnett",
@@ -196,7 +196,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 700, 
-        y: 6700,
+        y: 6900,
         id: 16,
         title: "Age of Darkness",
         author: "Dan Abnett",
@@ -248,7 +248,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1000, 
-        y: 6700,
+        y: 6900,
         id: 20,
         title: "The Primarchs",
         author: "Nick Kyme",
@@ -274,7 +274,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1300, 
-        y: 6700,
+        y: 6900,
         id: 22,
         title: "Shadows of Treachery",
         author: "Dan Abnett",
@@ -391,7 +391,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1600, 
-        y: 6700,
+        y: 6900,
         id: 31,
         title: "Legacies of Betrayal",
         author: "Aaron Dembski-Bowden",
@@ -417,7 +417,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 400, 
-        y: 6850,
+        y: 7050,
         id: 33,
         title: "War Without End",
         author: "Aaron Dembski-Bowden",
@@ -443,7 +443,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 700, 
-        y: 6850,
+        y: 7050,
         id: 35,
         title: "Eye of Terra",
         author: "Aaron Dembski-Bowden Anthology",
@@ -469,7 +469,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1000, 
-        y: 6850,
+        y: 7050,
         id: 37,
         title: "The Silent War",
         author: "Varius",
@@ -508,7 +508,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1300, 
-        y: 6850,
+        y: 7050,
         id: 40,
         title: "Corax",
         author: "Gav Thorpe",
@@ -547,7 +547,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1600, 
-        y: 6850,
+        y: 7050,
         id: 43,
         title: "Shattered Legions",
         author: "Dan Abnett",
@@ -573,7 +573,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 400,
-        y: 7050,
+        y: 7250,
         id: 45,
         title: "Tallarn",
         author: "John French",
@@ -612,7 +612,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 700,
-        y: 7050,
+        y: 7250,
         id: 48,
         title: "The Burden of Loyalty",
         author: "",
@@ -638,7 +638,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1000,
-        y: 7050,
+        y: 7250,
         id: 50,
         title: "Born of Flame",
         author: "Nick Kyme",
@@ -664,7 +664,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 1300,
-        y: 7050,
+        y: 7250,
         id: 52,
         title: "Heralds of the Siege",
         author: "Varius",
@@ -1051,6 +1051,32 @@ const horusHeresyDataBooks = [
         audio:"",
         rating: "%",
         link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/embers-of-extinction-eshort-2020.html"
+    },
+    {
+        x: 4800,
+        y: 7350,
+        id: 94,
+        title: "The Revelation of the Word",
+        author: "David Annandale",
+        book:"Audio Dramas",
+        faction: ["Word Bearers"],
+        pages:"",
+        audio:"24m",
+        rating: "%",
+        link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/the-revelation-of-the-word-2019.html"
+    },
+    {
+        x: 3850,
+        y: 950,
+        id: 95,
+        title: "Morningstar",
+        author: "Graham McNeill",
+        book:"Audio Dramas",
+        faction: ["Thousand Sons"],
+        pages:"",
+        audio:"24m",
+        rating: "%",
+        link:""
     },
     {
         x: 7000,
@@ -4941,7 +4967,7 @@ export const horusHeresyDataArrow = [
 	{
 		id:260,
 		type:"tertiary",
-        gridbreak:"5%",
+        gridbreak:"40%",
 		start:15,
 		end:139,
 	},
