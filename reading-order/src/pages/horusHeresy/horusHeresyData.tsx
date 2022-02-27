@@ -117,8 +117,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/Mechanicum-eBook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 400, 
+        y: 6700,
         id: 10,
         title: "Tales of Heresy",
         author: "Dan Abnett",
@@ -195,8 +195,8 @@ const horusHeresyDataBooks = [
         link:"http://www.blacklibrary.com/Blog/A-look-into-the-future.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 700, 
+        y: 6700,
         id: 16,
         title: "Age of Darkness",
         author: "Dan Abnett",
@@ -247,8 +247,8 @@ const horusHeresyDataBooks = [
         link:"http://www.blacklibrary.com/Blog/Questions-for-the-High-Lords_.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000, 
+        y: 6700,
         id: 20,
         title: "The Primarchs",
         author: "Nick Kyme",
@@ -273,8 +273,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/fear-to-tread-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1300, 
+        y: 6700,
         id: 22,
         title: "Shadows of Treachery",
         author: "Dan Abnett",
@@ -390,8 +390,8 @@ const horusHeresyDataBooks = [
         link:"http://www.blacklibrary.com/Blog/new-hh-art.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1600, 
+        y: 6700,
         id: 31,
         title: "Legacies of Betrayal",
         author: "Aaron Dembski-Bowden",
@@ -416,8 +416,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/deathfire-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 400, 
+        y: 6850,
         id: 33,
         title: "War Without End",
         author: "Aaron Dembski-Bowden",
@@ -442,8 +442,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/pharos-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 700, 
+        y: 6850,
         id: 35,
         title: "Eye of Terra",
         author: "Aaron Dembski-Bowden Anthology",
@@ -468,11 +468,11 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/path-of-heaven-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000, 
+        y: 6850,
         id: 37,
         title: "The Silent War",
-        author: "",
+        author: "Varius",
         book:"Book 37 Anthology",
         faction: [""],
         pages:"480",
@@ -507,8 +507,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/hh-praetorian-of-dorn-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1300, 
+        y: 6850,
         id: 40,
         title: "Corax",
         author: "Gav Thorpe",
@@ -546,8 +546,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/hh-garro-weapon-of-fate-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1600, 
+        y: 6850,
         id: 43,
         title: "Shattered Legions",
         author: "Dan Abnett",
@@ -572,8 +572,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/hh-the-crimson-king-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 400,
+        y: 7050,
         id: 45,
         title: "Tallarn",
         author: "John French",
@@ -611,8 +611,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/old-earth-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 700,
+        y: 7050,
         id: 48,
         title: "The Burden of Loyalty",
         author: "",
@@ -637,8 +637,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/wolfsbane-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000,
+        y: 7050,
         id: 50,
         title: "Born of Flame",
         author: "Nick Kyme",
@@ -663,17 +663,17 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 1300,
+        y: 7050,
         id: 52,
         title: "Heralds of the Siege",
-        author: "",
+        author: "Varius",
         book:"Book 52 Anthology",
         faction: [""],
         pages:"432",
         audio:"",
         rating: "%",
-        link:""
+        link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/the-horus-heresy-heralds-of-the-siege-book52-mp3-2018.html"
     },
     {
         x: 6230,
@@ -806,8 +806,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/featured/warhawk-ebook-2021.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 400,
+        y: 7600,
         id: 63,
         title: "Roboute Guilliman: Lord of Ultramar",
         author: "David Annandale",
@@ -819,8 +819,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/roboute-guilliman-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 700,
+        y: 7600,
         id: 64,
         title: "Leman Russ: The Great Wolf",
         author: "Chris Wraight",
@@ -832,8 +832,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/leman-russ-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000,
+        y: 7600,
         id: 65,
         title: "Magnus the Red: Master of Prospero",
         author: "Graham McNeill",
@@ -845,8 +845,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/magnus-the-red.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1300,
+        y: 7600,
         id: 66,
         title: "Perturabo: The Hammer of Olympia",
         author: "Guy Haley",
@@ -858,8 +858,8 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 1600,
+        y: 7600,
         id: 67,
         title: "Lorgar: Bearer of the Word",
         author: "Gav Thorpe",
@@ -871,8 +871,8 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 400,
+        y: 7800,
         id: 68,
         title: "Fulgrim: The Palatine Phoenix",
         author: "Josh Reynolds",
@@ -884,8 +884,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/fulgrim-the-palatine-phoenix-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 700,
+        y: 7800,
         id: 69,
         title: "Ferrus Manus: Gorgon of Medusa",
         author: "David Guymer",
@@ -897,8 +897,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/ferrus-manus-gorgon-of-medusa-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000,
+        y: 7800,
         id: 70,
         title: "Jaghatai Khan: Warhawk of Chogoris",
         author: "Chris Wraight",
@@ -910,8 +910,8 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 1300,
+        y: 7800,
         id: 71,
         title: "Vulkan: Lord of Drakes",
         author: "David Annandale",
@@ -923,11 +923,11 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 400,
+        y: 8200,
         id: 72,
         title: "Sons of the Emperor",
-        author: "",
+        author: "Varius",
         book:"The Primarchs Anthology",
         faction: [""],
         pages:"254",
@@ -936,8 +936,8 @@ const horusHeresyDataBooks = [
         link:""
     },
     {
-        x: 1,
-        y: 1,
+        x: 1600,
+        y: 7800,
         id: 73,
         title: "Corax: Lord of Shadows",
         author: "Guy Haley",
@@ -949,8 +949,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/featured/primarchs-corax-ebook-cs-2018.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 400,
+        y: 8000,
         id: 74,
         title: "Angron: Slave of Nuceria",
         author: "Ian St. Martin",
@@ -962,8 +962,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/series/primarchs_/angron-slave-of-nuceria-ebook-mp3-2019.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 700,
+        y: 8200,
         id: 75,
         title: "Scions of the Emperor",
         author: "",
@@ -975,8 +975,8 @@ const horusHeresyDataBooks = [
         link:"https://www.goodreads.com/book/show/43886241-scions-of-the-emperor?ac=1&from_search=true"
     },
     {
-        x: 1,
-        y: 1,
+        x: 700,
+        y: 8000,
         id: 76,
         title: "Konrad Curze: The Night Haunter",
         author: "Guy Haley",
@@ -988,8 +988,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/konrad-curze-the-night-haunter-mp3-2019.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000,
+        y: 8000,
         id: 77,
         title: "Lion El'Jonson: Lord of the First",
         author: "David Guymer",
@@ -1001,8 +1001,8 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/lion-eljonson-lord-of-the-first-ebook-2020.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1300,
+        y: 8000,
         id: 78,
         title: "Alpharius: Head of the Hydra",
         author: "Mike Brooks",
@@ -1014,17 +1014,17 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/featured/alpharius-head-of-the-hydra-mp3-2021.html"
     },
     {
-        x: 1,
-        y: 1,
+        x: 1000,
+        y: 8200,
         id: 79,
         title: "Blood of the Emperor",
-        author: "",
+        author: "Varius",
         book:"The Primarchs",
         faction: [""],
         pages:"192",
         audio:"",
         rating: "%",
-        link:""
+        link:"https://www.blacklibrary.com/the-horus-heresy/featured/blood-of-the-emperor-ebook-2021.html"
     },
     {
         x: 8050,
@@ -1040,84 +1040,6 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/grandfathers-gift-ebook.html"
     },
     {
-        x: 1,
-        y: 1,
-        id: 82,
-        title: "A Lesson in Iron",
-        author: "David Guymer",
-        book:"Short Stories",
-        faction: [""],
-        pages:"21",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/advent-2018-9-a-lesson-in-iron-eshort.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 83,
-        title: "Ghost of Nuceria",
-        author: "Ian St. Martin",
-        book:"Short Stories",
-        faction: [""],
-        pages:"21",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/eater-of-cities-eng-2019.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 84,
-        title: "The Passing of Angels",
-        author: "John French",
-        book:"Short Stories",
-        faction: [""],
-        pages:"21",
-        audio:"",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 85,
-        title: "The Abyssal Edge",
-        author: "Aaron Dembski-Bowden",
-        book:"Short Stories",
-        faction: [""],
-        pages:"30",
-        audio:"",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 86,
-        title: "Mercy of the Dragon",
-        author: "Nick Kyme",
-        book:"Short Stories",
-        faction: [""],
-        pages:"41",
-        audio:"",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 87,
-        title: "Will of the Legion",
-        author: "Andy Clark",
-        book:"Short Stories",
-        faction: [""],
-        pages:"",
-        audio:"",
-        rating: "%",
-        link:""
-    },
-    {
         x: 2500,
         y: 6300,
         id: 88,
@@ -1128,111 +1050,7 @@ const horusHeresyDataBooks = [
         pages:"",
         audio:"",
         rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 89,
-        title: "Perturabo: Stone and Iron",
-        author: "Robbie MacNiven",
-        book:"Audio Dramas",
-        faction: [""],
-        pages:"",
-        audio:"21m",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 90,
-        title: "Malcador: First Lord of the Imperium",
-        author: "L.J. Goulding",
-        book:"Audio Dramas",
-        faction: [""],
-        pages:"",
-        audio:"25m",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 91,
-        title: "Konrad Curze: A Lesson in Darkness",
-        author: "Ian St. Martin",
-        book:"Audio Dramas",
-        faction: [""],
-        pages:"",
-        audio:"27m",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 92,
-        title: "The Lords of Terra",
-        author: "L.J. Goulding",
-        book:"Audio Dramas",
-        faction: [""],
-        pages:"",
-        audio:"1 hour 13m",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 93,
-        title: "Illyrium",
-        author: "Darius Hinks",
-        book:"Audio Dramas",
-        faction: [""],
-        pages:"",
-        audio:"28m",
-        rating: "%",
-        link:"https://www.blacklibrary.com/prod-home/advent-home/illyrium-2019.html"
-    },
-    {
-        x: 4800,
-        y: 7350,
-        id: 94,
-        title: "The Revelation of the Word",
-        author: "David Annandale",
-        book:"Audio Dramas",
-        faction: ["Word Bearers"],
-        pages:"",
-        audio:"24m",
-        rating: "%",
-        link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/the-revelation-of-the-word-2019.html"
-    },
-    {
-        x: 3850,
-        y: 950,
-        id: 95,
-        title: "Morningstar",
-        author: "Graham McNeill",
-        book:"Audio Dramas",
-        faction: ["Thousand Sons"],
-        pages:"",
-        audio:"24m",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 96,
-        title: "Valdor: Birth of the Imperium",
-        author: "Chris Wraight",
-        book:"Horus Heresy Characters Novels",
-        faction: [""],
-        pages:"272",
-        audio:"6h 16m",
-        rating: "%",
-        link:""
+        link:"https://www.blacklibrary.com/new-titles/the-horus-heresy/embers-of-extinction-eshort-2020.html"
     },
     {
         x: 7000,
@@ -1244,19 +1062,6 @@ const horusHeresyDataBooks = [
         faction: ["Dark Angels","Death Guard"],
         pages:"224",
         audio:"7h 32m",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 98,
-        title: "Sigismund: The Eternal Crusader",
-        author: "John French",
-        book:"Horus Heresy Characters Novels",
-        faction: [""],
-        pages:"192",
-        audio:"",
         rating: "%",
         link:""
     },
@@ -1560,84 +1365,6 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/new-titles/featured/spear-of-ultramar-ebook-2018.html"
     },
     {
-        x: 1,
-        y: 1,
-        id: 123,
-        title: "Angron",
-        author: "Aaron Dembski-Bowden",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/angron-ebook.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 124,
-        title: "The Imperial Truth",
-        author: "",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/the-imperial-truth-ebook-collection.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 125,
-        title: "Sedition's Gate",
-        author: "Nick Kyme",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"142",
-        audio:"",
-        rating: "%",
-        link:"http://www.blacklibrary.com/new-at-bl/Horus_Heresy_Weekender_and_New_Night_Lords_Art.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 126,
-        title: "Echoes of Ruin",
-        author: "David Annandale",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"",
-        audio:"75m",
-        rating: "%",
-        link:"https://www.blacklibrary.com/all-products/echoes-of-ruin.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 127,
-        title: "Death and Defiance",
-        author: "Aaron Dembski-Bowden",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/death-and-defiance-ebook-collection.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 128,
-        title: "Blades of the Traitor",
-        author: "John French",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"118",
-        audio:"",
-        rating: "%",
-        link:""
-    },
-    {
         x: 7300,
         y: 6900,
         id: 129,
@@ -1649,45 +1376,6 @@ const horusHeresyDataBooks = [
         audio:"1h 12m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/novels/meduson-ultimate-ebook.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 130,
-        title: "Betrayal at Calth",
-        author: "David Annandale",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"",
-        audio:"",
-        rating: "%",
-        link:""
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 131,
-        title: "Echoes of the Imperium",
-        author: "",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"",
-        audio:"74m",
-        rating: "%",
-        link:"http://www.blacklibrary.com/all-products/echoes-of-imperium-mp3.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 133,
-        title: "Echoes of Revelation",
-        author: "Dan Abnett",
-        book:"Collections Anthology",
-        faction: [""],
-        pages:"",
-        audio:"75m",
-        rating: "%",
-        link:"https://www.blacklibrary.com/audio/the-horus-heresy-audio-dramas/hh-echoes-of-revelation-mp3.html"
     },
     {
         x: 1770,
@@ -2639,19 +2327,6 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/immortal-duty-eshort.html"
     },
     {
-        x: 1,
-        y: 1,
-        id: 207,
-        title: "A Lesson in Iron",
-        author: "David Guymer",
-        book:"Short stories",
-        faction: [""],
-        pages:"22",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/all-products/advent-2018-9-a-lesson-in-iron-eshort.html"
-    },
-    {
         x: 7000,
         y: 4750,
         id: 208,
@@ -2899,45 +2574,6 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/prod-home/12-tales-of-christmas/the-lighting-hall-eshort-2020.html"
     },
     {
-        x: 1,
-        y: 1,
-        id: 227,
-        title: "Eater of Dreams",
-        author: "Marc Collins",
-        book:"Short stories",
-        faction: [""],
-        pages:"",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/new-titles/featured/eshort-eater-of-dreams-eng-2021.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 228,
-        title: "Bloodhowl",
-        author: "Chris Forrester",
-        book:"Short stories",
-        faction: [""],
-        pages:"",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/new-titles/featured/eshort-bloodhowl-eng-2021.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 229,
-        title: "Amor Fati",
-        author: "Michael F. Haspil",
-        book:"Short stories",
-        faction: [""],
-        pages:"",
-        audio:"",
-        rating: "%",
-        link:"https://www.blacklibrary.com/new-titles/featured/eshort-amor-fati-eng-2021.html"
-    },
-    {
         x: 1770,
         y: 4200,
         id: 234,
@@ -2975,19 +2611,6 @@ const horusHeresyDataBooks = [
         audio:"35m",
         rating: "%",
         link:"https://www.blacklibrary.com/the-horus-heresy/quick-reads/grey-angel-eshort.html"
-    },
-    {
-        x: 1,
-        y: 1,
-        id: 239,
-        title: "Burden of Duty",
-        author: "James Swallow",
-        book:"Audio Dramas",
-        faction: [""],
-        pages:"",
-        audio:"5m",
-        rating: "%",
-        link:"https://www.blacklibrary.com/series/garro/burden-of-duty-mp3.html"
     },
     {
         x: 5300,

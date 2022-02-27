@@ -3,7 +3,7 @@ Add progress-bar on navbar.
 
 Add api hooking for books.tsx so it saves progress. Add localstorage support.
 
-Make text white for dark angels, raven gaurd, blood angels, ultramarines, world eaters, mechanicum, iron warriors, space wolves
+Improve text color changer for books.
 
 Create class to display conflic zones and areas.
 
