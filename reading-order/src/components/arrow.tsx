@@ -7,8 +7,8 @@ interface PropsArrow {
     id:number | string;
     type:string;
     gridbreak?:string | undefined ;
-    start:number;
-    end:number;
+    start:number|string;
+    end:number|string;
 }
 
 interface ArrowColorInterface {
