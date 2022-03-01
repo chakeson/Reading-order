@@ -4,7 +4,8 @@ import { Space } from 'react-zoomable-ui';
 import Book from '../../components/book';
 import Arrow from '../../components/arrow';
 import Shortcut from '../../components/shortcut';
-import horusHeresyDataBooks, { horusHeresyDataArrow , horusHeresyDataShortcut } from './horusHeresyData'; 
+import Zone from '../../components/zone';
+import horusHeresyDataBooks, { horusHeresyDataArrow , horusHeresyDataShortcut, horusHeresyDataZone } from './horusHeresyData'; 
 import NavPannel from '../../components/navPannel';
 
 
@@ -16,6 +17,12 @@ function HorusHerasy() {
             <NavPannel />
 
             <Space onCreate={vp => {vp.setBounds({ x:[0,12000], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 6000, height: 6000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 12000, height: 8500 }}>
+                
+                {horusHeresyDataZone.map(( data, index ) => {
+                            return <Zone key={index+"zone"+data.id} {...data}/>
+                        }
+                    )}
+                                
                 {horusHeresyDataBooks.map(( data, index ) => {
                         return <Book key={index+"book"+data.id} {...data}/>
                     }

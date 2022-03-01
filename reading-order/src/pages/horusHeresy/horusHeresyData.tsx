@@ -5208,8 +5208,8 @@ export const horusHeresyDataArrow = [
 	{
 		id:298,
 		type:"primary",
-		start:1,
-		end:1,
+		start:256,
+		end:38,
 	},
 	{
 		id:299,
@@ -5381,5 +5381,19 @@ export const horusHeresyDataShortcut = [
         id:22,
         title:"Fulgrim",
         faction: ["Emperor's Children"],
+    },
+]
+
+
+export const horusHeresyDataZone = [
+    {
+        x:200,
+        y:100,
+        width:500,
+        height:300,
+        xtitle:50,
+        ytitle:200,
+        id:1,
+        title:"Schism of Mars storyline",
     },
 ]
