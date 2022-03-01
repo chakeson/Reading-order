@@ -42,7 +42,7 @@ function Book(props:Props) {
     return (
         <NoPanArea>
         <div id={idAsString} style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(0deg,${ isGreyedOut ? `${greyedOutColorHex} 0%, ${greyedOutColorHex} 100%` : backgroundMakerColor})`}} className={`w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled ${isExpanded ? "z-50" : ""}`} onClick = { e => { setIsExpanded(!isExpanded); }} >
-            <div className='font-semibold text-xl overflow-clip flex justify-between items-center pt-3 px-3'>
+            <div className='font-semibold text-xl text-clip flex justify-between items-center pt-3 px-3'>
             { !!title && <div className='w-11/12' style={{color:`${fontColor[0]}`}}>{title}</div>}
                 <input type="checkbox" className='w-6 h-6' onClick={e => {handleChange(e);}}/>
             </div>

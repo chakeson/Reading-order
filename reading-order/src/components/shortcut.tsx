@@ -24,7 +24,7 @@ function Shortcut(props:Props) {
      
 
     return ( 
-        <div id={idAsString} className='z-10 border-2 absolute rounded-2xl p-3 font-semibold text-xl overflow-clip inline-flex flex-col justify-center items-center' style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(180deg,${backgroundMakerColor})`}} >
+        <div id={idAsString} className='z-10 border-2 absolute rounded-2xl p-3 font-semibold text-xl text-clip  inline-flex flex-col justify-center items-center' style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(180deg,${backgroundMakerColor})`}} >
                <h3 style={{color:`${fontColor[0]}`}}>
                     {title}
                </h3>
