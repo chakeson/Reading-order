@@ -6,19 +6,20 @@ interface Props {
     height:number;
     xtitle:number;
     ytitle:number;
+    textwidth?:number;
     id:number;
     title:string;
     icon?:SVGAElement;
 }
 
 function Zone(props:Props) {
-    const { x , y , width, height , xtitle , ytitle , id , title , icon } = props;
+    const { x , y , width, height , xtitle , ytitle , textwidth , id , title , icon } = props;
 
     var idAsString:string = id.toString()+"zone"
 
     return ( 
         <div id={idAsString} style={{top:`${y}px`,left:`${x}px`,width:`${width}px`,height:`${height}px`}} className="border-2 absolute rounded-2xl">
-                <h3 style={{top:`${ytitle}px`,left:`${xtitle}px`}} className="absolute font-semibold text-xl inline-flex flex-col justify-center items-center">
+                <h3 style={{top:`${ytitle}px`,left:`${xtitle}px`,width:`${textwidth}px`}} className="absolute font-semibold text-5xl inline-flex flex-col justify-center items-center">
                     {title}
                     {icon}
                </h3>
