@@ -16,8 +16,12 @@ function HorusHerasy() {
             <div className="map-height">
             <NavPannel />
 
-            <Space onCreate={vp => {vp.setBounds({ x:[0,12000], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 6000, height: 6000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 12000, height: 8500 }}>
+            <Space onCreate={vp => {vp.setBounds({ x:[0,11500], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 6000, height: 6000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11500, height: 8500 }}>
                 
+                <div style={{top:`0px`,left:`8760px`,width:`0px`,height:`100%`,border:"5px dashed #b09642"}} className='absolute'></div>
+                <h3 style={{top:`110px`,left:`8100px`}} className='absolute text-8xl'>Horus Heresy</h3>
+                <h3 style={{top:`110px`,left:`8880px`}} className='absolute text-8xl'>Siege Of Terra</h3>
+
                 {horusHeresyDataZone.map(( data, index ) => {
                             return <Zone key={index+"zone"+data.id} {...data}/>
                         }
