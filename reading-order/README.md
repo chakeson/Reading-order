@@ -5,9 +5,6 @@ Add api hooking for books.tsx so it saves progress. Add localstorage support.
 
 Improve text color changer for books.
 
-Create class to display conflic zones and areas.
-
-Add data for primary books and render it.
 
 # Important libraries
 React

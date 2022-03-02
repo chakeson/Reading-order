@@ -10,7 +10,8 @@ const horusHeresyDataBooks = [
         pages:"320 (hardcover) 416 (softcover)",
         audio:"12h 16m",
         rating: "95%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/horus-rising.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/horus-rising.html",
+        primary: true,
     },
     {
         x: 400,
@@ -23,7 +24,8 @@ const horusHeresyDataBooks = [
         pages:"416",
         audio:"11h 20m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/False-Gods-eBook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/False-Gods-eBook.html",
+        primary: true,
     },
     {
         x: 700,
@@ -36,7 +38,8 @@ const horusHeresyDataBooks = [
         pages:"416",
         audio:"8h 51m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/galaxy-in-flames-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/galaxy-in-flames-ebook.html",
+        primary: true,
     },
     {
         x: 1000,
@@ -49,7 +52,8 @@ const horusHeresyDataBooks = [
         pages:"416",
         audio:"12h",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/flight-of-the-eisenstein-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/flight-of-the-eisenstein-ebook.html",
+        primary: true,
     },
     {
         x: 1400,
@@ -62,11 +66,12 @@ const horusHeresyDataBooks = [
         pages:"512",
         audio:"15h 2m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/fulgrim-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/fulgrim-ebook.html",
+        primary: true,
     },
     {
         x: 2900,
-        y: 4800,
+        y: 4790,
         id: 6,
         title: "Descent of Angels",
         author: "Mitchel Scanlon",
@@ -105,7 +110,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 750,
-        y: 295,
+        y: 307,
         id: 9,
         title: "Mechanicum",
         author: "Graham McNeill",
@@ -131,7 +136,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 3700,
-        y: 4800,
+        y: 4790,
         id: 11,
         title: "Fallen Angels",
         author: "Mike Lee",
@@ -153,7 +158,8 @@ const horusHeresyDataBooks = [
         pages:"416",
         audio:"16h",
         rating: "%",
-        link:"http://www.blacklibrary.com/Blog/graham-mcneill-becomes-new-york-times-best-selling-author.html"
+        link:"http://www.blacklibrary.com/Blog/graham-mcneill-becomes-new-york-times-best-selling-author.html",
+        primary: true,
     },
     {
         x: 1880,
@@ -244,7 +250,8 @@ const horusHeresyDataBooks = [
         pages:"416",
         audio:"11h",
         rating: "%",
-        link:"http://www.blacklibrary.com/Blog/Questions-for-the-High-Lords_.html"
+        link:"http://www.blacklibrary.com/Blog/Questions-for-the-High-Lords_.html",
+        primary: true,
     },
     {
         x: 1000, 
@@ -270,7 +277,8 @@ const horusHeresyDataBooks = [
         pages:"516",
         audio:"15h",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/fear-to-tread-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/fear-to-tread-ebook.html",
+        primary: true,
     },
     {
         x: 1300, 
@@ -296,7 +304,8 @@ const horusHeresyDataBooks = [
         pages:"448",
         audio:"19h",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/angel-exterminatus-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/angel-exterminatus-ebook.html",
+        primary: true,
     },
     {
         x: 4400,
@@ -309,7 +318,8 @@ const horusHeresyDataBooks = [
         pages:"416",
         audio:"14h 9m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/betrayer-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/betrayer-ebook.html",
+        primary: true,
     },
     {
         x: 4800,
@@ -348,7 +358,8 @@ const horusHeresyDataBooks = [
         pages:"416",
         audio:"13h",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-unremembered-empire-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/the-unremembered-empire-ebook.html",
+        primary: true,
     },
     {
         x: 2200,
@@ -374,7 +385,8 @@ const horusHeresyDataBooks = [
         pages:"544",
         audio:"15h",
         rating: "%",
-        link:""
+        link:"",
+        primary: true,
     },
     {
         x: 2500,
@@ -465,7 +477,8 @@ const horusHeresyDataBooks = [
         pages:"432",
         audio:"13h 28m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/path-of-heaven-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/path-of-heaven-ebook.html",
+        primary: true,
     },
     {
         x: 1000, 
@@ -491,7 +504,8 @@ const horusHeresyDataBooks = [
         pages:"480",
         audio:"10h 57m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/angels-of-caliban-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/angels-of-caliban-ebook.html",
+        primary: true,
     },
     {
         x: 5400,
@@ -530,7 +544,8 @@ const horusHeresyDataBooks = [
         pages:"448",
         audio:"12h 34m",
         rating: "%",
-        link:"https://aarondembskibowden.wordpress.com/2015/08/28/okay-okay-fine-this-is-what-im-writing/"
+        link:"https://aarondembskibowden.wordpress.com/2015/08/28/okay-okay-fine-this-is-what-im-writing/",
+        primary: true,
     },
     {
         x: 2900,
@@ -569,7 +584,8 @@ const horusHeresyDataBooks = [
         pages:"456",
         audio:"14h 46m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/hh-the-crimson-king-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/hh-the-crimson-king-ebook.html",
+        primary: true,
     },
     {
         x: 400,
@@ -595,7 +611,8 @@ const horusHeresyDataBooks = [
         pages:"480",
         audio:"10h 7m",
         rating: "%",
-        link:""
+        link:"",
+        primary: true,
     },
     {
         x: 8350,
@@ -608,7 +625,8 @@ const horusHeresyDataBooks = [
         pages:"400",
         audio:"12h 39m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/old-earth-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/old-earth-ebook.html",
+        primary: true,
     },
     {
         x: 700,
@@ -634,7 +652,8 @@ const horusHeresyDataBooks = [
         pages:"400",
         audio:"11h 36m",
         rating: "%",
-        link:"https://www.blacklibrary.com/the-horus-heresy/novels/wolfsbane-ebook.html"
+        link:"https://www.blacklibrary.com/the-horus-heresy/novels/wolfsbane-ebook.html",
+        primary: true,
     },
     {
         x: 1000,
@@ -660,7 +679,8 @@ const horusHeresyDataBooks = [
         pages:"432",
         audio:"10h 49m",
         rating: "%",
-        link:""
+        link:"",
+        primary: true,
     },
     {
         x: 1300,
@@ -699,7 +719,8 @@ const horusHeresyDataBooks = [
         pages:"400",
         audio:"12h 40m",
         rating: "%",
-        link:"https://www.blacklibrary.com/all-products/horus-heresy-the-buried-dagger-ebook-cs-2018.html"
+        link:"https://www.blacklibrary.com/all-products/horus-heresy-the-buried-dagger-ebook-cs-2018.html",
+        primary: true,
     },
     {
         x: 8800,
@@ -712,7 +733,8 @@ const horusHeresyDataBooks = [
         pages:"384",
         audio:"12h 14m",
         rating: "%",
-        link:"https://www.blacklibrary.com/coming-soon/may/siege-of-terra-the-solar-war-ebook-2019.html"
+        link:"https://www.blacklibrary.com/coming-soon/may/siege-of-terra-the-solar-war-ebook-2019.html",
+        primary: true,
     },
     {
         x: 9150,
@@ -725,7 +747,8 @@ const horusHeresyDataBooks = [
         pages:"416",
         audio:"13h 2m",
         rating: "%",
-        link:"https://www.blacklibrary.com/all-products/the-lost-and-the-damned-ebook-2019.html"
+        link:"https://www.blacklibrary.com/all-products/the-lost-and-the-damned-ebook-2019.html",
+        primary: true,
     },
     {
         x: 9500,
@@ -738,7 +761,8 @@ const horusHeresyDataBooks = [
         pages:"460",
         audio:"12h 44m",
         rating: "%",
-        link:"https://www.blacklibrary.com/all-products/the-first-wall-ebook-2020.html"
+        link:"https://www.blacklibrary.com/all-products/the-first-wall-ebook-2020.html",
+        primary: true,
     },
     {
         x: 9400,
@@ -764,7 +788,8 @@ const horusHeresyDataBooks = [
         pages:"464",
         audio:"16h 48m",
         rating: "%",
-        link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/saturine-mp3-2020.html"
+        link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/saturine-mp3-2020.html",
+        primary: true,
     },
     {
         x: 10400,
@@ -790,7 +815,8 @@ const horusHeresyDataBooks = [
         pages:"560",
         audio:"16h 26m",
         rating: "%",
-        link:"https://www.blacklibrary.com/new-titles/featured/siege-of-terra-mortis-ebook-2021.html"
+        link:"https://www.blacklibrary.com/new-titles/featured/siege-of-terra-mortis-ebook-2021.html",
+        primary: true,
     },
     {
         x: 11100,
@@ -803,7 +829,8 @@ const horusHeresyDataBooks = [
         pages:"482",
         audio:"14h 15m",
         rating: "%",
-        link:"https://www.blacklibrary.com/new-titles/featured/warhawk-ebook-2021.html"
+        link:"https://www.blacklibrary.com/new-titles/featured/warhawk-ebook-2021.html",
+        primary: true,
     },
     {
         x: 400,
@@ -1483,7 +1510,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 3300,
-        y: 4800,
+        y: 4790,
         id: 140,
         title: "Call of the Lion",
         author: "Gav Thorpe",
@@ -1717,7 +1744,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 400,
-        y: 295,
+        y: 307,
         id: 158,
         title: "The Kaban Project",
         author: "Graham McNeill",
@@ -2016,7 +2043,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 4300,
-        y: 1800,
+        y: 1814,
         id: 181,
         title: "Wolf Mother",
         author: "Graham McNeill",
@@ -2029,7 +2056,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 4300,
-        y: 2040,
+        y: 2054,
         id: 182,
         title: "Twisted",
         author: "Guy Haley",
@@ -2198,7 +2225,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 4300,
-        y: 1920,
+        y: 1934,
         id: 195,
         title: "Blackshield",
         author: "Chris Wraight",
@@ -2770,7 +2797,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 5300,
-        y: 4800,
+        y: 4790,
         id: 251,
         title: "Guardian of Order",
         author: "Gav Thorpe",
@@ -2782,7 +2809,7 @@ const horusHeresyDataBooks = [
         link:"https://www.blacklibrary.com/audio/the-horus-heresy-audiobooks/advent-day-twenty-five-cypher-guardian-of-order.html"
     },
     {
-        x: 5250,
+        x: 5300,
         y: 6280,
         id: 252,
         title: "Hunter's Moon",
@@ -2861,7 +2888,7 @@ const horusHeresyDataBooks = [
     },
     {
         x: 5800,
-        y: 5407,
+        y: 5406,
         id: 259,
         title: "Herald of Sanguinius",
         author: "Andy Smillie",
@@ -5218,11 +5245,11 @@ export const horusHeresyDataArrow = [
 		start:53,
 		end:55,
 	},
-	{
+    {
 		id:300,
 		type:"primary",
-		start:1,
-		end:1,
+		start:250,
+		end:44,
 	},
 ];
 
@@ -5413,32 +5440,32 @@ export const horusHeresyDataZone = [
         y:1080,
         width:1870,
         height:750,
-        xtitle:70,
+        xtitle:120,
         ytitle:600,
         id:3,
-        title:"Prospero's sack storyline",
+        title:"Prospero's sack",
     },
     {
         x:2550,
         y:2250,
         width:900,
-        height:300,
+        height:250,
         xtitle:70,
         ytitle:160,
-        textwidth:600,
+        textwidth:800,
         id:4,
-        title:"Battle of the Alaxxes Nebula storyline",
+        title:"Battle of the Alaxxes Nebula",
     },
     {
         x:3480,
         y:1980,
         width:720,
         height:300,
-        xtitle:360,
+        xtitle:320,
         ytitle:30,
         textwidth:400,
         id:5,
-        title:"Molech's Doom storyline",
+        title:"Molech's Doom",
     },
     {
         x:670,
@@ -5449,7 +5476,7 @@ export const horusHeresyDataZone = [
         ytitle:30,
         textwidth:550,
         id:6,
-        title:"Isstvan III Betrayal storyline",
+        title:"Isstvan III Betrayal",
     },
     {
         x:1350,
@@ -5495,9 +5522,9 @@ export const horusHeresyDataZone = [
         title:"Beta-Garmon's Great-Slaughter",
     },
     {
-        x:4170,
+        x:4160,
         y:4935,
-        width:1350,
+        width:1360,
         height:410,
         xtitle:30,
         ytitle:300,

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GiVerticalBanner , GiKnightBanner } from "react-icons/gi";
 import backgroudMaker from '../util/backgroundMaker';
 import fontColorMaker from '../util/fontColorMaker';
 import { NoPanArea } from 'react-zoomable-ui';
@@ -16,15 +17,18 @@ interface Props {
     audio:string;
     rating:string;
     link:string;
+    primary?:boolean;
 }
 /*  faction:Array<string> */
 function Book(props:Props) {
-    const { x , y , id , title , author , book , faction , pages , audio , rating , link } = props;
+    const { x , y , id , title , author , book , faction , pages , audio , rating , link, primary } = props;
     const [ isExpanded , setIsExpanded ] = useState<boolean>(false);
     const [ isGreyedOut , setIsGreyedOut ] = useState<boolean>(false);
     const greyedOutColorHex:string = "#C4C4C4";
     
     var idAsString:string = id.toString()
+    
+    const isPrimary:boolean = primary || false;
     
     const handleChange = (e:any) => {
         e.stopPropagation(); // Allows checkbox to work in a clickable div.
@@ -41,7 +45,7 @@ function Book(props:Props) {
 
     return (
         <NoPanArea>
-        <div id={idAsString} style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(0deg,${ isGreyedOut ? `${greyedOutColorHex} 0%, ${greyedOutColorHex} 100%` : backgroundMakerColor})`}} className={`w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled ${isExpanded ? "z-50" : ""}`} onClick = { e => { setIsExpanded(!isExpanded); }} >
+        <div id={idAsString} style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(0deg,${ isGreyedOut ? `${greyedOutColorHex} 0%, ${greyedOutColorHex} 100%` : backgroundMakerColor})`}} className={`w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled ${isExpanded ? "z-50" : "z-10"}`} onClick = { e => { setIsExpanded(!isExpanded); }} >
             <div className='font-semibold text-xl text-clip flex justify-between items-center pt-3 px-3'>
             { !!title && <div className='w-11/12' style={{color:`${fontColor[0]}`}}>{title}</div>}
                 <input type="checkbox" className='w-6 h-6' onClick={e => {handleChange(e);}}/>
@@ -74,6 +78,11 @@ function Book(props:Props) {
                 {book}
             </div>
             }
+            {isPrimary && 
+            <div className='absolute flex flex-row justify-evenly w-60 z-0' style={{bottom:"-32px"}}>
+                <GiKnightBanner size="2rem" color="black"/>
+                <GiVerticalBanner size="2rem" color="black"/>
+            </div>}
         </div>
         </NoPanArea>
     );
