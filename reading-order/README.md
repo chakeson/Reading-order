@@ -3,7 +3,13 @@ Add progress-bar on navbar.
 
 Add api hooking for books.tsx so it saves progress. Add localstorage support.
 
+Siege of Terra site.
+
+Zoom in out buttons.
+
 Improve text color changer for books.
+
+Fix error resizing flickering.
 
 
 # Important libraries
