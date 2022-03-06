@@ -5,7 +5,7 @@ import '../index.css';
 
 
 function NavPannel() {
-    const [ isNavExpanded , setIsNavExpanded ] = useState<boolean>(true);
+    const [ isNavExpanded , setIsNavExpanded ] = useState<boolean>(false);
   
 
     const handleClickBar = (e:any) => {

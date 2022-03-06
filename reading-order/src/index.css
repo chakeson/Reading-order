@@ -29,6 +29,7 @@ html,body {
 .map-height {
     position: relative;
     height: calc(100vh - 56px);
+    width: 100%;
 }
 
 .navButton {
