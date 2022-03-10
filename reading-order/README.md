@@ -1,21 +1,20 @@
 # TODO
-Add progress-bar on navbar.
+- Add progress-bar on navbar.
 
-Add api hooking for books.tsx so it saves progress. Add localstorage support.
+- Add api hooking for books.tsx so it saves progress.
 
-Siege of Terra site.
+- Siege of Terra page.
 
-Improve text color changer for books.
+- Improve text color changer for books.
 
-Fix error resizing flickering.
+- Fix error resizing flickering.
 
-Context effect not firing on change
+- Context effect not firing on change
 
-Checked books have font color black
+- Checked books have font color black
 
-Type useGlobalContext hook
-
-Properly type all :any
+- Properly type all :any
+    - Type useGlobalContext hook
 
 # Important libraries
 React
