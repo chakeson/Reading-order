@@ -51,7 +51,6 @@ function Book(props:Props) {
         
         //Update global reading progress array.
         var temp = readingProgress;
-        console.log(temp);
         if (e.target.checked) {
             temp[id]=1;
             setReadingProgress(temp);
@@ -67,8 +66,8 @@ function Book(props:Props) {
 
 
     var backgroundMakerColor = backgroudMaker(faction);
-    
-    var fontColor = fontColorMaker(faction, isExpanded);
+    // If the checkbox is checked all text is black, else its generated based on background
+    var fontColor = isGreyedOut ? ["#000","#000","#000","#000","#000","#000","#000"] : fontColorMaker(faction, isExpanded);
 
 
     return (

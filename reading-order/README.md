@@ -7,11 +7,7 @@
 
 - Improve text color changer for books.
 
-- Fix error resizing flickering.
-
-- Context effect not firing on change
-
-- Checked books have font color black
+- Fix error resizing flickering/arrow line up.
 
 - Properly type all :any
     - Type useGlobalContext hook
