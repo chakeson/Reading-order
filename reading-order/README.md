@@ -9,6 +9,13 @@ Improve text color changer for books.
 
 Fix error resizing flickering.
 
+Context effect not firing on change
+
+Checked books have font color black
+
+Type useGlobalContext hook
+
+Properly type all :any
 
 # Important libraries
 React
