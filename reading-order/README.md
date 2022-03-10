@@ -12,6 +12,8 @@
 - Properly type all :any
     - Type useGlobalContext hook
 
+- Write about pages content text
+
 # Important libraries
 React
 
