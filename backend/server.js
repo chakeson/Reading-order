@@ -13,7 +13,7 @@ db.once("open", ()=>console.log("Connected to database."))
 app.use(express.json())
 
 const bookRouter = require("./routes/books")
-app.use("books", bookRouter)
+app.use("/books", bookRouter)
 
 
 app.listen(3000, () => console.log("Server started."));
