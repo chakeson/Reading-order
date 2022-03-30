@@ -5,16 +5,11 @@ const bookSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    userCreatedDate: {
-        type: Date,
-        required: true,
-        default: Date.now
-    },
     horusheresy: {
-        type: Array,
+        type: String,
         required: true
     }
 })
 
 
-module.exports = mongoose.model("bookSchema", bookSchema)
+module.exports = mongoose.model("readingProgress", bookSchema)

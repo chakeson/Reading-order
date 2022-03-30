@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const book = require("../module/bookSchema")
+const book = require("../models/book")
 
 // CRUD CREATE READ UPDATE DELETE
 
