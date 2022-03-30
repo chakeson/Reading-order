@@ -1,5 +1,5 @@
-const express = require("express")
-const book = require("../models/book")
+const express = require("express");
+const book = require("../models/book");
 
 // CRUD CREATE READ UPDATE DELETE
 //      POST   PUT  PUT    None
@@ -53,9 +53,13 @@ exports.putBooks = async function(req, res) {
 
 // Read user data
 exports.getBooks = async function(req, res) {
-    var userKey = req.body.userkey;
+    var unverifiedUserKey = req.body.userkey;
+    var unverifiedBookID = req.params.book_id;
+    // TODO - Verify input
+    var verifiedUserKey = unverifiedUserKey;
+    var verifiedBookID = unverifiedBookID;
 
-    book.findById({ userkey: userKey }, function(err, books) {
+    book.findById({ userkey: verifiedUserKey, _id: verifiedBookID }, function(err, books) {
         if (err) {
             console.log(err);
             res.send(err);
