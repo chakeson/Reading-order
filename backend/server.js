@@ -1,11 +1,13 @@
 // Imports of libraries
 require("dotenv").config();
 var express = require("express");
-var bodyParser = require("body-parser"); 
+var bodyParser = require("body-parser");
+var passport = require("passport");
 var { default: mongoose } = require("mongoose");
 
 var bookRouter = require("./routes/books");
 var userRouter = require("./routes/user");
+var authRouter = require("./routes/auth");
 
 var port = process.env.PORT || 3000;
 
@@ -26,11 +28,10 @@ db.once("open", ()=>console.log("Connected to database."))
 const router = express.Router();
 
 // Books routes
-router.route("/books").post(bookRouter.postBooks).get(bookRouter.getBooks).put(bookRouter.putBooks);
+router.route("/books").post(authRouter.isAuthenticated, bookRouter.postBooks).get(authRouter.isAuthenticated, bookRouter.getBooks).put(authRouter.isAuthenticated, bookRouter.putBooks);
 
 // Users routes
-router.route("/users").post(userRouter.postUser).delete(userRouter.deleteUser);
-
+router.route("/users").post(userRouter.postUser).delete(authRouter.isAuthenticated, userRouter.deleteUser);
 
 
 // Starts the express server
