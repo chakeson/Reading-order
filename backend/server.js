@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 var { default: mongoose } = require("mongoose");
 
 var bookRouter = require("./routes/books");
+var userRouter = require("./routes/user");
 
 var port = process.env.PORT || 3000;
 
@@ -27,12 +28,10 @@ const router = express.Router();
 // Books routes
 router.route("/books").post(bookRouter.postBooks).get(bookRouter.getBooks).put(bookRouter.putBooks);
 
-/*
-// Create our Express router
-const bookRouter = require("./routes/books")
+// Users routes
+router.route("/users").post(userRouter.postUser).delete(userRouter.deleteUser);
 
-app.use("/books", bookRouter)
-*/
+
 
 // Starts the express server
 app.listen(port, () => console.log("Server started."));
