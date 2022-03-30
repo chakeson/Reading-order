@@ -10,9 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.19.2",
     "express": "^4.17.3",
-    "mongoose": "^6.2.3"
+    "mongoose": "^6.2.3",
+    "passport": "^0.5.2",
+    "passport-http": "^0.3.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
