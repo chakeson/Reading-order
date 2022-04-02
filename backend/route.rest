@@ -1,4 +1,36 @@
-GET http://localhost:3000/books
+### Create user account
+POST http://localhost:3000/api/users HTTP/1.1
+content-type: application/x-www-form-urlencoded
 
-###
-GET http://localhost:3000/books/test/123
+username=username2
+&password=password1
+
+
+### Delete user account and associated books
+DELETE http://localhost:3000/api/users HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic username2 password1
+
+
+### Test to see failure
+GET http://localhost:3000/api/users
+
+### Create users book
+POST http://localhost:3000/api/books  HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic username2 password1
+
+book={0,1,0,,0,1,1,0,1,1}
+
+
+### Update users book
+PUT http://localhost:3000/api/books HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic username1 password1
+
+book={0,0,0,,0,0,0,0,0,0}
+
+### Get users book
+GET http://localhost:3000/api/books HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic username1 password1
