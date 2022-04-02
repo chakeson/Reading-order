@@ -1,5 +1,5 @@
 const express = require("express");
-const book = require("../models/book");
+const Book = require("../models/book");
 
 // CRUD CREATE READ UPDATE DELETE
 //      POST   PUT  PUT    None
@@ -7,16 +7,18 @@ const book = require("../models/book");
 // Create books
 exports.postBooks = async function(req, res) {
     // Verify input
-    var unverifiedUserKey = req.body.userkey;
+    var unverifiedUserKey = req.user._id;
     var unverifiedBook = req.body.book;
     
     // TODO - Verify input
     var verifiedUserKey = unverifiedUserKey;
     var verifiedBook = unverifiedBook;
 
-    var book = new book({
-        userkey: unverifiedUserKey,
-        book: unverifiedBook
+    // TODO Check if book already exists
+
+    var book = new Book({
+        userkey: verifiedUserKey,
+        horusheresy: verifiedBook
     });
 
     book.save(function(err) {
@@ -33,39 +35,46 @@ exports.postBooks = async function(req, res) {
 // Update book
 exports.putBooks = async function(req, res) {
     // Verify input
-    var unverifiedUserKey = req.body.userkey;
+    var unverifiedUserKey = req.user._id;
     var unverifiedBook = req.body.book;
     
     // TODO - Verify input
     var verifiedBook = unverifiedBook;
 
-    book.findByIdAndUpdate({ userkey: userKey }, { book: verifiedBook }, function(err, books) {
+    Book.findOneAndUpdate({ userkey: unverifiedUserKey }, { horusheresy: verifiedBook }, function(err, book) {
         if (err) {
             console.log(err);
             res.send(err);
-        } 
-        else {
-            res.send("Success.");
         }
+        // Update the existing beer quantity
+        book.horusheresy = verifiedBook;
+
+        // Save the beer and check for errors
+        book.save(function(err) {
+            if (err)
+                res.send(err);
+        });
+
+        res.json(book);
     });
 };
 
 
 // Read user data
 exports.getBooks = async function(req, res) {
-    var unverifiedUserKey = req.body.userkey;
-    var unverifiedBookID = req.params.book_id;
+    var unverifiedUserKey = req.user._id;
+    //var unverifiedBookID = req.body.book_id;
     // TODO - Verify input
     var verifiedUserKey = unverifiedUserKey;
-    var verifiedBookID = unverifiedBookID;
+    //var verifiedBookID = unverifiedBookID;
 
-    book.findById({ userkey: verifiedUserKey, _id: verifiedBookID }, function(err, books) {
+    Book.find({ userkey: verifiedUserKey }, function(err, book) {
         if (err) {
             console.log(err);
             res.send(err);
         } 
         else {
-            res.send(books);
+            res.send(book);
         }
     });
 };
