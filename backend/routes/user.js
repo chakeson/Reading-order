@@ -5,10 +5,9 @@ const Books = require("../models/book");
 
 // Create a user
 exports.postUser = (req, res) => {
-    
     var univerifiedUser = req.body.username;
     var univerifiedPassword = req.body.password;
-    
+
     // TODO - Validate the input
     /* From bcrypt docs:
     Per bcrypt implementation, only the first 72 bytes of a string are used. 
@@ -21,35 +20,45 @@ exports.postUser = (req, res) => {
         username: univerifiedUser,
         password: univerifiedPassword
     });
+    
+    try {
+        user.save(function(error) {
+            if (error) {
+                console.log(error);
+                res.status(500).send(error);
+            } else {
+                res.status(200).send("Successfully created user.");
+            }
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
 
-    user.save(function(error) {
-        if (error) {
-            console.log(error);
-            res.status(500).send(error);
-        } else {
-            res.status(200).send("Successfully created user.");
-        }
-    });
 };
 
 
 exports.deleteUser = function(req, res) {
+    var unverifiedUserKey = req.user._id;
+    // TODO - Verify input
+    var verifiedUserKey = unverifiedUserKey;
+
+    var successMessage;
     //TODO fix book linking
-    Books.findByIdAndRemove({ userkey: userKey, _id: bookID }, function(err, books) {
+    Books.findOneAndRemove({ userkey: verifiedUserKey }, function(err, books) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
         } else {
-            res.status(200).send("Successfully deleted user.");
+            successMessage ="Successfully deleted books record.";
         }
     });
 
-    User.findByIdAndRemove(req.params.id, function(error) {
+    User.findByIdAndRemove(verifiedUserKey, function(error) {
         if (error) {
             console.log(error);
             res.status(500).send(error);
         } else {
-            res.status(200).send("User successfully deleted.");
+            res.status(200).send("User successfully deleted."+successMessage);
         }
     });
 };
