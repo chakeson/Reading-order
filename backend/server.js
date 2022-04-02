@@ -17,6 +17,9 @@ const app = express();
 // Use body parser
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// use the passport package in our applications
+app.use(passport.initialize());
+
 // Database connection.
 mongoose.connect(process.env.DATABASE_URL)
 const db = mongoose.connection
@@ -33,6 +36,8 @@ router.route("/books").post(authRouter.isAuthenticated, bookRouter.postBooks).ge
 // Users routes
 router.route("/users").post(userRouter.postUser).delete(authRouter.isAuthenticated, userRouter.deleteUser);
 
+// Register all our routes with /api
+app.use("/api", router)
 
 // Starts the express server
 app.listen(port, () => console.log("Server started."));
