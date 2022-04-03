@@ -16,23 +16,41 @@ exports.postUser = (req, res) => {
     It is possible for a string to contain less than 72 characters, 
     while taking up more than 72 bytes (e.g. a UTF-8 encoded string containing emojis).
     */
-    const user = new User({
-        username: univerifiedUser,
-        password: univerifiedPassword
+
+
+    
+    // Check if username is already taken if not create a new user
+    User.findOne({ username: univerifiedUser }, function(err, user) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }
+        if (user) {
+            res.status(400).send("Username already taken.");
+            return;
+        } else {
+            const user = new User({
+                username: univerifiedUser,
+                password: univerifiedPassword
+            });
+            
+            try {
+                user.save(function(error) {
+                    if (error) {
+                        console.log(error);
+                        res.status(500).send(error);
+                    } else {
+                        res.status(200).send("Successfully created user.");
+                    }
+                });
+            } catch (error) {
+                res.status(500).send(error);
+            }
+        };
+
     });
     
-    try {
-        user.save(function(error) {
-            if (error) {
-                console.log(error);
-                res.status(500).send(error);
-            } else {
-                res.status(200).send("Successfully created user.");
-            }
-        });
-    } catch (error) {
-        res.status(500).send(error);
-    }
+
 
 };
 
