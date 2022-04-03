@@ -56,22 +56,24 @@ exports.putBooks = async function(req, res) {
     var verifiedBook = unverifiedBook;
 
     Book.findOneAndUpdate({ userkey: unverifiedUserKey }, { horusheresy: verifiedBook }, function(err, book) {
-        // TODO fix so mutliple headers cant possibly be sent and crash node.
-        
         if (err) {
             console.log(err);
             res.status(500).send(err);
         }
-        // Update the existing beer quantity
-        book.horusheresy = verifiedBook;
+        else {
+            // Update the existing beer quantity
+            book.horusheresy = verifiedBook;
 
-        // Save the beer and check for errors
-        book.save(function(err) {
-            if (err)
-                res.status(500).send(err);
-        });
-
-        res.json(book);
+            // Save the beer and check for errors
+            book.save(function(err) {
+                if (err) {
+                    res.status(500).send(err);
+                }
+                else {
+                    res.status(200).json(book);
+                }
+            });
+        }
     });
 };
 
