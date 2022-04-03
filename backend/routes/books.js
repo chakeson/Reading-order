@@ -39,7 +39,7 @@ exports.postBooks = async function(req, res) {
                     res.status(500).send(err);
                 } 
                 else {
-                    res.send("Success.");
+                    res.status(201).send("Success.");
                 }
             });
         }
@@ -56,9 +56,11 @@ exports.putBooks = async function(req, res) {
     var verifiedBook = unverifiedBook;
 
     Book.findOneAndUpdate({ userkey: unverifiedUserKey }, { horusheresy: verifiedBook }, function(err, book) {
+        // TODO fix so mutliple headers cant possibly be sent and crash node.
+        
         if (err) {
             console.log(err);
-            res.send(err);
+            res.status(500).send(err);
         }
         // Update the existing beer quantity
         book.horusheresy = verifiedBook;
@@ -66,7 +68,7 @@ exports.putBooks = async function(req, res) {
         // Save the beer and check for errors
         book.save(function(err) {
             if (err)
-                res.send(err);
+                res.status(500).send(err);
         });
 
         res.json(book);
@@ -85,10 +87,10 @@ exports.getBooks = async function(req, res) {
     Book.find({ userkey: verifiedUserKey }, function(err, book) {
         if (err) {
             console.log(err);
-            res.send(err);
+            res.status(500).send(err);
         } 
         else {
-            res.send(book);
+            res.status(200).send(book);
         }
     });
 };

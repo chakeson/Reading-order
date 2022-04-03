@@ -23,7 +23,7 @@ exports.postUser = (req, res) => {
     User.findOne({ username: univerifiedUser }, function(err, user) {
         if (err) {
             console.log(err);
-            res.send(err);
+            res.status(500).send(err);
         }
         if (user) {
             res.status(400).send("Username already taken.");
