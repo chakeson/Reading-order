@@ -14,20 +14,34 @@ exports.postBooks = async function(req, res) {
     var verifiedUserKey = unverifiedUserKey;
     var verifiedBook = unverifiedBook;
 
-    // TODO Check if book already exists
-
-    var book = new Book({
-        userkey: verifiedUserKey,
-        horusheresy: verifiedBook
-    });
-
-    book.save(function(err) {
+    // Check if book already exists
+    Book.findOne({ userkey: verifiedUserKey }, function(err, bookentry) {
+        console.log(bookentry);
+        console.log(typeof bookentry);
+        // Catch look up errors
         if (err) {
             console.log(err);
-            res.send(err);
-        } 
-        else {
-            res.send("Success.");
+            res.status(500).send(err);
+        }
+        // Catch if book already exists
+        else if (bookentry) {
+            res.status(400).send("Data already created. Save instead with PUT.");
+        } else {
+            // Create a new book entry
+            var book = new Book({
+                userkey: verifiedUserKey,
+                horusheresy: verifiedBook
+            });
+        
+            book.save(function(err) {
+                if (err) {
+                    console.log(err);
+                    res.status(500).send(err);
+                } 
+                else {
+                    res.send("Success.");
+                }
+            });
         }
     });
 };
