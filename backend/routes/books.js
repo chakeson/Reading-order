@@ -2,7 +2,7 @@ const express = require("express");
 const Book = require("../models/book");
 
 // CRUD CREATE READ UPDATE DELETE
-//      POST   PUT  PUT    None
+//      POST   GET  PUT    None
 
 // Create books
 exports.postBooks = async function(req, res) {
@@ -16,9 +16,7 @@ exports.postBooks = async function(req, res) {
 
     // Check if book already exists
     Book.findOne({ userkey: verifiedUserKey }, function(err, bookentry) {
-        console.log(bookentry);
-        console.log(typeof bookentry);
-        // Catch look up errors
+        // Catch look up/db errors
         if (err) {
             console.log(err);
             res.status(500).send(err);

@@ -76,7 +76,7 @@ exports.deleteUser = function(req, res) {
             console.log(error);
             res.status(500).send(error);
         } else {
-            res.status(200).send("User successfully deleted."+successMessage);
+            res.status(200).send("User successfully deleted. "+successMessage);
         }
     });
 };
