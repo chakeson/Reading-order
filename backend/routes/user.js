@@ -5,7 +5,7 @@ const Books = require("../models/book");
 
 // Create a user
 exports.postUser = (req, res) => {
-    var univerifiedUser = req.body.username;
+    var univerifiedUser = req.body.email;
     var univerifiedPassword = req.body.password;
 
     // TODO - Validate the input
@@ -19,18 +19,18 @@ exports.postUser = (req, res) => {
 
 
     
-    // Check if username is already taken if not create a new user
-    User.findOne({ username: univerifiedUser }, function(err, user) {
+    // Check if email is already taken if not create a new user
+    User.findOne({ email: univerifiedUser }, function(err, user) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
         }
         if (user) {
-            res.status(400).send("Username already taken.");
+            res.status(400).send("Email already taken.");
             return;
         } else {
             const user = new User({
-                username: univerifiedUser,
+                email: univerifiedUser,
                 password: univerifiedPassword
             });
             

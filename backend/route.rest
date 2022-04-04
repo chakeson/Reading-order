@@ -2,7 +2,7 @@
 POST http://localhost:3000/api/users HTTP/1.1
 content-type: application/x-www-form-urlencoded
 
-username=username2
+email=username2
 &password=password1
 
 

@@ -5,11 +5,11 @@ const User = require('../models/user');
 
 // Basic passport strategy HTTP
 passport.use(new BasicStrategy(
-    function(username, password, callback) {
-        User.findOne({ username: username }, function (error, user) {
+    function(email, password, callback) {
+        User.findOne({ email: email }, function (error, user) {
             if (error) { return callback(error); }
 
-            // No user found with that username
+            // No user found with that email
             if (!user) { return callback(null, false); }
 
             // Make sure the password is correct
