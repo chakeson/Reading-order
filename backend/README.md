@@ -2,14 +2,78 @@
 
 ## TODO
 
-Write documentation for api interface
+- Write documentation for diffrent parts of the program and request flow.
 
-Write documentation for diffrent parts of the program and request flow.
-
-
+- How to start server
 
 
 
+# API documentation
+
+## Introduction
+
+API for storing and retrieving reading progress associated with a specific account. Allows for account creation and deletion.
 
 
-Written using Github Copilot
+## Endpoints
+### /users
+
+### `POST`
+This is the endpoint intended for users to register. In the body of the request you need to include the email and password. 
+This is the only endpoint that lacks authentication.
+
+The password must be at least 6 characters and no longer then 70 characters, it must contain one uppercase, one lowercase character, one number and one special character (like !"#¤%&).
+Emails are normalised and checked for validity and must be unique.
+
+Example:
+```
+POST http://localhost:3000/api/users HTTP/1.1
+content-type: application/x-www-form-urlencoded
+
+email=test@test.com
+&password=password1
+``` 
+
+### `DELETE`
+This is the endpoint intended for users to delete their account and assocated saved information, currently reading progress ony. Requst must contain basic authentication of account that is intended to be deleted.
+
+Example:
+```
+DELETE http://localhost:3000/api/users HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic test@test.com Password1!
+``` 
+
+### /books
+
+### `POST`
+This is the endpoint intended for users to saved reading progress after creating their account. In the body of the request you need to include the book paramater containing the reading progress. The data is then validated to contain only legal characters and of correct length. Requst must contain basic authentication of account.
+
+Example:
+```
+POST http://localhost:3000/api/books  HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic test@test.com Password1!
+
+book=[reading progress]
+``` 
+### `PUT`
+This is the endpoint intended for users to update reading progress. In the body of the request you need to include the book paramater containing the reading progress. The data is then validated to contain only legal characters and of correct length. Requst must contain basic authentication of account.
+
+Example:
+```
+PUT http://localhost:3000/api/books HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic test@test.com Password1!
+
+book=[reading progress]
+``` 
+### `GET`
+This is the endpoint intended for users to fetch their saved reading progress. Requst must contain basic authentication of account.
+
+Example:
+```
+GET http://localhost:3000/api/books HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic test@test.com Password1!
+``` 
