@@ -13,10 +13,6 @@ Then to start the server.
 npm start
 ```
 
-## TODO
-
-- Write documentation for diffrent parts of the program and request flow.
-
 # API documentation
 
 ## Introduction
@@ -86,3 +82,13 @@ GET http://localhost:3000/api/books HTTP/1.1
 content-type: application/x-www-form-urlencoded
 Authorization: Basic test@test.com Password1!
 ``` 
+
+# Program flow and structure
+
+The start entry file is server.js. Here we have our library imports and database connection. The library [body parser](https://github.com/expressjs/body-parser) is used to parse the body of the request. [Passport](https://www.passportjs.org/docs/) is then used as middleware to authenticate the user. [Mongoose](https://mongoosejs.com/docs/) for the mongoDB connection.
+
+The folder models contains the schema for the database. The folder routes contains the code that the diffrent routes call to. In the [auth.js](routes/auth.js) is the folder handling the authentication using passports basic http strategy. 
+
+Validation is the folder that controlls api input validation. [validation.js](validation/validation.js) is the function that processes the checks and halts the chain and sends back any failures.
+
+[routes.rest](route.rest) is the file for testing the api and degugging it. It's most easily used, using the vscode pluggin [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to test the api.
