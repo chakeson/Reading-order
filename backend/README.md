@@ -1,12 +1,21 @@
 # Backend server for storing accounts and their reading progress.
 
+## Installation
+Once you have cloned the repository you can install the dependencies with npm.
+
+```
+npm install
+```
+Then open the .env file and fill in the correct values for the database and port. For format look at [.env.example](.env.example).
+
+Then to start the server.
+```
+npm start
+```
+
 ## TODO
 
 - Write documentation for diffrent parts of the program and request flow.
-
-- How to start server
-
-
 
 # API documentation
 
