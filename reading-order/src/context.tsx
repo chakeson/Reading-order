@@ -17,7 +17,7 @@ const storageAccess = () => {
     var lsReadingProgress:number[] = Array.apply(null, Array(300)).map(function (x) { return 0; });
     if (localStorage.getItem("ReadingProgress")){
         let lsTemp:string = localStorage.getItem("ReadingProgress") || "";
-        lsReadingProgress = JSON.parse(lsTemp)
+        lsReadingProgress = JSON.parse(lsTemp);
     }
     return lsReadingProgress;
 }
