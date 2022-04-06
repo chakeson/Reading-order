@@ -9,6 +9,11 @@ var bookRouter = require("./routes/books");
 var userRouter = require("./routes/user");
 var authRouter = require("./routes/auth");
 
+const { validateUsersPost } = require("./validation/users");
+const { validateBooksData } = require("./validation/books");
+const { validator } = require("./validation/validation");
+
+
 var port = process.env.PORT || 3000;
 
 // Start/Create express server
@@ -31,10 +36,15 @@ db.once("open", ()=>console.log("Connected to database."))
 const router = express.Router();
 
 // Books routes
-router.route("/books").post(authRouter.isAuthenticated, bookRouter.postBooks).get(authRouter.isAuthenticated, bookRouter.getBooks).put(authRouter.isAuthenticated, bookRouter.putBooks);
+router.route("/books")
+    .post(validateBooksData, validator, authRouter.isAuthenticated, bookRouter.postBooks)
+    .get(authRouter.isAuthenticated, bookRouter.getBooks)
+    .put(validateBooksData, validator, authRouter.isAuthenticated, bookRouter.putBooks);
 
 // Users routes
-router.route("/users").post(userRouter.postUser).delete(authRouter.isAuthenticated, userRouter.deleteUser);
+router.route("/users")
+    .post(validateUsersPost, validator, userRouter.postUser)
+    .delete(authRouter.isAuthenticated, userRouter.deleteUser);
 
 // Register all our routes with /api
 app.use("/api", router)
