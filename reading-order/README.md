@@ -1,7 +1,15 @@
 # TODO
-- Add progress-bar on navbar.
+- Add login page
+
+- Add login api hooking
+
+- Add account settings.
+
+- Way to exfiltrate data for requests.
 
 - Add api hooking for books.tsx so it saves progress.
+
+- Add progress-bar on navbar.
 
 - Siege of Terra page.
 
