@@ -2,14 +2,14 @@
 POST http://localhost:3000/api/users HTTP/1.1
 content-type: application/x-www-form-urlencoded
 
-email=username2
+email=test@test.com
 &password=password1
 
 
 ### Delete user account and associated books
 DELETE http://localhost:3000/api/users HTTP/1.1
 content-type: application/x-www-form-urlencoded
-Authorization: Basic username2 password1
+Authorization: Basic test@test.com password1
 
 
 ### Test to see failure
@@ -18,19 +18,19 @@ GET http://localhost:3000/api/users
 ### Create users book
 POST http://localhost:3000/api/books  HTTP/1.1
 content-type: application/x-www-form-urlencoded
-Authorization: Basic username2 password1
+Authorization: Basic test@test.com password1
 
-book={0,1,0,,0,1,1,0,1,1}
+book=[0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 
 ### Update users book
 PUT http://localhost:3000/api/books HTTP/1.1
 content-type: application/x-www-form-urlencoded
-Authorization: Basic username1 password1
+Authorization: Basic test@test.com password1
 
-book={0,0,0,,0,0,0,0,0,0}
+book=[0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 ### Get users book
 GET http://localhost:3000/api/books HTTP/1.1
 content-type: application/x-www-form-urlencoded
-Authorization: Basic username1 password1
+Authorization: Basic test@test.com password1
