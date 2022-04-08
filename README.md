@@ -1,7 +1,8 @@
 # Reading-order
 Reading order guide for horus heresy. Website built with react.
 
-
+## Backend
+Backend build using mongoDB and express. More information on the backend can be found in the [backend README](backend/README.md).
 
 
 # Excluded Books:
