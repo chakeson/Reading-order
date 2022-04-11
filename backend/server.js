@@ -31,6 +31,13 @@ const db = mongoose.connection
 db.on("error", (error)=>console.error(error))
 db.once("open", ()=>console.log("Connected to database."))
 
+// Set up cors
+app.use(function(req, res, callback) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    callback();
+});
+
 
 // Create our Express router
 const router = express.Router();
