@@ -1,5 +1,9 @@
 # Backend server for storing accounts and their reading progress.
 
+# TODO
+
+Add path for login to validate credentials.
+
 ## Installation
 Once you have cloned the repository you can install the dependencies with npm.
 
