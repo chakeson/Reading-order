@@ -22,6 +22,11 @@
 
 - Write about pages content text
 
+# Start and set up
+
+Look at [.env.example](.env.example) for the template for your .env file in the same directory.
+
+
 # Important libraries
 React
 

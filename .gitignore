@@ -2,3 +2,4 @@
 data collection/faction.png
 backend/node_modules
 backend/.env
+reading-order/.env
