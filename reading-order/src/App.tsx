@@ -7,7 +7,8 @@ import HorusHerasy from './pages/horusHeresy/horusHeresy';
 import SiegeOfTerra from './pages/siegeOfTerra/siegeOfTerra';
 import About from './pages/about/about';
 import Error from './pages/error/error';
-
+import Login from './pages/login/login';
+import Register from './pages/register/register';
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
 				<Route path="/horusheresy" element={<HorusHerasy />} />
 				<Route path="/siegeofterra" element={<SiegeOfTerra />} />
 				<Route path="/about" element={<About />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
 				<Route path="*" element={<Error />} />
 			</Routes>
 			</div>

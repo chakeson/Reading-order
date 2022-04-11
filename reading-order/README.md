@@ -1,13 +1,14 @@
 # TODO
-- Add login page
 
-- Add login api hooking
+- Fix login api target api to verification
 
 - Add account settings.
 
 - Way to exfiltrate data for requests.
 
 - Add api hooking for books.tsx so it saves progress.
+
+- Fix Login and Sign up and similar routing. Consider modal instad of page.
 
 - Add progress-bar on navbar.
 

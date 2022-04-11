@@ -27,9 +27,10 @@ const storageAccess = () => {
 
 const AppProvider: React.FC = ({ children }) => {
     const [readingProgress, setReadingProgress] = useState<number[]>(storageAccess());
+    const [auth, setAuth] = useState<object>({}); // {username:string, password:string}
 
     return (
-        <AppContext.Provider value={{ readingProgress , setReadingProgress }}>
+        <AppContext.Provider value={{ readingProgress , setReadingProgress , auth, setAuth }}>
             {children}
         </AppContext.Provider>
     )
