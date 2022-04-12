@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 // Login page
 
+// TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
+// TODO write the css for the login page
 
 const Login = () => {
 
@@ -63,10 +66,10 @@ const Login = () => {
     };
 
     return (
-        <div onSubmit={handleSubmit} className='flex flex-col justify-center items-center h-32'>
+        <div className='flex flex-col justify-center items-center'>
             <h1 className='text-4xl'>Login</h1>
             <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `block text-2xl text-red-800 bg-white` : `hidden`}`}>{errorMessage}</p>
-            <form>
+            <form onSubmit={handleSubmit} className='flex flex-col'>
                 <label htmlFor="email">
                     Email:
                     <input type="text" id="email" autoComplete="on" required ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
@@ -75,9 +78,9 @@ const Login = () => {
                     Password:
                     <input type="password" id="password" autoComplete="on" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
                 </label>
-                <button>Sign In</button>
+                <button className="">Sign In</button>
             </form>
-            <p>Don't have an account? {/*TODO <Link to="/register">Register</Link>*/}</p>
+            <p>Don't have an account? <Link to="/register">Register.</Link></p>
         </div>
     );
 }
