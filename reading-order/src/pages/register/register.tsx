@@ -5,12 +5,16 @@ import { useGlobalContext } from '../../context';
 
 // TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
 // TODO write the css for the register page
+// TODO when fields dont pass validation add red border to the field
+// TODO deal with server answers
 
 const emailRegex = /.+@.+\..+/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!"#$%&'()*+,-./:;<=>?@[}]\^_`{|}~]).{6,70}$/;
 
 const Register = () => {
 
+    const { auth, setAuth } = useGlobalContext();
+    
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
 
@@ -58,6 +62,53 @@ const Register = () => {
     const handleSubmit = async (e: any) => {  // e is the event
         e.preventDefault();
         setErrorMessage("");
+
+        // Double check if email and password pass regex validation.
+        if ( (!emailRegex.test(email)) || (!passwordRegex.test(password)) ) {
+            setErrorMessage("Invalid email or password");
+            return;
+        }
+
+
+        try {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                },
+                body: new URLSearchParams({
+                    'email': email,
+                    'password': password
+                })
+            });
+
+            const message = await response?.text();
+            console.log(message);
+            console.log(await response.ok);
+
+            if (response.ok) {
+                setAuth({ "email":email, "password":password });
+                
+                // Clear input data since the user is now registered
+                setEmail('');
+                setPassword('');
+                setMatchPassword('');
+
+                setSuccess(true);
+            } else {
+                setErrorMessage(message);
+                errorRef.current?.focus();
+            }
+        } catch (error) {
+            let errorText:string = "No Server Response. Check connection.";
+            
+            if (error instanceof TypeError) {
+                errorText = error?.message;
+            }
+            setErrorMessage(errorText); 
+            errorRef.current?.focus();
+        }
+
     };
 
 
@@ -65,7 +116,7 @@ const Register = () => {
     return (
         <div className='flex flex-col justify-center items-center'>
             <h1 className='text-4xl'>Register</h1>
-            <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `block text-2xl text-red-800 bg-white` : `hidden`}`}>{errorMessage}</p>
+            <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `text-2xl text-red-800 bg-white` : `hidden`}`}>{errorMessage}</p>
             
             <form onSubmit={handleSubmit} className='flex flex-col'>
                 <label htmlFor="email" className='block'>
@@ -77,21 +128,21 @@ const Register = () => {
                 <label htmlFor="password" className='block'>
                     Password:
                 </label>
-                <input id="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} />
+                <input id="password" type="password" required value={password} aria-invalid={passwordValidated?"false":"true"} arida-describedby="password" onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} />
                 <p className={`${ !passwordValidated&&passwordFocus ? `text-1xl text-red-800 bg-white` : `hidden`}`}>Passwords must contain one uppercase and lowercase letter. One number and one special character. Atleast 6 characters long and max 70.</p>
                 
                 <label htmlFor="matchPassword" className='block'>
                     Confirm Password:
                 </label>
-                <input id="matchPassword" type="password" required value={matchPassword} onChange={(e) => setMatchPassword(e.target.value)} onFocus={() => setMatchPasswordFocus(true)} onBlur={() => setMatchPasswordFocus(false)} />
+                <input id="matchPassword" type="password" required aria-invalid={validPasswordMatch?"false":"true"} arida-describedby="Password matching" value={matchPassword} onChange={(e) => setMatchPassword(e.target.value)} onFocus={() => setMatchPasswordFocus(true)} onBlur={() => setMatchPasswordFocus(false)} />
                 
                 <p className={`${ (password!=="" && matchPassword!=="") &&!validPasswordMatch ? `text-1xl text-red-800 bg-white` : `hidden`}`}>Passwords must match.</p>
                 
-                <button className="">Register</button>
+                <button className="" disabled={!emailValidated || !passwordValidated || !validPasswordMatch}>Register</button>
 
-                <p className='text-center'>Already have an account? <Link to='/login'>Login page</Link></p>
             </form>
 
+            <p className='text-center'>Already have an account? <Link to='/login'>Login page</Link></p>
         </div>
     );
 }
