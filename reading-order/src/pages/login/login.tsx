@@ -48,9 +48,15 @@ const Login = () => {
 
             if (response.ok) {
                 setAuth({ "email":email, "password":password });
+                
+                // Clear input data since the user is now signed in
+                setEmail('');
+                setPassword('');
+
                 setSuccess(true);
             } else {
                 setErrorMessage(message);
+                errorRef.current?.focus();
             }
         } catch (error) {
             let errorText:string = "No Server Response. Check connection.";
