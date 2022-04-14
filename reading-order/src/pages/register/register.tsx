@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
+import { emailRegex , passwordRegex } from '../../util/regex';
 // Registering page
 
 // TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
@@ -8,9 +9,6 @@ import { useGlobalContext } from '../../context';
 // TODO when fields dont pass validation add red border to the field
 // TODO deal with server answers
 
-const emailRegex = /.+@.+\..+/;
-// eslint-disable-next-line no-useless-escape
-const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!"#$%&'()*+,-./:;<=>?@[}\]\^_`{|}~]).{6,70}$/;
 
 const Register = () => {
 
@@ -123,19 +121,19 @@ const Register = () => {
                 <label htmlFor="email" className='block'>
                     Email:
                 </label>
-                <input className={`${ emailValidated ? `border-solid border-red-800` : ``}`} ref={emailRef} id="email" type="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} arida-describedby="email" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setEmailFocus(true)} onBlur={() => setEmailFocus(false)} />
+                <input className={`${ (emailValidated || email==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} ref={emailRef} id="email" type="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} arida-describedby="email" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setEmailFocus(true)} onBlur={() => setEmailFocus(false)} />
                 <p className={`${ email && emailFocus && !emailValidated ? `text-1xl text-red-800 bg-white` : `hidden`}`}>Please enter a valid email address.</p>
                 
                 <label htmlFor="password" className='block'>
                     Password:
                 </label>
-                <input id="password" type="password" required value={password} aria-invalid={passwordValidated?"false":"true"} arida-describedby="password" onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} />
+                <input className={`${ (passwordValidated || password==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} id="password" type="password" required value={password} aria-invalid={passwordValidated?"false":"true"} arida-describedby="password" onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} />
                 <p className={`${ !passwordValidated&&passwordFocus ? `text-1xl text-red-800 bg-white` : `hidden`}`}>Passwords must contain one uppercase and lowercase letter. One number and one special character. Atleast 6 characters long and max 70.</p>
                 
                 <label htmlFor="matchPassword" className='block'>
                     Confirm Password:
                 </label>
-                <input id="matchPassword" type="password" required aria-invalid={validPasswordMatch?"false":"true"} arida-describedby="Password matching" value={matchPassword} onChange={(e) => setMatchPassword(e.target.value)} onFocus={() => setMatchPasswordFocus(true)} onBlur={() => setMatchPasswordFocus(false)} />
+                <input className={`${ (validPasswordMatch || matchPassword==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} id="matchPassword" type="password" required aria-invalid={validPasswordMatch?"false":"true"} arida-describedby="Password matching" value={matchPassword} onChange={(e) => setMatchPassword(e.target.value)} onFocus={() => setMatchPasswordFocus(true)} onBlur={() => setMatchPasswordFocus(false)} />
                 
                 <p className={`${ (password!=="" && matchPassword!=="") &&!validPasswordMatch ? `text-1xl text-red-800 bg-white` : `hidden`}`}>Passwords must match.</p>
                 
@@ -143,7 +141,7 @@ const Register = () => {
 
             </form>
 
-            <p className='text-center'>Already have an account? <Link to='/login'>Login page</Link></p>
+            <p className='text-center'>Already have an account? <Link to='/login' className='underline'>Login page</Link></p>
         </div>
     );
 }
