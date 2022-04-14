@@ -9,7 +9,8 @@ import { useGlobalContext } from '../../context';
 // TODO deal with server answers
 
 const emailRegex = /.+@.+\..+/;
-const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!"#$%&'()*+,-./:;<=>?@[}]\^_`{|}~]).{6,70}$/;
+// eslint-disable-next-line no-useless-escape
+const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!"#$%&'()*+,-./:;<=>?@[}\]\^_`{|}~]).{6,70}$/;
 
 const Register = () => {
 
