@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
+import { emailRegex } from '../../util/regex';
 // Login page
 
 // TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
@@ -13,11 +14,11 @@ const Login = () => {
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
-    const [success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState<boolean>(false);
 
     useEffect(() => {
         emailRef?.current?.focus();
@@ -78,7 +79,7 @@ const Login = () => {
             <form onSubmit={handleSubmit} className='flex flex-col'>
                 <label htmlFor="email">
                     Email:
-                    <input type="text" id="email" autoComplete="on" required ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+                    <input className={`${ (email==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} type="text" id="email" autoComplete="on" required ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
                 </label>
                 <label htmlFor="password">
                     Password:
