@@ -15,6 +15,8 @@ const Login = () => {
     const errorRef = useRef<any>();
 
     const [email, setEmail] = useState<string>('');
+    const [emailValidated, setEmailValidated] = useState<boolean>(false);
+    
     const [password, setPassword] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -23,6 +25,13 @@ const Login = () => {
     useEffect(() => {
         emailRef?.current?.focus();
     }, []);
+
+    useEffect(() => {
+        var emailValid = emailRegex.test(email);
+        console.log(email);
+        console.log(emailValid);
+        setEmailValidated(emailValid);
+    }, [email]);
 
     useEffect(() => {
         setErrorMessage("");
@@ -79,11 +88,11 @@ const Login = () => {
             <form onSubmit={handleSubmit} className='flex flex-col'>
                 <label htmlFor="email">
                     Email:
-                    <input className={`${ (email==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} type="text" id="email" autoComplete="on" required ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+                    <input className={`${ (emailValidated || email==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} type="text" id="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
                 </label>
                 <label htmlFor="password">
                     Password:
-                    <input type="password" id="password" autoComplete="on" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+                    <input type="password" id="password" autoComplete="off" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
                 </label>
                 <button className="">Sign In</button>
             </form>
