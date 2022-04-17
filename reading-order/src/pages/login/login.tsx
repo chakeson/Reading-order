@@ -6,6 +6,7 @@ import { emailRegex } from '../../util/regex';
 
 // TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
 // TODO write the css for the login page
+// TODO deal with server answers
 
 const Login = () => {
 
@@ -40,6 +41,15 @@ const Login = () => {
     const handleSubmit = async (e: any) => {  // e is the event
         e.preventDefault();
         setErrorMessage("");
+
+        // Double check if email and password pass regex validation.
+        if ( !emailRegex.test(email) ) {
+            setErrorMessage("Invalid email.");
+            setEmailValidated(false);
+            return;
+        }
+
+
         try { // TODO fix login path
             const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`, {
                 method: 'POST',
@@ -92,7 +102,7 @@ const Login = () => {
                 </label>
                 <label htmlFor="password">
                     Password:
-                    <input type="password" id="password" autoComplete="off" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+                    <input className='border-2 border-solid border-black' type="password" id="password" autoComplete="off" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
                 </label>
                 <button className="">Sign In</button>
             </form>
