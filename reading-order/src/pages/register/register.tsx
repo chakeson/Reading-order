@@ -6,8 +6,6 @@ import { emailRegex , passwordRegex } from '../../util/regex';
 
 // TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
 // TODO write the css for the register page
-// TODO when fields dont pass validation add red border to the field
-// TODO deal with server answers
 
 
 const Register = () => {
@@ -63,8 +61,14 @@ const Register = () => {
         setErrorMessage("");
 
         // Double check if email and password pass regex validation.
-        if ( (!emailRegex.test(email)) || (!passwordRegex.test(password)) ) {
-            setErrorMessage("Invalid email or password");
+        if ( !emailRegex.test(email) ) {
+            setErrorMessage("Invalid email.");
+            setEmailValidated(false);
+            return;
+        }
+        if ( !passwordRegex.test(password) ) {
+            setErrorMessage("Invalid password.");
+            setPasswordValidated(false);
             return;
         }
 
@@ -95,7 +99,26 @@ const Register = () => {
 
                 setSuccess(true);
             } else {
-                setErrorMessage(message);
+                if (message === "Email already taken.") {
+                    setEmailValidated(false);
+                    setErrorMessage(message);
+                }
+                else if (message === '{"success":false,"message":"Invalid email."}') {
+                    setEmailValidated(false);
+                    setErrorMessage("Invalid email.");
+                }
+                else if (message === '{"success":false,"message":"Password must be 6 to 70 characters long. It must contain at least one lowercase letter, one uppercase letter, one number and one special character."}') {
+                    setPasswordValidated(false);
+                    setErrorMessage(message);
+                }
+                else if (message === '{"success":false,"message":"Password must be 6 to 70 characters long!"}') {
+                    setPasswordValidated(false);
+                    setErrorMessage(message);
+                }
+                else {
+                    setErrorMessage(message);
+                }
+
                 errorRef.current?.focus();
             }
         } catch (error) {
