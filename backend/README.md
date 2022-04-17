@@ -4,6 +4,8 @@
 
 Add path for login to validate credentials.
 
+Add a put path for users to change their password.
+
 ## Installation
 Once you have cloned the repository you can install the dependencies with npm.
 

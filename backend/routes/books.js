@@ -59,10 +59,10 @@ exports.putBooks = async function(req, res) {
             res.status(500).send(err);
         }
         else {
-            // Update the existing beer quantity
+            // Update the book progress
             book.horusheresy = verifiedBook;
 
-            // Save the beer and check for errors
+            // Save the book progress and check for errors
             book.save(function(err) {
                 if (err) {
                     res.status(500).send(err);
