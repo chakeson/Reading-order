@@ -1,5 +1,6 @@
 // Import express
 const express = require("express");
+var bcrypt = require("bcrypt-nodejs");
 const User = require("../models/user");
 const Books = require("../models/book");
 
@@ -53,6 +54,32 @@ exports.postUser = (req, res) => {
 
 
 };
+
+
+// Update password
+exports.putUser = (req, res) => {
+    var userKey = req.user._id;
+    var newPassword = req.body.password;
+
+    User.findOne({ _id: userKey }, function(err, user) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            user.password = newPassword;
+
+            user.save(function(error) {
+                if (error) {
+                    console.log(error);
+                    res.status(500).send(error);
+                } else {
+                    res.status(200).send("Successfully updated password.");
+                }
+            });
+        }
+    });
+};
+
 
 
 exports.deleteUser = function(req, res) {

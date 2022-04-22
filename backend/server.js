@@ -9,7 +9,7 @@ var bookRouter = require("./routes/books");
 var userRouter = require("./routes/user");
 var authRouter = require("./routes/auth");
 
-const { validateUsersPost } = require("./validation/users");
+const { validateUsersPost , validateUsersPut } = require("./validation/users");
 const { validateBooksData } = require("./validation/books");
 const { validator } = require("./validation/validation");
 
@@ -51,6 +51,7 @@ router.route("/books")
 // Users routes
 router.route("/users")
     .post(validateUsersPost, validator, userRouter.postUser)
+    .put(validateUsersPut, validator, authRouter.isAuthenticated, userRouter.putUser)
     .delete(authRouter.isAuthenticated, userRouter.deleteUser);
 
 // Register all our routes with /api
