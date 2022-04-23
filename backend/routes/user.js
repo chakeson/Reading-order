@@ -6,6 +6,7 @@ const Books = require("../models/book");
 
 // Post - Create user
 // Put - Update password
+// Get - Check if credentails are correct.
 // Delete - Delete user and associated books.
 
 
@@ -79,7 +80,10 @@ exports.putUser = (req, res) => {
     });
 };
 
-
+exports.getUser = function(req, res) {
+    // Authentiaction should have been done before this in.
+    res.status(201).send("Valid credentails.");
+}
 
 exports.deleteUser = function(req, res) {
     var inputUserKey = req.user._id;

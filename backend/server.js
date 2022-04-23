@@ -52,6 +52,7 @@ router.route("/books")
 router.route("/users")
     .post(validateUsersPost, validator, userRouter.postUser)
     .put(validateUsersPut, validator, authRouter.isAuthenticated, userRouter.putUser)
+    .get(authRouter.isAuthenticated, userRouter.getUser)
     .delete(authRouter.isAuthenticated, userRouter.deleteUser);
 
 // Register all our routes with /api
