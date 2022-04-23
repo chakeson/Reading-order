@@ -3,19 +3,15 @@ const Book = require("../models/book");
 
 // CRUD CREATE READ UPDATE DELETE
 //      POST   GET  PUT    None
+// Deleted via user deletion
 
 // Create books
 exports.postBooks = async function(req, res) {
-    // Verify input
-    var unverifiedUserKey = req.user._id;
-    var unverifiedBook = req.body.book;
-    
-    // TODO - Verify input
-    var verifiedUserKey = unverifiedUserKey;
-    var verifiedBook = unverifiedBook;
+    var inputUserKey = req.user._id;
+    var inputBookData = req.body.book;
 
     // Check if book already exists
-    Book.findOne({ userkey: verifiedUserKey }, function(err, bookentry) {
+    Book.findOne({ userkey: inputUserKey }, function(err, bookentry) {
         // Catch look up/db errors
         if (err) {
             console.log(err);
@@ -27,8 +23,8 @@ exports.postBooks = async function(req, res) {
         } else {
             // Create a new book entry
             var book = new Book({
-                userkey: verifiedUserKey,
-                horusheresy: verifiedBook
+                userkey: inputUserKey,
+                horusheresy: inputBookData
             });
         
             book.save(function(err) {
@@ -46,21 +42,17 @@ exports.postBooks = async function(req, res) {
 
 // Update book
 exports.putBooks = async function(req, res) {
-    // Verify input
-    var unverifiedUserKey = req.user._id;
-    var unverifiedBook = req.body.book;
-    
-    // TODO - Verify input
-    var verifiedBook = unverifiedBook;
+    var inputUserKey = req.user._id;
+    var inputBookData = req.body.book;
 
-    Book.findOneAndUpdate({ userkey: unverifiedUserKey }, { horusheresy: verifiedBook }, function(err, book) {
+    Book.findOneAndUpdate({ userkey: inputUserKey }, { horusheresy: inputBookData }, function(err, book) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
         }
         else {
             // Update the book progress
-            book.horusheresy = verifiedBook;
+            book.horusheresy = inputBookData;
 
             // Save the book progress and check for errors
             book.save(function(err) {
@@ -78,13 +70,9 @@ exports.putBooks = async function(req, res) {
 
 // Read user data
 exports.getBooks = async function(req, res) {
-    var unverifiedUserKey = req.user._id;
-    //var unverifiedBookID = req.body.book_id;
-    // TODO - Verify input
-    var verifiedUserKey = unverifiedUserKey;
-    //var verifiedBookID = unverifiedBookID;
+    var inputUserKey = req.user._id;
 
-    Book.find({ userkey: verifiedUserKey }, function(err, book) {
+    Book.find({ userkey: inputUserKey }, function(err, book) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
