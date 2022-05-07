@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import { emailRegex , passwordRegex } from '../../util/regex';
 // Registering page
@@ -30,7 +30,9 @@ const Register = () => {
 
     const [errorMessage, setErrorMessage] = useState<string>('');
 
-    const [success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState<boolean>(false);
+
+    const navigate = useNavigate();
 
     // Set focus on the email input when the page loads
     useEffect(() => {
@@ -39,15 +41,11 @@ const Register = () => {
 
     useEffect(() => {
         var emailValid = emailRegex.test(email);
-        console.log(email);
-        console.log(emailValid);
         setEmailValidated(emailValid);
     }, [email]);
 
     useEffect(() => {
         var passwordValid = passwordRegex.test(password);
-        console.log(password);
-        console.log(passwordValid);
         setPasswordValidated(passwordValid);
         setValidPasswordMatch(password === matchPassword);
     }, [password, matchPassword]);
@@ -77,6 +75,10 @@ const Register = () => {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`, {
                 method: 'POST',
                 headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    "Access-Control-Allow-Credentials": "true",
+                    'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
+                    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT,HEAD',
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                 },
                 body: new URLSearchParams({
@@ -86,18 +88,17 @@ const Register = () => {
             });
 
             const message = await response?.text();
-            console.log(message);
-            console.log(await response.ok);
-
             if (response.ok) {
                 setAuth({ "email":email, "password":password });
-                
+                setSuccess(true);
+
                 // Clear input data since the user is now registered
                 setEmail('');
                 setPassword('');
                 setMatchPassword('');
+                // Change the page after registration
+                navigate('/');
 
-                setSuccess(true);
             } else {
                 if (message === "Email already taken.") {
                     setEmailValidated(false);
@@ -130,9 +131,7 @@ const Register = () => {
             setErrorMessage(errorText); 
             errorRef.current?.focus();
         }
-
     };
-
 
 
     return (

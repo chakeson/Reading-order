@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import { emailRegex } from '../../util/regex';
 // Login page
@@ -23,14 +23,14 @@ const Login = () => {
 
     const [success, setSuccess] = useState<boolean>(false);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         emailRef?.current?.focus();
     }, []);
 
     useEffect(() => {
         var emailValid = emailRegex.test(email);
-        console.log(email);
-        console.log(emailValid);
         setEmailValidated(emailValid);
     }, [email]);
 
@@ -49,44 +49,42 @@ const Login = () => {
             return;
         }
 
-
         try { // TODO fix login path
             const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`, {
-                method: 'POST',
+                method: 'GET',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    'Access-Control-Allow-Origin': '*',
+                    "Access-Control-Allow-Credentials": "true",
+                    'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
+                    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT,HEAD',
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    'Authorization': `Basic ${btoa((email +":"+ password))}`
                 },
-                body: new URLSearchParams({
-                    'email': email,
-                    'password': password
-                })
+                credentials: 'include'
             });
 
             const message = await response?.text();
-            console.log(message);
-            console.log(await response.ok);
-
             if (response.ok) {
-                setAuth({ "email":email, "password":password });
-                
+                if (message === "Valid credentails.") {
+                    setAuth({ "email":email, "password":password });
+                    // Change the page after registration
+                    navigate('/');
+                }
                 // Clear input data since the user is now signed in
                 setEmail('');
                 setPassword('');
-
                 setSuccess(true);
             } else {
                 setErrorMessage(message);
                 errorRef.current?.focus();
             }
-        } catch (error) {
+        } catch (error) {     
             let errorText:string = "No Server Response. Check connection.";
             
             if (error instanceof TypeError) {
                 errorText = error?.message;
             }
             setErrorMessage(errorText); 
-            //setErrorMessage(error?.message);
-            //console.log(errorText);
             errorRef.current?.focus();
         }
     };
@@ -98,12 +96,14 @@ const Login = () => {
             <form onSubmit={handleSubmit} className='flex flex-col'>
                 <label htmlFor="email">
                     Email:
-                    <input className={`${ (emailValidated || email==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} type="text" id="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
                 </label>
+                <input className={`${ (emailValidated || email==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} type="text" id="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+                
                 <label htmlFor="password">
                     Password:
-                    <input className='border-2 border-solid border-black' type="password" id="password" autoComplete="off" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
                 </label>
+                <input className='border-2 border-solid border-black' type="password" id="password" autoComplete="off" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+                
                 <button className="">Sign In</button>
             </form>
             <p>Don't have an account? <Link to="/register">Register.</Link></p>
