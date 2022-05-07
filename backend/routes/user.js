@@ -82,7 +82,7 @@ exports.putUser = (req, res) => {
 
 exports.getUser = function(req, res) {
     // Authentiaction should have been done before this in.
-    res.status(201).send("Valid credentails.");
+    res.status(200).send("Valid credentails.");
 }
 
 exports.deleteUser = function(req, res) {

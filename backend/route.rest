@@ -17,6 +17,11 @@ DELETE http://localhost:3100/api/users HTTP/1.1
 content-type: application/x-www-form-urlencoded
 Authorization: Basic test@test.com Password1!
 
+### Test user verification path 
+GET http://localhost:3100/api/users HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic test@test.com Password1!
+
 
 ### Test to see failure
 GET http://localhost:3100/api/users
