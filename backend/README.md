@@ -2,7 +2,6 @@
 
 # TODO
 
-Add path for login to validate credentials.
 
 ## Installation
 Once you have cloned the repository you can install the dependencies with npm.
@@ -42,6 +41,26 @@ content-type: application/x-www-form-urlencoded
 email=test@test.com
 &password=password1
 ``` 
+
+### `PUT`
+This is the endpoint intended for users to update their password. In the body of the request you need to include the new password. Account selected by authentication.
+
+```
+PUT http://localhost:3000/api/users HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic test@test.com Password1!
+
+password=Password2!
+```
+
+### `GET`
+This endpoint is used to validate the user's credentials. It is intended for the login process.
+
+```
+GET http://localhost:3100/api/users HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic test@test.com Password1!
+```
 
 ### `DELETE`
 This is the endpoint intended for users to delete their account and assocated saved information, currently reading progress ony. Requst must contain basic authentication of account that is intended to be deleted.
