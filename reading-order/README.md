@@ -18,6 +18,8 @@
 
 - Fix error resizing flickering/arrow line up.
 
+- Add lazy loading of book data to reduce bundle size.
+
 - Properly type all :any
     - Type useGlobalContext hook
 
