@@ -51,8 +51,16 @@ const AppProvider: React.FC = ({ children }) => {
         console.log("testFunction");
     }
 
+    const handleLogout = () => {
+        setAuth({"email":"", "password":""});
+        setIsSignedIn(false);
+        localStorage.removeItem('Login');
+        
+        // Stop server saving with PUT requests.
+    }
+
     return (
-        <AppContext.Provider value={{ readingProgress , setReadingProgress, saveReadingProgress , auth, setAuth, saveLogin , isSignedIn , setIsSignedIn }}>
+        <AppContext.Provider value={{ readingProgress , setReadingProgress, saveReadingProgress , auth, setAuth, saveLogin , isSignedIn , setIsSignedIn , handleLogout}}>
             {children}
         </AppContext.Provider>
     )
