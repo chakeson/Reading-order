@@ -10,7 +10,7 @@ import { emailRegex } from '../../util/regex';
 
 const Login = () => {
 
-    const { setAuth } = useGlobalContext();
+    const { setAuth , setIsSignedIn , saveLogin } = useGlobalContext();
 
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
@@ -64,7 +64,11 @@ const Login = () => {
             const message = await response?.text();
             if (response.ok) {
                 if (message === "Valid credentails.") {
+                    // Update global state for login and then call to sava it to local storage
                     await setAuth({ "email":email, "password":password });
+                    await saveLogin();
+                    await setIsSignedIn(true);
+                    
                     // Clear input data since the user is now signed in
                     await setEmail('');
                     await setPassword('');

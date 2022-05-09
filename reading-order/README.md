@@ -8,8 +8,6 @@
 
 - Add api hooking for books.tsx so it saves progress.
 
-- Fix Login and Sign up and similar routing. Consider modal instad of page.
-
 - Add progress-bar on navbar.
 
 - Siege of Terra page.
@@ -19,6 +17,8 @@
 - Fix error resizing flickering/arrow line up.
 
 - Add lazy loading of book data to reduce bundle size.
+
+- Fix inital POST request or change backend.
 
 - Properly type all :any
     - Type useGlobalContext hook

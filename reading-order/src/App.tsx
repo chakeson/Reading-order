@@ -10,8 +10,12 @@ import Error from './pages/error/error';
 import Login from './pages/login/login';
 import Register from './pages/register/register';
 import Account from './pages/account/account';
+import { useGlobalContext } from './context';
+
 
 function App() {
+	const { isSignedIn } = useGlobalContext();
+
 	return (
 
         <BrowserRouter>
@@ -22,9 +26,9 @@ function App() {
 				<Route path="/horusheresy" element={<HorusHerasy />} />
 				<Route path="/siegeofterra" element={<SiegeOfTerra />} />
 				<Route path="/about" element={<About />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/register" element={<Register />} />
-				<Route path="/account" element={<Account />} />
+				{isSignedIn ? <Route path="/login" element={<Account />} /> : <Route path="/login" element={<Login />} />}
+				{isSignedIn ? <Route path="/register" element={<Account />} /> :<Route path="/register" element={<Register />} />}
+				{isSignedIn ? <Route path="/account" element={<Account />} /> : <Route path="/account" element={<Login />} />}
 				<Route path="*" element={<Error />} />
 			</Routes>
 			</div>

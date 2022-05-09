@@ -11,9 +11,7 @@ import {  passwordRegex } from '../../util/regex';
 
 
 const Account = () => {
-    const { auth , setAuth } = useGlobalContext();
-    const [ isSignedIn , setIsSignedIn ] = useState<boolean>((setAuth.email !== ""));
-
+    const { auth , setAuth, isSignedIn } = useGlobalContext();
 
     const [errorMessage, setErrorMessage] = useState<string>('');
     const errorRef = useRef<any>();
@@ -68,9 +66,10 @@ const Account = () => {
 
             const message = await response?.text();
             if (response.ok) {
-                //setAuth({ "email":email, "password":password });
+                // Update the saved credentials.
+                await setAuth({ ...auth, "password": password });
 
-                // Clear input data since the user is now registered
+                // Clear input data since the request succesfully went through.
                 setPassword('');
                 setMatchPassword('');
                 // Message confirming password change was successful TODO
@@ -154,17 +153,7 @@ const Account = () => {
         
     }
 
-    return (
-        <div>
-        {isSignedIn ? 
-        
-        <div className='flex flex-col justify-center items-center'>
-            <p>Don't have an account? <Link to="/register" className='underline'>Register.</Link></p>
-            <p className='text-center'>Already have an account? <Link to='/login' className='underline'>Login page</Link></p>
-        </div> 
-        
-        : 
-        
+    return (      
         <div className='flex flex-col justify-center items-center'>
             <h1 className='text-4xl'>Account</h1>
             <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `text-2xl text-red-800 bg-white` : `hidden`}`}>{errorMessage}</p>
@@ -189,7 +178,6 @@ const Account = () => {
             </form>
             <br/>
             <button onClick={(e) => {handleDelete(e)}}>Delete Account</button>
-        </div>}
         </div>
     );
 }

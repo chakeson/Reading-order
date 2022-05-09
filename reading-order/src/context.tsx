@@ -6,7 +6,10 @@ import React, {useContext, useState } from "react";
     siegeOfTerra:[]
 }*/
 
-
+interface authObject {
+    email:string;
+    password:string;
+}
 
 const AppContext = React.createContext({});
 
@@ -23,18 +26,33 @@ const storageAccess = () => {
 }
 // Storage updating is done in the components change readingProgress. Since useEffect wont trigger on here on change of the States 
 
+// Check if local storage has user credentials.
+const storageAccessUser = () => {
+    if (localStorage.getItem("Login")){
+        let lsTemp:string = localStorage.getItem("Login") || "";
+        return JSON.parse(lsTemp);
+    }
+    return {"email":"", "password":""};
+}
 
 
 const AppProvider: React.FC = ({ children }) => {
     const [readingProgress, setReadingProgress] = useState<number[]>(storageAccess());
-    const [auth, setAuth] = useState<object>({}); // {username:string, password:string}
+    const [auth, setAuth] = useState<authObject>(storageAccessUser()); // {username:string, password:string}
+    const [ isSignedIn , setIsSignedIn ] = useState<boolean>((auth.email !== ""));
+
+    // Saves auth state to local storage.
+    const saveLogin = () => {
+        let stringData = JSON.stringify(auth);
+        localStorage.setItem('Login', stringData);
+    }
 
     const saveReadingProgress = () => {
         console.log("testFunction");
     }
 
     return (
-        <AppContext.Provider value={{ readingProgress , setReadingProgress , auth, setAuth , saveReadingProgress}}>
+        <AppContext.Provider value={{ readingProgress , setReadingProgress, saveReadingProgress , auth, setAuth, saveLogin , isSignedIn , setIsSignedIn }}>
             {children}
         </AppContext.Provider>
     )

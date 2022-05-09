@@ -5,11 +5,12 @@ import { emailRegex , passwordRegex } from '../../util/regex';
 // Registering page
 
 // TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
+// User data needs to be sent with a POST request to the server to create the book data.
 // TODO write the css for the register page
 
 
 const Register = () => {
-    const { auth , setAuth } = useGlobalContext();
+    const { setAuth , setIsSignedIn , saveLogin } = useGlobalContext();
 
     
     const emailRef = useRef<any>();
@@ -87,7 +88,10 @@ const Register = () => {
 
             const message = await response?.text();
             if (response.ok) {
+                // Update global state for login and then call to sava it to local storage
                 await setAuth({ "email":email, "password":password });
+                await saveLogin();
+                await setIsSignedIn(true);
 
                 // Clear input data since the user is now registered
                 await setEmail('');
@@ -95,7 +99,6 @@ const Register = () => {
                 await setMatchPassword('');
                 // Change the page after registration
                 await navigate('/');
-                //await setTest(true);
 
             } else {
                 if (message === "Email already taken.") {
