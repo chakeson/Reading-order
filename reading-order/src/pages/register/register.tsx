@@ -9,8 +9,8 @@ import { emailRegex , passwordRegex } from '../../util/regex';
 
 
 const Register = () => {
+    const { auth , setAuth } = useGlobalContext();
 
-    const { auth, setAuth } = useGlobalContext();
     
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
@@ -29,8 +29,6 @@ const Register = () => {
 
 
     const [errorMessage, setErrorMessage] = useState<string>('');
-
-    const [success, setSuccess] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
@@ -89,15 +87,15 @@ const Register = () => {
 
             const message = await response?.text();
             if (response.ok) {
-                setAuth({ "email":email, "password":password });
-                setSuccess(true);
+                await setAuth({ "email":email, "password":password });
 
                 // Clear input data since the user is now registered
-                setEmail('');
-                setPassword('');
-                setMatchPassword('');
+                await setEmail('');
+                await setPassword('');
+                await setMatchPassword('');
                 // Change the page after registration
-                navigate('/');
+                await navigate('/');
+                //await setTest(true);
 
             } else {
                 if (message === "Email already taken.") {
@@ -132,7 +130,6 @@ const Register = () => {
             errorRef.current?.focus();
         }
     };
-
 
     return (
         <div className='flex flex-col justify-center items-center'>

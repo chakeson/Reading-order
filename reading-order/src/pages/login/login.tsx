@@ -21,8 +21,6 @@ const Login = () => {
     const [password, setPassword] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string>('');
 
-    const [success, setSuccess] = useState<boolean>(false);
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -66,14 +64,13 @@ const Login = () => {
             const message = await response?.text();
             if (response.ok) {
                 if (message === "Valid credentails.") {
-                    setAuth({ "email":email, "password":password });
+                    await setAuth({ "email":email, "password":password });
+                    // Clear input data since the user is now signed in
+                    await setEmail('');
+                    await setPassword('');
                     // Change the page after registration
-                    navigate('/');
+                    await navigate('/');
                 }
-                // Clear input data since the user is now signed in
-                setEmail('');
-                setPassword('');
-                setSuccess(true);
             } else {
                 setErrorMessage(message);
                 errorRef.current?.focus();
@@ -106,7 +103,7 @@ const Login = () => {
                 
                 <button className="">Sign In</button>
             </form>
-            <p>Don't have an account? <Link to="/register">Register.</Link></p>
+            <p>Don't have an account? <Link to="/register" className='underline'>Register.</Link></p>
         </div>
     );
 }
