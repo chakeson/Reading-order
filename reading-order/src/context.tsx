@@ -29,8 +29,12 @@ const AppProvider: React.FC = ({ children }) => {
     const [readingProgress, setReadingProgress] = useState<number[]>(storageAccess());
     const [auth, setAuth] = useState<object>({}); // {username:string, password:string}
 
+    const saveReadingProgress = () => {
+        console.log("testFunction");
+    }
+
     return (
-        <AppContext.Provider value={{ readingProgress , setReadingProgress , auth, setAuth }}>
+        <AppContext.Provider value={{ readingProgress , setReadingProgress , auth, setAuth , saveReadingProgress}}>
             {children}
         </AppContext.Provider>
     )

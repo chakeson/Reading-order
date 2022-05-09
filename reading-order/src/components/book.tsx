@@ -22,7 +22,7 @@ interface Props {
 }
 /*  faction:Array<string> */
 function Book(props:Props) {
-    const { readingProgress , setReadingProgress } = useGlobalContext();
+    const { readingProgress , setReadingProgress, saveReadingProgress } = useGlobalContext();
     const { x , y , id , title , author , book , faction , pages , audio , rating , link, primary } = props;
 
 
@@ -61,7 +61,8 @@ function Book(props:Props) {
         //Writes to the browsers local storage.
         let stringData = JSON.stringify(readingProgress);
         localStorage.setItem('ReadingProgress', stringData);
-
+        // Call function in context to save the reading progress to the server.
+        saveReadingProgress();
     }
 
 
