@@ -9,7 +9,7 @@ import About from './pages/about/about';
 import Error from './pages/error/error';
 import Login from './pages/login/login';
 import Register from './pages/register/register';
-
+import Account from './pages/account/account';
 
 function App() {
 	return (
@@ -24,6 +24,7 @@ function App() {
 				<Route path="/about" element={<About />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/register" element={<Register />} />
+				<Route path="/account" element={<Account />} />
 				<Route path="*" element={<Error />} />
 			</Routes>
 			</div>
