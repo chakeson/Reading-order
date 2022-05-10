@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import {  passwordRegex } from '../../util/regex';
 // Account management page
@@ -11,7 +11,7 @@ import {  passwordRegex } from '../../util/regex';
 
 
 const Account = () => {
-    const { auth , setAuth, isSignedIn } = useGlobalContext();
+    const { auth , setAuth } = useGlobalContext();
 
     const [errorMessage, setErrorMessage] = useState<string>('');
     const errorRef = useRef<any>();
