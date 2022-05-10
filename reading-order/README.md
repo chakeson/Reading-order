@@ -16,6 +16,8 @@
 
 - Fix error resizing flickering/arrow line up.
 
+- Fix navbar pop down height, bind it to element height.
+
 - Add lazy loading of book data to reduce bundle size.
 
 - Fix inital POST request or change backend.

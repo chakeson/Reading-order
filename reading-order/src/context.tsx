@@ -36,6 +36,45 @@ const storageAccessUser = () => {
 }
 
 
+const saveReadingProgressPUT = async (auth:authObject, readingProgress:number[]) => {
+    // TODO set up correct response and error codes.
+
+    try {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/books`, {
+            method: 'PUT',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                "Access-Control-Allow-Credentials": "true",
+                'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
+                'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT,HEAD',
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'Authorization': `Basic ${btoa((auth.email +":"+ auth.password))}`
+            },
+            credentials: 'include',
+            body: new URLSearchParams({
+                book: JSON.stringify(readingProgress)
+            })
+        });
+
+        const message = await response?.text();
+        if (response.ok) {
+            if (message === "Valid credentails.") {
+
+            }
+        } else {
+            console.log("Error: " + message);
+        }
+    } catch (error) {     
+        let errorText:string = "No Server Response. Check connection.";
+        
+        if (error instanceof TypeError) {
+            errorText = error?.message;
+        }
+        console.log("Error: " + errorText);
+    }
+}
+
+//LOAD data on page load with GET request
 const AppProvider: React.FC = ({ children }) => {
     const [readingProgress, setReadingProgress] = useState<number[]>(storageAccess());
     const [auth, setAuth] = useState<authObject>(storageAccessUser()); // {username:string, password:string}
@@ -46,8 +85,7 @@ const AppProvider: React.FC = ({ children }) => {
         let stringData = JSON.stringify(auth);
         localStorage.setItem('Login', stringData);
     }
-
-    const saveReadingProgress = () => {
+    const saveReadingProgress = async () => {
         console.log("testFunction");
     }
 
