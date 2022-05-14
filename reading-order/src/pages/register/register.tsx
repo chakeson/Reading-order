@@ -101,15 +101,7 @@ const Register = () => {
                 await navigate('/');
 
             } else {
-                if (message === "Email already taken.") {
-                    setEmailValidated(false);
-                    setErrorMessage(message);
-                }
-                else if (message === '{"success":false,"message":"Invalid email."}') {
-                    setEmailValidated(false);
-                    setErrorMessage("Invalid email.");
-                }
-                else if (message === '{"success":false,"message":"Password must be 6 to 70 characters long. It must contain at least one lowercase letter, one uppercase letter, one number and one special character."}') {
+                if (message === '{"success":false,"message":"Password must be 6 to 70 characters long. It must contain at least one lowercase letter, one uppercase letter, one number and one special character."}') {
                     setPasswordValidated(false);
                     setErrorMessage(message);
                 }

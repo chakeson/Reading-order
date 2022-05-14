@@ -5,8 +5,8 @@ import { emailRegex } from '../../util/regex';
 // Login page
 
 // TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
+// Fetch server progress status.
 // TODO write the css for the login page
-// TODO deal with server answers
 
 const Login = () => {
 
@@ -47,7 +47,7 @@ const Login = () => {
             return;
         }
 
-        try { // TODO fix login path
+        try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`, {
                 method: 'GET',
                 headers: {
@@ -76,7 +76,17 @@ const Login = () => {
                     await navigate('/');
                 }
             } else {
-                setErrorMessage(message);
+                if (message === "Unauthorized") {
+                    setEmailValidated(false);
+                    setErrorMessage("Email or password is incorrect.");
+                }
+                else if (response.redirected){
+                    setEmailValidated(false);
+                    setErrorMessage("Email or password is incorrect.");
+                }
+                else{
+                    setErrorMessage(message);
+                }
                 errorRef.current?.focus();
             }
         } catch (error) {     
