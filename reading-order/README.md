@@ -2,11 +2,7 @@
 
 - Fix login api target api to verification
 
-- Add account settings.
-
-- Way to exfiltrate data for requests.
-
-- Add api hooking for books.tsx so it saves progress.
+- Way to exfiltrate data for requests. 
 
 - Add progress-bar on navbar.
 
@@ -26,6 +22,8 @@
     - Type useGlobalContext hook
 
 - Write about pages content text
+
+- Add sync/save visualiser.
 
 # Start and set up
 

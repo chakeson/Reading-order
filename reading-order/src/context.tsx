@@ -57,10 +57,21 @@ const saveReadingProgressPUT = async (auth:authObject, readingProgress:number[])
 
         const message = await response?.text();
         if (response.ok) {
-            if (message === "Valid credentails.") {
-
+            if (message === "Succesful save.") {
+                // Update sync save visualiser TODO
             }
+        else if (message === "Unauthorized") {
+            //await setAuth({"email":"", "password":""});
+            //await setIsSignedIn(false); 
+            // Update sync save visualiser TODO
+        }
+        else if (response.redirected) {
+            //await setAuth({"email":"", "password":""});
+            //await setIsSignedIn(false);
+            // Update sync save visualiser TODO
+        }
         } else {
+            // Update sync save visualiser TODO
             console.log("Error: " + message);
         }
     } catch (error) {     
@@ -68,6 +79,10 @@ const saveReadingProgressPUT = async (auth:authObject, readingProgress:number[])
         
         if (error instanceof TypeError) {
             errorText = error?.message;
+            // Update sync save visualiser TODO
+        }
+        else {
+            // Update sync save visualiser TODO
         }
         console.log("Error: " + errorText);
     }
@@ -90,12 +105,12 @@ const AppProvider: React.FC = ({ children }) => {
         // When changes to the saved books happen we wanna save that to the server if the user is signed in.
         // We dont want to spam the server with requests for everychange, so we wait 10s and send it.
         // But if a change occurs during those 10s we wanna restart the timer and wait another 10s.
-
+        
         // Check if user is not logged in.
         if (!isSignedIn) {
             return;
         }
-
+        
         //Check if timer is already running.
         if (interValTrackerVariable){
             // Clear previous timer and create a new one to reset the time to 10s.
@@ -112,12 +127,12 @@ const AppProvider: React.FC = ({ children }) => {
             } , 10000);
         }
     }
-
+    
     const handleLogout = () => {
         setAuth({"email":"", "password":""});
         setIsSignedIn(false);
         localStorage.removeItem('Login');
-        
+        localStorage.removeItem('ReadingProgress');
         // Stop server saving with PUT requests.
     }
 
