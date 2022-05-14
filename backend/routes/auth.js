@@ -27,4 +27,6 @@ passport.use(new BasicStrategy(
 ));
 
 // Session turned of so authentication must happen on each call
-exports.isAuthenticated = passport.authenticate('basic', { session : false });
+// Failure redirect turned on to stop it from sending "Unauthorized" status 401 
+// triggering browsers built in authentication popup.
+exports.isAuthenticated = passport.authenticate('basic', { session : false, failureRedirect: '/' });

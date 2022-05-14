@@ -22,6 +22,7 @@ npm start
 
 API for storing and retrieving reading progress associated with a specific account. Allows for account creation and deletion.
 
+On authenticaded endpoints when authentication fails, a redirect is issued. This is so passport-js doesn't send a 401 triggering the browsers built in authentication prompt.
 
 ## Endpoints
 ### /users
