@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import {  passwordRegex } from '../../util/regex';
+import DeleteModal from './deleteModal';
+
 // Account management page
 
 // TODO
-// Button with password check, to delete your account. Modal design
 // TODO message that shows if it was succesfully changed or deleted.
 
 
@@ -27,7 +27,6 @@ const Account = () => {
     const [validPasswordMatch, setValidPasswordMatch] = useState<boolean>(false);
     const [matchPasswordFocus, setMatchPasswordFocus] = useState<boolean>(false);
 
-    const navigate = useNavigate();
 
     useEffect(() => {
         var passwordValid = passwordRegex.test(password);
@@ -110,55 +109,6 @@ const Account = () => {
         }
     };
 
-    const handleDelete = async (e: any) => {  // e is the event
-        e.preventDefault();
-        setErrorMessage("");
-        console.log("delete");
-        try {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`, {
-                method: 'DELETE',
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    "Access-Control-Allow-Credentials": "true",
-                    'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
-                    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT,HEAD',
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',            
-                    'Authorization': `Basic ${btoa((auth.email +":"+ + auth.password))}`
-                },
-                credentials: 'include'
-            });
-
-            const message = await response?.text();
-            if (response.ok) {
-
-                // Clear input data since the user is now deleted
-                await setPassword('');
-                await setMatchPassword('');
-                // Go to the front after deleting account
-                await navigate('/');
-
-            } else {
-                if (message === "Unauthorized") {
-                    setErrorMessage("Unauthorized access. " + message);
-                }
-                else {
-                    setErrorMessage(message);
-                }
-
-                errorRef.current?.focus();
-            }
-        } catch (error) {
-            let errorText:string = "No Server Response. Check connection.";
-            
-            if (error instanceof TypeError) {
-                errorText = error?.message;
-            }
-            setErrorMessage(errorText); 
-            errorRef.current?.focus();
-        }
-        
-    }
-
     return (      
         <div className='flex flex-col justify-center items-center'>
             <h1 className='text-4xl'>Account</h1>
@@ -189,7 +139,9 @@ const Account = () => {
 
             </form>
             <br/>
-            <button onClick={(e) => {handleDelete(e)}}>Delete Account</button>
+            
+            <DeleteModal />
+
         </div>
     );
 }

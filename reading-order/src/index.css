@@ -51,6 +51,9 @@ html,body {
     border-radius: 50%;
 }
 
+.height-offset {
+    height: calc(100vh - 56px);
+}
 
 /*
 .test {
