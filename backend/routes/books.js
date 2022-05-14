@@ -60,7 +60,7 @@ exports.putBooks = async function(req, res) {
                     res.status(500).send(err);
                 }
                 else {
-                    res.status(200).json(book);
+                    res.status(200).send("Succesful save.");
                 }
             });
         }
