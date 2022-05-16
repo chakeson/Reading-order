@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './index.css';
 import './App.css'
 import Navbar from './components/navbar';
+import SyncVisualiser from './components/syncVisualiser';
 import HorusHerasy from './pages/horusHeresy/horusHeresy';
 import SiegeOfTerra from './pages/siegeOfTerra/siegeOfTerra';
 import About from './pages/about/about';
@@ -31,6 +32,7 @@ function App() {
 				{isSignedIn ? <Route path="/account" element={<Account />} /> : <Route path="/account" element={<Login />} />}
 				<Route path="*" element={<Error />} />
 			</Routes>
+			<SyncVisualiser />
 			</div>
     	</BrowserRouter>
     

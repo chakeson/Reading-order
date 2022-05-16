@@ -11,6 +11,11 @@ interface authObject {
     password:string;
 }
 
+interface syncObject {
+    color:string;
+    message:string;
+}
+
 const AppContext = React.createContext({});
 
 // Array filled with 0 length 299
@@ -36,8 +41,9 @@ const storageAccessUser = () => {
 }
 
 
-const saveReadingProgressPUT = async (auth:authObject, readingProgress:number[]) => {
+const saveReadingProgressPUT = async (auth:authObject, readingProgress:number[], setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
     // TODO set up correct response and error codes.
+    setSyncStatus({color:"#3DED97", message:"Saving..."});
     try {
         const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/books`, {
             method: 'PUT',
@@ -59,20 +65,24 @@ const saveReadingProgressPUT = async (auth:authObject, readingProgress:number[])
         if (response.ok) {
             if (message === "Succesful save.") {
                 // Update sync save visualiser TODO
+                setSyncStatus({color:"#028A0F", message:"Saved"});
             }
         else if (message === "Unauthorized") {
             //await setAuth({"email":"", "password":""});
             //await setIsSignedIn(false); 
             // Update sync save visualiser TODO
+            setSyncStatus({color:"#8E1600", message:"Unauthorized"});
         }
         else if (response.redirected) {
             //await setAuth({"email":"", "password":""});
             //await setIsSignedIn(false);
             // Update sync save visualiser TODO
+            setSyncStatus({color:"#8E1600", message:"Unauthorized"});
         }
         } else {
             // Update sync save visualiser TODO
             console.log("Error: " + message);
+            setSyncStatus({color:"#8E1600", message:"Unauthorized"});
         }
     } catch (error) {     
         let errorText:string = "No Server Response. Check connection.";
@@ -84,6 +94,7 @@ const saveReadingProgressPUT = async (auth:authObject, readingProgress:number[])
         else {
             // Update sync save visualiser TODO
         }
+        setSyncStatus({color:"#8E1600", message:"Unauthorized"});
         console.log("Error: " + errorText);
     }
 }
@@ -93,6 +104,12 @@ const AppProvider: React.FC = ({ children }) => {
     const [readingProgress, setReadingProgress] = useState<number[]>(storageAccess());
     const [auth, setAuth] = useState<authObject>(storageAccessUser()); // {username:string, password:string}
     const [ isSignedIn , setIsSignedIn ] = useState<boolean>((auth.email !== ""));
+    const [ syncStatus, setSyncStatus ] = useState<syncObject>({color:"#FFFFFF", message:"sdgsdg"});
+
+    // For testing as logged in user
+    //const [auth, setAuth] = useState<authObject>({email:"test@test.com",password:"Password1!"}); // {username:string, password:string}
+    //const [ isSignedIn , setIsSignedIn ] = useState<boolean>(true);
+
 
     // Saves auth state to local storage.
     const saveLogin = () => {
@@ -116,13 +133,13 @@ const AppProvider: React.FC = ({ children }) => {
             // Clear previous timer and create a new one to reset the time to 10s.
             clearInterval(interValTrackerVariable);
             interValTrackerVariable = setInterval(() => {
-                saveReadingProgressPUT(auth, readingProgress);
+                saveReadingProgressPUT(auth, readingProgress, setSyncStatus);
                 clearInterval(interValTrackerVariable);
             } , 10000);
         }
         else { // If no timer running start a new one.
             interValTrackerVariable = setInterval(() => {
-                saveReadingProgressPUT(auth, readingProgress);
+                saveReadingProgressPUT(auth, readingProgress, setSyncStatus);
                 clearInterval(interValTrackerVariable);
             } , 10000);
         }
@@ -137,7 +154,7 @@ const AppProvider: React.FC = ({ children }) => {
     }
 
     return (
-        <AppContext.Provider value={{ readingProgress , setReadingProgress, saveReadingProgress , auth, setAuth, saveLogin , isSignedIn , setIsSignedIn , handleLogout}}>
+        <AppContext.Provider value={{ readingProgress , setReadingProgress, saveReadingProgress , auth, setAuth, saveLogin , isSignedIn , setIsSignedIn , handleLogout, syncStatus, setSyncStatus}}>
             {children}
         </AppContext.Provider>
     )
