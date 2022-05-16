@@ -38,7 +38,7 @@ function DeleteModal() {
     const handleDelete = async (e: any) => {  // e is the event
         e.preventDefault();
         setErrorMessage("");
-        console.log("delete");
+
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`, {
                 method: 'DELETE',
