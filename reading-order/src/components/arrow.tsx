@@ -19,7 +19,7 @@ interface ArrowDashnessInterface {
     [key:string]:boolean | { strokeLen?: number | undefined; nonStrokeLen?: number | undefined; animation?: number | boolean | undefined; } | undefined ;
 }
 
-function Arrow(props:PropsArrow) {
+const Arrow = React.memo((props:PropsArrow)=>{
     const { type , start, end } = props;
     
     var { gridbreak } =  props;
@@ -34,6 +34,8 @@ function Arrow(props:PropsArrow) {
 	return (
             <Xarrow start={startString} end={endString} color={arrowColor[type]} path={"grid"} dashness={arrowDashness[type]} startAnchor="right" endAnchor="left" gridBreak={gridbreak}/>
     );
-}
+},(prevProps,nextProps)=>{
+    return true;
+});
 
 export default Arrow;
