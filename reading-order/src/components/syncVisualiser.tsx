@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "../context";
 
+// Display to the sure that data is saving or saved.
+// TODO style with CSS
+
 
 function SyncVisualiser() {
     const { syncStatus, setSyncStatus } = useGlobalContext();
@@ -15,13 +18,10 @@ function SyncVisualiser() {
 
 
 
-    if (syncStatus.message === "") {
-        return(null)
-    }
     return ( 
-        <div className="absolute flex justify-center items-center bottom-1/4 mx-auto right-0 left-0 w-24 border-solid border-2 border-black z-30" style={{backgroundColor:syncStatus.color}}>
+        <div className={`${syncStatus.message==="" ? "opacity-0" : "opacity-90"} absolute flex justify-center items-center bottom-1/4 mx-auto right-0 left-0 w-24 border-solid border-2 border-black z-30`} style={{backgroundColor:syncStatus.color}}>
             {syncStatus.message}
-        </div> 
+        </div>
     );
 }
 

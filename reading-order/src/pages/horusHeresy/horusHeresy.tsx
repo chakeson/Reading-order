@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef , useState } from 'react';
 import '../../index.css';
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { Space } from 'react-zoomable-ui';
@@ -8,6 +8,7 @@ import Shortcut from '../../components/shortcut';
 import Zone from '../../components/zone';
 import horusHeresyDataBooks, { horusHeresyDataArrow , horusHeresyDataShortcut, horusHeresyDataZone } from './horusHeresyData'; 
 import NavPannel from '../../components/navPannel';
+import SyncVisualiser from '../../components/syncVisualiser';
 
 // limitToBounds={false}
 function HorusHerasy() {
@@ -17,6 +18,7 @@ function HorusHerasy() {
             <>
             <div className="map-height">
             <NavPannel />
+            <SyncVisualiser/>
             <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,11500], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 6000, height: 6000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11500, height: 8500 }}>
                 
                 {/* Devision slider and side naming. */}
@@ -45,7 +47,6 @@ function HorusHerasy() {
                 )}
                 
             </Space>
-            
             <div className="absolute right-5 bottom-5 inline-flex flex-col text-4xl xl:text-4xl lg:text-4xl md:text-3xl sm:text-2xl">
                 <button onClick={() => spaceRef.current?.viewPort?.camera.moveBy(0, 0, 0.2)}>
                     <AiOutlinePlusCircle />
