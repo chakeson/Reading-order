@@ -6,15 +6,21 @@ import React, {useContext, useState } from "react";
     siegeOfTerra:[]
 }*/
 
-interface authObject {
+export interface authObject {
     email:string;
     password:string;
 }
 
-interface syncObject {
+export interface syncObject {
     color:string;
     message:string;
 }
+
+/*
+export interface readingProgressType {
+    horusHeresy:number[];
+}
+*/
 
 const AppContext = React.createContext({});
 
