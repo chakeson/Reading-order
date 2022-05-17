@@ -34,7 +34,7 @@ db.once("open", ()=>console.log("Connected to database."))
 //'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
 // Set up cors
 app.use(cors({
-    origin: ["http://localhost:3000","localhost:3000"],
+    origin: JSON.parse(process.env.CORS_ORIGIN),
     methods: ['GET', 'POST', 'PUT', 'DELETE', "OPTIONS"],
     allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'X-Requested-With', 'Accept', 'Access-Control-Allow-Origin', "Access-Control-Request-Method", "Access-Control-Allow-Credentials",'Access-Control-Allow-Headers', "Access-Control-Request-Headers", "Access-Control-Allow-Methods"],
     credentials: true,
