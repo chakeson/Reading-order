@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link , useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import { emailRegex , passwordRegex } from '../../util/regex';
+import fetchBookDataPost from '../../util/fetchBookDataPost';
 // Registering page
 
 // TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
@@ -10,7 +11,7 @@ import { emailRegex , passwordRegex } from '../../util/regex';
 
 
 const Register = () => {
-    const { setAuth , setIsSignedIn , saveLogin } = useGlobalContext();
+    const { auth, setAuth , setIsSignedIn , saveLogin, readingProgress } = useGlobalContext();
 
     
     const emailRef = useRef<any>();
@@ -92,7 +93,7 @@ const Register = () => {
                 await setAuth({ "email":email, "password":password });
                 await saveLogin();
                 await setIsSignedIn(true);
-
+                await fetchBookDataPost( auth , readingProgress );
                 // Clear input data since the user is now registered
                 await setEmail('');
                 await setPassword('');
