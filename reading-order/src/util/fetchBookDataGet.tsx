@@ -20,21 +20,21 @@ const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Disp
         });
 
         const message = await response?.text();
-        var horusHersyData = (JSON.parse(message));
-        console.log(message);
-        console.log(horusHersyData);
-        if (response.ok) {
-            if (message === "Succesful save.") { // TOD response
+        var horusHersyData = JSON.parse(horusHersyData[0].horusheresy);
+
+        if (response.ok) {           
+            
+            if (message === "Unauthorized") {
+                //await setAuth({"email":"", "password":""});
+                //await setIsSignedIn(false); 
+            }
+            else if (response.redirected) {
+                //await setAuth({"email":"", "password":""});
+                //await setIsSignedIn(false);
+            } else {
                 setReadingProgress(horusHersyData);
             }
-        else if (message === "Unauthorized") {
-            //await setAuth({"email":"", "password":""});
-            //await setIsSignedIn(false); 
-        }
-        else if (response.redirected) {
-            //await setAuth({"email":"", "password":""});
-            //await setIsSignedIn(false);
-        }
+
         } else {
             console.log("Error: " + message);
         }
