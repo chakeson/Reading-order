@@ -50,6 +50,26 @@ exports.putBooks = async function(req, res) {
             console.log(err);
             res.status(500).send(err);
         }
+        else if (book === null) {
+            // No book data was found. Create a new one.
+            
+            // Create a new book entry
+            var book = new Book({
+                userkey: inputUserKey,
+                horusheresy: inputBookData
+            });
+        
+            book.save(function(err) {
+                if (err) {
+                    console.log(err);
+                    res.status(500).send(err);
+                } 
+                else {
+                    res.status(201).send("Success.");
+                }
+            });
+            
+        }
         else {
             // Update the book progress
             book.horusheresy = inputBookData;

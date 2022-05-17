@@ -1,7 +1,7 @@
 # Backend server for storing accounts and their reading progress.
 
 # TODO
-
+Cors allowed domain to be fetched from .env
 
 ## Installation
 Once you have cloned the repository you can install the dependencies with npm.
@@ -87,7 +87,7 @@ Authorization: Basic test@test.com Password1!
 book=[reading progress]
 ``` 
 ### `PUT`
-This is the endpoint intended for users to update reading progress. In the body of the request you need to include the book paramater containing the reading progress. The data is then validated to contain only legal characters and of correct length. Requst must contain basic authentication of account.
+This is the endpoint intended for users to update reading progress. If no previous book data was saved it created and saved. In the body of the request you need to include the book paramater containing the reading progress. The data is then validated to contain only legal characters and of correct length. Requst must contain basic authentication of account.
 
 Example:
 ```
