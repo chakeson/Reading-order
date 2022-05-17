@@ -1,7 +1,7 @@
 # Backend server for storing accounts and their reading progress.
 
 # TODO
-Cors allowed domain to be fetched from .env
+
 
 ## Installation
 Once you have cloned the repository you can install the dependencies with npm.

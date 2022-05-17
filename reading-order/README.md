@@ -8,7 +8,7 @@
 
 - Siege of Terra page.
 
-- Improve text color changer for books.
+- Improve text color changer for books. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
 
 - Fix error resizing flickering/arrow line up.
 
@@ -16,14 +16,10 @@
 
 - Add lazy loading of book data to reduce bundle size.
 
-- Fix inital POST request or change backend.
-
 - Properly type all :any
     - Type useGlobalContext hook
 
 - Write about pages content text
-
-- Add sync/save visualiser.
 
 # Start and set up
 
