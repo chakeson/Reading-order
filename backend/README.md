@@ -107,6 +107,18 @@ content-type: application/x-www-form-urlencoded
 Authorization: Basic test@test.com Password1!
 ``` 
 
+### /requestdata
+
+### `GET`
+Fetch all saved data. Requst must contain basic authentication of account.
+
+Example:
+```
+GET http://localhost:3100/api/requestdata HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Basic test@test.com Password1!
+```
+
 # Program flow and structure
 
 The start entry file is server.js. Here we have our library imports and database connection. The library [body parser](https://github.com/expressjs/body-parser) is used to parse the body of the request. [Passport](https://www.passportjs.org/docs/) is then used as middleware to authenticate the user. [Mongoose](https://mongoosejs.com/docs/) for the mongoDB connection.

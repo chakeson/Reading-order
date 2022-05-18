@@ -8,6 +8,7 @@ var { default: mongoose } = require("mongoose");
 
 var bookRouter = require("./routes/books");
 var userRouter = require("./routes/user");
+var requestDataRouter = require("./routes/requestdata");
 var authRouter = require("./routes/auth");
 
 const { validateUsersPost , validateUsersPut } = require("./validation/users");
@@ -68,6 +69,11 @@ router.route("/users")
     .put(validateUsersPut, validator, authRouter.isAuthenticated, userRouter.putUser)
     .get(authRouter.isAuthenticated, userRouter.getUser)
     .delete(authRouter.isAuthenticated, userRouter.deleteUser);
+
+// Reqeust for data
+router.route("/requestdata")
+    .get(authRouter.isAuthenticated, requestDataRouter.getData);
+
 
 // Register all our routes with /api
 app.use("/api", router)
