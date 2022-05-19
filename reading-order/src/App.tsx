@@ -5,6 +5,7 @@ import './App.css'
 import Navbar from './components/navbar';
 import HorusHerasy from './pages/horusHeresy/horusHeresy';
 import SiegeOfTerra from './pages/siegeOfTerra/siegeOfTerra';
+import Inquisitors from './pages/inquisitors/inquisitors';
 import About from './pages/about/about';
 import Error from './pages/error/error';
 import Login from './pages/login/login';
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/" element={<HorusHerasy />} />
 				<Route path="/horusheresy" element={<HorusHerasy />} />
 				<Route path="/siegeofterra" element={<SiegeOfTerra />} />
+				<Route path="/inquisitors" element={<Inquisitors />} />
 				<Route path="/about" element={<About />} />
 				{isSignedIn ? <Route path="/login" element={<Account />} /> : <Route path="/login" element={<Login />} />}
 				{isSignedIn ? <Route path="/register" element={<Account />} /> :<Route path="/register" element={<Register />} />}

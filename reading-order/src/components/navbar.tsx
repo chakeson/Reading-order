@@ -29,6 +29,9 @@ function Navbar() {
                             <Link to="/siegeofterra">Siege Of Terra</Link>
                         </li>
                         <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
+                            <Link to="/inquisitors">Inquisitors</Link>
+                        </li>
+                        <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
                             <Link to="/about">About</Link>
                         </li>
                     </ul>
@@ -47,6 +50,9 @@ function Navbar() {
                 </li>
                 <li className="transform transition duration-700 hover:text-tertiary">
                     <Link to="/siegeofterra">Siege Of Terra</Link>
+                </li>
+                <li className="transform transition duration-700 hover:text-tertiary">
+                    <Link to="/inquisitors">Inquisitors</Link>
                 </li>
                 <li className="transform transition duration-700 hover:text-tertiary">
                     <Link to="/about">About</Link>
