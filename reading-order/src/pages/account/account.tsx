@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useGlobalContext } from '../../context';
 import {  passwordRegex } from '../../util/regex';
+import RequestData from './requestData';
 import DeleteModal from './deleteModal';
 
 // Account management page
@@ -139,8 +140,8 @@ const Account = () => {
 
             </form>
             <br/>
-            
             <DeleteModal />
+            <RequestData />
 
         </div>
     );
