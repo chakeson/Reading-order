@@ -1,9 +1,5 @@
 # TODO
 
-- Fix login api target api to verification
-
-- Way to exfiltrate data for requests. 
-
 - Add progress-bar on navbar.
 
 - Siege of Terra page.
@@ -11,8 +7,6 @@
 - Improve text color changer for books. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
 
 - Fix error resizing flickering/arrow line up.
-
-- Fix navbar pop down height, bind it to element height.
 
 - Add lazy loading of book data to reduce bundle size.
 

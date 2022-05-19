@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import '../index.css';
 import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
@@ -7,8 +7,8 @@ import { ImBook } from "react-icons/im";
 
 function Navbar() {
     const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
-    
-  
+    const dropdownRef = useRef<HTMLUListElement>(null);      
+
     return (
         <nav className="bg-blue2 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-12">
@@ -40,8 +40,8 @@ function Navbar() {
             </div>
         </div>
         {/*actaul dropdown menu*/}
-        <div className={`${showMobileNav ? "w-full h-32 transition-all ease-out duration-500 overflow-hidden md:hidden":"w-full h-0 transition-all ease-out duration-500 overflow-hidden md:hidden"}`}>
-            <ul className="block font-bold text-xl text-white px-4 py-2">
+        <div style={{height:`${showMobileNav ? ((dropdownRef.current?.clientHeight)?.toString()+"px") :"0px"}`}} className={`${showMobileNav ? "w-full transition-all ease-out duration-500 overflow-hidden md:hidden":"w-full transition-all ease-out duration-500 overflow-hidden md:hidden"}`}>
+            <ul ref={dropdownRef} className="block font-bold text-xl text-white px-4 py-2">
                 <li className="transform transition duration-700 hover:text-tertiary">
                     <Link to="/horusheresy">Horus Heresy</Link>
                 </li>
