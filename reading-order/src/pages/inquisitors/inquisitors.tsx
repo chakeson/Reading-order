@@ -19,7 +19,7 @@ function Inquisitors() {
             <div className="map-height">
             <NavPannel />
             <SyncVisualiser/>
-            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,11500], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 6000, height: 6000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11500, height: 8500 }}>
+            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,5000], y:[0,5000] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 5000, height: 2000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 5000, height: 5000 }}>
 
                 {inquisitorsDataZone.map(( data, index ) => {
                             return <Zone key={index+"zone"+data.id} {...data}/>
