@@ -6,7 +6,7 @@ import Book from '../../components/book';
 import Arrow from '../../components/arrow';
 import Shortcut from '../../components/shortcut';
 import Zone from '../../components/zone';
-import imperialGaurdDataBooks, { imperialGaurdDataArrow, imperialGaurdDataShortcut, imperialGaurdDataZone } from './imperialGaurdData'; 
+import imperialGaurdDataBooks, { imperialGaurdDataArrow, imperialGaurdDataZone } from './imperialGaurdData'; 
 import NavPannel from '../../components/navPannel';
 import SyncVisualiser from '../../components/syncVisualiser';
 
@@ -19,7 +19,7 @@ function ImperialGaurd() {
             <div className="map-height">
             <NavPannel />
             <SyncVisualiser/>
-            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,5000], y:[0,5000] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 5000, height: 2000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 5000, height: 5000 }}>
+            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,6500], y:[0,5000] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 6500, height: 2000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 6500, height: 5000 }}>
 
                 {imperialGaurdDataZone.map(( data, index ) => {
                             return <Zone key={index+"zone"+data.id} {...data}/>
@@ -28,11 +28,6 @@ function ImperialGaurd() {
                                 
                 {imperialGaurdDataBooks.map(( data, index ) => {
                         return <Book key={index+"book"+data.id} {...data}/>
-                    }
-                )}
-                
-                {imperialGaurdDataShortcut.map(( data, index ) => {                          
-                        return <Shortcut key={index+"Shortcut"+data.id} {...data}/>
                     }
                 )}
 
