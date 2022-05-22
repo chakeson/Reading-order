@@ -4,7 +4,6 @@ import './index.css';
 import './App.css'
 import Navbar from './components/navbar';
 import HorusHerasy from './pages/horusHeresy/horusHeresy';
-import SiegeOfTerra from './pages/siegeOfTerra/siegeOfTerra';
 import Inquisitors from './pages/inquisitors/inquisitors';
 import ImperialGaurd from './pages/imperialGaurd/imperialGaurd';
 import About from './pages/about/about';
@@ -26,7 +25,7 @@ function App() {
       		<Routes>
 				<Route path="/" element={<HorusHerasy />} />
 				<Route path="/horusheresy" element={<HorusHerasy />} />
-				<Route path="/siegeofterra" element={<SiegeOfTerra />} />
+				<Route path="/siegeofterra" element={<HorusHerasy />} />
 				<Route path="/inquisitors" element={<Inquisitors />} />
 				<Route path="/imperialgaurd" element={<ImperialGaurd />} />
 				<Route path="/about" element={<About />} />

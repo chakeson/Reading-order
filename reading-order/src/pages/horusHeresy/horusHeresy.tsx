@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../../index.css';
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { Space } from 'react-zoomable-ui';
@@ -14,12 +15,21 @@ import SyncVisualiser from '../../components/syncVisualiser';
 function HorusHerasy() {
     const spaceRef = useRef<any>();
 
+    
+    // If the page is siege of terra we wanna start zoomed in on that part of the page/map.
+    // Else we want to start zoomed out.
+    let location = useLocation();
+    var cameraStartingPosition = { left: 0, top: 0, width: 6000, height: 6000};
+    if (location.pathname === "/siegeofterra") {
+        cameraStartingPosition = { left: 9500, top: 3100, width: 1320, height: 1320};
+    }
+
     return (
             <>
             <div className="map-height">
             <NavPannel />
             <SyncVisualiser/>
-            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,11500], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 6000, height: 6000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11500, height: 8500 }}>
+            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,11500], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: cameraStartingPosition.left, top: cameraStartingPosition.top, width: cameraStartingPosition.width, height: cameraStartingPosition.height});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11500, height: 8500 }}>
                 
                 {/* Devision slider and side naming. */}
                 <div style={{top:`0px`,left:`8760px`,width:`0px`,height:`100%`,border:"5px dashed #b09642"}} className='absolute'></div>
