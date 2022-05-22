@@ -4,7 +4,6 @@ import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { Space } from 'react-zoomable-ui';
 import Book from '../../components/book';
 import Arrow from '../../components/arrow';
-import Shortcut from '../../components/shortcut';
 import Zone from '../../components/zone';
 import imperialGaurdDataBooks, { imperialGaurdDataArrow, imperialGaurdDataZone } from './imperialGaurdData'; 
 import NavPannel from '../../components/navPannel';
