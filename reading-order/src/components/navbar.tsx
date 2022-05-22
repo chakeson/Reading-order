@@ -13,7 +13,7 @@ function Navbar() {
         <nav className="bg-blue2 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-12">
             <div className="flex justify-between">
-                <div className="py-4 flex items-center">
+                <div className="p-4 flex items-center">
                     <Link to="/">
                         <ImBook size="1.5em" color="white"/>
                     </Link>
