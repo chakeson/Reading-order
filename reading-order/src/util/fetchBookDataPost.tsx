@@ -1,9 +1,9 @@
-import { authObject } from "../context";
+import { authObject , readingProgressType } from "../context";
 
 // Deal with failures and successes
 
 //, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>
-const fetchBookDataPost = async ( auth:authObject , readingProgress:number[]  ) => {
+const fetchBookDataPost = async ( auth:authObject , readingProgress:readingProgressType  ) => {
     // setSyncStatus({color:"#3DED97", message:"Saving..."});
     try {
         const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/books`, {
@@ -18,7 +18,9 @@ const fetchBookDataPost = async ( auth:authObject , readingProgress:number[]  ) 
             },
             credentials: 'include',
             body: new URLSearchParams({
-                book: JSON.stringify(readingProgress)
+                horusHeresy: JSON.stringify(readingProgress.horusHeresy),
+                inquisitor: JSON.stringify(readingProgress.inquisitor),
+                imperialGaurd: JSON.stringify(readingProgress.imperialGaurd)
             })
         });
 

@@ -1,7 +1,7 @@
-import { authObject,syncObject } from "../context";
+import { authObject,syncObject,readingProgressType } from "../context";
 
 
-const fetchBookDataPut = async (auth:authObject, readingProgress:number[], setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
+const fetchBookDataPut = async (auth:authObject, readingProgress:readingProgressType, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
     // TODO set up correct response and error codes.
     setSyncStatus({color:"#3DED97", message:"Saving..."});
     try {
@@ -17,7 +17,9 @@ const fetchBookDataPut = async (auth:authObject, readingProgress:number[], setSy
             },
             credentials: 'include',
             body: new URLSearchParams({
-                book: JSON.stringify(readingProgress)
+                horusHeresy: JSON.stringify(readingProgress.horusHeresy),
+                inquisitor: JSON.stringify(readingProgress.inquisitor),
+                imperialGaurd: JSON.stringify(readingProgress.imperialGaurd)
             })
         });
 

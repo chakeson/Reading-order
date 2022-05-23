@@ -26,7 +26,7 @@ function ImperialGaurd() {
                     )}
                                 
                 {imperialGaurdDataBooks.map(( data, index ) => {
-                        return <Book key={index+"book"+data.id} {...data}/>
+                        return <Book key={index+"book"+data.id} {...data} page={"imperialGaurd"}/>
                     }
                 )}
 

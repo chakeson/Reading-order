@@ -42,7 +42,7 @@ function HorusHerasy() {
                     )}
                                 
                 {horusHeresyDataBooks.map(( data, index ) => {
-                        return <Book key={index+"book"+data.id} {...data}/>
+                        return <Book key={index+"book"+data.id} {...data} page={"horusHeresy"}/>
                     }
                 )}
                 
@@ -51,7 +51,7 @@ function HorusHerasy() {
                     }
                 )}
 
-                {horusHeresyDataArrow.map(( data, index ) => {                          
+                {horusHeresyDataArrow.map(( data, index ) => {                   
                         return <Arrow key={index+"arrow"+data.id} {...data}/>
                     }
                 )}

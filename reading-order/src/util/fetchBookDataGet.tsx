@@ -1,8 +1,8 @@
-import { authObject } from "../context";
+import { authObject, readingProgressType } from "../context";
 
 // Deal with failures and successes
 
-const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Dispatch<React.SetStateAction<number[]>> ) => {
+const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Dispatch<React.SetStateAction<readingProgressType>> ) => {
     // TODO set up correct response and error codes.
     
     try {
@@ -20,8 +20,9 @@ const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Disp
         });
 
         const message = await response?.text();
-        var horusHersyData = JSON.parse(horusHersyData[0].horusheresy);
-
+        
+        var bookData = JSON.parse(message)[0];
+        //var horusHersyData = JSON.parse(horusHersyData[0].horusheresy);
         if (response.ok) {           
             
             if (message === "Unauthorized") {
@@ -32,7 +33,7 @@ const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Disp
                 //await setAuth({"email":"", "password":""});
                 //await setIsSignedIn(false);
             } else {
-                setReadingProgress(horusHersyData);
+                setReadingProgress({horusHeresy:bookData.horusheresy, inquisitor:bookData.inquisitor, imperialGaurd:bookData.imperialgaurd});
             }
 
         } else {

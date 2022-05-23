@@ -16,11 +16,12 @@ export interface syncObject {
     message:string;
 }
 
-/*
 export interface readingProgressType {
     horusHeresy:number[];
+    inquisitor:number[];
+    imperialGaurd:number[];
 }
-*/
+
 
 const AppContext = React.createContext({});
 
@@ -28,7 +29,8 @@ const AppContext = React.createContext({});
 // Array.apply(null, Array(299)).map(function (x) { return 0; });
 
 const storageAccess = () => {
-    var lsReadingProgress:number[] = Array.apply(null, Array(300)).map(function (x) { return 0; });
+    var lsReadingProgress:readingProgressType = { horusHeresy:Array.apply(null, Array(300)).map(function (x) { return 0; }), inquisitor:Array.apply(null, Array(100)).map(function (x) { return 0; }), imperialGaurd:Array.apply(null, Array(100)).map(function (x) { return 0; })};
+    
     if (localStorage.getItem("ReadingProgress")){
         let lsTemp:string = localStorage.getItem("ReadingProgress") || "";
         lsReadingProgress = JSON.parse(lsTemp);
@@ -49,7 +51,7 @@ const storageAccessUser = () => {
 
 //LOAD data on page load with GET request
 const AppProvider: React.FC = ({ children }) => {
-    const [readingProgress, setReadingProgress] = useState<number[]>(storageAccess());
+    const [readingProgress, setReadingProgress] = useState<readingProgressType>(storageAccess());
     const [auth, setAuth] = useState<authObject>(storageAccessUser()); // {username:string, password:string}
     const [ isSignedIn , setIsSignedIn ] = useState<boolean>((auth.email !== ""));
     const [ syncStatus, setSyncStatus ] = useState<syncObject>({color:"#FFFFFF", message:"sdgsdg"});

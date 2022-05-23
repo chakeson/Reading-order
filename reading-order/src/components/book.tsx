@@ -19,15 +19,17 @@ interface Props {
     rating:string;
     link:string;
     primary?:boolean;
+    page:string;
 }
 /*  faction:Array<string> */
 function Book(props:Props) {
     const { readingProgress , setReadingProgress, saveReadingProgress } = useGlobalContext();
-    const { x , y , id , title , author , book , faction , pages , audio , rating , link, primary } = props;
+    const { x , y , id , title , author , book , faction , pages , audio , rating , link, primary, page } = props;
 
 
     let startInStatus:boolean;
-    if ( readingProgress[id] === 1 ) {
+    var tempSetup = readingProgress;
+    if ( tempSetup[page][id] === 1 ) {
         startInStatus = true
     } else {
         startInStatus = false
@@ -52,10 +54,10 @@ function Book(props:Props) {
         //Update global reading progress array.
         var temp = readingProgress;
         if (e.target.checked) {
-            temp[id]=1;
+            temp[page][id]=1;
             setReadingProgress(temp);
         } else {
-            temp[id]=0;
+            temp[page][id]=0;
             setReadingProgress(temp);
         }
         //Writes to the browsers local storage.
