@@ -2,8 +2,6 @@
 
 - Add progress-bar on navbar.
 
-- Siege of Terra page.
-
 - Improve text color changer for books. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
 
 - Fix error resizing flickering/arrow line up.
@@ -14,6 +12,8 @@
     - Type useGlobalContext hook
 
 - Write about pages content text
+
+- Write Home pages content text
 
 # Start and set up
 

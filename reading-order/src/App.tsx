@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './index.css';
 import './App.css'
 import Navbar from './components/navbar';
+import Home from './pages/Home/home';
 import HorusHerasy from './pages/horusHeresy/horusHeresy';
 import Inquisitors from './pages/inquisitors/inquisitors';
 import ImperialGaurd from './pages/imperialGaurd/imperialGaurd';
@@ -23,7 +24,7 @@ function App() {
 			<div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       		<Navbar />
       		<Routes>
-				<Route path="/" element={<HorusHerasy />} />
+				<Route path="/" element={<Home />} />
 				<Route path="/horusheresy" element={<HorusHerasy />} />
 				<Route path="/siegeofterra" element={<HorusHerasy />} />
 				<Route path="/inquisitors" element={<Inquisitors />} />
