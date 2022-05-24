@@ -5,7 +5,15 @@ const bookSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    horusheresy: {
+    horusHeresy: {
+        type: String,
+        required: true
+    },
+    inquisitors: {
+        type: String,
+        required: true
+    },
+    imperialGuard: {
         type: String,
         required: true
     }

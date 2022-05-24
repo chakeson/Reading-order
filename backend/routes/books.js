@@ -8,8 +8,12 @@ const Book = require("../models/book");
 // Create books
 exports.postBooks = async function(req, res) {
     var inputUserKey = req.user._id;
-    var inputBookData = req.body.book;
+    var inputHorusHeresy = req.body.horusHeresy;
+    var inputInquisitors = req.body.inquisitors;
+    var inputImperialGuard = req.body.imperialGuard;
 
+    //console.log(typeof inputHorusHeresy);
+    //console.log(inputHorusHeresy);
     // Check if book already exists
     Book.findOne({ userkey: inputUserKey }, function(err, bookentry) {
         // Catch look up/db errors
@@ -24,7 +28,9 @@ exports.postBooks = async function(req, res) {
             // Create a new book entry
             var book = new Book({
                 userkey: inputUserKey,
-                horusheresy: inputBookData
+                horusHeresy: inputHorusHeresy,
+                inquisitors: inputInquisitors,
+                imperialGuard: inputImperialGuard
             });
         
             book.save(function(err) {
@@ -43,9 +49,11 @@ exports.postBooks = async function(req, res) {
 // Update book
 exports.putBooks = async function(req, res) {
     var inputUserKey = req.user._id;
-    var inputBookData = req.body.book;
+    var inputHorusHeresy = req.body.horusHeresy;
+    var inputInquisitors = req.body.inquisitors;
+    var inputImperialGuard = req.body.imperialGuard;
 
-    Book.findOneAndUpdate({ userkey: inputUserKey }, { horusheresy: inputBookData }, function(err, book) {
+    Book.findOneAndUpdate({ userkey: inputUserKey }, { horusheresy: inputHorusHeresy }, function(err, book) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
@@ -56,7 +64,9 @@ exports.putBooks = async function(req, res) {
             // Create a new book entry
             var book = new Book({
                 userkey: inputUserKey,
-                horusheresy: inputBookData
+                horusHeresy: inputHorusHeresy,
+                inquisitors: inputInquisitors,
+                imperialGuard: inputImperialGuard
             });
         
             book.save(function(err) {
@@ -72,8 +82,9 @@ exports.putBooks = async function(req, res) {
         }
         else {
             // Update the book progress
-            book.horusheresy = inputBookData;
-
+            book.horusHeresy = inputHorusHeresy,
+            book.inquisitors = inputInquisitors,
+            book.imperialGuard = inputImperialGuard
             // Save the book progress and check for errors
             book.save(function(err) {
                 if (err) {
