@@ -18,8 +18,8 @@ export interface syncObject {
 
 export interface readingProgressType {
     horusHeresy:number[];
-    inquisitor:number[];
-    imperialGaurd:number[];
+    inquisitors:number[];
+    imperialGuard:number[];
 }
 
 
@@ -29,7 +29,7 @@ const AppContext = React.createContext({});
 // Array.apply(null, Array(299)).map(function (x) { return 0; });
 
 const storageAccess = () => {
-    var lsReadingProgress:readingProgressType = { horusHeresy:Array.apply(null, Array(300)).map(function (x) { return 0; }), inquisitor:Array.apply(null, Array(100)).map(function (x) { return 0; }), imperialGaurd:Array.apply(null, Array(100)).map(function (x) { return 0; })};
+    var lsReadingProgress:readingProgressType = { horusHeresy:Array.apply(null, Array(300)).map(function (x) { return 0; }), inquisitors:Array.apply(null, Array(100)).map(function (x) { return 0; }), imperialGuard:Array.apply(null, Array(100)).map(function (x) { return 0; })};
     
     if (localStorage.getItem("ReadingProgress")){
         let lsTemp:string = localStorage.getItem("ReadingProgress") || "";

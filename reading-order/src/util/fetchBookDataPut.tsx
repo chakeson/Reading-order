@@ -18,8 +18,8 @@ const fetchBookDataPut = async (auth:authObject, readingProgress:readingProgress
             credentials: 'include',
             body: new URLSearchParams({
                 horusHeresy: JSON.stringify(readingProgress.horusHeresy),
-                inquisitor: JSON.stringify(readingProgress.inquisitor),
-                imperialGaurd: JSON.stringify(readingProgress.imperialGaurd)
+                inquisitors: JSON.stringify(readingProgress.inquisitors),
+                imperialGuard: JSON.stringify(readingProgress.imperialGuard)
             })
         });
 

@@ -33,7 +33,7 @@ const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Disp
                 //await setAuth({"email":"", "password":""});
                 //await setIsSignedIn(false);
             } else {
-                setReadingProgress({horusHeresy:bookData.horusheresy, inquisitor:bookData.inquisitor, imperialGaurd:bookData.imperialgaurd});
+                setReadingProgress({horusHeresy:bookData.horusHeresy, inquisitors:bookData.inquisitors, imperialGuard:bookData.imperialGuard});
             }
 
         } else {

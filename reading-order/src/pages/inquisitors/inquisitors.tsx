@@ -27,7 +27,7 @@ function Inquisitors() {
                     )}
                                 
                 {inquisitorsDataBooks.map(( data, index ) => {
-                        return <Book key={index+"book"+data.id} {...data} page={"inquisitor"}/>
+                        return <Book key={index+"book"+data.id} {...data} page={"inquisitors"}/>
                     }
                 )}
                 
