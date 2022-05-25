@@ -8,7 +8,7 @@ import { useGlobalContext } from '../context';
 function Navbar() {
     const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
     const dropdownRef = useRef<HTMLUListElement>(null);
-    const { isSignedIn } = useGlobalContext();
+    const { isSignedIn , handleLogout } = useGlobalContext();
     
     return (
         <nav className="bg-blue2 sticky top-0 z-50">
@@ -39,9 +39,14 @@ function Navbar() {
                             <Link to="/about">About</Link>
                         </li>
                         { isSignedIn ?
+                            <>
                             <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
                                 <Link to="/account">Account</Link>
                             </li>
+                            <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
+                                <button onClick={()=>handleLogout()} className="font-bold">Logout</button>
+                            </li>
+                            </>
                             :
                             <>
                             <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
@@ -79,9 +84,14 @@ function Navbar() {
                     <Link to="/about">About</Link>
                 </li>
                 { isSignedIn ?
-                    <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
+                    <>
+                    <li className="transform transition duration-700 hover:text-tertiary">
                         <Link to="/account">Account</Link>
                     </li>
+                    <li className="transform transition duration-700 hover:text-tertiary">
+                        <button onClick={()=>handleLogout()} className="font-bold">Logout</button>
+                    </li>
+                    </>
                     :
                     <>
                     <li className="transform transition duration-700 hover:text-tertiary">
