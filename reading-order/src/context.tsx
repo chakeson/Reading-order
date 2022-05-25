@@ -27,10 +27,13 @@ const AppContext = React.createContext({});
 
 // Array filled with 0 length 299
 // Array.apply(null, Array(299)).map(function (x) { return 0; });
+const createEmptyReadingProgressArray = () => {
+    return { horusHeresy:Array.apply(null, Array(300)).map(function (x) { return 0; }), inquisitors:Array.apply(null, Array(100)).map(function (x) { return 0; }), imperialGuard:Array.apply(null, Array(100)).map(function (x) { return 0; })};
+}
 
 const storageAccess = () => {
-    var lsReadingProgress:readingProgressType = { horusHeresy:Array.apply(null, Array(300)).map(function (x) { return 0; }), inquisitors:Array.apply(null, Array(100)).map(function (x) { return 0; }), imperialGuard:Array.apply(null, Array(100)).map(function (x) { return 0; })};
-    
+    var lsReadingProgress:readingProgressType = createEmptyReadingProgressArray();
+
     if (localStorage.getItem("ReadingProgress")){
         let lsTemp:string = localStorage.getItem("ReadingProgress") || "";
         lsReadingProgress = JSON.parse(lsTemp);
@@ -95,12 +98,19 @@ const AppProvider: React.FC = ({ children }) => {
         }
     }
     
-    const handleLogout = () => {
+    const handleLogout = async () => {
+        // Stop server saving with PUT requests.
+        // Save to server with PUT requests.
+
+        await fetchBookDataPut(auth, readingProgress, setSyncStatus);
         setAuth({"email":"", "password":""});
         setIsSignedIn(false);
-        localStorage.removeItem('Login');
-        localStorage.removeItem('ReadingProgress');
-        // Stop server saving with PUT requests.
+
+        let stringUser = JSON.stringify({"email":"", "password":""});
+        localStorage.setItem('Login', stringUser);
+
+        let stringReadingProgress = JSON.stringify(createEmptyReadingProgressArray());
+        localStorage.setItem('ReadingProgress', stringReadingProgress);
     }
 
     return (
