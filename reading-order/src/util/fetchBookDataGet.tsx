@@ -22,7 +22,12 @@ const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Disp
         const message = await response?.text();
         
         var bookData = JSON.parse(message)[0];
-        //var horusHersyData = JSON.parse(horusHersyData[0].horusheresy);
+        // Convert objects strings of arrays to arrays
+        bookData.horusHeresy = JSON.parse(bookData.horusHeresy);
+        bookData.inquisitors = JSON.parse(bookData.inquisitors);
+        bookData.imperialGuard = JSON.parse(bookData.imperialGuard);
+
+
         if (response.ok) {           
             
             if (message === "Unauthorized") {

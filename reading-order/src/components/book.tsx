@@ -29,7 +29,7 @@ function Book(props:Props) {
 
     let startInStatus:boolean;
     var tempSetup = readingProgress;
-    if ( tempSetup[page][id] === 1 ) {
+    if ( tempSetup[page][id] === 1 ) { //TODO change so with empty readingProgress it does not break it
         startInStatus = true
     } else {
         startInStatus = false

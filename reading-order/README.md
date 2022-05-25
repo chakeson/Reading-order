@@ -12,6 +12,8 @@
 
 - Improve text color changer for books. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
 
+- Test updating to React 18.
+
 - Fix error resizing flickering/arrow line up.
 
 - Add lazy loading of book data to reduce bundle size.
