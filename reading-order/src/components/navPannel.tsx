@@ -8,8 +8,8 @@ import { IoIosArrowUp , IoIosArrowDown} from "react-icons/io";
 
 function NavPannel() {
     const [ isNavExpanded , setIsNavExpanded ] = useState<boolean>(false);
-  
-
+   
+    
     const handleClickBar = (e:any) => {
         e.stopPropagation(); 
         if (isNavExpanded) {
@@ -25,14 +25,12 @@ function NavPannel() {
     return (
     <nav onClick={(e)=>handleClickBar(e)} className={`w-96 absolute top-0 left-0 z-20 border-2 rounded-br-2xl inline-flex flex-col nav-pannel bg-map ${isNavExpanded?"":"cursor-pointer"}`}>
         <div className={`px-6 pt-2 ${isNavExpanded ? "pb-4" : "pb-2" }`}>
-            <div className='flex flex-row justify-between'>
-                <h1 className='text-2xl font-bold'>Legend</h1>
+            <div className='flex flex-row justify-between pb-1'>
+                <h1 className='text-2xl font-bold'>{isNavExpanded ? "Factions":"Legend"}</h1>
                 <button onClick={(e)=>handleClickButton(e)}>{ isNavExpanded ? < IoIosArrowUp size="1.5rem" color="black"/> : < IoIosArrowDown size="1.5rem" color="black"/> }</button>
             </div>
             {isNavExpanded ? 
             <>
-            <p>Explains the map element.</p>
-            <h1 className='text-2xl font-bold'>Factions</h1>
             <NavPannelFaction />
             <h1 className='text-2xl font-bold'>Symbols</h1>
             <div>
