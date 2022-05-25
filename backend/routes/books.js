@@ -109,7 +109,7 @@ exports.getBooks = async function(req, res) {
             res.status(500).send(err);
         } 
         else {
-            res.status(200).send(book);
+            res.status(200).send({"horusHeresy":book[0].horusHeresy, "inquisitors":book[0].inquisitors, "imperialGuard":book[0].imperialGuard});
         }
     });
 };
