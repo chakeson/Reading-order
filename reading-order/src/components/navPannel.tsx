@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import Xarrow from "react-xarrows";
 import NavPannelFaction from './navPannelFaction';
-import '../index.css';
+import { GiVerticalBanner , GiKnightBanner } from "react-icons/gi";
+import { IoIosArrowUp , IoIosArrowDown} from "react-icons/io";
+//import '../index.css';
 
 
 function NavPannel() {
@@ -19,20 +21,20 @@ function NavPannel() {
         e.stopPropagation(); 
         setIsNavExpanded(!isNavExpanded)
     }
-    
+
     return (
     <nav onClick={(e)=>handleClickBar(e)} className={`w-96 absolute top-0 left-0 z-20 border-2 rounded-br-2xl inline-flex flex-col nav-pannel bg-map ${isNavExpanded?"":"cursor-pointer"}`}>
         <div className={`px-6 pt-2 ${isNavExpanded ? "pb-4" : "pb-2" }`}>
             <div className='flex flex-row justify-between'>
                 <h1 className='text-2xl font-bold'>Legend</h1>
-                <button onClick={(e)=>handleClickButton(e)}>{ isNavExpanded ? "X" : "\\/"}</button>
+                <button onClick={(e)=>handleClickButton(e)}>{ isNavExpanded ? < IoIosArrowUp size="1.5rem" color="black"/> : < IoIosArrowDown size="1.5rem" color="black"/> }</button>
             </div>
             {isNavExpanded ? 
             <>
             <p>Explains the map element.</p>
             <h1 className='text-2xl font-bold'>Factions</h1>
             <NavPannelFaction />
-            <h1 className='text-2xl font-bold'>Arrows</h1>
+            <h1 className='text-2xl font-bold'>Symbols</h1>
             <div>
                 <div className='flex flex-row'>
                     <div className='flex flex-row'>
@@ -60,6 +62,12 @@ function NavPannel() {
                     <Xarrow start="example-arrow-3-start" end="example-arrow-3-end" color="green" path={"grid"} dashness={{strokeLen: 3,nonStrokeLen:5}} startAnchor={{position: "left", offset: {y: -11}}} endAnchor={{position: "right", offset: {y: -11}}}/>
                     <h4 className='font-semibold mx-2 w-24'>Tertiary</h4>
                     <p>May contain common character</p>
+                </div>
+                
+                <div className='flex flex-row'>
+                    <GiKnightBanner size="3rem" color="black"/>
+                    <GiVerticalBanner size="3rem" color="black"/>
+                    <p className='mx-2'>Indiactes that the texts are essential or major part of the story.</p>
                 </div>
             </div>
             </>

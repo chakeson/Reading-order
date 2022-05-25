@@ -1,5 +1,13 @@
 # TODO
 
+- Fix syncing compenent
+
+- Fix navpannel
+
+- Make navpannel factions clicable
+
+- Create navbar login out register interaction part
+
 - Add progress-bar on navbar.
 
 - Improve text color changer for books. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
