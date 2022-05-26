@@ -7,7 +7,7 @@ function NavPannelFaction() {
     <div className='grid grid-cols-3 gap-2'>
         {factionText.map(( data, index ) => {
             return(
-            <button key={"factionNavpannel"+index} className='w-28 inline-flex flex-col items-center justify-center border-2 rounded font-bold text-sm' style={{ background:data.color, color:data.text, borderColor:"#000000"}}>
+            <button key={"factionNavpannel"+index} className=' inline-flex flex-col items-center justify-center border-2 rounded font-bold text-sm' style={{ background:data.color, color:data.text, borderColor:"#000000"}}>
                 <p>{data.nr}</p>
                 {data.Name}
             </button>     
