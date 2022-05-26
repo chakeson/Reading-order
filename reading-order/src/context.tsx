@@ -57,7 +57,7 @@ const AppProvider: React.FC = ({ children }) => {
     const [readingProgress, setReadingProgress] = useState<readingProgressType>(storageAccess());
     const [auth, setAuth] = useState<authObject>(storageAccessUser()); // {username:string, password:string}
     const [ isSignedIn , setIsSignedIn ] = useState<boolean>((auth.email !== ""));
-    const [ syncStatus, setSyncStatus ] = useState<syncObject>({color:"#FFFFFF", message:"sdgsdg"});
+    const [ syncStatus, setSyncStatus ] = useState<syncObject>({color:"#FFFFFF", message:""});
 
     // For testing as logged in user
     //const [auth, setAuth] = useState<authObject>({email:"test@test.com",password:"Password1!"}); // {username:string, password:string}
