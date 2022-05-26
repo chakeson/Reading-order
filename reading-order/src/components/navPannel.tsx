@@ -24,12 +24,16 @@ function NavPannel() {
 
     return (
     <nav onClick={(e)=>handleClickBar(e)} className={`w-96 absolute top-0 left-0 z-20 border-2 rounded-br-2xl inline-flex flex-col nav-pannel bg-map ${isNavExpanded?"":"cursor-pointer"}`}>
-        <div className={`px-6 pt-2 ${isNavExpanded ? "pb-4" : "pb-2" }`}>
-            <div className='flex flex-row justify-between pb-1'>
+        <div className={`px-6 ${isNavExpanded ? "pb-4" : "pb-2" }`}>
+            <div className='bg-map pt-2 flex flex-row justify-between pb-1'>
                 <h1 className='text-2xl font-bold'>{isNavExpanded ? "Factions":"Legend"}</h1>
                 <button onClick={(e)=>handleClickButton(e)}>{ isNavExpanded ? < IoIosArrowUp size="1.5rem" color="black"/> : < IoIosArrowDown size="1.5rem" color="black"/> }</button>
             </div>
-            {isNavExpanded ? 
+
+            {/* Handles in and out animation */}
+            <div className='overflow-hidden'>
+            <div className={`${isNavExpanded?"nav-show":"nav-hidden"}`}>
+            
             <>
             <NavPannelFaction />
             <h1 className='text-2xl font-bold'>Symbols</h1>
@@ -39,7 +43,7 @@ function NavPannel() {
                         <div id="example-arrow-1-start" className='w-10'></div>
                         <div id="example-arrow-1-end" className='w-10'></div>
                     </div>
-                    <Xarrow start="example-arrow-1-start" end="example-arrow-1-end" color="red" path={"grid"} startAnchor={{position: "left", offset: {y: -11}}} endAnchor={{position: "right", offset: {y: -11}}}/>
+                    <Xarrow start="example-arrow-1-start" end="example-arrow-1-end" color="red" path={"grid"} startAnchor={{position: "left", offset: {y: -11}}} endAnchor={{position: "right", offset: {y: -11}}} zIndex={-1}/>
                     <h4 className='font-semibold mx-2 w-24'>Primary</h4>
                     <p>High risk of spoiling the plot</p>
                 </div>
@@ -48,7 +52,7 @@ function NavPannel() {
                         <div id="example-arrow-2-start" className='w-10'></div>
                         <div id="example-arrow-2-end" className='w-10'></div>
                     </div>
-                    <Xarrow start="example-arrow-2-start" end="example-arrow-2-end" color="blue" path={"grid"} dashness={{strokeLen: 5,nonStrokeLen:2}} startAnchor={{position: "left", offset: {y: -11}}} endAnchor={{position: "right", offset: {y: -11}}}/>
+                    <Xarrow start="example-arrow-2-start" end="example-arrow-2-end" color="blue" path={"grid"} dashness={{strokeLen: 5,nonStrokeLen:2}} startAnchor={{position: "left", offset: {y: -11}}} endAnchor={{position: "right", offset: {y: -11}}} zIndex={-1}/>
                     <h4 className='font-semibold mx-2 w-24'>Secondary</h4>
                     <p>May spoil significant parts of the story</p>
                 </div>
@@ -57,7 +61,7 @@ function NavPannel() {
                         <div id="example-arrow-3-start" className='w-10'></div>
                         <div id="example-arrow-3-end" className='w-10'></div>
                     </div>
-                    <Xarrow start="example-arrow-3-start" end="example-arrow-3-end" color="green" path={"grid"} dashness={{strokeLen: 3,nonStrokeLen:5}} startAnchor={{position: "left", offset: {y: -11}}} endAnchor={{position: "right", offset: {y: -11}}}/>
+                    <Xarrow start="example-arrow-3-start" end="example-arrow-3-end" color="green" path={"grid"} dashness={{strokeLen: 3,nonStrokeLen:5}} startAnchor={{position: "left", offset: {y: -11}}} endAnchor={{position: "right", offset: {y: -11}}} zIndex={-1}/>
                     <h4 className='font-semibold mx-2 w-24'>Tertiary</h4>
                     <p>May contain common character</p>
                 </div>
@@ -69,7 +73,9 @@ function NavPannel() {
                 </div>
             </div>
             </>
-            :""}
+
+            </div>
+            </div>
         </div>
     </nav>
   );

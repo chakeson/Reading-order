@@ -55,6 +55,18 @@ html,body {
     height: calc(100vh - 56px);
 }
 
+.nav-hidden {
+    margin-top: -220%;
+    transition: all 1s;
+}
+
+.nav-show {
+    margin-top: 0;
+    transition: all 1s;
+}
+
+
+
 /*
 .test {
     background: repeating-linear-gradient(
