@@ -1,5 +1,9 @@
 # Reading-order
-Reading order guide for horus heresy. Website built with react.
+Reading order guide for black libarary books, origninally built for the horus heresy series.
+
+## Frontend
+Front end is built with react. More information about react can be found [frontend README](reading-order/README.md).
+
 
 ## Backend
 Backend build using mongoDB and express. More information on the backend can be found in the [backend README](backend/README.md).

@@ -6,9 +6,9 @@
 
 - Make navpannel factions clicable
 
-- Create navbar login out register interaction part
+- Add progress-bar on navbar. Maybe display progress under account instead. Diplay on home page.
 
-- Add progress-bar on navbar.
+- Navbar on link click in phone mode maybe should close menu. Test on mobile and tablet.
 
 - Improve text color changer for books. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
 
@@ -24,6 +24,8 @@
 - Write about pages content text
 
 - Write Home pages content text
+
+Set up website icons.
 
 # Start and set up
 

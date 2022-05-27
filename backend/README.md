@@ -2,6 +2,18 @@
 
 # TODO
 
+Set up token for password backend.
+
+Set up rate limiting.
+
+On set up store user account creation time.
+
+Store 10 last IP address from user.
+
+Consider storing last login time.
+
+Consider storing IP address account was created on.
+
 
 ## Installation
 Once you have cloned the repository you can install the dependencies with npm.
