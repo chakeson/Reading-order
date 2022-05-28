@@ -4,9 +4,9 @@ import '../../index.css';
 function About() {
 	
 	return (
-    	<div className="flex items-center flex-col min-h-full h-2/3">
-            <h3 className='w-7/12 pt-8 pb-2 text-4xl'>About</h3>
-            <p className='w-7/12 text-lg'>
+    	<div className="flex items-center flex-col map-height">
+            <h3 className='w-5/6 md:w-4/6 lg:w-3/6 pt-8 pb-2 text-4xl'>About</h3>
+            <p className='w-5/6 md:w-4/6 lg:w-3/6 text-lg'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate tenetur harum culpa delectus totam voluptatum, tempora tempore eos praesentium temporibus, a nesciunt architecto amet aut esse modi mollitia voluptatem fugiat!
                 Repellendus accusamus a repudiandae nihil sed, quia officiis! Reiciendis magni commodi voluptatibus dicta eaque dolorem nostrum modi quo a non repellat minus provident, ut dolor? Explicabo inventore iure maxime voluptatum.
                 Atque deleniti ea repudiandae doloremque sit velit at culpa, voluptatibus illum vel nostrum quo amet alias eius? Dolore id sequi molestias. Iure voluptas nihil consequuntur debitis libero? Maiores, natus tempora.
@@ -18,9 +18,6 @@ function About() {
                 Odit fugiat consequatur quia quidem optio unde laudantium, maiores beatae adipisci cumque magni ratione accusamus aliquid asperiores, blanditiis tempora. Numquam rem cum molestias neque iste dignissimos nostrum cumque culpa aut.
                 Veritatis consequatur deserunt quos temporibus, similique atque debitis praesentium iure alias nisi dignissimos nemo explicabo velit aut enim eaque animi nihil in vel repudiandae voluptatum error dolorem. Nemo, corporis unde.
             </p>
-          
-          
-
     </div>
   );
 }

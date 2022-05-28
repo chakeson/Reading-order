@@ -10,7 +10,8 @@ function Home() {
 
 
     return (
-        <div className='w-full flex justify-center pt-6 sm:pt-10'>
+        <div className='w-full flex justify-center pt-6 sm:pt-10 map-height'>
+        <div className='flex justify-center items-start '>
         <main className='grid gap-5 grid-cols-1 md:grid-cols-2 w-5/6 md:w-4/6 lg:w-3/6'>
             <div className='md:col-span-2'>
                 <h1 className='font-bold text-3xl'>Black Library reading order guides</h1>
@@ -27,6 +28,7 @@ function Home() {
             </div>}
         
         </main>
+        </div>
         </div>
     );
 }
