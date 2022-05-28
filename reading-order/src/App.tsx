@@ -28,7 +28,7 @@ function App() {
 				<Route path="/horusheresy" element={<HorusHerasy />} />
 				<Route path="/siegeofterra" element={<HorusHerasy />} />
 				<Route path="/inquisitors" element={<Inquisitors />} />
-				<Route path="/imperialgaurd" element={<ImperialGaurd />} />
+				<Route path="/imperialguard" element={<ImperialGaurd />} />
 				<Route path="/about" element={<About />} />
 				{isSignedIn ? <Route path="/login" element={<Account />} /> : <Route path="/login" element={<Login />} />}
 				{isSignedIn ? <Route path="/register" element={<Account />} /> :<Route path="/register" element={<Register />} />}

@@ -10,21 +10,20 @@ function Home() {
 
 
     return (
-        <div className='w-full flex justify-center'>
-        <main className='grid grid-cols-1 md:grid-cols-2 w-5/6 md:w-4/6 lg:w-3/6'>
+        <div className='w-full flex justify-center pt-6 sm:pt-10'>
+        <main className='grid gap-5 grid-cols-1 md:grid-cols-2 w-5/6 md:w-4/6 lg:w-3/6'>
             <div className='md:col-span-2'>
-                <h1>Black Library Reading order guides</h1>
-                <p>The black libarary books can be many and it can be confusing at times to keep track of what you have read or listened to. Aswell in what order to read it as to avoid spoilers. Thus far this is most pressing with the horus heresy series with over 60 main books and many short stories.</p>
+                <h1 className='font-bold text-3xl'>Black Library reading order guides</h1>
+                <p className='text-lg'>The black libarary books can be many and it can be confusing at times to keep track of what you have read and in what order to read them to avoid spoilers. This website seeks to help you keep track of it all and in what order to read them.</p>
             </div>
 
-            <div className={`${isSignedIn?"justify-self-center md:col-span-2":""}`}>
+            <div className={`${isSignedIn?"justify-self-center md:col-span-2":"col-span-2"}`}>
                 <ReadingProgressVisualiser/>
             </div>
             
             {!isSignedIn && 
-            <div>
-                <Link to="/login">Login</Link>
-                <Link to="/register">Register</Link>
+            <div className='flex flex-col col-span-2'>
+                <p><Link to="/login" className='underline font-semibold'>Login</Link> or <Link to="/register" className='underline font-semibold'>Register</Link> to save your reading progress</p>
             </div>}
         
         </main>
