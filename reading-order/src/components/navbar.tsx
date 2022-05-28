@@ -15,7 +15,7 @@ function Navbar() {
         <div className="max-w-7xl mx-auto px-12">
             <div className="flex justify-between">
                 <div className="p-4 flex items-center">
-                    <Link to="/">
+                    <Link to="/" onClick={()=>{setShowMobileNav(false)}}>
                         <ImBook size="1.5em" color="white"/>
                     </Link>
                 </div>
@@ -69,36 +69,36 @@ function Navbar() {
         <div style={{height:`${showMobileNav ? ((dropdownRef.current?.clientHeight)?.toString()+"px") :"0px"}`}} className={`${showMobileNav ? "w-full transition-all ease-out duration-500 overflow-hidden md:hidden":"w-full transition-all ease-out duration-500 overflow-hidden md:hidden"}`}>
             <ul ref={dropdownRef} className="block font-bold text-xl text-white px-16 pb-3">
                 <li className="transform transition duration-700 hover:text-tertiary">
-                    <Link to="/horusheresy">Horus Heresy</Link>
+                    <Link to="/horusheresy" onClick={()=>{setShowMobileNav(false)}}>Horus Heresy</Link>
                 </li>
                 <li className="transform transition duration-700 hover:text-tertiary">
-                    <Link to="/siegeofterra">Siege Of Terra</Link>
+                    <Link to="/siegeofterra" onClick={()=>{setShowMobileNav(false)}}>Siege Of Terra</Link>
                 </li>
                 <li className="transform transition duration-700 hover:text-tertiary">
-                    <Link to="/Inquisitors">Inquisitors</Link>
+                    <Link to="/Inquisitors" onClick={()=>{setShowMobileNav(false)}}>Inquisitors</Link>
                 </li>
                 <li className="transform transition duration-700 hover:text-tertiary">
-                    <Link to="/imperialgaurd">Imperial Guard</Link>
+                    <Link to="/imperialguard" onClick={()=>{setShowMobileNav(false)}}>Imperial Guard</Link>
                 </li>
                 <li className="transform transition duration-700 hover:text-tertiary">
-                    <Link to="/about">About</Link>
+                    <Link to="/about" onClick={()=>{setShowMobileNav(false)}}>About</Link>
                 </li>
                 { isSignedIn ?
                     <>
                     <li className="transform transition duration-700 hover:text-tertiary">
-                        <Link to="/account">Account</Link>
+                        <Link to="/account" onClick={()=>{setShowMobileNav(false)}}>Account</Link>
                     </li>
                     <li className="transform transition duration-700 hover:text-tertiary">
-                        <button onClick={()=>handleLogout()} className="font-bold">Logout</button>
+                        <button onClick={()=>{setShowMobileNav(false);handleLogout();}} className="font-bold">Logout</button>
                     </li>
                     </>
                     :
                     <>
                     <li className="transform transition duration-700 hover:text-tertiary">
-                        <Link to="/login">Login</Link>
+                        <Link to="/login" onClick={()=>{setShowMobileNav(false)}}>Login</Link>
                     </li>
                     <li className="transform transition duration-700 hover:text-tertiary">
-                        <Link to="/register">Register</Link>
+                        <Link to="/register" onClick={()=>{setShowMobileNav(false)}}>Register</Link>
                     </li>
                     </>
                 }

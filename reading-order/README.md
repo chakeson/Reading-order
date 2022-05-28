@@ -6,11 +6,7 @@
 
 - Make navpannel factions clicable
 
-- Add progress-bar on navbar. Maybe display progress under account instead. Diplay on home page.
-
-- Navbar on link click in phone mode maybe should close menu. Test on mobile and tablet.
-
-- Improve text color changer for books. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
+- Improve text color changer for books. Consider it for progress bars aswell. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
 
 - Test updating to React 18.
 
@@ -23,9 +19,7 @@
 
 - Write about pages content text
 
-- Write Home pages content text
-
-Set up website icons.
+- Set up website icons.
 
 # Start and set up
 
