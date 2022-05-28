@@ -1,4 +1,4 @@
-const imperialGaurdDataBooks = [
+const imperialGuardDataBooks = [
     {
         x: 430,
         y: 430,
@@ -560,10 +560,10 @@ const imperialGaurdDataBooks = [
         primary: true,
     },
 ];
-export default imperialGaurdDataBooks;
+export default imperialGuardDataBooks;
 
 
-export const imperialGaurdDataArrow = [
+export const imperialGuardDataArrow = [
     {
         id:1,
         type:"secondary",
@@ -716,7 +716,7 @@ export const imperialGaurdDataArrow = [
     },
 ]
 
-export const imperialGaurdDataZone = [
+export const imperialGuardDataZone = [
     {
         x:300,
         y:290,

@@ -33,7 +33,7 @@ function Navbar() {
                             <Link to="/inquisitors">Inquisitors</Link>
                         </li>
                         <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
-                            <Link to="/imperialgaurd">Imperial Guard</Link>
+                            <Link to="/imperialguard">Imperial Guard</Link>
                         </li>
                         <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
                             <Link to="/about">About</Link>

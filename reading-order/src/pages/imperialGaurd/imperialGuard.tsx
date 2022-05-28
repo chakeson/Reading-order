@@ -5,12 +5,12 @@ import { Space } from 'react-zoomable-ui';
 import Book from '../../components/book';
 import Arrow from '../../components/arrow';
 import Zone from '../../components/zone';
-import imperialGaurdDataBooks, { imperialGaurdDataArrow, imperialGaurdDataZone } from './imperialGaurdData'; 
+import imperialGuardDataBooks, { imperialGuardDataArrow, imperialGuardDataZone } from './imperialGuardData'; 
 import NavPannel from '../../components/navPannel';
 import SyncVisualiser from '../../components/syncVisualiser';
 
 // limitToBounds={false}
-function ImperialGaurd() {
+function ImperialGuard() {
     const spaceRef = useRef<any>();
 
     return (
@@ -20,17 +20,17 @@ function ImperialGaurd() {
             <SyncVisualiser/>
             <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,6500], y:[0,5000] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 6500, height: 2000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 6500, height: 5000 }}>
 
-                {imperialGaurdDataZone.map(( data, index ) => {
+                {imperialGuardDataZone.map(( data, index ) => {
                             return <Zone key={index+"zone"+data.id} {...data}/>
                         }
                     )}
                                 
-                {imperialGaurdDataBooks.map(( data, index ) => {
+                {imperialGuardDataBooks.map(( data, index ) => {
                         return <Book key={index+"book"+data.id} {...data} page={"imperialGuard"}/>
                     }
                 )}
 
-                {imperialGaurdDataArrow.map(( data, index ) => {                          
+                {imperialGuardDataArrow.map(( data, index ) => {                          
                         return <Arrow key={index+"arrow"+data.id} {...data}/>
                     }
                 )}
@@ -50,4 +50,4 @@ function ImperialGaurd() {
   );
 }
 
-export default ImperialGaurd;
+export default ImperialGuard;
