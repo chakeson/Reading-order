@@ -100,7 +100,7 @@ function Book(props:Props) {
                     Rating: {rating}
                 </div>}
                 { !!link && <div className='flex justify-center content-center p-2' style={{color:`${fontColor[6]}`}}>
-                    <a href={link} target="_blank" rel="noopener noreferrer" className='border-2 rounded-full px-2 py-1 font-medium font-lg'>Buy now</a>
+                    <a href={link} target="_blank" rel="noopener noreferrer" className='border-2 rounded-full px-2 py-1 font-medium font-lg' onClick={(e)=>{e.stopPropagation()}}>Buy now</a>
                 </div>}
             </div>
             :

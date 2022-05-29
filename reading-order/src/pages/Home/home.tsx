@@ -18,7 +18,7 @@ function Home() {
                 <p className='text-lg'>The black libarary books can be many and it can be confusing at times to keep track of what you have read and in what order to read them to avoid spoilers. This website seeks to help you keep track of it all and in what order to read them.</p>
             </div>
 
-            <div className={`${isSignedIn?"justify-self-center md:col-span-2":"col-span-2"}`}>
+            <div className={`${isSignedIn?"md:col-span-2":"col-span-2"}`}>
                 <ReadingProgressVisualiser/>
             </div>
             

@@ -22,7 +22,7 @@ function Navbar() {
 
                 {/*PC navbar*/}
                 <div className="hidden md:flex py-1">
-                    <ul className="flex items-center space-x-5 font-bold text-xl text-white">
+                    <ul className="flex items-center space-x-5 font-bold text-lg lg:text-xl text-white">
                         <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
                             <Link to="/horusheresy">Horus Heresy</Link>
                         </li>
