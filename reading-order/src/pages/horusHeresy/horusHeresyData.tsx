@@ -3160,6 +3160,20 @@ const horusHeresyDataBooks = [
         link:"https://www.warhammer-community.com/2019/06/01/black-library-live-the-reveals/"
     },
     {
+        x: 11400,
+        y: 3688,
+        id: 283,
+        title: "Echoes of Eternity",
+        author: "Aaron Dembski-Bowden",
+        book:"Siege of Terra",
+        faction: [""],
+        pages:"",
+        audio:"",
+        rating: "%",
+        link:"",
+        primary: true,
+    },
+    {
         x: 3900,
         y: 7450,
         id: 284,
@@ -5250,6 +5264,12 @@ export const horusHeresyDataArrow = [
 		type:"primary",
 		start:250,
 		end:44,
+	},
+    {
+		id:301,
+		type:"primary",
+		start:62,
+		end:283,
 	},
 ];
 

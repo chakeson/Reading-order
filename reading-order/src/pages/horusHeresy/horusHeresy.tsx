@@ -29,7 +29,7 @@ function HorusHerasy() {
             <div className="map-height">
             <NavPannel />
             <SyncVisualiser/>
-            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,11500], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: cameraStartingPosition.left, top: cameraStartingPosition.top, width: cameraStartingPosition.width, height: cameraStartingPosition.height});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11500, height: 8500 }}>
+            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,11800], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: cameraStartingPosition.left, top: cameraStartingPosition.top, width: cameraStartingPosition.width, height: cameraStartingPosition.height});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11800, height: 8500 }}>
                 
                 {/* Devision slider and side naming. */}
                 <div style={{top:`0px`,left:`8760px`,width:`0px`,height:`100%`,border:"5px dashed #b09642"}} className='absolute'></div>
