@@ -5,20 +5,20 @@ function About() {
 	
 	return (
     	<div className="flex items-center flex-col map-height">
-            <h3 className='w-5/6 md:w-4/6 lg:w-3/6 pt-8 pb-2 text-4xl'>About</h3>
-            <p className='w-5/6 md:w-4/6 lg:w-3/6 text-lg'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate tenetur harum culpa delectus totam voluptatum, tempora tempore eos praesentium temporibus, a nesciunt architecto amet aut esse modi mollitia voluptatem fugiat!
-                Repellendus accusamus a repudiandae nihil sed, quia officiis! Reiciendis magni commodi voluptatibus dicta eaque dolorem nostrum modi quo a non repellat minus provident, ut dolor? Explicabo inventore iure maxime voluptatum.
-                Atque deleniti ea repudiandae doloremque sit velit at culpa, voluptatibus illum vel nostrum quo amet alias eius? Dolore id sequi molestias. Iure voluptas nihil consequuntur debitis libero? Maiores, natus tempora.
-                Officiis praesentium debitis pariatur labore magnam obcaecati cumque quod, excepturi sed repudiandae dolorem reprehenderit explicabo, deserunt quidem nam voluptatem a fuga odit consequatur? Fuga quae praesentium, placeat vel qui blanditiis!
-                Eligendi distinctio id cumque aperiam totam. Magni rerum a eaque! Tempore, iusto ipsum nemo dolor reprehenderit ut voluptates, ipsam tempora laboriosam totam corporis odit quae unde tenetur non sunt illo.
-                Soluta doloremque aliquid dolor, excepturi a sint aliquam alias nesciunt quas deleniti magni exercitationem esse. Qui natus, ipsam laudantium nostrum illo error sed repellendus, facilis et quaerat expedita perferendis officia.
-                Cumque nostrum ipsum provident eveniet ex voluptates voluptas ab! Facilis rem, modi laboriosam nihil debitis, soluta voluptates nesciunt, dolores in culpa consequatur error dolor officia quidem vel architecto dolore ipsa!
-                Modi doloremque repellat culpa fugit dignissimos incidunt nostrum! Dolore minima dolor consequuntur suscipit molestiae tempora ut. Id, quis? Adipisci, sed pariatur? Optio necessitatibus, esse ipsam corrupti porro atque consectetur amet!
-                Odit fugiat consequatur quia quidem optio unde laudantium, maiores beatae adipisci cumque magni ratione accusamus aliquid asperiores, blanditiis tempora. Numquam rem cum molestias neque iste dignissimos nostrum cumque culpa aut.
-                Veritatis consequatur deserunt quos temporibus, similique atque debitis praesentium iure alias nisi dignissimos nemo explicabo velit aut enim eaque animi nihil in vel repudiandae voluptatum error dolorem. Nemo, corporis unde.
-            </p>
-    </div>
+            <h3 className='w-5/6 md:w-4/6 lg:w-3/6 pt-6 sm:pt-10 pb-2 text-3xl font-bold'>About</h3>
+            <main className='w-5/6 md:w-4/6 lg:w-3/6 text-lg pb-2'>
+                <p>This website was written as a portfolio project, and opertunity to practise react for frontend and learn backend technologies.</p>
+
+                <p>It aims to solve the problem of reading <a href="https://www.blacklibrary.com/" className='underline' target="_blank" rel="noopener noreferrer">Black Libary</a> books in a spoiler free order and in a mildly cronological order. It also aims to help you keep track of which you have read.</p>
+                
+                <h4 className='text-lg font-bold'>Special thanks</h4>
+                <p>I would like to thank the <a href="https://www.blacklibrary.com/" className='underline' target="_blank" rel="noopener noreferrer">Black Libary</a> for publishing and directing the writting of all of these books.</p>
+                
+                <p>For helping me with the order of the horus hersey and siege of terra books I would like to thank the <a href="https://www.black-librarium.com/" className='underline' target="_blank" rel="noopener noreferrer">Black Librarium</a>.</p>
+                
+                <p>For providing alot of the information about the books and the order of the Inquistors and Imperial Guard section of books. I would like to thank the <a href="https://wh40k.lexicanum.com/wiki/Main_Page" className='underline' target="_blank" rel="noopener noreferrer">Lexicanum wiki</a>.</p>
+            </main>
+        </div>
   );
 }
 
