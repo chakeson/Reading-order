@@ -67,7 +67,7 @@ const Login = () => {
                 if (message === "Valid credentails.") {
                     // Update global state for login and then call to sava it to local storage
                     await setAuth({ "email":email, "password":password });
-                    await saveLogin();
+                    await saveLogin(email,password);
                     await setIsSignedIn(true);
                     await fetchBookDataGet({ "email":email, "password":password }, setReadingProgress); // Evaluate decision to pass object instead of auth
                     // Clear input data since the user is now signed in

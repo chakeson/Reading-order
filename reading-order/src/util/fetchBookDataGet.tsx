@@ -38,6 +38,8 @@ const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Disp
                 //await setAuth({"email":"", "password":""});
                 //await setIsSignedIn(false);
             } else {
+                let stringData = JSON.stringify({horusHeresy:bookData.horusHeresy, inquisitors:bookData.inquisitors, imperialGuard:bookData.imperialGuard});
+                localStorage.setItem('ReadingProgress', stringData);
                 setReadingProgress({horusHeresy:bookData.horusHeresy, inquisitors:bookData.inquisitors, imperialGuard:bookData.imperialGuard});
             }
 

@@ -65,8 +65,8 @@ const AppProvider: React.FC = ({ children }) => {
 
 
     // Saves auth state to local storage.
-    const saveLogin = () => {
-        let stringData = JSON.stringify(auth);
+    const saveLogin = (email:string,password:string) => {
+        let stringData = JSON.stringify({ "email":email, "password":password });
         localStorage.setItem('Login', stringData);
     }
 
@@ -103,14 +103,15 @@ const AppProvider: React.FC = ({ children }) => {
         // Save to server with PUT requests.
 
         await fetchBookDataPut(auth, readingProgress, setSyncStatus);
-        setAuth({"email":"", "password":""});
+        
         setIsSignedIn(false);
-
+        setAuth({"email":"", "password":""});
         let stringUser = JSON.stringify({"email":"", "password":""});
         localStorage.setItem('Login', stringUser);
 
-        let stringReadingProgress = JSON.stringify(createEmptyReadingProgressArray());
-        localStorage.setItem('ReadingProgress', stringReadingProgress);
+        let stringReadingProgress = createEmptyReadingProgressArray();
+        localStorage.setItem('ReadingProgress', JSON.stringify(stringReadingProgress));
+        setReadingProgress(stringReadingProgress);
     }
 
     return (
