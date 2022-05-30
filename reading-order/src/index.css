@@ -65,11 +65,11 @@ html,body {
     transition: all 1s;
 }
 
-.shodow-inner-sm {
+.shadow-inner-sm {
     box-shadow: inset 0 1px 2px rgb(0 0 0 / 50%);
 }
 
-.shodow-bar {
+.shadow-bar {
     box-shadow: inset 0 -1px 0 rgb(0 0 0 / 50%);
 }
 
