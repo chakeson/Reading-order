@@ -21,6 +21,12 @@
 
 - Set up website icons.
 
+- Consider adding contact form to about page.
+
+- Fix book for empty progress
+
+- Fix loggout
+
 # Start and set up
 
 Look at [.env.example](.env.example) for the template for your .env file in the same directory.

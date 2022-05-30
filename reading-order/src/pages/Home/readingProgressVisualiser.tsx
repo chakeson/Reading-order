@@ -21,7 +21,7 @@ function ReadingProgressVisualiser() {
                             <div className='text-black text-opacity-70'>{readingProgress[key as keyof typeof bookNames].reduce((a:number,b:number)=>a+b,0)}/{bookCount[key as keyof typeof bookNames]}</div>
                         </div>
                         <div className='rounded-md bg-map shadow-inner-sm shadow-black'>
-                            <div className={`rounded-l-md bg-blue2 text-center shadow-bar  ${procentageProgress>0?"text-white":"text-black"}`} style={{width:(procentageProgress.toString()+"%")}} role="progressbar" aria-valuenow={procentageProgress} aria-valuemin={0} aria-valuemax={100}>{procentageProgress}%</div>
+                            <div className={`rounded-l-md bg-blue2 text-center shadow-bar  ${procentageProgress>0?"text-white":"text-black ml-3"}`} style={{width:(procentageProgress.toString()+"%")}} role="progressbar" aria-valuenow={procentageProgress} aria-valuemin={0} aria-valuemax={100}>{procentageProgress}%</div>
                         </div>
                     </div>
             })
