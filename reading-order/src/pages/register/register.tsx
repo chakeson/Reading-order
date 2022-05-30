@@ -129,34 +129,34 @@ const Register = () => {
 
     return (
         <div className='flex flex-col justify-center items-center'>
-            <h1 className='text-4xl'>Register</h1>
-            <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `text-2xl text-red-800 bg-white` : `hidden`}`}>{errorMessage}</p>
+            <h1 className='text-3xl font-bold pt-6 sm:pt-10'>Register</h1>
+            <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `text-2xl bg-white` : `hidden`}`}>{errorMessage}</p>
             
-            <form onSubmit={handleSubmit} className='flex flex-col'>
-                <label htmlFor="email" className='block'>
+            <form onSubmit={handleSubmit} className='flex flex-col mb-1 w-8/12 sm:w-1/2 md:w-1/3 lg:w-1/4'>
+                <label htmlFor="email" className='block text-lg opacity-90'>
                     Email:
                 </label>
-                <input className={`${ (emailValidated || email==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} ref={emailRef} id="email" type="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} aria-describedby="emailID" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setEmailFocus(true)} onBlur={() => setEmailFocus(false)} />
-                <p id="emailID" className={`${ email && emailFocus && !emailValidated ? `text-1xl text-red-800 bg-white` : `hidden`}`}>Please enter a valid email address.</p>
+                <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(emailValidated || email==="") ? `border-black` : `border-orange1`}`} ref={emailRef} id="email" type="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} aria-describedby="emailID" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setEmailFocus(true)} onBlur={() => setEmailFocus(false)} />
+                <p id="emailID" className={`pl-2 transform transition duration-300 ${email && emailFocus && !emailValidated ? `text-1xl bg-white opacity-100` : `h-0 opacity-0`}`}>Please enter a valid email address.</p>
                 
-                <label htmlFor="password" className='block'>
+                <label htmlFor="password" className='block text-lg opacity-90 bg-white z-10'>
                     Password:
                 </label>
-                <input className={`${ (passwordValidated || password==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} id="password" type="password" required value={password} aria-invalid={passwordValidated?"false":"true"} aria-describedby="passwordID" onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} />
-                <p id="passwordID" className={`${ !passwordValidated&&passwordFocus ? `text-1xl text-red-800 bg-white` : `hidden`}`}>Passwords must contain one uppercase and lowercase letter. One number and one special character. Atleast 6 characters long and max 70.</p>
+                <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(passwordValidated || password==="") ? `border-black` : `border-orange1`}`} id="password" type="password" required value={password} aria-invalid={passwordValidated?"false":"true"} aria-describedby="passwordID" onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} />
+                <p id="passwordID" className={`pl-2 transform transition duration-300 ${ !passwordValidated&&passwordFocus ? `text-1xl bg-white opacity-100` : `h-0 opacity-0`}`}>Passwords must contain one uppercase and lowercase letter. One number and one special character. Atleast 6 characters long and max 70.</p>
                 
-                <label htmlFor="matchPassword" className='block'>
+                <label htmlFor="matchPassword" className='block text-lg opacity-90 bg-white z-10'>
                     Confirm Password:
                 </label>
-                <input className={`${ (validPasswordMatch || matchPassword==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} id="matchPassword" type="password" required aria-invalid={validPasswordMatch?"false":"true"} aria-describedby="matchPasswordID" value={matchPassword} onChange={(e) => setMatchPassword(e.target.value)} onFocus={() => setMatchPasswordFocus(true)} onBlur={() => setMatchPasswordFocus(false)} />
+                <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(validPasswordMatch || matchPassword==="") ? `border-black` : `border-orange1`}`} id="matchPassword" type="password" required aria-invalid={validPasswordMatch?"false":"true"} aria-describedby="matchPasswordID" value={matchPassword} onChange={(e) => setMatchPassword(e.target.value)} onFocus={() => setMatchPasswordFocus(true)} onBlur={() => setMatchPasswordFocus(false)} />
                 
-                <p id="matchPasswordID" className={`${ (password!=="" && matchPassword!=="") &&!validPasswordMatch ? `text-1xl text-red-800 bg-white` : `hidden`}`}>Passwords must match.</p>
+                <p id="matchPasswordID" className={`pl-2 transform transition duration-300 ${ (password!=="" && matchPassword!=="") &&!validPasswordMatch ? `text-1xl bg-white opacity-100 mb-2` : `h-0 opacity-0`}`}>Passwords must match.</p>
                 
-                <button className="" disabled={!emailValidated || !passwordValidated || !validPasswordMatch}>Register</button>
+                <button className={`h-10 mb-2 text-lg font-medium rounded-xl shadow-sm shadow-black bg-black hover:bg-grey-900 ${!emailValidated || !passwordValidated || !validPasswordMatch ? "text-grey-200": "text-white"}`} disabled={!emailValidated || !passwordValidated || !validPasswordMatch}>Register</button>
 
             </form>
 
-            <p className='text-center'>Already have an account? <Link to='/login' className='underline'>Login page</Link></p>
+            <p className='text-center'>Already have an account? <Link to='/login' className='underline text-blue3'>Login page</Link></p>
         </div>
     );
 }
