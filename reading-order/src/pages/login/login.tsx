@@ -103,22 +103,22 @@ const Login = () => {
 
     return (
         <div className='flex flex-col justify-center items-center'>
-            <h1 className='text-4xl'>Login</h1>
-            <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `block text-2xl text-red-800 bg-white` : `hidden`}`}>{errorMessage}</p>
-            <form onSubmit={handleSubmit} className='flex flex-col'>
-                <label htmlFor="email">
+            <h1 className='text-3xl font-bold pt-6 sm:pt-10'>Login</h1>
+            <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `block text-xl font-medium text-orange1 bg-white` : `hidden`}`}>{errorMessage}</p>
+            <form onSubmit={handleSubmit} className='flex flex-col mb-1 w-8/12 sm:w-1/2 md:w-1/3 lg:w-1/4'>
+                <label htmlFor="email" className='text-lg opacity-90'>
                     Email:
                 </label>
-                <input className={`${ (emailValidated || email==="") ? `border-2 border-solid border-black` : `border-2 border-solid border-orange1`}`} type="text" id="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
+                <input className={`h-10 rounded mb-2 pl-2 border-2 border-solid ${ (emailValidated || email==="") ? ` border-black` : `border-orange1`}`} type="text" id="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} ref={emailRef} value={email} onChange={(e)=>{setEmail(e.target.value)}} />
                 
-                <label htmlFor="password">
+                <label htmlFor="password" className='text-lg opacity-90'>
                     Password:
                 </label>
-                <input className='border-2 border-solid border-black' type="password" id="password" autoComplete="off" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+                <input className='h-10 rounded mb-4 pl-2 border-2 border-solid border-black' type="password" id="password" autoComplete="off" required value={password} onChange={(e)=>{setPassword(e.target.value)}} />
                 
-                <button className="">Sign In</button>
+                <button className={`h-10 mb-2 text-lg font-medium rounded-xl shadow-sm shadow-black bg-black hover:bg-grey-900 ${!emailValidated || email==="" || password===""?"text-grey-200":"text-white"}`} disabled={!emailValidated || password===""}>Sign In</button>
             </form>
-            <p>Don't have an account? <Link to="/register" className='underline'>Register.</Link></p>
+            <p>Don't have an account? <Link to="/register" className='underline text-blue3'>Register.</Link></p>
         </div>
     );
 }
