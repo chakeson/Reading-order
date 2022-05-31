@@ -29,11 +29,15 @@ function Book(props:Props) {
 
     let startInStatus:boolean;
     var tempSetup = readingProgress;
-    if ( tempSetup[page][id] === 1 ) { //TODO change so with empty readingProgress it does not break it
-        startInStatus = true
-    } else {
-        startInStatus = false
-    } 
+    try {   // Catches the times when the reading progress is undefined. It should have been created before rendering at this point but 
+        if ( tempSetup[page][id] === 1 ) {
+            startInStatus = true;
+        } else {
+            startInStatus = false;
+        } 
+    } catch (error) {
+        startInStatus = false;
+    }
 
 
 
