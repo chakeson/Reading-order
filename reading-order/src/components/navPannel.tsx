@@ -3,10 +3,16 @@ import Xarrow from "react-xarrows";
 import NavPannelFaction from './navPannelFaction';
 import { GiVerticalBanner , GiKnightBanner } from "react-icons/gi";
 import { IoIosArrowUp , IoIosArrowDown} from "react-icons/io";
-//import '../index.css';
+
+/*
+    Compent for map book pages that renders the nappannel which works as the legend.
+    Its normal input which is conditional is for faction and symbol rendering which normally is shown.
+    What factions it diplays is determined in the navPannelFaction component.
+*/
 
 
-function NavPannel() {
+function NavPannel({factions=true, symbols=true}:{factions?:boolean, symbols?:boolean}) {
+
     const [ isNavExpanded , setIsNavExpanded ] = useState<boolean>(false);
    
     
@@ -26,7 +32,7 @@ function NavPannel() {
     <nav onClick={(e)=>handleClickBar(e)} className={`w-96 absolute top-0 left-0 z-20 border-2 rounded-br-2xl inline-flex flex-col nav-pannel bg-map ${isNavExpanded?"":"cursor-pointer"}`}>
         <div className={`px-6 ${isNavExpanded ? "pb-4" : "pb-2" }`}>
             <div className='bg-map pt-2 flex flex-row justify-between pb-1'>
-                <h1 className='text-2xl font-bold'>{isNavExpanded ? "Factions":"Legend"}</h1>
+                <h1 className='text-2xl font-bold'>{isNavExpanded ? (factions?"Factions":"Symbols"):"Legend"}</h1>
                 <button onClick={(e)=>handleClickButton(e)}>{ isNavExpanded ? < IoIosArrowUp size="1.5rem" color="black"/> : < IoIosArrowDown size="1.5rem" color="black"/> }</button>
             </div>
 
@@ -35,8 +41,10 @@ function NavPannel() {
             <div className={`${isNavExpanded?"nav-show":"nav-hidden"}`}>
             
             <>
-            <NavPannelFaction />
-            <h1 className='text-2xl font-bold'>Symbols</h1>
+            {factions && <NavPannelFaction />}
+            {symbols &&
+            <>
+            {factions && <h1 className='text-2xl font-bold'>Symbols</h1>}
             <div>
                 <div className='flex flex-row'>
                     <div className='flex flex-row'>
@@ -72,6 +80,7 @@ function NavPannel() {
                     <p className='mx-2'>Indiactes that the texts are essential or major part of the story.</p>
                 </div>
             </div>
+            </>}
             </>
 
             </div>

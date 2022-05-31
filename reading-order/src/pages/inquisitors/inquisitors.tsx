@@ -17,7 +17,7 @@ function Inquisitors() {
     return (
             <>
             <div className="map-height">
-            <NavPannel />
+            <NavPannel factions={false}/>
             <SyncVisualiser/>
             <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,5000], y:[0,5000] }); vp.camera.centerFitAreaIntoView({ left: 0, top: 0, width: 5000, height: 2000});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 5000, height: 5000 }}>
 
