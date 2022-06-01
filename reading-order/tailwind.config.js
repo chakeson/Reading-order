@@ -48,7 +48,11 @@ module.exports = {
         900: '#7f1d1d',
       },
     },
-    extend: {},
+    extend: {
+      screens: {
+        '3xl': '2000px',
+      }
+    },
   },
   plugins: [],
 };
