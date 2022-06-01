@@ -1,4 +1,5 @@
-import React, {useContext, useState } from "react";
+import React, {useContext, useEffect, useState } from "react";
+import fetchBookDataGet from "./util/fetchBookDataGet";
 import fetchBookDataPut from "./util/fetchBookDataPut";
 
 /*type ProviderType = {
@@ -62,6 +63,13 @@ const AppProvider: React.FC = ({ children }) => {
     // For testing as logged in user
     //const [auth, setAuth] = useState<authObject>({email:"test@test.com",password:"Password1!"}); // {username:string, password:string}
     //const [ isSignedIn , setIsSignedIn ] = useState<boolean>(true);
+    
+    // On intial load if user is signed in, load the reading progress from the server.
+    useEffect(() => {
+        if (isSignedIn){
+            fetchBookDataGet(auth, setReadingProgress);
+        }
+    }, []);
 
 
     // Saves auth state to local storage.
