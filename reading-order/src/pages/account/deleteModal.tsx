@@ -92,7 +92,7 @@ function DeleteModal() {
     if (showDeleteModal){
     return (
             <div className='absolute flex flex-col justify-center items-center z-10 w-full height-offset' style={{top:"56px",backgroundColor:"rgba(0, 0, 0, 0.5)"}} onClick={(e)=>{closeModal(e);}}>  
-                <div className='absolute flex flex-col justify-center items-center z-10 w-10/12 h-80 sm:h-1/3 sm:w-3/4 md:w-3/5 lg:w-2/5 bg-white border-2 border-solid border-black' style={{minHeight:"360px"}} onClick={(e)=>{e.stopPropagation();}}>
+                <div className='absolute flex flex-col justify-center items-center z-10 w-10/12 h-80 sm:h-1/3 sm:w-3/4 md:w-3/5 lg:w-2/5 bg-white border-2 border-solid border-black rounded' style={{minHeight:"360px"}} onClick={(e)=>{e.stopPropagation();}}>
                     
                     <button className='absolute text-2xl lg:text-3xl' style={{top:"20px",right:"20px"}} onClick={(e)=>{closeModal(e);}}><AiOutlineClose/></button>
 
