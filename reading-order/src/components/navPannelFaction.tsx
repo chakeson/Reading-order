@@ -8,7 +8,7 @@ function NavPannelFaction() {
         {factionText.map(( data, index ) => {
             return(
             <button key={"factionNavpannel"+index} className=' inline-flex flex-col items-center justify-center border-2 rounded font-bold text-xs lg:text-sm 3xl:text-2xl break-all lg:break-normal' style={{ background:data.color, color:data.text, borderColor:"#000000"}}>
-                <p>{data.nr}</p>
+                {data.nr !== "" && <p>{data.nr}</p>}
                 {data.Name}
             </button>     
             )
