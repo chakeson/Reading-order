@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState , useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../../index.css';
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
@@ -15,6 +15,10 @@ import SyncVisualiser from '../../components/syncVisualiser';
 function HorusHerasy() {
     const spaceRef = useRef<any>();
 
+    // Handles the state from the navpanel. Holds an array with strings of the clicked factions.
+    // It's supposed to handle selective faction rendering.
+    const [factionFilter, setFactionFilter] = useState<string[]>([]);
+
     
     // If the page is siege of terra we wanna start zoomed in on that part of the page/map.
     // Else we want to start zoomed out.
@@ -27,7 +31,7 @@ function HorusHerasy() {
     return (
             <>
             <div className="map-height">
-            <NavPannel />
+            <NavPannel factionFilter={factionFilter} setFactionFilter={setFactionFilter} />
             <SyncVisualiser/>
             <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,11800], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: cameraStartingPosition.left, top: cameraStartingPosition.top, width: cameraStartingPosition.width, height: cameraStartingPosition.height});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11800, height: 8500 }}>
                 

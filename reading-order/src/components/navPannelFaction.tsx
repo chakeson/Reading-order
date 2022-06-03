@@ -2,17 +2,48 @@ import React from 'react';
 import '../index.css';
 
 
-function NavPannelFaction() {
-  return (
+function NavPannelFaction({factionFilter=[], setFactionFilter}:{factionFilter?:string[], setFactionFilter?:React.Dispatch<React.SetStateAction<string[]>>}) {
+
+    // Toggles the presence of the faction passed in the factionFilter state.
+    const handleClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>, factionName:string) => {
+        e.stopPropagation();
+
+        // Exludes expunged factions from the filter. And values are undefined.
+        if (factionName==="Expunged" || factionFilter===undefined || setFactionFilter===undefined) {
+            return;
+        }
+        if (factionFilter.includes(factionName)) {
+            setFactionFilter(factionFilter.filter(faction => faction !== factionName)||[]);
+        } else {
+            setFactionFilter([...factionFilter, factionName]);
+        }
+        return;
+
+    }
+
+    const clearFactionFilter = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.stopPropagation();
+        if (setFactionFilter===undefined) {
+            return;
+        }
+        setFactionFilter([]);
+        return;
+    }
+
+    return (
     <div className='grid grid-cols-3 gap-2'>
         {factionText.map(( data, index ) => {
             return(
-            <button key={"factionNavpannel"+index} className=' inline-flex flex-col items-center justify-center border-2 rounded font-bold text-xs lg:text-sm 3xl:text-2xl break-all lg:break-normal' style={{ background:data.color, color:data.text, borderColor:"#000000"}}>
+            <button onClick={(e)=>{handleClick( e , data.Name )}} key={"factionNavpannel"+index} 
+            className='inline-flex flex-col items-center justify-center border-2 rounded font-bold text-xs lg:text-sm 3xl:text-2xl break-all lg:break-normal' 
+            style={{ background:((!factionFilter.includes(data.Name) && factionFilter.length>0) ?"#4b5563":data.color), color:data.text, borderColor:(factionFilter.includes(data.Name)?"#4b5563":"#000000")}}>
                 {data.nr !== "" && <p>{data.nr}</p>}
                 {data.Name}
             </button>     
             )
         })}
+        <button onClick={(e)=>{clearFactionFilter(e)}} className={`inline-flex flex-col items-center justify-center border-2 rounded font-bold text-xs lg:text-sm 3xl:text-2xl transform transition duration-500 ${factionFilter.length>0?"opacity-100":"opacity-0 cursor-default"}`}>Clear</button>
+
     </div>
   );
 }

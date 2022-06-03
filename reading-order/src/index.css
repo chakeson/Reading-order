@@ -56,7 +56,7 @@ html,body {
 }
 
 .nav-hidden {
-    margin-top: -220%;
+    margin-top: -250%;
     transition: all 1s;
 }
 

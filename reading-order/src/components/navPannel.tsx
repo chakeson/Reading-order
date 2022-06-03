@@ -11,7 +11,7 @@ import { IoIosArrowUp , IoIosArrowDown} from "react-icons/io";
 */
 
 
-function NavPannel({factions=true, symbols=true}:{factions?:boolean, symbols?:boolean}) {
+function NavPannel({factions=true, symbols=true, factionFilter, setFactionFilter}:{factions?:boolean, symbols?:boolean, factionFilter?:string[], setFactionFilter?:React.Dispatch<React.SetStateAction<string[]>>}) {
 
     const [ isNavExpanded , setIsNavExpanded ] = useState<boolean>(false);
    
@@ -29,7 +29,7 @@ function NavPannel({factions=true, symbols=true}:{factions?:boolean, symbols?:bo
     }
 
     return (
-    <nav onClick={(e)=>handleClickBar(e)} className={`w-full sm:w-72 md:w-80 lg:w-96 3xl:w-3/12 absolute top-0 left-0 z-20 border-2 rounded-br-2xl inline-flex flex-col nav-pannel bg-map ${isNavExpanded?"":"cursor-pointer"}`}>
+    <nav onClick={(e)=>handleClickBar(e)} className={`w-full sm:w-72 md:w-80 lg:w-96 3xl:w-3/12 absolute top-0 left-0 z-20 border-2 sm:rounded-br-2xl inline-flex flex-col nav-pannel bg-map ${isNavExpanded?"":"cursor-pointer"}`}>
         <div className={`px-12 sm:px-6 ${isNavExpanded ? "pb-4" : "pb-1 sm:pb-2" }`}>
             <div className='pt-1 sm:pt-2 bg-map flex flex-row justify-between pb-1'>
                 <h1 className='text-lg md:text-xl lg:text-2xl 3xl:text-4xl font-bold'>{isNavExpanded ? (factions?"Factions":"Symbols"):"Legend"}</h1>
@@ -41,7 +41,7 @@ function NavPannel({factions=true, symbols=true}:{factions?:boolean, symbols?:bo
             <div className={`${isNavExpanded?"nav-show":"nav-hidden"}`}>
             
             <>
-            {factions && <NavPannelFaction />}
+            {factions && <NavPannelFaction factionFilter={factionFilter} setFactionFilter={setFactionFilter} />}
             {symbols &&
             <>
             {factions && <h1 className='text-lg md:text-xl lg:text-2xl 3xl:text-4xl font-bold pb-2 sm:pb-0'>Symbols</h1>}
