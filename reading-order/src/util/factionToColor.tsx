@@ -56,6 +56,9 @@ const factionToColor = (factionArray:string[]) =>{
             case "sons of horus":
                 colorList.push("#fffcec");
                 break;
+            case "luna wolves / sons of horus":
+                colorList.push("#fffcec");
+                break;
             case "luna wolves and sons of horus":
                 colorList.push("#fffcec");
                 break;
