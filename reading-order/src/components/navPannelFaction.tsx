@@ -35,8 +35,8 @@ function NavPannelFaction({factionFilter=[], setFactionFilter}:{factionFilter?:s
         {factionText.map(( data, index ) => {
             return(
             <button onClick={(e)=>{handleClick( e , data.Name )}} key={"factionNavpannel"+index} 
-            className='inline-flex flex-col items-center justify-center border-2 rounded font-bold text-xs lg:text-sm 3xl:text-2xl break-all lg:break-normal' 
-            style={{ background:((!factionFilter.includes(data.Name) && factionFilter.length>0) ?"#4b5563":data.color), color:data.text, borderColor:(factionFilter.includes(data.Name)?"#4b5563":"#000000")}}>
+            className='transition duration-300 inline-flex flex-col items-center justify-center border-2 rounded font-bold text-xs lg:text-sm 3xl:text-2xl break-all lg:break-normal' 
+            style={{ background:((!factionFilter.includes(data.Name) && factionFilter.length>0) ?"#4b5563":data.color), color:((factionFilter.length>0 &&!factionFilter.includes(data.Name))?"#000":data.text), borderColor:(factionFilter.includes(data.Name)?"#4b5563":"#000000")}}>
                 {data.nr !== "" && <p>{data.nr}</p>}
                 {data.Name}
             </button>     
