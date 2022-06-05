@@ -46,7 +46,7 @@ function HorusHerasy() {
                     )}
                                 
                 {horusHeresyDataBooks.map(( data, index ) => {
-                        return <Book key={index+"book"+data.id} {...data} page={"horusHeresy"}/>
+                        return <Book key={index+"book"+data.id} {...data} page={"horusHeresy"} factionFilter={factionFilter}/>
                     }
                 )}
                 
