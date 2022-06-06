@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 var passport = require("passport");
 var cors = require('cors');
 var { default: mongoose } = require("mongoose");
+const rateLimit = require("express-rate-limit");
 
 var bookRouter = require("./routes/books");
 var userRouter = require("./routes/user");
@@ -32,6 +33,25 @@ mongoose.connect(process.env.DATABASE_URL)
 const db = mongoose.connection
 db.on("error", (error)=>console.error(error))
 db.once("open", ()=>console.log("Connected to database."))
+
+// Set up rate limiter. Applied on all routes.
+const limiter = rateLimit({
+    windowMs: 10 * 1000, // 10 seconds
+    max: 10, // limit each IP to 10 requests per windowMs
+    message: "Too many requests from this IP, please try again later."
+});
+
+// Rate limiter for account creation
+const createAccountPOSTLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 3, // limit each IP to 3 requests per windowMs
+    message: "Created to many accounts for now, please try again later."
+});
+
+app.use(limiter);
+
+
+
 //'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
 // Set up cors
 app.use(cors({
@@ -65,7 +85,7 @@ router.route("/books")
 
 // Users routes
 router.route("/users")
-    .post(validateUsersPost, validator, userRouter.postUser)
+    .post(createAccountPOSTLimiter, validateUsersPost, validator, userRouter.postUser)
     .put(validateUsersPut, validator, authRouter.isAuthenticated, userRouter.putUser)
     .get(authRouter.isAuthenticated, userRouter.getUser)
     .delete(authRouter.isAuthenticated, userRouter.deleteUser);

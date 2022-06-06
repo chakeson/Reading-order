@@ -4,8 +4,6 @@
 
 Set up token for password backend.
 
-Set up rate limiting.
-
 Store 10 last IP address from user.
 
 ## Installation
