@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../index.css';
+import { FiTwitter } from 'react-icons/fi';
 
 function About() {
 	
@@ -14,7 +14,7 @@ function About() {
                 <h4 className='text-lg font-bold'>Special thanks</h4>
                 <p>I would like to thank the <a href="https://www.blacklibrary.com/" className='underline' target="_blank" rel="noopener noreferrer">Black Libary</a> for publishing and directing the writting of all of these books.</p>
                 
-                <p>For helping me with the order of the horus hersey and siege of terra books I would like to thank the <a href="https://www.black-librarium.com/" className='underline' target="_blank" rel="noopener noreferrer">Black Librarium</a>.</p>
+                <p>For helping me with the order of the horus hersey and siege of terra books I would like to thank the <a href="https://www.black-librarium.com/" className='underline' target="_blank" rel="noopener noreferrer">Black Librarium</a>.<a href="https://twitter.com/blacklibrarium" className='inline-block pl-1' target="_blank" rel="noopener noreferrer"><FiTwitter/></a></p>
                 
                 <p>For providing alot of the information about the books and the order of the Inquistors and Imperial Guard section of books. I would like to thank the <a href="https://wh40k.lexicanum.com/wiki/Main_Page" className='underline' target="_blank" rel="noopener noreferrer">Lexicanum wiki</a>.</p>
             </main>
