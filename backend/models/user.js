@@ -19,8 +19,19 @@ const UserSchema = new mongoose.Schema({
     createdIp: {
         type: String,
         required: true
+    },
+    lastLoginDate: {
+        type: Date,
+        default: Date.now,
+        required: true
     }
 });
+
+// Update last login date for the passed user.
+UserSchema.statics.updateLastLoginDate = function updateLastLogin(email,callback) {
+    return this.findOneAndUpdate(email, { "$set" : { "lastLoginDate": Date.now() } }, {new:true}, callback);
+};
+
 
 
 // Excute before each user.save() call to hash the password

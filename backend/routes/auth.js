@@ -6,6 +6,15 @@ const User = require('../models/user');
 // Basic passport strategy HTTP
 passport.use(new BasicStrategy(
     function(email, password, callback) {
+
+        // Updateds the last login date for the user.
+        User.updateLastLoginDate({ email: email }, function(error, user) {
+            if (error) { return callback(error); }
+
+            if (!user) { return callback(null, false); }
+
+        });
+
         User.findOne({ email: email }, function (error, user) {
             if (error) { return callback(error); }
 

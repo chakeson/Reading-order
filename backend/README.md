@@ -8,9 +8,6 @@ Set up rate limiting.
 
 Store 10 last IP address from user.
 
-Consider storing last login time.
-
-
 ## Installation
 Once you have cloned the repository you can install the dependencies with npm.
 
