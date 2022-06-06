@@ -1,10 +1,14 @@
 # TODO
 
-- Fix syncing compenent
+- Set up website icons.
 
-- Fix navpannel
+- Set up robot.txt
 
-- Make navpannel factions clicable
+- Navbar mobile hamburger bar change on opening.
+
+- Consider adding contact form to about page.
+
+### Longer term todo
 
 - Improve text color changer for books. Consider it for progress bars aswell. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
 
@@ -17,19 +21,9 @@
 - Properly type all :any
     - Type useGlobalContext hook
 
-- Write about pages content text
-
-- Set up website icons.
-
-- Consider adding contact form to about page.
-
-- Fix book for empty progress
-
-- Fix loggout
-
 # Start and set up
 
-Look at [.env.example](.env.example) for the template for your .env file in the same directory.
+Look at [.env.example](.env.example) for the template for your .env file in the same directory. After that launch it with `yarn start`.
 
 
 # Important libraries
@@ -56,6 +50,12 @@ Router and website structure in App.tsx. (React router)
 
 # Design
 Palettes: https://coolors.co/palette/ff5400-ff6d00-ff8500-ff9100-ff9e00-00b4d8-0096c7-0077b6-023e8a-03045e
+
+# Tailwind set up
+
+Extended tailwinds normal breakpoints by adding 3xl which breaks at 2000px to deal with 4k monitors.
+For colors tailwinds red and grey color spectrum are defined. Blue and orange scales taken from palette site.
+For more information check out the [tailwind config file](tailwind.config.js).
 
 
 # Getting Started with Create React App
