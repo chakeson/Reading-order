@@ -10,8 +10,6 @@ Store 10 last IP address from user.
 
 Consider storing last login time.
 
-Consider storing IP address account was created on.
-
 
 ## Installation
 Once you have cloned the repository you can install the dependencies with npm.
@@ -138,3 +136,7 @@ The folder models contains the schema for the database. The folder routes contai
 Validation is the folder that controlls api input validation. [validation.js](validation/validation.js) is the function that processes the checks and halts the chain and sends back any failures.
 
 [routes.rest](route.rest) is the file for testing the api and degugging it. It's most easily used, using the vscode pluggin [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) to test the api.
+
+# Dependencies
+
+[request-ip](https://www.npmjs.com/package/request-ip) for advanced dermination of the user's IP address. Used for saving ip addresses.

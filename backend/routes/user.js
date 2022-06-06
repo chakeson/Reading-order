@@ -1,6 +1,7 @@
 // Import express
 const express = require("express");
 var bcrypt = require("bcrypt-nodejs");
+const requestIp = require('request-ip');
 const User = require("../models/user");
 const Books = require("../models/book");
 
@@ -36,7 +37,8 @@ exports.postUser = (req, res) => {
         } else {
             const user = new User({
                 email: inputUserKey,
-                password: inputPassword
+                password: inputPassword,
+                createdIp: requestIp.getClientIp(req)
             });
             
             try {
