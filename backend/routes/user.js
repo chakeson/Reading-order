@@ -4,6 +4,7 @@ var bcrypt = require("bcrypt-nodejs");
 const requestIp = require('request-ip');
 const User = require("../models/user");
 const Books = require("../models/book");
+const jsonwebtoken = require("jsonwebtoken");
 
 // Post - Create user
 // Put - Update password
@@ -82,9 +83,35 @@ exports.putUser = (req, res) => {
     });
 };
 
-exports.getUser = function(req, res) {
-    // Authentiaction should have been done before this in.
-    res.status(200).send("Valid credentails.");
+exports.getUser = async function(req, res) {
+    // Authentiaction should have been done before this with basic auth.
+    var inputUserKey = req.user._id;
+
+    const user = await User.findOne({ _id: inputUserKey }).exec().then().catch(err => {
+        console.log(err);
+        res.status(500).send(err);
+    });
+
+    const token = jsonwebtoken.sign({
+        email: user.email,
+    }, process.env.JWT_SECRET, 
+    {
+        expiresIn: '24h'
+    });
+
+    user.token = token;
+    /*
+    TODO for future:
+    issuer: 'https://www.DOMAIN.TOP_LEVEL_DOMAIN'
+    maybe iat: Date.now()
+    */
+    
+    await user.save().then().catch(err => {
+        console.log(err);
+        res.status(500).send(err);
+    });
+
+    res.status(200).json(token);
 }
 
 exports.deleteUser = function(req, res) {
