@@ -103,10 +103,10 @@ exports.putBooks = async function(req, res) {
 exports.getBooks = async function(req, res) {
     var inputUserKey = req.user._id;
 
-    Book.find({ userkey: inputUserKey }, function(err, book) {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err);
+    Book.find({ userkey: inputUserKey }, function(error, book) {   
+        if (error) {
+            console.log(error);
+            res.status(500).send(error);
         } 
         else {
             res.status(200).send({"horusHeresy":book[0].horusHeresy, "inquisitors":book[0].inquisitors, "imperialGuard":book[0].imperialGuard});
