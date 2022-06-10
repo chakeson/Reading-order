@@ -66,7 +66,7 @@ passport.use(
                     if (!user) { return callback(null, false); }
                 });
 
-                return callback(null, jwtPayload.email);
+                return callback(null, user);
 
             } else {
                 return callback(null, false);
