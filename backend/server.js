@@ -79,16 +79,16 @@ const router = express.Router();
 
 // Books routes
 router.route("/books")
-    .post(validateBooksData, validator, authRouter.isAuthenticated, bookRouter.postBooks)
-    .get(authRouter.isAuthenticated, bookRouter.getBooks)
-    .put(validateBooksData, validator, authRouter.isAuthenticated, bookRouter.putBooks);
+    .post(validateBooksData, validator, authRouter.isAuthenticatedJWT, bookRouter.postBooks)
+    .get(authRouter.isAuthenticatedJWT, bookRouter.getBooks)
+    .put(validateBooksData, validator, authRouter.isAuthenticatedJWT, bookRouter.putBooks);
 
 // Users routes
 router.route("/users")
     .post(createAccountPOSTLimiter, validateUsersPost, validator, userRouter.postUser)
-    .put(validateUsersPut, validator, authRouter.isAuthenticated, userRouter.putUser)
+    .put(validateUsersPut, validator, authRouter.isAuthenticatedJWT, userRouter.putUser)
     .get(authRouter.isAuthenticated, userRouter.getUser)
-    .delete(authRouter.isAuthenticated, userRouter.deleteUser);
+    .delete(authRouter.isAuthenticatedJWT, userRouter.deleteUser);
 
 // Reqeust for data
 router.route("/requestdata")
