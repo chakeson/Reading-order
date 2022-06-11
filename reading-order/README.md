@@ -4,9 +4,9 @@
 
 - Set up robot.txt
 
-- Navbar mobile hamburger bar change on opening.
-
 - Consider adding contact form to about page.
+
+- Label all form fields. Books checkboxes need labels.
 
 ### Longer term todo
 

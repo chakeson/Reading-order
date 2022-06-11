@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import '../index.css';
 import { Link } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
+import { IoClose } from 'react-icons/io5'
 import { ImBook } from "react-icons/im";
 import { useGlobalContext } from '../context';
 
@@ -61,7 +62,7 @@ function Navbar() {
                 </div>
                 {/*Mobile navbar*/}
                 <div className="md:hidden flex items-center transform transition duration-700 hover:scale-10" onClick={()=>setShowMobileNav(!showMobileNav)}>
-                    <FaBars  size="2em" color="white"/>
+                    { showMobileNav ? <IoClose size="2.6em" color="white"/>: <FaBars size="2em" color="white"/>}
                 </div>
             </div>
         </div>
