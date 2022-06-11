@@ -60,7 +60,7 @@ const Account = () => {
                     'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
                     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT,HEAD',
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                    'Authorization': `Basic ${btoa((auth.email +":"+ oldPassword))}`
+                    'Authorization': `Bearer ${auth.jwt}`
                 },
                 credentials: 'include',
                 body: new URLSearchParams({

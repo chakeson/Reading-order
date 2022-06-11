@@ -64,18 +64,16 @@ const Login = () => {
 
             const message = await response?.text();
             if (response.ok) {
-                if (message === "Valid credentails.") {
-                    // Update global state for login and then call to sava it to local storage
-                    await setAuth({ "email":email, "password":password });
-                    await saveLogin(email,password);
-                    await setIsSignedIn(true);
-                    await fetchBookDataGet({ "email":email, "password":password }, setReadingProgress); // Evaluate decision to pass object instead of auth
-                    // Clear input data since the user is now signed in
-                    await setEmail('');
-                    await setPassword('');
-                    // Change the page after registration
-                    await navigate('/');
-                }
+                // Update global state for login and then call to sava it to local storage
+                await setAuth({ "jwt":message});
+                await saveLogin(message);
+                await setIsSignedIn(true);
+                await fetchBookDataGet({ "jwt":message }, setReadingProgress); // Evaluate decision to pass object instead of auth
+                // Clear input data since the user is now signed in
+                await setEmail('');
+                await setPassword('');
+                // Change the page after registration
+                await navigate('/');
             } else {
                 if (message === "Unauthorized") {
                     setEmailValidated(false);
