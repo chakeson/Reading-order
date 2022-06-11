@@ -56,7 +56,7 @@ app.use(limiter);
 // Set up cors
 app.use(cors({
     origin: JSON.parse(process.env.CORS_ORIGIN),
-    methods: ['GET', 'POST', 'PUT', 'DELETE', "OPTIONS"],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', "OPTIONS", "PATCH"],
     allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'X-Requested-With', 'Accept', 'Access-Control-Allow-Origin', "Access-Control-Request-Method", "Access-Control-Allow-Credentials",'Access-Control-Allow-Headers', "Access-Control-Request-Headers", "Access-Control-Allow-Methods"],
     credentials: true,
     preflightContinue: false,
@@ -88,7 +88,8 @@ router.route("/users")
     .post(createAccountPOSTLimiter, validateUsersPost, validator, userRouter.postUser)
     .put(validateUsersPut, validator, authRouter.isAuthenticatedJWT, userRouter.putUser)
     .get(authRouter.isAuthenticated, userRouter.getUser)
-    .delete(authRouter.isAuthenticatedJWT, userRouter.deleteUser);
+    .delete(authRouter.isAuthenticatedJWT, userRouter.deleteUser)
+    .patch(authRouter.isAuthenticatedJWT, userRouter.patchUser);
 
 // Reqeust for data
 router.route("/requestdata")

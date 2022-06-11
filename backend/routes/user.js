@@ -136,3 +136,23 @@ exports.deleteUser = function(req, res) {
         }
     });
 };
+
+exports.patchUser = function(req, res) {
+    var inputUserKey = req.user._id;
+    
+    User.findOneAndUpdate({ _id: inputUserKey }, {token:""}, function(error, user) {
+        if (error) {
+            res.status(500).send(error);
+        } else {
+            user.token = "";
+            
+            user.save(function(error) {
+                if (error) {
+                    res.status(500).send(error);
+                } else {
+                    res.status(200).send("Successfully deleted token.");
+                }
+            });
+        }
+    });
+}
