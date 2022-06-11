@@ -92,7 +92,7 @@ router.route("/users")
 
 // Reqeust for data
 router.route("/requestdata")
-    .get(authRouter.isAuthenticated, requestDataRouter.getData);
+    .get(authRouter.isAuthenticatedJWT, requestDataRouter.getData);
 
 
 // Register all our routes with /api

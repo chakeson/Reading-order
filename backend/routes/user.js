@@ -111,7 +111,7 @@ exports.getUser = async function(req, res) {
         res.status(500).send(err);
     });
 
-    res.status(200).json(token);
+    res.status(200).send(token);
 }
 
 exports.deleteUser = function(req, res) {
