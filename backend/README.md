@@ -12,7 +12,11 @@ Once you have cloned the repository you can install the dependencies with npm.
 ```
 npm install
 ```
-Then open the .env file and fill in the correct values for the database and port. For format look at [.env.example](.env.example).
+Then open the .env file and fill in the correct values for the database and port. Per the [JWS token libraries](https://github.com/dwyl/hapi-auth-jwt2#generating-your-secret-key) instructions for secret generation use:
+``` 
+node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
+```
+For format look at [.env.example](.env.example).
 
 Then to start the server.
 ```

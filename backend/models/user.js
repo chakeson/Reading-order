@@ -16,6 +16,9 @@ const UserSchema = new mongoose.Schema({
         default: Date.now,
         required: true
     },
+    token: {
+        type: String,
+    },
     createdIp: {
         type: String,
         required: true

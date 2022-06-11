@@ -8,8 +8,7 @@ import fetchBookDataPut from "./util/fetchBookDataPut";
 }*/
 
 export interface authObject {
-    email:string;
-    password:string;
+        jwt:string;
 }
 
 export interface syncObject {
@@ -57,7 +56,7 @@ const storageAccessUser = () => {
 const AppProvider: React.FC = ({ children }) => {
     const [readingProgress, setReadingProgress] = useState<readingProgressType>(storageAccess());
     const [auth, setAuth] = useState<authObject>(storageAccessUser()); // {username:string, password:string}
-    const [ isSignedIn , setIsSignedIn ] = useState<boolean>((auth.email !== ""));
+    const [ isSignedIn , setIsSignedIn ] = useState<boolean>((auth.jwt !== ""));
     const [ syncStatus, setSyncStatus ] = useState<syncObject>({color:"#FFFFFF", message:""});
 
     // For testing as logged in user
@@ -73,8 +72,8 @@ const AppProvider: React.FC = ({ children }) => {
 
 
     // Saves auth state to local storage.
-    const saveLogin = (email:string,password:string) => {
-        let stringData = JSON.stringify({ "email":email, "password":password });
+    const saveLogin = (jwt:string) => {
+        let stringData = JSON.stringify({ "jwt":jwt });
         localStorage.setItem('Login', stringData);
     }
 
@@ -113,8 +112,8 @@ const AppProvider: React.FC = ({ children }) => {
         await fetchBookDataPut(auth, readingProgress, setSyncStatus);
         
         setIsSignedIn(false);
-        setAuth({"email":"", "password":""});
-        let stringUser = JSON.stringify({"email":"", "password":""});
+        setAuth({"jwt":""});
+        let stringUser = JSON.stringify({"jwt":""});
         localStorage.setItem('Login', stringUser);
 
         let stringReadingProgress = createEmptyReadingProgressArray();
