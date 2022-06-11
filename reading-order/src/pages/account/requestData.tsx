@@ -8,6 +8,7 @@ function RequestData() {
     const { auth } = useGlobalContext();
 
     const handleSubmit = async () => {
+        setRawData("");
         var requestResponse = await fetchRequestDataGet(auth);
         setRawData(requestResponse)
     }
