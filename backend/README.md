@@ -1,10 +1,12 @@
 # Backend server for storing accounts and their reading progress.
 
+Serves as the server backend for the site. 
+
 # TODO
 
 - Consider storing 10 last IP address from user.
 
-## Installation
+# Installation
 Once you have cloned the repository you can install the dependencies with npm.
 
 ```
