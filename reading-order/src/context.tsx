@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState } from "react";
 import fetchBookDataGet from "./util/fetchBookDataGet";
 import fetchBookDataPut from "./util/fetchBookDataPut";
+import fetchBookDataPatch from "./util/fetchBookDataPatch";
 
 /*type ProviderType = {
     horusHeresy:[],
@@ -109,8 +110,12 @@ const AppProvider: React.FC = ({ children }) => {
         // Stop server saving with PUT requests.
         // Save to server with PUT requests.
 
+        if (interValTrackerVariable){
+            // Clear interval for saving to server.
+            clearInterval(interValTrackerVariable);
+        }
         await fetchBookDataPut(auth, readingProgress, setSyncStatus);
-        
+        fetchBookDataPatch(auth);
         setIsSignedIn(false);
         setAuth({"jwt":""});
         let stringUser = JSON.stringify({"jwt":""});
