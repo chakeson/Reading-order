@@ -95,7 +95,7 @@ function Book(props:Props) {
         <div id={idAsString} style={{top:`${y}px`,left:`${x}px`,background:`repeating-linear-gradient(0deg,${ isGreyedOut||isRead ? `${greyedOutColorHex} 0%, ${greyedOutColorHex} 100%` : backgroundMakerColor})`}} className={`select-none hover:select-text w-60 absolute inline-flex flex-col border-2 rounded-2xl doubleClickDisabled ${isExpanded ? "z-20" : "z-10"}`} onClick = { e => { setIsExpanded(!isExpanded); }} >
             <div className='font-semibold text-xl text-clip flex justify-between items-center pt-3 px-3'>
             { !!title && <div className='w-11/12' style={{color:`${fontColor[0]}`}}>{title}</div>}
-                <input type="checkbox" className='w-6 h-6' onClick={e => {handleChange(e);}} defaultChecked={isRead}/>
+                <input aria-label='Saves book as read.' type="checkbox" className='w-6 h-6' onClick={e => {handleChange(e);}} defaultChecked={isRead}/>
             </div>
             { !!author && <div className='px-3' style={{color:`${fontColor[1]}`}}>
                 Author: {author}

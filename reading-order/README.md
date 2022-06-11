@@ -4,8 +4,6 @@
 
 - Consider adding contact form to about page.
 
-- Label all form fields. Books checkboxes need labels.
-
 - Set up 404 page.
 
 ### Longer term todo
