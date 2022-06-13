@@ -4,8 +4,6 @@
 
 - Consider adding contact form to about page.
 
-- Set up 404 page.
-
 ### Longer term todo
 
 - Improve text color changer for books. Consider it for progress bars aswell. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
