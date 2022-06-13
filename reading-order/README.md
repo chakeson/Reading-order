@@ -1,8 +1,10 @@
 # TODO
 
-- Set up website icons.
-
 - Consider adding contact form to about page.
+
+- Fix all the TODO in the code. Clean up some.
+
+- Write front page readme with image.
 
 ### Longer term todo
 

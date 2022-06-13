@@ -1,0 +1,41 @@
+{
+    "name": "Reading Order",
+    "short_name": "Reading Order",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "description":"Reading guide for black library books",
+    "shortcuts": [
+        {
+            "name": "Horus heresy reading order",
+            "short_name": "Horus heresy",
+            "description": "Spoiler free reading guide for the Horus heresy",
+            "url": "/horusheresy"
+        },
+        {
+            "name": "Inquisitors reading order",
+            "short_name": "Inquisitors books",
+            "description": "Spoiler free reading guide for the Eisenhorn books and other Inquisitorial books",
+            "url": "/inquisitors"
+        },
+        {
+            "name": "Imperial Guard reading order",
+            "short_name": "Imperial Guard books",
+            "description": "Spoiler free reading guide for the Gaunts's ghost series and other Imperial Guard novels",
+            "url": "/imperialguard"
+        }
+    ]
+}
