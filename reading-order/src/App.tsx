@@ -9,6 +9,7 @@ import Inquisitors from './pages/inquisitors/inquisitors';
 import ImperialGuard from './pages/imperialGaurd/imperialGuard';
 import About from './pages/about/about';
 import Error from './pages/error/error';
+import SuccesfulDelete from './pages/succesfulDelete/succesfulDelete';
 import Login from './pages/login/login';
 import Register from './pages/register/register';
 import Account from './pages/account/account';
@@ -33,6 +34,9 @@ function App() {
 				{isSignedIn ? <Route path="/login" element={<Account />} /> : <Route path="/login" element={<Login />} />}
 				{isSignedIn ? <Route path="/register" element={<Account />} /> :<Route path="/register" element={<Register />} />}
 				{isSignedIn ? <Route path="/account" element={<Account />} /> : <Route path="/account" element={<Login />} />}
+				<Route path='/deletion'>
+					<Route path=':id' element={<SuccesfulDelete/>} />
+				</Route>
 				<Route path="*" element={<Error />} />
 			</Routes>
 			</div>

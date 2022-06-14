@@ -54,8 +54,8 @@ function DeleteModal() {
                 await setIsSignedIn(false);
                 await localStorage.removeItem('Login');
                 await localStorage.removeItem('ReadingProgress');
-                // Go to the front after deleting account
-                await navigate('/');
+                // Go to page displaying message from request that should tell the user that it all has been deleted.
+                await navigate(`/deletion/${btoa(message)}`);
 
             } else {
                 if (message === "Unauthorized") {
