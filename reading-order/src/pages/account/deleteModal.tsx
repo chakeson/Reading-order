@@ -6,12 +6,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 // Outside click be full screen modal
 // On inside e.stopPropagation()<
 
-/*
-interface IProps {
-    setShowDeleteModal?: React.Dispatch<React.SetStateAction<boolean>>;
-}
-props:IProps
-*/
+
 
 function DeleteModal() {
     const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
@@ -55,7 +50,7 @@ function DeleteModal() {
 
             const message = await response?.text();
             if (response.ok) {
-                await setAuth({"email":"", "password":""});
+                await setAuth({"jwt":""});
                 await setIsSignedIn(false);
                 await localStorage.removeItem('Login');
                 await localStorage.removeItem('ReadingProgress');

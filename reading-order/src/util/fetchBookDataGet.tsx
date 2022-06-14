@@ -1,9 +1,8 @@
 import { authObject, readingProgressType } from "../context";
 
-// Deal with failures and successes
+// After login this is called to fetch the book progress.
 
 const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Dispatch<React.SetStateAction<readingProgressType>> ) => {
-    // TODO set up correct response and error codes.
     
     try {
         const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/books`, {

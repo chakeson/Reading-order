@@ -2,7 +2,7 @@ import { authObject,syncObject,readingProgressType } from "../context";
 
 
 const fetchBookDataPut = async (auth:authObject, readingProgress:readingProgressType, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
-    // TODO set up correct response and error codes.
+
     setSyncStatus({color:"#3DED97", message:"Saving..."});
     try {
         const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/books`, {
@@ -26,37 +26,25 @@ const fetchBookDataPut = async (auth:authObject, readingProgress:readingProgress
         const message = await response?.text();
         if (response.ok) {
             if (message === "Succesful save.") {
-                // Update sync save visualiser TODO
                 setSyncStatus({color:"#028A0F", message:"Saved"});
             }
         else if (message === "Unauthorized") {
-            //await setAuth({"email":"", "password":""});
-            //await setIsSignedIn(false); 
-            // Update sync save visualiser TODO
-            setSyncStatus({color:"#8E1600", message:"Unauthorized"});
+            setSyncStatus({color:"#cf171f", message:"Unauthorized"});
         }
         else if (response.redirected) {
-            //await setAuth({"email":"", "password":""});
-            //await setIsSignedIn(false);
-            // Update sync save visualiser TODO
-            setSyncStatus({color:"#8E1600", message:"Unauthorized"});
+            setSyncStatus({color:"#cf171f", message:"Unauthorized"});
         }
         } else {
-            // Update sync save visualiser TODO
             console.log("Error: " + message);
-            setSyncStatus({color:"#8E1600", message:"Unauthorized"});
+            setSyncStatus({color:"#cf171f", message:"Unauthorized"});
         }
     } catch (error) {     
         let errorText:string = "No Server Response. Check connection.";
         
         if (error instanceof TypeError) {
             errorText = error?.message;
-            // Update sync save visualiser TODO
         }
-        else {
-            // Update sync save visualiser TODO
-        }
-        setSyncStatus({color:"#8E1600", message:"Unauthorized"});
+        setSyncStatus({color:"#cf171f", message:"Unauthorized"});
         console.log("Error: " + errorText);
     }
 }

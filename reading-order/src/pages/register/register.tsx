@@ -5,15 +5,9 @@ import { emailRegex , passwordRegex } from '../../util/regex';
 import fetchBookDataPost from '../../util/fetchBookDataPost';
 // Registering page
 
-// TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
-// User data needs to be sent with a POST request to the server to create the book data.
-// TODO write the css for the register page
-
-
 const Register = () => {
     const { auth, setAuth , setIsSignedIn , saveLogin, readingProgress } = useGlobalContext();
 
-    
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
 
@@ -29,7 +23,6 @@ const Register = () => {
     const [validPasswordMatch, setValidPasswordMatch] = useState<boolean>(false);
     const [matchPasswordFocus, setMatchPasswordFocus] = useState<boolean>(false);
 
-
     const [errorMessage, setErrorMessage] = useState<string>('');
 
     const navigate = useNavigate();
@@ -39,17 +32,20 @@ const Register = () => {
         emailRef?.current?.focus();
     }, []);
 
+    // Validate email on change
     useEffect(() => {
         var emailValid = emailRegex.test(email);
         setEmailValidated(emailValid);
     }, [email]);
 
+    // Validate password on change
     useEffect(() => {
         var passwordValid = passwordRegex.test(password);
         setPasswordValidated(passwordValid);
         setValidPasswordMatch(password === matchPassword);
     }, [password, matchPassword]);
 
+    // Clear error message on change of input
     useEffect(() => {
         setErrorMessage("");
     }, [email, password, matchPassword]);

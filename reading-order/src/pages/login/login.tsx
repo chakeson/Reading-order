@@ -5,9 +5,6 @@ import { emailRegex } from '../../util/regex';
 import fetchBookDataGet from '../../util/fetchBookDataGet';
 // Login page
 
-// TODO handle success, maybe redirect to the page that was last visited or first time sign up to sync or something
-// Fetch server progress status.
-// TODO write the css for the login page
 
 const Login = () => {
 
@@ -72,15 +69,13 @@ const Login = () => {
                 // Clear input data since the user is now signed in
                 await setEmail('');
                 await setPassword('');
-                // Change the page after registration
+                // Change the page after login
                 await navigate('/');
             } else {
                 if (message === "Unauthorized") {
-                    setEmailValidated(false);
                     setErrorMessage("Email or password is incorrect.");
                 }
                 else if (response.redirected){
-                    setEmailValidated(false);
                     setErrorMessage("Email or password is incorrect.");
                 }
                 else{

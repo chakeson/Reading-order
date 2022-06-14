@@ -6,12 +6,8 @@ import DeleteModal from './deleteModal';
 
 // Account management page
 
-// TODO
-// TODO message that shows if it was succesfully changed or deleted.
-
-
 const Account = () => {
-    const { auth , setAuth } = useGlobalContext();
+    const { auth } = useGlobalContext();
 
     const [errorMessage, setErrorMessage] = useState<string>('');
     const errorRef = useRef<any>();
@@ -71,7 +67,6 @@ const Account = () => {
             const message = await response?.text();            
             if (response.ok) {
                 // Update the saved credentials.
-                await setAuth({ ...auth, "password": password });
 
                 // Clear input data since the request succesfully went through.
                 setPassword('');
