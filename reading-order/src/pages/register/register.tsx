@@ -3,10 +3,11 @@ import { Link , useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import { emailRegex , passwordRegex } from '../../util/regex';
 import fetchBookDataPost from '../../util/fetchBookDataPost';
+import fetchUserGet from '../../util/fetchUserGet';
 // Registering page
 
 const Register = () => {
-    const { auth, setAuth , setIsSignedIn , saveLogin, readingProgress } = useGlobalContext();
+    const { setAuth , setIsSignedIn , saveLogin, readingProgress } = useGlobalContext();
 
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
@@ -85,11 +86,20 @@ const Register = () => {
 
             const message = await response?.text();
             if (response.ok) {
-                // Update global state for login and then call to sava it to local storage
-                await setAuth({ "email":email, "password":password });
-                await saveLogin();
-                await setIsSignedIn(true);
-                await fetchBookDataPost( auth , readingProgress );
+                // Log in with those credentials and get your JWT token
+                const jwtResponse = await fetchUserGet(email, password, saveLogin, setAuth, setIsSignedIn);
+
+                // Check so response is not undefined because request failed due to network error
+                // Then check if it was successful
+                if (jwtResponse !== undefined && jwtResponse.ok===true) {
+                    const JWTMessage = await jwtResponse?.text();
+                    // Update global state for login and then call to sava it to local storage
+                    await setAuth({ "jwt":JWTMessage});
+                    await saveLogin(JWTMessage);
+                    await setIsSignedIn(true);
+                    await fetchBookDataPost( JWTMessage , readingProgress );
+                }
+
                 // Clear input data since the user is now registered
                 await setEmail('');
                 await setPassword('');

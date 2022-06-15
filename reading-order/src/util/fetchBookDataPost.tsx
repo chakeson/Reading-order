@@ -1,8 +1,8 @@
-import { authObject , readingProgressType } from "../context";
+import { readingProgressType } from "../context";
 
 // Intial save to the server to create the book document server side.
 
-const fetchBookDataPost = async ( auth:authObject , readingProgress:readingProgressType  ) => {
+const fetchBookDataPost = async ( jwt:string , readingProgress:readingProgressType  ) => {
 
     try {
         const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/books`, {
@@ -13,7 +13,7 @@ const fetchBookDataPost = async ( auth:authObject , readingProgress:readingProgr
                 'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
                 'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT,HEAD',
                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                'Authorization': `Bearer ${auth.jwt}`
+                'Authorization': `Bearer ${jwt}`
             },
             credentials: 'include',
             body: new URLSearchParams({
