@@ -27,11 +27,9 @@ function Book(props:Props) {
     const { readingProgress , setReadingProgress, saveReadingProgress } = useGlobalContext();
     const { x , y , id , title , author , book , faction , pages , audio , rating , link, primary, page , factionFilter=[] } = props;
 
-    // Cut out middle step. TODO
     let startInStatus:boolean;
-    var tempSetup = readingProgress;
     try {   // Catches the times when the reading progress is undefined. It should have been created before rendering at this point but 
-        if ( tempSetup[page][id] === 1 ) {
+        if ( readingProgress[page][id] === 1 ) {
             startInStatus = true;
         } else {
             startInStatus = false;
@@ -87,7 +85,7 @@ function Book(props:Props) {
 
     var backgroundMakerColor = backgroudMaker(faction);
     // If the checkbox is checked all text is black, else its generated based on background
-    var fontColor = isGreyedOut ? ["#000","#000","#000","#000","#000","#000","#000"] : fontColorMaker(faction, isExpanded);
+    var fontColor = (isGreyedOut||isRead) ? ["#000","#000","#000","#000","#000","#000","#000"] : fontColorMaker(faction, isExpanded);
 
 
     return (
