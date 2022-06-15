@@ -62,12 +62,12 @@ password=Password2!
 ```
 
 ### `GET`
-This endpoint is used to validate the user's credentials. It is intended for the login process. If succesful it returns a JWT token.
+This endpoint is used to validate the user's credentials. It is intended for the login process. If succesful it returns a JWT token. Username and passport have to be send in the format of base64, this is easily done with javascripts function btoa().
 
 ```
 GET http://localhost:3100/api/users HTTP/1.1
 content-type: application/x-www-form-urlencoded
-Authorization: Bearer <token>
+Authorization: Basic username password
 ```
 
 ### `DELETE`

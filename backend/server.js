@@ -45,7 +45,8 @@ const limiter = rateLimit({
 const createAccountPOSTLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour
     max: 3, // limit each IP to 3 requests per windowMs
-    message: "Created to many accounts for now, please try again later."
+    message: "Created to many accounts for now, please try again later.",
+    skipFailedRequests: true
 });
 
 app.use(limiter);
