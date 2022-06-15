@@ -20,10 +20,12 @@ exports.postBooks = async function(req, res) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
+            return;
         }
         // Catch if book already exists
         else if (bookentry) {
             res.status(400).send("Data already created. Save instead with PUT.");
+            return;
         } else {
             // Create a new book entry
             var book = new Book({
@@ -37,9 +39,11 @@ exports.postBooks = async function(req, res) {
                 if (err) {
                     console.log(err);
                     res.status(500).send(err);
+                    return;
                 } 
                 else {
                     res.status(201).send("Success.");
+                    return;
                 }
             });
         }
@@ -57,6 +61,7 @@ exports.putBooks = async function(req, res) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
+            return;
         }
         else if (book === null) {
             // No book data was found. Create a new one.
@@ -73,9 +78,11 @@ exports.putBooks = async function(req, res) {
                 if (err) {
                     console.log(err);
                     res.status(500).send(err);
+                    return;
                 } 
                 else {
                     res.status(201).send("Success.");
+                    return;
                 }
             });
             
@@ -89,9 +96,11 @@ exports.putBooks = async function(req, res) {
             book.save(function(err) {
                 if (err) {
                     res.status(500).send(err);
+                    return;
                 }
                 else {
                     res.status(200).send("Succesful save.");
+                    return;
                 }
             });
         }
@@ -107,9 +116,11 @@ exports.getBooks = async function(req, res) {
         if (error) {
             console.log(error);
             res.status(500).send(error);
+            return;
         } 
         else {
             res.status(200).send({"horusHeresy":book[0].horusHeresy, "inquisitors":book[0].inquisitors, "imperialGuard":book[0].imperialGuard});
+            return;
         }
     });
 };

@@ -16,4 +16,5 @@ exports.getData = async function(req, res) {
     }
 
     res.status(200).send({ users, books });
+    return;
 }

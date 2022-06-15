@@ -31,6 +31,7 @@ exports.postUser = (req, res) => {
         if (err) {
             console.log(err);
             res.status(500).send(err);
+            return;
         }
         if (user) {
             res.status(400).send("Email already taken.");
@@ -47,12 +48,15 @@ exports.postUser = (req, res) => {
                     if (error) {
                         console.log(error);
                         res.status(500).send(error);
+                        return;
                     } else {
                         res.status(200).send("Successfully created user.");
+                        return;
                     }
                 });
             } catch (error) {
                 res.status(500).send(error);
+                return;
             }
         };
     });
@@ -67,6 +71,8 @@ exports.putUser = (req, res) => {
     User.findOne({ _id: inputUserKey }, function(err, user) {
         if (err) {
             console.log(err);
+            res.status(500).send(err);
+            return;
         }
         else {
             user.password = newPassword;
@@ -75,8 +81,10 @@ exports.putUser = (req, res) => {
                 if (error) {
                     console.log(error);
                     res.status(500).send(error);
+                    return;
                 } else {
                     res.status(200).send("Successfully updated password.");
+                    return;
                 }
             });
         }
@@ -90,6 +98,7 @@ exports.getUser = async function(req, res) {
     const user = await User.findOne({ _id: inputUserKey }).exec().then().catch(err => {
         console.log(err);
         res.status(500).send(err);
+        return;
     });
 
     const token = jsonwebtoken.sign({
@@ -109,9 +118,11 @@ exports.getUser = async function(req, res) {
     await user.save().then().catch(err => {
         console.log(err);
         res.status(500).send(err);
+        return;
     });
 
     res.status(200).send(token);
+    return;
 }
 
 exports.deleteUser = function(req, res) {
@@ -122,6 +133,7 @@ exports.deleteUser = function(req, res) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
+            return;
         } else {
             successMessage ="Successfully deleted books record.";
         }
@@ -131,8 +143,10 @@ exports.deleteUser = function(req, res) {
         if (error) {
             console.log(error);
             res.status(500).send(error);
+            return;
         } else {
             res.status(200).send("User successfully deleted. "+successMessage);
+            return;
         }
     });
 };
@@ -143,14 +157,17 @@ exports.patchUser = function(req, res) {
     User.findOneAndUpdate({ _id: inputUserKey }, {token:""}, function(error, user) {
         if (error) {
             res.status(500).send(error);
+            return;
         } else {
             user.token = "";
             
             user.save(function(error) {
                 if (error) {
                     res.status(500).send(error);
+                    return;
                 } else {
                     res.status(200).send("Successfully deleted token.");
+                    return;
                 }
             });
         }
