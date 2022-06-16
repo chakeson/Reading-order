@@ -34,9 +34,9 @@ function App() {
 				{isSignedIn ? <Route path="/login" element={<Account />} /> : <Route path="/login" element={<Login />} />}
 				{isSignedIn ? <Route path="/register" element={<Account />} /> :<Route path="/register" element={<Register />} />}
 				{isSignedIn ? <Route path="/account" element={<Account />} /> : <Route path="/account" element={<Login />} />}
-				<Route path='/deletion'>
+				{!isSignedIn&& <Route path='/deletion'>
 					<Route path=':id' element={<SuccesfulDelete/>} />
-				</Route>
+				</Route>}
 				<Route path="*" element={<Error />} />
 			</Routes>
 			</div>

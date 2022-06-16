@@ -19,7 +19,7 @@ function About() {
                 <p>For providing alot of the information about the books and the order of the Inquistors and Imperial Guard section of books. I would like to thank the <a href="https://wh40k.lexicanum.com/wiki/Main_Page" className='underline' target="_blank" rel="noopener noreferrer">Lexicanum wiki</a>.</p>
             </main>
         </div>
-  );
+    );
 }
 
 export default About;
