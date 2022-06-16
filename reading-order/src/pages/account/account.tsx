@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useGlobalContext } from '../../context';
 import {  passwordRegex } from '../../util/regex';
+import { jwtTokenDecode } from '../../util/JWTDate';
 import RequestData from './requestData';
 import DeleteModal from './deleteModal';
 
@@ -8,6 +9,9 @@ import DeleteModal from './deleteModal';
 
 const Account = () => {
     const { auth } = useGlobalContext();
+
+    const [ successMessage , setSuccessMessage ] = useState('');
+    const successRef = useRef<any>();
 
     const [errorMessage, setErrorMessage] = useState<string>('');
     const errorRef = useRef<any>();
@@ -47,6 +51,15 @@ const Account = () => {
             return;
         }
 
+        // Ensure you are changing it to something new.
+        if (oldPassword === password) {
+            setErrorMessage("New password must be different from old password");
+            return;
+        }
+        
+        // For authontication, we need the email.
+        const decodedToken = jwtTokenDecode(auth.jwt);
+
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users`, {
                 method: 'PUT',
@@ -56,7 +69,7 @@ const Account = () => {
                     'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin , Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
                     'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT,HEAD',
                     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                    'Authorization': `Bearer ${auth.jwt}`
+                    'Authorization': `Basic ${btoa((decodedToken.email +":"+ oldPassword))}`
                 },
                 credentials: 'include',
                 body: new URLSearchParams({
@@ -69,9 +82,12 @@ const Account = () => {
                 // Update the saved credentials.
 
                 // Clear input data since the request succesfully went through.
+                setOldPassword('');
                 setPassword('');
                 setMatchPassword('');
                 // Message confirming password change was successful TODO
+                setSuccessMessage(message);
+                successRef.current?.focus();
 
             } else {
                 if (message === "Unauthorized") {
@@ -110,6 +126,7 @@ const Account = () => {
             <div className='w-8/12 sm:w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center'>
             <h1 className='text-3xl font-bold pt-6 sm:pt-10 pb-4'>Account</h1>
             <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `text-2xl text-orange1 bg-white opacity-100` : `h-0 opacity-0`}`}>{errorMessage}</p>
+            <p ref={successRef} aria-live="assertive" className={`${ successMessage ? `text-2xl text-black bg-white opacity-100` : `h-0 opacity-0`}`}>{successMessage}</p>
             
             <form onSubmit={handleSubmit} className='flex flex-col mb-4'>
                 <p className='text-xl font-medium'>Change your password:</p>

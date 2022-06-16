@@ -87,7 +87,7 @@ router.route("/books")
 // Users routes
 router.route("/users")
     .post(createAccountPOSTLimiter, validateUsersPost, validator, userRouter.postUser)
-    .put(validateUsersPut, validator, authRouter.isAuthenticatedJWT, userRouter.putUser)
+    .put(validateUsersPut, validator, authRouter.isAuthenticated, userRouter.putUser)
     .get(authRouter.isAuthenticated, userRouter.getUser)
     .delete(authRouter.isAuthenticatedJWT, userRouter.deleteUser)
     .patch(authRouter.isAuthenticatedJWT, userRouter.patchUser);

@@ -10,6 +10,7 @@ const jsonwebtoken = require("jsonwebtoken");
 // Put - Update password
 // Get - Check if credentails are correct.
 // Delete - Delete user and associated books.
+// Patch - Delete token.
 
 
 

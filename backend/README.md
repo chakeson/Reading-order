@@ -53,12 +53,12 @@ email=test@test.com
 ``` 
 
 ### `PUT`
-This is the endpoint intended for users to update their password. In the body of the request you need to include the new password. Account selected by authentication.
+This is the endpoint intended for users to update their password. In the body of the request you need to include the new password. Account selected by authentication, basic used to check if the provided password is correct.
 
 ```
 PUT http://localhost:3000/api/users HTTP/1.1
 content-type: application/x-www-form-urlencoded
-Authorization: Bearer <token>
+Authorization: Basic username password
 
 password=Password2!
 ```
