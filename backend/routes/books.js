@@ -112,14 +112,18 @@ exports.putBooks = async function(req, res) {
 exports.getBooks = async function(req, res) {
     var inputUserKey = req.user._id;
 
-    Book.find({ userkey: inputUserKey }, function(error, book) {   
+    Book.findOne({ userkey: inputUserKey }, function(error, book) {   
         if (error) {
             console.log(error);
             res.status(500).send(error);
             return;
         } 
+        else if (book === null) {
+            res.status(404).send("No data found.");
+            return;
+        }
         else {
-            res.status(200).send({"horusHeresy":book[0].horusHeresy, "inquisitors":book[0].inquisitors, "imperialGuard":book[0].imperialGuard});
+            res.status(200).send({"horusHeresy":book.horusHeresy, "inquisitors":book.inquisitors, "imperialGuard":book.imperialGuard});
             return;
         }
     });

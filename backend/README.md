@@ -4,6 +4,8 @@ Serves as the server backend for the site.
 
 # TODO
 
+- Add login with Google or Twitter or Facebook.
+
 - Consider storing 10 last IP address from user.
 
 # Installation
