@@ -2,27 +2,48 @@
 
 - Consider adding contact form to about page.
 
-- Fix all the TODO in the code. Clean up some.
-
 - Write front page readme with image.
+
+- Upgrade sync handler
+
+    - Handle failed book get fetches.
+
+    - Interactive save handler. If failed to save keep displaying component and offer save again button.
+
+    - If not signed in remind user that its not permanetly saved.
+
+- Clean up react console warnings.
+
+- Get terms and conditions document and add to login page.
 
 ### Longer term todo
 
-- Improve text color changer for books. Consider it for progress bars aswell. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
+- Welcome new users.
+
+- Maybe first time tutorial for map sections.
+
+- Handle login and out between tabs.
+
+- Add a search bar to the home page.
+
+- Consider breaking up all fetches into separate files.
 
 - Test updating to React 18.
 
+- Add lazy loading of book data to reduce bundle size.
+
+- Improve text color changer for books. Consider it for progress bars aswell. Use color-contrast CSS property when adoption is high enough. Check in August 2022.
+
 - Fix error resizing flickering/arrow line up.
 
-- Add lazy loading of book data to reduce bundle size.
+- Explicitly type where any is used.
 
 - Properly type all :any
     - Type useGlobalContext hook
 
 # Start and set up
 
-Look at [.env.example](.env.example) for the template for your .env file in the same directory. After that launch it with `yarn start`.
-
+Start by running `yarn install` to install needed dependencies. Look at [.env.example](.env.example) for the template for your .env file in the same directory. After that launch it with `yarn start`.
 
 # Important libraries
 React
@@ -55,6 +76,10 @@ Extended tailwinds normal breakpoints by adding 3xl which breaks at 2000px to de
 For colors tailwinds red and grey color spectrum are defined. Blue and orange scales taken from palette site.
 For more information check out the [tailwind config file](tailwind.config.js).
 
+## How to add books
+Start by adding them to corresponding data file, for example [horusHeresyData](src/pages/horusHeresy/horusHeresyData.tsx). Id spans for certain data collections have gaps in them, fill them first. 
+Check that it doesn't already exist or excede the storage array length for it in the [global context](src/context.tsx) if so update front and backend and consider how to update all users data.
+Then update the frontpages book count in the [home page progress visualiser](src/pages/home/readingProgressVisualiser.tsx).
 
 # Getting Started with Create React App
 

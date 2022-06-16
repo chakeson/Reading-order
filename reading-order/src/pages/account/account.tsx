@@ -11,10 +11,10 @@ const Account = () => {
     const { auth } = useGlobalContext();
 
     const [ successMessage , setSuccessMessage ] = useState('');
-    const successRef = useRef<any>();
+    const successRef = useRef<HTMLParagraphElement>(null);
 
     const [errorMessage, setErrorMessage] = useState<string>('');
-    const errorRef = useRef<any>();
+    const errorRef = useRef<HTMLParagraphElement>(null);
     
     const [oldPassword, setOldPassword] = useState<string>('');
     const [oldPasswordValidated, setOldPasswordValidated] = useState<boolean>(true);
@@ -85,7 +85,7 @@ const Account = () => {
                 setOldPassword('');
                 setPassword('');
                 setMatchPassword('');
-                // Message confirming password change was successful TODO
+                // Message confirming password change was successful
                 setSuccessMessage(message);
                 successRef.current?.focus();
 
