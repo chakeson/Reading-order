@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState } from "react";
 import fetchBookDataGet from "./util/fetchBookDataGet";
 import fetchBookDataPut from "./util/fetchBookDataPut";
 import fetchBookDataPatch from "./util/fetchBookDataPatch";
+import { jwtTokenIsExpired } from "./util/JWTDate";
 
 /*type ProviderType = {
     horusHeresy:[],
@@ -49,7 +50,7 @@ const storageAccessUser = () => {
         let lsTemp:string = localStorage.getItem("Login") || "";
         return JSON.parse(lsTemp);
     }
-    return {"email":"", "password":""};
+    return {"jwt":""};
 }
 
 
@@ -64,10 +65,18 @@ const AppProvider: React.FC = ({ children }) => {
     //const [auth, setAuth] = useState<authObject>({email:"test@test.com",password:"Password1!"}); // {username:string, password:string}
     //const [ isSignedIn , setIsSignedIn ] = useState<boolean>(true);
     
+
     // On intial load if user is signed in, load the reading progress from the server.
     useEffect(() => {
         if (isSignedIn){
-            fetchBookDataGet(auth, setReadingProgress);
+            // Check if token has expired.
+            if (jwtTokenIsExpired(auth)){
+                // If token is expired, sign out.
+                handleLogout(true);
+            }
+            else{
+                fetchBookDataGet(auth, setReadingProgress);
+            }
         }
     }, []);
 
@@ -106,7 +115,7 @@ const AppProvider: React.FC = ({ children }) => {
         }
     }
     
-    const handleLogout = async () => {
+    const handleLogout = async ( skipServerCall=false ) => {
         // Stop server saving with PUT requests.
         // Save to server with PUT requests.
 
@@ -114,8 +123,10 @@ const AppProvider: React.FC = ({ children }) => {
             // Clear interval for saving to server.
             clearInterval(interValTrackerVariable);
         }
-        await fetchBookDataPut(auth, readingProgress, setSyncStatus);
-        fetchBookDataPatch(auth);
+        if (!skipServerCall){
+            await fetchBookDataPut(auth, readingProgress, setSyncStatus);
+            fetchBookDataPatch(auth);
+        }
         setIsSignedIn(false);
         setAuth({"jwt":""});
         let stringUser = JSON.stringify({"jwt":""});
@@ -137,3 +148,27 @@ export const useGlobalContext = ():any => {
     return useContext(AppContext)
   }
 export { AppContext, AppProvider }
+
+
+
+
+
+
+/*
+// Check if local storage has user credentials.
+const storageAccessUser = () => {
+    if (localStorage.getItem("Login")){
+        let lsTemp:string = localStorage.getItem("Login") || "";
+        let lsUser = JSON.parse(lsTemp);
+        
+        // Check so its not empty then check if the token is expired. If so, remove the token in localstorage and return blank one.
+        if ( lsTemp !== "" && jwtTokenIsExpired(lsUser) ){
+            localStorage.setItem( 'Login', JSON.stringify({"jwt":""}) );
+            return {"jwt":""}
+        }
+
+        return lsUser;
+    }
+    return {"jwt":""};
+}
+*/
