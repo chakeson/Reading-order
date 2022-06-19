@@ -4,14 +4,6 @@
 
 - Write front page readme with image.
 
-- Upgrade sync handler
-
-    - Handle failed book get fetches.
-
-    - Interactive save handler. If failed to save keep displaying component and offer save again button.
-
-    - If not signed in remind user that its not permanetly saved.
-
 - Clean up react console warnings.
 
 - Get terms and conditions document and add to login page.

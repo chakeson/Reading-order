@@ -1,8 +1,8 @@
-import { authObject, readingProgressType } from "../context";
+import { authObject, syncObject, readingProgressType } from "../context";
 
 // After login this is called to fetch the book progress.
 
-const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Dispatch<React.SetStateAction<readingProgressType>> ) => {
+const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Dispatch<React.SetStateAction<readingProgressType>>, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>> ) => {
     
     try {
         const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/books`, {
@@ -30,20 +30,20 @@ const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Disp
         if (response.ok) {           
             
             if (message === "Unauthorized") {
-                //await setAuth({"email":"", "password":""});
-                //await setIsSignedIn(false); 
+                setSyncStatus({color:"#cf171f", message:message, status:"loadFailed"});
             }
             else if (response.redirected) {
-                //await setAuth({"email":"", "password":""});
-                //await setIsSignedIn(false);
+                setSyncStatus({color:"#cf171f", message:"Authentication failed", status:"loadFailed"});
             } else {
                 let stringData = JSON.stringify({horusHeresy:bookData.horusHeresy, inquisitors:bookData.inquisitors, imperialGuard:bookData.imperialGuard});
                 localStorage.setItem('ReadingProgress', stringData);
                 setReadingProgress({horusHeresy:bookData.horusHeresy, inquisitors:bookData.inquisitors, imperialGuard:bookData.imperialGuard});
+                setSyncStatus({color:"#028A0F", message:"Loaded books", status:""});
             }
 
         } else {
             console.log("Error: " + message);
+            setSyncStatus({color:"#cf171f", message:message, status:"loadFailed"});
         }
     } catch (error) {     
         let errorText:string = "No Server Response. Check connection.";
@@ -52,6 +52,7 @@ const fetchBookDataGet = async ( auth:authObject , setReadingProgress:React.Disp
             errorText = error?.message;
         }
         console.log("Error: " + errorText);
+        setSyncStatus({color:"#cf171f", message:errorText, status:"loadFailed"});
     }
 }
 

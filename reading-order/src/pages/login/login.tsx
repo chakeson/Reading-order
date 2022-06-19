@@ -8,7 +8,7 @@ import fetchBookDataGet from '../../util/fetchBookDataGet';
 
 const Login = () => {
 
-    const { setAuth , setIsSignedIn , saveLogin , setReadingProgress} = useGlobalContext();
+    const { setAuth , setIsSignedIn , saveLogin , setReadingProgress , setSyncStatus} = useGlobalContext();
 
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
@@ -65,7 +65,7 @@ const Login = () => {
                 await setAuth({ "jwt":message});
                 await saveLogin(message);
                 await setIsSignedIn(true);
-                await fetchBookDataGet({ "jwt":message }, setReadingProgress); // Evaluate decision to pass object instead of auth
+                await fetchBookDataGet({ "jwt":message }, setReadingProgress, setSyncStatus ); // Evaluate decision to pass object instead of auth
                 // Clear input data since the user is now signed in
                 await setEmail('');
                 await setPassword('');

@@ -3,7 +3,7 @@ import { authObject,syncObject,readingProgressType } from "../context";
 
 const fetchBookDataPut = async (auth:authObject, readingProgress:readingProgressType, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
 
-    setSyncStatus({color:"#3DED97", message:"Saving..."});
+    setSyncStatus({color:"#3DED97", message:"Saving...", status:""});
     try {
         const response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/books`, {
             method: 'PUT',
@@ -26,17 +26,17 @@ const fetchBookDataPut = async (auth:authObject, readingProgress:readingProgress
         const message = await response?.text();
         if (response.ok) {
             if (message === "Succesful save.") {
-                setSyncStatus({color:"#028A0F", message:"Saved"});
+                setSyncStatus({color:"#028A0F", message:"Saved", status:""});
             }
         else if (message === "Unauthorized") {
-            setSyncStatus({color:"#cf171f", message:"Unauthorized"});
+            setSyncStatus({color:"#cf171f", message:message, status:"saveFailed"});
         }
         else if (response.redirected) {
-            setSyncStatus({color:"#cf171f", message:"Unauthorized"});
+            setSyncStatus({color:"#cf171f", message:"Authentication failed", status:"saveFailed"});
         }
         } else {
             console.log("Error: " + message);
-            setSyncStatus({color:"#cf171f", message:"Unauthorized"});
+            setSyncStatus({color:"#cf171f", message:message, status:"saveFailed"});
         }
     } catch (error) {     
         let errorText:string = "No Server Response. Check connection.";
@@ -44,7 +44,7 @@ const fetchBookDataPut = async (auth:authObject, readingProgress:readingProgress
         if (error instanceof TypeError) {
             errorText = error?.message;
         }
-        setSyncStatus({color:"#cf171f", message:"Unauthorized"});
+        setSyncStatus({color:"#cf171f", message:errorText, status:"saveFailed"});
         console.log("Error: " + errorText);
     }
 }

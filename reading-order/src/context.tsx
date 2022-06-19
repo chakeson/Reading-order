@@ -16,6 +16,7 @@ export interface authObject {
 export interface syncObject {
     color:string;
     message:string;
+    status:string;
 }
 
 export interface readingProgressType {
@@ -59,7 +60,7 @@ const AppProvider: React.FC = ({ children }) => {
     const [readingProgress, setReadingProgress] = useState<readingProgressType>(storageAccess());
     const [auth, setAuth] = useState<authObject>(storageAccessUser()); // {username:string, password:string}
     const [ isSignedIn , setIsSignedIn ] = useState<boolean>((auth.jwt !== ""));
-    const [ syncStatus, setSyncStatus ] = useState<syncObject>({color:"#FFFFFF", message:""});
+    const [ syncStatus, setSyncStatus ] = useState<syncObject>({color:"#FFFFFF", message:"", status:""});
 
     // For testing as logged in user
     //const [auth, setAuth] = useState<authObject>({email:"test@test.com",password:"Password1!"}); // {username:string, password:string}
@@ -75,7 +76,7 @@ const AppProvider: React.FC = ({ children }) => {
                 handleLogout(true);
             }
             else{
-                fetchBookDataGet(auth, setReadingProgress);
+                fetchBookDataGet(auth, setReadingProgress, setSyncStatus);
             }
         }
     }, []);
@@ -95,6 +96,7 @@ const AppProvider: React.FC = ({ children }) => {
         
         // Check if user is not logged in.
         if (!isSignedIn) {
+            setSyncStatus({color:"#FFFFFF",message:"Register or sign in to permantly save progress.", status:""});
             return;
         }
         
@@ -138,7 +140,7 @@ const AppProvider: React.FC = ({ children }) => {
     }
 
     return (
-        <AppContext.Provider value={{ readingProgress , setReadingProgress, saveReadingProgress , auth, setAuth, saveLogin , isSignedIn , setIsSignedIn , handleLogout, syncStatus, setSyncStatus}}>
+        <AppContext.Provider value={{ readingProgress , setReadingProgress, saveReadingProgress , auth, setAuth, saveLogin , isSignedIn , setIsSignedIn , handleLogout, syncStatus, setSyncStatus }}>
             {children}
         </AppContext.Provider>
     )
