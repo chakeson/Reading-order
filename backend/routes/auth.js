@@ -118,7 +118,6 @@ passport.use(new GoogleStrategy({
             token:"",
             google: {
                 id: profile.id,
-                name: profile.displayName,
                 email: profile.emails[0].value
             }
         });
