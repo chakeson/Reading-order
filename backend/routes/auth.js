@@ -4,6 +4,9 @@ const BasicStrategy = require('passport-http').BasicStrategy;
 const User = require('../models/user');
 const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
+const GoogleStrategy = require("passport-google-oauth2").Strategy;
+const requestIp = require('request-ip');
+require("dotenv").config();
 
 // Basic passport strategy HTTP
 passport.use(new BasicStrategy(
@@ -79,3 +82,57 @@ passport.use(
 // Failure redirect turned on to stop it from sending "Unauthorized" status 401 
 // triggering browsers built in authentication popup.
 exports.isAuthenticatedJWT = passport.authenticate('jwt', { session : false, failureRedirect: '/' });
+
+
+// Google passport strategy
+
+passport.use(new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: process.env.GOOGLE_CALLBACK_URL,
+    passReqToCallback: true
+    },
+    async function(request, accessToken, refreshToken, profile, done) {
+
+        // Check if user already exists, and if so return it to a variable else let it be null.
+        var alreadyUser = await User.findOne({ "google.id": profile.id }).exec().then().catch(err => {
+            return done(error);
+        });
+
+        // Check there is a user already, then update its last accessed IP address and then return it.
+        if (alreadyUser) {
+            User.updateLastLoginDate({ "google.id": profile.id }, function(error, user) {
+                if (error) { return callback(error); }
+
+                if (!user) { return callback(null, false); }
+            });
+
+            return done(null, alreadyUser)
+        }
+
+        // Otherwise create a new user
+        const newUser = new User({
+            email: profile.emails[0].value,
+            createdIp: requestIp.getClientIp(request),
+            updateLastLoginDate: Date.now(),
+            token:"",
+            google: {
+                id: profile.id,
+                name: profile.displayName,
+                email: profile.emails[0].value
+            }
+        });
+        // Save the new user to the database
+        await newUser.save().then(()=>{return done(null, newUser);})
+        .catch(error => {
+            console.log(error);
+            return;
+        });
+        
+        // Then return the new user
+        return done(null, newUser);
+    }
+));
+
+exports.isAuthenticatedGoogle = passport.authenticate("google", {scope: ["email","profile"]});
+exports.isAuthenticatedGoogleCallback = passport.authenticate("google", {session:false});
