@@ -9,7 +9,6 @@ const UserSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
     },
     createdAt: {
         type: Date,
@@ -27,7 +26,19 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
         required: true
+    },
+    google: {
+        id:{
+            type: String,
+        },
+        name: {
+            type: String,
+        },
+        email: {
+            type: String,
+        }
     }
+
 });
 
 // Update last login date for the passed user.

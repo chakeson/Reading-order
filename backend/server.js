@@ -6,15 +6,21 @@ var passport = require("passport");
 var cors = require('cors');
 var { default: mongoose } = require("mongoose");
 const rateLimit = require("express-rate-limit");
-
+/*
+const jsonwebtoken = require("jsonwebtoken");
+*/
+const User = require("./models/user");
 var bookRouter = require("./routes/books");
 var userRouter = require("./routes/user");
 var requestDataRouter = require("./routes/requestdata");
 var authRouter = require("./routes/auth");
+var oauth2Router = require("./routes/oauth2");
 
 const { validateUsersPost , validateUsersPut } = require("./validation/users");
 const { validateBooksData } = require("./validation/books");
 const { validator } = require("./validation/validation");
+
+//const User = require("./models/user");
 
 
 var port = process.env.PORT || 3100;
@@ -95,6 +101,15 @@ router.route("/users")
 // Reqeust for data
 router.route("/requestdata")
     .get(authRouter.isAuthenticatedJWT, requestDataRouter.getData);
+
+// Redirect the user to the Google signin page 
+router.route("/google")
+    .get(authRouter.isAuthenticatedGoogle);
+
+// Retrieve user data using the access token received 
+router.route("/google/callback")
+    .get(authRouter.isAuthenticatedGoogleCallback, oauth2Router.GoogleOAuth2Callback);
+
 
 
 // Register all our routes with /api
