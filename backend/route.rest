@@ -74,3 +74,9 @@ Authorization: Bearer {{JWT_Token}}
 GET http://localhost:3100/api/requestdata HTTP/1.1
 content-type: application/x-www-form-urlencoded
 Authorization: Bearer {{JWT_Token}}
+
+
+
+### Google auth testing
+GET http://localhost:3100/api/google HTTP/1.1
+content-type: application/x-www-form-urlencoded
