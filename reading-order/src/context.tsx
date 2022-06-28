@@ -108,12 +108,14 @@ const AppProvider: React.FC = ({ children }) => {
                 fetchBookDataPut(auth, readingProgress, setSyncStatus);
                 clearInterval(interValTrackerVariable);
             } , 10000);
+            return;
         }
         else { // If no timer running start a new one.
             interValTrackerVariable = setInterval(() => {
                 fetchBookDataPut(auth, readingProgress, setSyncStatus);
                 clearInterval(interValTrackerVariable);
             } , 10000);
+            return;
         }
     }
     

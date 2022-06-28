@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link , useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import { emailRegex , passwordRegex } from '../../util/regex';
+import readCookie from '../../util/readCookie';
 import fetchBookDataPost from '../../util/fetchBookDataPost';
 import fetchUserGet from '../../util/fetchUserGet';
 // Registering page
@@ -133,36 +134,99 @@ const Register = () => {
         }
     };
 
+    const [ extPopup, setExtPopup ] = useState< Window | null >(null);
+    
+    const connectGoogle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent> ) => {
+        let widthWin = 500;
+        let heightWin = 600;
+        const left = window.screenX + (window.outerWidth - widthWin) / 2;
+        const top = window.screenY + (window.outerHeight - heightWin) / 2.5;
+        const title = `Google Authentication`;
+        const url = `${process.env.REACT_APP_SERVER_URL}api/google`;
+        const popup = window.open( url, title, `width=${widthWin}, height=${heightWin}, left=${left}, top=${top}` );
+        setExtPopup(popup);
+    }
+
+    useEffect(() => {
+        // If there is no popup return.
+        if ( extPopup === null ) {
+            return
+        }
+        
+        const cookieCheckTimer = setInterval(() => {
+            // Check if the popup window has been closed and remove the timer if it is.
+            if ( extPopup === null ) {
+              cookieCheckTimer && clearInterval(cookieCheckTimer);
+              return;
+            }
+
+            var JWTToken = readCookie("jwt");
+            if ( JWTToken !== "" && JWTToken !== undefined ) {
+                // Token aquired.
+                
+                // Close the popup window and remove interval timer
+                extPopup.close();
+                setExtPopup(null);
+                clearInterval(cookieCheckTimer);
+
+                // Delete the cookie. Sets content to empty string and set a negative max age so the browser deletes it.
+                document.cookie = "jwt"+"=; Max-Age=-9999999";
+
+                // Start registration process
+                setAuth({ "jwt":JWTToken});
+                saveLogin(JWTToken);
+                setIsSignedIn(true);
+                fetchBookDataPost( JWTToken , readingProgress );
+                setEmail('');
+                setPassword('');
+                setMatchPassword('');
+                // Change the page after registration
+                navigate('/');
+            }
+        }, 500)
+
+    }, [extPopup]);
+
+
     return (
         <div className='flex flex-col justify-center items-center'>
             <h1 className='text-3xl font-bold pt-6 sm:pt-10'>Register</h1>
-            <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `text-2xl bg-white` : `hidden`}`}>{errorMessage}</p>
             
-            <form onSubmit={handleSubmit} className='flex flex-col mb-1 w-8/12 sm:w-1/2 md:w-1/3 lg:w-1/4'>
-                <label htmlFor="email" className='block text-lg opacity-90'>
-                    Email:
-                </label>
-                <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(emailValidated || email==="") ? `border-black` : `border-orange1`}`} ref={emailRef} id="email" type="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} aria-describedby="emailID" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setEmailFocus(true)} onBlur={() => setEmailFocus(false)} />
-                <p id="emailID" className={`pl-2 transform transition duration-300 ${email && emailFocus && !emailValidated ? `text-1xl bg-white opacity-100` : `h-0 opacity-0`}`}>Please enter a valid email address.</p>
+            <div className='flex flex-col md:flex-row justify-center w-5/6 sm:w-3/4 md:w-3/4 lg:4/6 xl:w-1/2'>
+                <div className="w-full md:w-1/2 flex flex-col">test
+                    <button onClick={(e)=>{connectGoogle(e)}}>Google</button>
+                </div>
                 
-                <label htmlFor="password" className='block text-lg opacity-90 bg-white z-10'>
-                    Password:
-                </label>
-                <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(passwordValidated || password==="") ? `border-black` : `border-orange1`}`} id="password" type="password" required value={password} aria-invalid={passwordValidated?"false":"true"} aria-describedby="passwordID" onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} />
-                <p id="passwordID" className={`pl-2 transform transition duration-300 ${ !passwordValidated&&passwordFocus ? `text-1xl bg-white opacity-100` : `h-0 opacity-0`}`}>Passwords must contain one uppercase and lowercase letter. One number and one special character. Atleast 6 characters long and max 70.</p>
-                
-                <label htmlFor="matchPassword" className='block text-lg opacity-90 bg-white z-10'>
-                    Confirm Password:
-                </label>
-                <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(validPasswordMatch || matchPassword==="") ? `border-black` : `border-orange1`}`} id="matchPassword" type="password" required aria-invalid={validPasswordMatch?"false":"true"} aria-describedby="matchPasswordID" value={matchPassword} onChange={(e) => setMatchPassword(e.target.value)} onFocus={() => setMatchPasswordFocus(true)} onBlur={() => setMatchPasswordFocus(false)} />
-                
-                <p id="matchPasswordID" className={`pl-2 transform transition duration-300 ${ (password!=="" && matchPassword!=="") &&!validPasswordMatch ? `text-1xl bg-white opacity-100 mb-2` : `h-0 opacity-0`}`}>Passwords must match.</p>
-                
-                <button className={`h-10 mb-2 text-lg font-medium rounded-xl shadow-sm shadow-black bg-black hover:bg-grey-900 ${!emailValidated || !passwordValidated || !validPasswordMatch ? "text-grey-200": "text-white"}`} disabled={!emailValidated || !passwordValidated || !validPasswordMatch}>Register</button>
+                <div className="w-full md:w-1/2">
+                    <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `text-2xl bg-white` : `hidden`}`}>{errorMessage}</p>
+                    
+                    <form onSubmit={handleSubmit} className='flex flex-col mb-1'>
+                        <label htmlFor="email" className='block text-lg opacity-90'>
+                            Email:
+                        </label>
+                        <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(emailValidated || email==="") ? `border-black` : `border-orange1`}`} ref={emailRef} id="email" type="email" autoComplete="on" required aria-invalid={emailValidated?"false":"true"} aria-describedby="emailID" value={email} onChange={(e) => setEmail(e.target.value)} onFocus={() => setEmailFocus(true)} onBlur={() => setEmailFocus(false)} />
+                        <p id="emailID" className={`pl-2 transform transition duration-300 ${email && emailFocus && !emailValidated ? `text-1xl bg-white opacity-100` : `h-0 opacity-0`}`}>Please enter a valid email address.</p>
+                        
+                        <label htmlFor="password" className='block text-lg opacity-90 bg-white z-10'>
+                            Password:
+                        </label>
+                        <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(passwordValidated || password==="") ? `border-black` : `border-orange1`}`} id="password" type="password" required value={password} aria-invalid={passwordValidated?"false":"true"} aria-describedby="passwordID" onChange={(e) => setPassword(e.target.value)} onFocus={() => setPasswordFocus(true)} onBlur={() => setPasswordFocus(false)} />
+                        <p id="passwordID" className={`pl-2 transform transition duration-300 ${ !passwordValidated&&passwordFocus ? `text-1xl bg-white opacity-100` : `h-0 opacity-0`}`}>Passwords must contain one uppercase and lowercase letter. One number and one special character. Atleast 6 characters long and max 70.</p>
+                        
+                        <label htmlFor="matchPassword" className='block text-lg opacity-90 bg-white z-10'>
+                            Confirm Password:
+                        </label>
+                        <input className={`bg-white z-10 h-10 rounded mb-2 pl-2 border-2 border-solid ${(validPasswordMatch || matchPassword==="") ? `border-black` : `border-orange1`}`} id="matchPassword" type="password" required aria-invalid={validPasswordMatch?"false":"true"} aria-describedby="matchPasswordID" value={matchPassword} onChange={(e) => setMatchPassword(e.target.value)} onFocus={() => setMatchPasswordFocus(true)} onBlur={() => setMatchPasswordFocus(false)} />
+                        
+                        <p id="matchPasswordID" className={`pl-2 transform transition duration-300 ${ (password!=="" && matchPassword!=="") &&!validPasswordMatch ? `text-1xl bg-white opacity-100 mb-2` : `h-0 opacity-0`}`}>Passwords must match.</p>
+                        
+                        <button className={`h-10 mb-2 text-lg font-medium rounded-xl shadow-sm shadow-black bg-black hover:bg-grey-900 ${!emailValidated || !passwordValidated || !validPasswordMatch ? "text-grey-200": "text-white"}`} disabled={!emailValidated || !passwordValidated || !validPasswordMatch}>Register</button>
 
-            </form>
+                    </form>
 
-            <p className='text-center'>Already have an account? <Link to='/login' className='underline text-blue3'>Login page</Link></p>
+                    <p className='text-center'>Already have an account? <Link to='/login' className='underline text-blue3'>Login page</Link></p>
+                </div>
+            </div>
         </div>
     );
 }
