@@ -161,7 +161,9 @@ const Register = () => {
         }
         
         const loginPOSTGETSave = async (JWTTokenStr:string, readingProgress:readingProgressType, setReadingProgress:React.Dispatch<React.SetStateAction<readingProgressType>>, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
+            // Tries to save book data. If it already exists, it will fail. Then the get fetch will be relevant.
             await fetchBookDataPost( JWTTokenStr , readingProgress );
+            // Fetches the book data from the server.
             fetchBookDataGet({ "jwt":JWTTokenStr }, setReadingProgress, setSyncStatus );
         }
 
@@ -192,6 +194,7 @@ const Register = () => {
                 setPassword('');
                 setMatchPassword('');
                 
+                // Handle book data saving
                 loginPOSTGETSave(JWTToken, readingProgress, setReadingProgress, setSyncStatus);
                 // Change the page after registration
                 navigate('/');
