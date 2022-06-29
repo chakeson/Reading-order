@@ -6,6 +6,8 @@ import readCookie from '../../util/readCookie';
 import fetchBookDataPost from '../../util/fetchBookDataPost';
 import fetchBookDataGet from '../../util/fetchBookDataGet';
 import { syncObject, readingProgressType } from "../../context";
+
+import { FcGoogle } from "react-icons/fc";
 // Login page
 
 
@@ -163,9 +165,14 @@ const Login = () => {
         <div className='flex flex-col justify-center items-center'>
             <h1 className='text-3xl font-bold pt-6 sm:pt-10'>Login</h1>
             
-            <div className='flex flex-col md:flex-row justify-center w-5/6 sm:w-3/4 md:w-3/4 lg:4/6 xl:w-1/2'>
-                <div className="w-full md:w-1/2 flex flex-col">test
-                        <button onClick={(e)=>{connectGoogle(e)}}>Google</button>
+            <div className='flex flex-col md:flex-row w-5/6 sm:w-3/4 md:w-3/4 lg:4/6 xl:w-1/2 pt-4 md:pt-0'>
+                <div className="w-full md:w-1/2 flex flex-col p-0 md:p-7">
+                        <button onClick={(e)=>{connectGoogle(e)}} className="flex flex-row items-center rounded-md shadow-sm shadow-black" style={{backgroundColor:"#4286f5"}}>
+                            <div className='bg-white m-1 rounded'>
+                                <FcGoogle size="2.5em" />
+                            </div>
+                            <div className='text-white text-xl font-semibold mx-auto'>Google</div>
+                        </button>
                 </div>
                 
                 <div className="w-full md:w-1/2">
