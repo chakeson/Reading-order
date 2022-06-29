@@ -3,13 +3,15 @@ import { Link , useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import { emailRegex } from '../../util/regex';
 import readCookie from '../../util/readCookie';
+import fetchBookDataPost from '../../util/fetchBookDataPost';
 import fetchBookDataGet from '../../util/fetchBookDataGet';
+import { syncObject, readingProgressType } from "../../context";
 // Login page
 
 
 const Login = () => {
 
-    const { setAuth , setIsSignedIn , saveLogin , setReadingProgress , setSyncStatus} = useGlobalContext();
+    const { setAuth , setIsSignedIn , saveLogin , readingProgress , setReadingProgress , setSyncStatus} = useGlobalContext();
 
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
@@ -113,6 +115,11 @@ const Login = () => {
         if ( extPopup === null ) {
             return
         }
+
+        const loginPOSTGETSave = async (JWTTokenStr:string, readingProgress:readingProgressType, setReadingProgress:React.Dispatch<React.SetStateAction<readingProgressType>>, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
+            await fetchBookDataPost( JWTTokenStr , readingProgress );
+            fetchBookDataGet({ "jwt":JWTTokenStr }, setReadingProgress, setSyncStatus );
+        }
         
         const cookieCheckTimer = setInterval(() => {
             // Check if the popup window has been closed and remove the timer if it is.
@@ -137,10 +144,10 @@ const Login = () => {
                 setAuth({ "jwt":JWTToken});
                 saveLogin(JWTToken);
                 setIsSignedIn(true);
-                fetchBookDataGet({ "jwt":JWTToken }, setReadingProgress, setSyncStatus );
                 setEmail('');
                 setPassword('');
                 
+                loginPOSTGETSave(JWTToken, readingProgress, setReadingProgress, setSyncStatus);
                 // Change the page after registration
                 navigate('/');
             }

@@ -4,11 +4,15 @@ import { useGlobalContext } from '../../context';
 import { emailRegex , passwordRegex } from '../../util/regex';
 import readCookie from '../../util/readCookie';
 import fetchBookDataPost from '../../util/fetchBookDataPost';
+import fetchBookDataGet from '../../util/fetchBookDataGet';
 import fetchUserGet from '../../util/fetchUserGet';
+import { syncObject, readingProgressType } from "../../context";
+
+
 // Registering page
 
 const Register = () => {
-    const { setAuth , setIsSignedIn , saveLogin, readingProgress } = useGlobalContext();
+    const { setAuth , setIsSignedIn , saveLogin, readingProgress, setReadingProgress,setSyncStatus} = useGlobalContext();
 
     const emailRef = useRef<any>();
     const errorRef = useRef<any>();
@@ -147,12 +151,20 @@ const Register = () => {
         setExtPopup(popup);
     }
 
+
+
+
     useEffect(() => {
         // If there is no popup return.
         if ( extPopup === null ) {
             return
         }
         
+        const loginPOSTGETSave = async (JWTTokenStr:string, readingProgress:readingProgressType, setReadingProgress:React.Dispatch<React.SetStateAction<readingProgressType>>, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
+            await fetchBookDataPost( JWTTokenStr , readingProgress );
+            fetchBookDataGet({ "jwt":JWTTokenStr }, setReadingProgress, setSyncStatus );
+        }
+
         const cookieCheckTimer = setInterval(() => {
             // Check if the popup window has been closed and remove the timer if it is.
             if ( extPopup === null ) {
@@ -176,10 +188,11 @@ const Register = () => {
                 setAuth({ "jwt":JWTToken});
                 saveLogin(JWTToken);
                 setIsSignedIn(true);
-                fetchBookDataPost( JWTToken , readingProgress );
                 setEmail('');
                 setPassword('');
                 setMatchPassword('');
+                
+                loginPOSTGETSave(JWTToken, readingProgress, setReadingProgress, setSyncStatus);
                 // Change the page after registration
                 navigate('/');
             }
