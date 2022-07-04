@@ -110,6 +110,11 @@ router.route("/google")
 router.route("/google/callback")
     .get(authRouter.isAuthenticatedGoogleCallback, oauth2Router.GoogleOAuth2Callback);
 
+router.route("/twitter")
+    .get(authRouter.isAuthenticatedTwitter);
+
+router.route("/twitter/callback")
+    .get(authRouter.isAuthenticatedTwitterCallback);
 
 
 // Register all our routes with /api
