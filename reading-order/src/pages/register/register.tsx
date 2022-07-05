@@ -9,6 +9,7 @@ import fetchUserGet from '../../util/fetchUserGet';
 import { syncObject, readingProgressType } from "../../context";
 
 import { FcGoogle } from "react-icons/fc";
+import { AiFillFacebook } from "react-icons/ai";
 
 // Registering page
 
@@ -139,15 +140,16 @@ const Register = () => {
         }
     };
 
+    // Stores the pop up login window
     const [ extPopup, setExtPopup ] = useState< Window | null >(null);
     
-    const connectGoogle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent> ) => {
+    const connectOAuth = (e: React.MouseEvent<HTMLButtonElement, MouseEvent> , site:string ) => {
         let widthWin = 500;
         let heightWin = 600;
         const left = window.screenX + (window.outerWidth - widthWin) / 2;
         const top = window.screenY + (window.outerHeight - heightWin) / 2.5;
-        const title = `Google Authentication`;
-        const url = `${process.env.REACT_APP_SERVER_URL}api/google`;
+        const title = `${site} Authentication`;
+        const url = `${process.env.REACT_APP_SERVER_URL}api/${site}`;
         const popup = window.open( url, title, `width=${widthWin}, height=${heightWin}, left=${left}, top=${top}` );
         setExtPopup(popup);
     }
@@ -161,6 +163,7 @@ const Register = () => {
             return
         }
         
+        // Handles data saving.
         const loginPOSTGETSave = async (JWTTokenStr:string, readingProgress:readingProgressType, setReadingProgress:React.Dispatch<React.SetStateAction<readingProgressType>>, setSyncStatus:React.Dispatch<React.SetStateAction<syncObject>>) => {
             // Tries to save book data. If it already exists, it will fail. Then the get fetch will be relevant.
             await fetchBookDataPost( JWTTokenStr , readingProgress );
@@ -211,11 +214,13 @@ const Register = () => {
             
             <div className='flex flex-col md:flex-row justify-center w-5/6 sm:w-3/4 md:w-3/4 lg:4/6 xl:w-1/2'>
             <div className="w-full md:w-1/2 flex flex-col p-0 md:p-7">
-                        <button onClick={(e)=>{connectGoogle(e)}} className="flex flex-row items-center rounded-md shadow-sm shadow-black" style={{backgroundColor:"#4286f5"}}>
-                            <div className='bg-white m-1 rounded'>
-                                <FcGoogle size="2.5em" />
-                            </div>
+                        <button onClick={(e)=>{connectOAuth(e,"google")}} className="flex flex-row items-center rounded-md shadow-sm shadow-black mb-4" style={{backgroundColor:"#4286f5"}}>
+                            <FcGoogle size="2.5em" className='bg-white m-1 rounded'/>
                             <div className='text-white text-xl font-semibold mx-auto'>Google</div>
+                        </button>
+                        <button onClick={(e)=>{connectOAuth(e,"facebook")}} className="flex flex-row items-center rounded-md shadow-sm shadow-black" style={{backgroundColor:"#4064ac"}}>
+                            <AiFillFacebook size="2.5em" style={{color:"#fff"}} className="m-1"/>
+                            <div className='text-white text-xl font-semibold mx-auto'>Facebook</div>
                         </button>
                 </div>
                 
