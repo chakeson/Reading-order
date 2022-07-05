@@ -34,6 +34,14 @@ const UserSchema = new mongoose.Schema({
         email: {
             type: String,
         }
+    },
+    facebook: {
+        id:{
+            type: String,
+        },
+        email: {
+            type: String,
+        }
     }
 
 });
