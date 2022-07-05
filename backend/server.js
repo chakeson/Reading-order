@@ -102,6 +102,7 @@ router.route("/users")
 router.route("/requestdata")
     .get(authRouter.isAuthenticatedJWT, requestDataRouter.getData);
 
+// Oauth2 Google
 // Redirect the user to the Google signin page 
 router.route("/google")
     .get(authRouter.isAuthenticatedGoogle);
@@ -109,6 +110,14 @@ router.route("/google")
 // Retrieve user data using the access token received 
 router.route("/google/callback")
     .get(authRouter.isAuthenticatedGoogleCallback, oauth2Router.GoogleOAuth2Callback);
+
+// Oauth2 Facebook
+router.route("/facebook")
+    .get(authRouter.isAuthenticatedFacebook);
+
+// Retrieve user data using the access token received 
+router.route("/facebook/callback")
+    .get(authRouter.isAuthenticatedFacebookCallback, oauth2Router.FacebookOAuth2Callback);
 
 
 

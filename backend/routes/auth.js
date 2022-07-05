@@ -5,6 +5,7 @@ const User = require('../models/user');
 const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
+const FacebookStrategy = require("passport-facebook").Strategy;
 const requestIp = require('request-ip');
 require("dotenv").config();
 
@@ -135,3 +136,57 @@ passport.use(new GoogleStrategy({
 
 exports.isAuthenticatedGoogle = passport.authenticate("google", {scope: ["email","profile"]});
 exports.isAuthenticatedGoogleCallback = passport.authenticate("google", {session:false});
+
+
+// Facebook passport strategy
+
+passport.use(new FacebookStrategy({
+    clientID: process.env.FACEBOOK_CLIENT_ID,
+    clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+    callbackURL: process.env.FACEBOOK_CALLBACK_URL,
+    profileFields: ["id","email"],
+    passReqToCallback: true
+    },
+    async function(request, accessToken, refreshToken, profile, done) {
+        
+        // Check if user already exists, and if so return it to a variable else let it be null.
+        var alreadyUser = await User.findOne({ "facebook.id": profile.id }).exec().then().catch(err => {
+            return done(error);
+        });
+
+        // Check there is a user already, then update its last accessed IP address and then return it.
+        if (alreadyUser) {
+            User.updateLastLoginDate({ "facebook.id": profile.id }, function(error, user) {
+                if (error) { return callback(error); }
+
+                if (!user) { return callback(null, false); }
+            });
+
+            return done(null, alreadyUser)
+        }
+
+        // Otherwise create a new user
+        const newUser = new User({
+            email: profile.emails[0].value,
+            createdIp: requestIp.getClientIp(request),
+            updateLastLoginDate: Date.now(),
+            token:"",
+            facebook: {
+                id: profile.id,
+                email: profile.emails[0].value
+            }
+        });
+        // Save the new user to the database
+        await newUser.save().then(()=>{return done(null, newUser);})
+        .catch(error => {
+            console.log(error);
+            return;
+        });
+        
+        // Then return the new user
+        return done(null, newUser);
+    }
+));
+
+exports.isAuthenticatedFacebook = passport.authenticate("facebook", {scope: ["email","public_profile"]});
+exports.isAuthenticatedFacebookCallback = passport.authenticate("facebook", {session:false});
