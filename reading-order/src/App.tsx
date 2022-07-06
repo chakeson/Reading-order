@@ -13,6 +13,8 @@ import SuccesfulDelete from './pages/succesfulDelete/succesfulDelete';
 import Login from './pages/login/login';
 import Register from './pages/register/register';
 import Account from './pages/account/account';
+import DataDeletionInstructions from './pages/compliancePages/dataDeletionInstructions';
+import PrivacyPolicy from './pages/compliancePages/privacyPolicy';
 import { useGlobalContext } from './context';
 
 
@@ -37,6 +39,8 @@ function App() {
 				{!isSignedIn&& <Route path='/deletion'>
 					<Route path=':id' element={<SuccesfulDelete/>} />
 				</Route>}
+				<Route path="/datadeletioninstructions" element={<DataDeletionInstructions />} />
+				<Route path="/privacypolicy" element={<PrivacyPolicy />} />
 				<Route path="*" element={<Error />} />
 			</Routes>
 			</div>
