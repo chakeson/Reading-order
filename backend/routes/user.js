@@ -4,7 +4,7 @@ var bcrypt = require("bcrypt-nodejs");
 const requestIp = require('request-ip');
 const User = require("../models/user");
 const Books = require("../models/book");
-const jsonwebtoken = require("jsonwebtoken");
+const { createJWTToken } = require("../utils/createToken");
 
 // Post - Create user
 // Put - Update password
@@ -102,19 +102,9 @@ exports.getUser = async function(req, res) {
         return;
     });
 
-    const token = jsonwebtoken.sign({
-        email: user.email,
-    }, process.env.JWT_SECRET, 
-    {
-        expiresIn: '24h'
-    });
+    const token = createJWTToken( user.email , "normal" );
 
     user.token = token;
-    /*
-    TODO for future:
-    issuer: 'https://www.DOMAIN.TOP_LEVEL_DOMAIN'
-    maybe iat: Date.now()
-    */
     
     await user.save().then().catch(err => {
         console.log(err);
