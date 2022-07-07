@@ -10,6 +10,9 @@ import DeleteModal from './deleteModal';
 const Account = () => {
     const { auth } = useGlobalContext();
 
+    // Helps with conditional rendering that depends on the account type. Oauth for example shouldn't render password change.
+    const accountType:string = jwtTokenDecode(auth.jwt).type;
+
     const [ successMessage , setSuccessMessage ] = useState('');
     const successRef = useRef<HTMLParagraphElement>(null);
 
@@ -128,7 +131,7 @@ const Account = () => {
             <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `text-2xl text-orange1 bg-white opacity-100` : `h-0 opacity-0`}`}>{errorMessage}</p>
             <p ref={successRef} aria-live="assertive" className={`${ successMessage ? `text-2xl text-black bg-white opacity-100` : `h-0 opacity-0`}`}>{successMessage}</p>
             
-            <form onSubmit={handleSubmit} className='flex flex-col mb-4'>
+            {accountType==="normal" && <form onSubmit={handleSubmit} className='flex flex-col mb-4'>
                 <p className='text-xl font-medium'>Change your password:</p>
                 
                 <label htmlFor="oldPassword" className='block text-lg opacity-90'>
@@ -151,8 +154,9 @@ const Account = () => {
                 
                 <button className={`h-10 text-lg font-medium rounded-xl shadow-sm shadow-black bg-black hover:bg-grey-900 ${!passwordValidated || !validPasswordMatch?"text-grey-200":"text-white"}`} disabled={!passwordValidated || !validPasswordMatch}>Change Password</button>
             </form>
+            }
 
-            <DeleteModal />
+            <DeleteModal accountType={accountType} />
             <RequestData />
             </div>
         </div>
