@@ -123,7 +123,7 @@ function DeleteModal( {accountType}:{accountType:string} ) {
                         <label htmlFor="deletePassword" className='block' id="deleteAcc">
                             Type "DELETE" to confirm deleting account:
                         </label>
-                        <input className={`w-full h-10 rounded mb-2 pl-2 border-2 border-solid ${ (deleteForm===OAuthDeleteString || deleteForm==="") ? `border-black` : `border-orange1`}`} id="deletePassword" type="password" required value={deleteForm} aria-invalid={deleteForm===OAuthDeleteString ?"false":"true"} aria-describedby="deleteAcc" onChange={(e) => {setDeleteFrom(e.target.value)}} />
+                        <input className={`w-full h-10 rounded mb-2 pl-2 border-2 border-solid ${ (deleteForm===OAuthDeleteString || deleteForm==="") ? `border-black` : `border-orange1`}`} id="deletePassword" type="text" required value={deleteForm} aria-invalid={deleteForm===OAuthDeleteString ?"false":"true"} aria-describedby="deleteAcc" onChange={(e) => {setDeleteFrom(e.target.value)}} />
                         
                         <button className={`w-full p-2 h-10 text-lg font-medium rounded-xl text-white shadow-sm shadow-black bg-black hover:bg-grey-900 ${deleteForm!==OAuthDeleteString?"text-grey-200":"text-white"}`}  disabled={deleteForm!==OAuthDeleteString} >Delete Account</button>
                     </form>
