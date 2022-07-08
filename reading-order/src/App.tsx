@@ -15,6 +15,7 @@ import Register from './pages/register/register';
 import Account from './pages/account/account';
 import DataDeletionInstructions from './pages/compliancePages/dataDeletionInstructions';
 import PrivacyPolicy from './pages/compliancePages/privacyPolicy';
+import TermsAndConditions from './pages/compliancePages/termsAndConditions';
 import { useGlobalContext } from './context';
 
 
@@ -41,6 +42,7 @@ function App() {
 				</Route>}
 				<Route path="/datadeletioninstructions" element={<DataDeletionInstructions />} />
 				<Route path="/privacypolicy" element={<PrivacyPolicy />} />
+				<Route path="/termsandconditions" element={<TermsAndConditions />} />
 				<Route path="*" element={<Error />} />
 			</Routes>
 			</div>
