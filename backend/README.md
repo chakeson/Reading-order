@@ -6,7 +6,7 @@ Serves as the server backend for the site.
 
 - findOneAndUpdate all must check if something was actually returned like else if (book)
 
-- Add login with Twitter or Facebook.
+- Add login with Apple.
 
 - Consider storing 10 last IP address from user.
 
@@ -146,3 +146,8 @@ The server uses the express rate limit package for rate limiting. The global rat
 # Dependencies
 
 [request-ip](https://www.npmjs.com/package/request-ip) for advanced dermination of the user's IP address. Used for saving ip addresses.
+
+# OAUTH2 providers
+
+Used google because it's the most popular and easy to work with.
+Abandoned using twitter because libraries are not updated for oauth2. Twitter itself is not easy or smooth to work with. Alot of extra steps and premissions for everything big and small.

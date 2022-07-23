@@ -1,12 +1,16 @@
 # TODO
 
+- Privacy policy page text.
+
+- Terms and conditions page text.
+
+- Get terms and conditions document and add to login page.
+
 - Consider adding contact form to about page.
 
 - Write front page readme with image.
 
 - Clean up react console warnings.
-
-- Get terms and conditions document and add to login page.
 
 ### Longer term todo
 

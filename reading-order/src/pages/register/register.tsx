@@ -251,6 +251,11 @@ const Register = () => {
 
                     </form>
 
+                    <div className="flex flex-row items-start p"> 
+                        <input type="checkbox"></input>
+                        <p>By clicking the Register button below, you accept the sites Terms of Use and Privacy Policy. </p>
+                    </div>
+
                     <p className='text-center'>Already have an account? <Link to='/login' className='underline text-blue3'>Login page</Link></p>
                 </div>
             </div>
