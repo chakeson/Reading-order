@@ -168,7 +168,7 @@ const Login = () => {
         <div className='flex flex-col justify-center items-center'>
             <h1 className='text-3xl font-bold pt-6 sm:pt-10'>Login</h1>
             
-            <div className='flex flex-col md:flex-row w-5/6 sm:w-3/4 md:w-3/4 lg:4/6 xl:w-1/2 pt-4 md:pt-0'>
+            <div className='flex flex-col md:flex-roww-5/6 sm:w-3/4 md:w-3/4 lg:4/6 xl:w-1/2 pt-4 md:pt-0'>
                 <div className="w-full md:w-1/2 flex flex-col p-0 md:p-7">
                         <button onClick={(e)=>{connectOAuth(e,"google")}} className="flex flex-row items-center rounded-md shadow-sm shadow-black mb-4" style={{backgroundColor:"#4286f5"}}>
                             <FcGoogle size="2.5em" className='bg-white m-1 rounded'/>
@@ -181,7 +181,8 @@ const Login = () => {
                 </div>
                 
                 <div className="w-full md:w-1/2">
-                    <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `block text-xl font-medium text-orange1 bg-white` : `hidden`}`}>{errorMessage}</p>
+                    <p ref={errorRef} aria-live="assertive" className={`${ errorMessage ? `block text-2xl font-medium text-orange1 bg-white` : `hidden`}`}>{errorMessage}</p>
+                    
                     <form onSubmit={handleSubmit} className='flex flex-col mb-1'>
                         <label htmlFor="email" className='text-lg opacity-90'>
                             Email:
