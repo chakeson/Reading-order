@@ -13,14 +13,6 @@ require("dotenv").config();
 passport.use(new BasicStrategy(
     function(email, password, callback) {
 
-        // Updateds the last login date for the user.
-        User.updateLastLoginDate({ email: email }, function(error, user) {
-            if (error) { return callback(error); }
-
-            if (!user) { return callback(null, false); }
-
-        });
-
         User.findOne({ email: email }, function (error, user) {
             if (error) { return callback(error); }
 
@@ -33,6 +25,19 @@ passport.use(new BasicStrategy(
 
                 // Password did not match
                 if (!isMatch) { return callback(null, false); }
+
+                try {
+                    // Updateds the last login date for the user.
+                    User.updateLastLoginDate({ email: email }, function(error, user) {
+                        if (error) { return callback(error); }
+
+                        if (!user) { return callback(null, false); }
+
+                    });
+                } catch (error_updateLastLoginDate) {
+                    console.log(error_updateLastLoginDate)
+                }
+
 
                 // Success
                 return callback(null, user);
