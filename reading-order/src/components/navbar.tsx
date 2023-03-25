@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../index.css';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5'
 import { ImBook } from "react-icons/im";
@@ -10,6 +10,14 @@ function Navbar() {
     const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
     const dropdownRef = useRef<HTMLUListElement>(null);
     const { isSignedIn , handleLogout } = useGlobalContext();
+    
+    const navigate = useNavigate();
+
+    const Logout = async () => {
+        setShowMobileNav(false);
+        await handleLogout();
+        navigate('/'); // Called here since it's inside the react router.
+    }
     
     return (
         <nav className="bg-blue2 sticky top-0 z-50">
@@ -45,7 +53,7 @@ function Navbar() {
                                 <Link to="/account">Account</Link>
                             </li>
                             <li className="transform transition duration-700 hover:scale-105 hover:text-tertiary">
-                                <button onClick={()=>handleLogout()} className="font-bold">Logout</button>
+                                <button onClick={()=>Logout()} className="font-bold">Logout</button>
                             </li>
                             </>
                             :
@@ -90,7 +98,7 @@ function Navbar() {
                         <Link to="/account" onClick={()=>{setShowMobileNav(false)}}>Account</Link>
                     </li>
                     <li className="transform transition duration-700 hover:text-tertiary">
-                        <button onClick={()=>{setShowMobileNav(false);handleLogout();}} className="font-bold">Logout</button>
+                        <button onClick={()=>{Logout();}} className="font-bold">Logout</button>
                     </li>
                     </>
                     :

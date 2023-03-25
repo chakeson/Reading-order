@@ -139,6 +139,8 @@ const AppProvider: React.FC = ({ children }) => {
         let stringReadingProgress = createEmptyReadingProgressArray();
         localStorage.setItem('ReadingProgress', JSON.stringify(stringReadingProgress));
         setReadingProgress(stringReadingProgress);
+        // navigate('/'); is supposed to be called by the function that ran this one after this one finished.
+        // Context.tsx is located outside of the router navigate can't be called here.
     }
 
     return (
