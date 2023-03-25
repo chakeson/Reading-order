@@ -1,22 +1,23 @@
-import React from 'react';
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './index.css';
 import './App.css'
 import Navbar from './components/navbar';
 import Home from './pages/Home/home';
-import HorusHerasy from './pages/horusHeresy/horusHeresy';
-import Inquisitors from './pages/inquisitors/inquisitors';
-import ImperialGuard from './pages/imperialGaurd/imperialGuard';
 import About from './pages/about/about';
 import Error from './pages/error/error';
-import SuccesfulDelete from './pages/succesfulDelete/succesfulDelete';
 import Login from './pages/login/login';
 import Register from './pages/register/register';
-import Account from './pages/account/account';
-import DataDeletionInstructions from './pages/compliancePages/dataDeletionInstructions';
-import PrivacyPolicy from './pages/compliancePages/privacyPolicy';
-import TermsAndConditions from './pages/compliancePages/termsAndConditions';
 import { useGlobalContext } from './context';
+
+const HorusHerasy = lazy(() => import('./pages/horusHeresy/horusHeresy'));
+const Inquisitors = lazy(() => import('./pages/inquisitors/inquisitors'));
+const ImperialGuard = lazy(() => import('./pages/imperialGaurd/imperialGuard'));
+const Account = lazy(() => import('./pages/account/account'));
+const DataDeletionInstructions = lazy(() => import('./pages/compliancePages/dataDeletionInstructions'));
+const PrivacyPolicy = lazy(() => import('./pages/compliancePages/privacyPolicy'));
+const TermsAndConditions = lazy(() => import('./pages/compliancePages/termsAndConditions'));
+const SuccesfulDelete = lazy(() => import('./pages/succesfulDelete/succesfulDelete'));
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <BrowserRouter>
 			<div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       		<Navbar />
+			<Suspense fallback={<h1>Loading</h1>}>
       		<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/horusheresy" element={<HorusHerasy />} />
@@ -45,6 +47,7 @@ function App() {
 				<Route path="/termsandconditions" element={<TermsAndConditions />} />
 				<Route path="*" element={<Error />} />
 			</Routes>
+			</Suspense>
 			</div>
     	</BrowserRouter>
     
