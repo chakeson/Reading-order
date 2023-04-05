@@ -120,11 +120,9 @@ passport.use(new GoogleStrategy({
         const newUser = new User({
             email: profile.emails[0].value,
             createdIp: requestIp.getClientIp(request),
-            updateLastLoginDate: Date.now(),
             token:"",
             google: {
-                id: profile.id,
-                email: profile.emails[0].value
+                id: profile.id
             }
         });
         // Save the new user to the database
@@ -174,11 +172,9 @@ passport.use(new FacebookStrategy({
         const newUser = new User({
             email: profile.emails[0].value,
             createdIp: requestIp.getClientIp(request),
-            updateLastLoginDate: Date.now(),
             token:"",
             facebook: {
-                id: profile.id,
-                email: profile.emails[0].value
+                id: profile.id
             }
         });
         // Save the new user to the database

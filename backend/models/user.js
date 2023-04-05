@@ -30,16 +30,10 @@ const UserSchema = new mongoose.Schema({
     google: {
         id:{
             type: String,
-        },
-        email: {
-            type: String,
         }
     },
     facebook: {
         id:{
-            type: String,
-        },
-        email: {
             type: String,
         }
     }

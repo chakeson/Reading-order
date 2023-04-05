@@ -41,7 +41,8 @@ exports.postUser = (req, res) => {
             const user = new User({
                 email: inputUserKey,
                 password: inputPassword,
-                createdIp: requestIp.getClientIp(req)
+                createdIp: requestIp.getClientIp(req),
+                token:""
             });
             
             try {
