@@ -12,7 +12,7 @@ email=test@test.com
 ### Updates password for the authorized account
 PUT http://localhost:3100/api/users HTTP/1.1
 content-type: application/x-www-form-urlencoded
-Authorization: Bearer {{JWT_Token}}
+Authorization: Basic test@test.com Password1!
 
 password=Password2!
 
