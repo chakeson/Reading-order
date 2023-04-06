@@ -11,7 +11,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 function DeleteModal( {accountType}:{accountType:string} ) {
     const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
 
-    const { auth , setAuth, setIsSignedIn } = useGlobalContext();
+    const { auth, handleLogout } = useGlobalContext();
 
     const navigate = useNavigate();
 
@@ -54,10 +54,8 @@ function DeleteModal( {accountType}:{accountType:string} ) {
 
             const message = await response?.text();
             if (response.ok) {
-                await setAuth({"jwt":""});
-                await setIsSignedIn(false);
-                await localStorage.removeItem('Login');
-                await localStorage.removeItem('ReadingProgress');
+                // Handles the logout process.
+                await handleLogout(true);
                 // Go to page displaying message from request that should tell the user that it all has been deleted.
                 await navigate(`/deletion/${btoa(message)}`);
 

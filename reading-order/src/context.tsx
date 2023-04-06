@@ -141,6 +141,7 @@ const AppProvider: React.FC = ({ children }) => {
         setReadingProgress(stringReadingProgress);
         // navigate('/'); is supposed to be called by the function that ran this one after this one finished.
         // Context.tsx is located outside of the router navigate can't be called here.
+        // This is also called when deleting the account.
     }
 
     return (
