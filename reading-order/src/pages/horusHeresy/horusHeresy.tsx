@@ -11,6 +11,9 @@ import horusHeresyDataBooks, { horusHeresyDataArrow , horusHeresyDataShortcut, h
 import NavPannel from '../../components/navPannel';
 import SyncVisualiser from '../../components/syncVisualiser';
 
+const mapWidth:number = 12500;
+const mapHeight:number = 8500;
+
 // limitToBounds={false}
 function HorusHerasy() {
     const spaceRef = useRef<any>();
@@ -33,7 +36,7 @@ function HorusHerasy() {
             <div className="map-height">
             <NavPannel factionFilter={factionFilter} setFactionFilter={setFactionFilter} />
             <SyncVisualiser/>
-            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,11800], y:[0,8500] }); vp.camera.centerFitAreaIntoView({ left: cameraStartingPosition.left, top: cameraStartingPosition.top, width: cameraStartingPosition.width, height: cameraStartingPosition.height});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: 11800, height: 8500 }}>
+            <Space ref={spaceRef} onCreate={vp => {vp.setBounds({ x:[0,mapWidth], y:[0,mapHeight] }); vp.camera.centerFitAreaIntoView({ left: cameraStartingPosition.left, top: cameraStartingPosition.top, width: cameraStartingPosition.width, height: cameraStartingPosition.height});}} style={{ backgroundColor: '#F2F2F2' }} innerDivStyle={{ width: mapWidth, height: mapHeight }}>
                 
                 {/* Devision slider and side naming. */}
                 <div style={{top:`0px`,left:`8760px`,width:`0px`,height:`100%`,border:"5px dashed #b09642"}} className='absolute'></div>
