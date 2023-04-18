@@ -29,6 +29,18 @@ function DeleteModal( {accountType}:{accountType:string} ) {
         setIncorrectPassword(false);
     }, [password]);
 
+    useEffect(() => {
+        // Stops scrolling when the modal is open.
+        if (showDeleteModal) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [showDeleteModal]);
+
     const closeModal = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>| React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
         setShowDeleteModal(false);
