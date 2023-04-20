@@ -6,6 +6,7 @@ import Navbar from './components/navbar';
 import Home from './pages/Home/home';
 import About from './pages/about/about';
 import Error from './pages/error/error';
+import Loading from './pages/loading/loading';
 import Login from './pages/login/login';
 import Register from './pages/register/register';
 import { useGlobalContext } from './context';
@@ -28,7 +29,7 @@ function App() {
         <BrowserRouter>
 			<div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       		<Navbar />
-			<Suspense fallback={<h1>Loading</h1>}>
+			<Suspense fallback={<Loading />}>
       		<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/horusheresy" element={<HorusHerasy />} />
@@ -46,6 +47,7 @@ function App() {
 				<Route path="/privacypolicy" element={<PrivacyPolicy />} />
 				<Route path="/termsandconditions" element={<TermsAndConditions />} />
 				<Route path="*" element={<Error />} />
+				{/*<Route path="/loading" element={<Loading />} />*/}
 			</Routes>
 			</Suspense>
 			</div>

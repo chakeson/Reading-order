@@ -51,6 +51,20 @@ module.exports = {
     extend: {
       screens: {
         '3xl': '2000px',
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'spin-slow-reverse': 'spin-reverse 3s linear infinite',
+      },
+      keyframes: {
+        'spin-reverse': {
+          from: {
+            transform: 'rotate(360deg)',
+          },
+          to: {
+            transform: 'rotate(0deg)',
+          }
+        }
       }
     },
   },
