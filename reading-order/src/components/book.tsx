@@ -99,12 +99,12 @@ function Book(props:Props) {
                 Author: {author}
             </div>}
             
+            { !!book && <div className={`px-3 ${(isExpanded===false ) ? "pb-3" : ""} ${(isExpanded===true && !pages && !audio && !(rating.length>1) && !link) ? "pb-3" : ""}`} style={{color:`${fontColor[2]}`}}>
+                {book}
+            </div>}
 
             { isExpanded ? 
-            <div>
-                { !!book && <div className='px-3' style={{color:`${fontColor[2]}`}}>
-                    {book}
-                </div>}
+            <>
                 { !!pages && <div className='px-3' style={{color:`${fontColor[3]}`}}>
                     Pages: {pages}
                 </div>}
@@ -117,11 +117,9 @@ function Book(props:Props) {
                 { !!link && <div className='flex justify-center content-center p-2' style={{color:`${fontColor[6]}`}}>
                     <a href={link} target="_blank" rel="noopener noreferrer" className='border-2 rounded-full px-2 py-1 font-medium font-lg' onClick={(e)=>{e.stopPropagation()}}>Buy now</a>
                 </div>}
-            </div>
+            </>
             :
-            !!book && <div className='px-3 pb-3' style={{color:`${fontColor[2]}`}}>
-                {book}
-            </div>
+            <></>
             }
             {isPrimary && 
             <div className='absolute flex flex-row justify-evenly w-60 z-0' style={{bottom:"-32px"}}>
