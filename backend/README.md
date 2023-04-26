@@ -6,9 +6,15 @@ Serves as the server backend for the site.
 
 - findOneAndUpdate all must check if something was actually returned like else if (book)
 
-- Add login with Apple.
-
 - Consider storing 10 last IP address from user.
+
+- Add login with Apple. Skip this most likely.
+
+- Password recovery for email accounts.
+
+# Longer term todo
+
+- Implement automatic testing. End point api testing and coverage of the code.
 
 # Installation
 Once you have cloned the repository you can install the dependencies with npm.
@@ -36,7 +42,7 @@ API for storing and retrieving reading progress associated with a specific accou
 On authenticaded endpoints when authentication fails, a redirect is issued. This is so passport-js doesn't send a 401 triggering the browsers built in authentication prompt.
 
 ## Endpoints
-### /users
+## /users
 
 ### `POST`
 This is the endpoint intended for users to register. In the body of the request you need to include the email and password. 
@@ -84,7 +90,17 @@ content-type: application/x-www-form-urlencoded
 Authorization: Bearer <token>
 ``` 
 
-### /books
+### `PATCH`
+This end point is intended to becalled when the user logsout. It deletes the saved JWT token associated with the account.
+
+Example:
+```
+PATCH http://localhost:3100/api/users HTTP/1.1
+content-type: application/x-www-form-urlencoded
+Authorization: Bearer {{JWT_Token}}
+``` 
+
+## /books
 
 ### `POST`
 This is the endpoint intended for users to saved reading progress after creating their account. In the body of the request you need to include the book paramater containing the reading progress. The data is then validated to contain only legal characters and of correct length. Requst must contain a bearer token for authentication of account.
@@ -118,7 +134,7 @@ content-type: application/x-www-form-urlencoded
 Authorization: Bearer <token>
 ``` 
 
-### /requestdata
+## /requestdata
 
 ### `GET`
 Fetch all saved data. Requst must contain a bearer token for authentication of account.
@@ -129,6 +145,11 @@ GET http://localhost:3100/api/requestdata HTTP/1.1
 content-type: application/x-www-form-urlencoded
 Authorization: Bearer <token>
 ```
+
+# JWT token structure
+
+The structure is shown in [createToken.js](utils/createToken.js). Tokens are currently set for 24h. In the future This could be increased and to have a refresh scheme set up to increase the time if the page is revistied or interacted with again.
+
 
 # Program flow and structure
 
